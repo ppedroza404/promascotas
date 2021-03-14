@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header-principal">
+
+        <a href="#"><img src="/img/logo.png"></a>
+
+        <nav>
+
+            <div class="flotar-der">
+                <div class="flotar-izq">
+                    <a href="Reportes.html" class="active">Reportes</a>
+                    <a href="#">Bitácora</a>
+                    <a href="#">Mantenimiento</a>
+
+
+                </div>
+
+                <div class="flotar-der">
+                    <a href="#" id="btn-cerrar-sesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <table id="tbl-usuarios" class="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Tipo de mascota</th>
+                    <th>Dueño</th>
+                    <th>Fecha de ingreso</th>
+                    <th>Cantidad de servicios</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/mascotasAdmin.js"></script>
+</body>
+
+</html>
