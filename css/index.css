@@ -30,8 +30,13 @@ html {
 
 /* Inicio: estilos header principal */
 
-.header-principal {
+.header-principal-cliente {
     background: #6700a3;
+    padding: 20px;
+}
+
+.header-principal-admin {
+    background: #000000;
     padding: 20px;
 }
 
@@ -74,7 +79,7 @@ html {
     font-size: 18px;
 }
 
-.header-principal nav div ul ul {
+.header-principal-cliente nav div ul ul {
     position: absolute;
     top: 100%;
     background-color: #6700a3;
@@ -82,8 +87,20 @@ html {
     display: none;
 }
 
-.header-principal nav div ul ul li:hover {
+.header-principal-admin nav div ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #000000;
+    top: 290px;
+    display: none;
+}
+
+.header-principal-cliente nav div ul ul li:hover {
     background-color: #9f56cc;
+}
+
+.header-principal-admin nav div ul ul li:hover {
+    background-color: #383737;
 }
 
 .header-principal nav div ul li:hover>ul {
