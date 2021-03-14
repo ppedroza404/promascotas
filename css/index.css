@@ -36,12 +36,74 @@ html {
 }
 
 .header-principal nav {
-    margin-top: 20px;
+    position: absolute;
+    top: -190px;
+    left: 0px;
+    padding: 50px 0 0 0;
+    width: 100%;
+    margin-left: 70px;
+    /*margin-top: 20px;
     display: block;
-    position: relative;
+    position: absolute;
     text-align: center;
     margin-top: -30px;
-    padding: 10px 16px;
+    padding: 10px 16px;*/
+}
+
+.header-principal nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header-principal nav div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-principal nav div ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+
+.header-principal nav div ul ul li a {
+    font-size: 18px;
+}
+
+.header-principal nav div ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #6700a3;
+    top: 290px;
+    display: none;
+}
+
+.header-principal nav div ul ul li:hover {
+    background-color: #9f56cc;
+}
+
+.header-principal nav div ul li:hover>ul {
+    display: block;
+}
+
+.header-principal nav div ul ul li:hover>ul {
+    display: block;
+}
+
+.header-principal nav div ul ul li {
+    position: relative;
+}
+
+.header-principal nav>div>ul {
+    padding: 200px;
+}
+
+.header-principal nav>div>ul>li {
+    float: left;
 }
 
 .header-principal nav .flotar-izq a {
