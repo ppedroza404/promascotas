@@ -80,3 +80,66 @@ let mascotas = [{
         'servicios': '8'
     }
 ]
+
+
+let mascotasCliente = [{
+        'nombre': 'Cloe',
+        'raza': 'Chihuahua',
+        'vacunas': 'hepatitis, estemper',
+        'servicios': '15'
+    },
+    {
+        'nombre': 'Papi',
+        'raza': 'Chihuahua',
+        'vacunas': 'hepatitis, rabia',
+        'servicios': '13'
+    },
+    {
+        'nombre': 'Oreo',
+        'raza': 'Persa',
+        'vacunas': 'rabia, leucemia felina',
+        'servicios': '5'
+    },
+    {
+        'nombre': 'Corchito',
+        'raza': 'Esfinge',
+        'vacunas': 'herpesvirus, calicivirus, rabia',
+        'servicios': '35'
+    },
+    {
+        'nombre': 'Figaro',
+        'raza': 'Bengala',
+        'vacunas': 'leucemia felina, calicivirus',
+        'servicios': '15'
+    },
+    {
+        'nombre': 'Cosmo',
+        'raza': 'Siberiano',
+        'vacunas': 'rabia, leucemia felina',
+        'servicios': '27'
+    },
+    {
+        'nombre': 'Kitty',
+        'raza': 'Angola',
+        'vacunas': 'herpesvirus, rabia',
+        'servicios': '23'
+    },
+    {
+        'nombre': 'Orus',
+        'raza': 'Standford',
+        'vacunas': 'rabia, estemper',
+        'servicios': '3'
+    },
+    {
+        'nombre': 'Max',
+        'raza': 'Standford',
+        'vacunas': 'estemper, hepatitis',
+        'servicios': '7'
+    },
+    {
+        'nombre': 'Terry',
+        'raza': 'Golden',
+        'vacunas': 'hepatitis, rabia',
+        'servicios': '8'
+    }
+]
