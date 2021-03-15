@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,46 +9,53 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/tabla.css">
 </head>
 
 <body>
-    <header class="header-principal">
-
-        <a href="#"><img src="/img/logo.png"></a>
-
-        <nav>
-
-            <div class="flotar-der">
-                <ul>
-                    <li>
-                        <a href="" class="active">Reportes</a>
-                        <ul>
-                            <li>
-                                <a href="Reportes.html">Reportes</a>
-                            </li>
-                            <li>
-                                <a href="Listar.html">Listar</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Bitácora</a>
-                    </li>
-                    <li>
-                        <a href="#">Mantenimiento</a>
-                    </li>
-
-
-
-                    <li>
-                        <a href="#" id="btn-cerrar-sesion">Cerrar sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <header class="header-principal header-principal-cliente">
+        <div>
+            <a href="#"><img src="/img/logo.png"></a>
+            <nav>
+                <div class="flotar-der">
+                    <ul>
+                        <li>
+                            <a href="#">Volver</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
+    <main>
+        <h2>Formulario de registro</h2>
+        <h3>Datos personales</h3>
+        <section>
+            <form>
+                <div>
+                    <label for="div-imgUpload">Fotografía o avatar</label>
+                    <div class="div-imgUpload">
+                        <div class="previstaImagen" id="prevImagen">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                        </div>
+                        <input type="file" name="input-img" id="input-imagen">
+                    </div>
+                </div>
+                <div>
+                    <label for="slt-generoCliente">Género del paciente</label>
+                    <select id="slt-generoCliente">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="txt-nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" id="txt-nacimiento">
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="js/registrarCliente.js"></script>
 </body>
 
 </html>
