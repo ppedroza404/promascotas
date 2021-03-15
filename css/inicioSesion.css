@@ -1,0 +1,31 @@
+body {
+    background-color: #070c0f;
+    background-image: url('../img/bgrInicioSesion.jpg');
+    background-repeat: no-repeat;
+    background-position: 5% 0%;
+}
+
+.inicioSesionContenedor h1,
+.inicioSesionContenedor h2 {
+    color: #56cfe1;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+
+.logoInicioSesion {
+    background: url('../img/logoInicioSesion.png') no-repeat top left transparent;
+    background-size: 100%;
+    display: block;
+    height: 289px;
+    width: 584px;
+    margin: 3% auto 0;
+}
+
+.capturaContenedor {
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+}
