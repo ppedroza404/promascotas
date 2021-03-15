@@ -33,11 +33,17 @@ html {
 .header-principal-cliente {
     background: #6700a3;
     padding: 20px;
+    border-bottom: #56cfe1;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
 }
 
 .header-principal-admin {
     background: #000000;
     padding: 20px;
+    border-bottom: #56cfe1;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
 }
 
 .header-principal nav {
