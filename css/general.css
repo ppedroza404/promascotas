@@ -46,3 +46,73 @@ a:hover {
     text-decoration: underline;
     transition: all 0.5s ease 0s;
 }
+
+.logo {
+    display: block;
+    width: 217px;
+    height: 95px;
+    background: url('../img/logo.png') no-repeat top left;
+}
+
+.sinRegistroBody .logo {
+    background: url('../img/logoMorado.png') no-repeat top left;
+}
+
+.adminBody header {
+    background-color: #000000;
+    border-bottom: 5px solid #56cfe1;
+}
+
+.sinRegistroBody header {
+    background: #000000;
+}
+
+.h1ParaAdmin {
+    color: #00ff00;
+}
+
+.h1ParaProveedor {
+    color: #00ff00;
+}
+
+.duenoBody header {
+    background-color: #6700a3;
+    border-bottom: 5px solid #56cfe1;
+}
+
+.proveedorBody header {
+    background-color: #56cfe1;
+    border-bottom: 5px solid #6700a3;
+}
+
+select,
+input {
+    background: #d5f3f7;
+    border: none;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+input {
+    width: calc(100% - 30px);
+}
+
+.contenedorColumna {
+    width: 100%;
+    display: flow-root;
+}
+
+.contenedorColumna .columna {
+    float: left;
+    padding: 5px 10px;
+    display: block;
+}
+
+.dobleColumna .columna:first-child,
+.simpleColumna .columna {
+    width: calc(33% - 20px);
+}
+
+.dobleColumna .columna:last-child {
+    width: calc(66% - 20px);
+}
