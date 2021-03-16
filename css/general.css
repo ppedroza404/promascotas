@@ -118,6 +118,7 @@ a:hover {
 textarea,
 select,
 input {
+    margin-top: 5px;
     background: #d5f3f7;
     border: none;
     width: 100%;
