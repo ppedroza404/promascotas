@@ -17,12 +17,25 @@ html {
     float: right;
 }
 
+.centrarTexto {
+    text-align: center;
+}
+
 .btn {
-    background: #ffa502;
-    border: #333 solid 2px;
-    border-radius: 10px;
-    font-size: 18px;
-    padding: 15px;
+    background: #6700a3;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 10px 2px rgba(86, 207, 225, 0.35);
+    transition: all 0.5s ease 0s;
 }
 
 .error {
