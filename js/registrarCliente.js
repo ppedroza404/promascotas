@@ -130,7 +130,7 @@ const obtenerDatos = () => {
 
     registrarCliente(nombreCliente, primerApellidoCliente, segApellidoCliente, generoCliente, tipoId, numId, formatoFecha, correo, cantMascotas, provincia, canton, distrito, otrasSenias);
 
-    console.log(formatoFecha);
+    console.log(nombreCliente)
 }
 
 /* Fin: Función de obtención de datos*/
