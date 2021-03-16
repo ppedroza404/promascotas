@@ -154,7 +154,7 @@ input {
 }
 
 .contenedorColumna textArea {
-    width: 95.3%;
+    width: 94%;
     margin-left: 10px;
     height: 50px;
 }
@@ -193,6 +193,14 @@ input {
 
 
 /* Genera el marco de la foto en los perfiles */
+
+.div-imgUpload {
+    text-align: center;
+}
+
+.div-imgUpload span input {
+    margin-left: 55px;
+}
 
 .div-imgUpload img {
     margin-top: 10px;

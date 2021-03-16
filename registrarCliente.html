@@ -33,8 +33,13 @@
         <form>
             <section class="contenedorColumna dobleColumna">
                 <div class="columna">
-                    <img id="img-prev" src="img/imgPrevLogo.jpg" alt="Foto o avatar" />
-                    <input type='file' id="input-imagen" />
+                    <label for="div-imgUpload">Fotografía o avatar</label>
+                    <div class="div-imgUpload">
+                        <div class="previstaImagen" id="prevImagen">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                        </div>
+                        <span><input type="file" name="input-img" id="input-imagen"></span>
+                    </div>
                 </div>
                 <div class="columna">
                     <div>
@@ -114,10 +119,13 @@
             </section>
             <section class="contenedorColumna"><br/>
                 <div>
-                    <label for="txtOtrasSenias">Otras señas</label>
-                    <textarea id="txtOtrasSenias" class="columna-textArea">
+                    <label for="txt-otrasSenias">Otras Señas</label>
+                    <textarea id="txt-otrasSenias" name="otrasSenias"></textarea>
                 </div>
             </section>
+            <div class="btn-registar">
+                <button>Registrar</button>
+            </div>
         </form>
     </main>
     <script src="js/registrarCliente.js"></script>
