@@ -143,3 +143,13 @@ let mascotasCliente = [{
         'servicios': '8'
     }
 ]
+
+let lista_clientes = []
+
+const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
+    let nuevoCliente = [];
+
+    nuevoCliente.push(pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias);
+
+    lista_clientes.push(nuevoCliente);
+}

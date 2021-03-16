@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body class="sinRegistroBody">
@@ -58,7 +59,7 @@
             </section>
             <section class="contenedorColumna simpleColumna">
                 <div class="columna">
-                    <label for="slt-generoCliente">Género del paciente</label>
+                    <label for="slt-generoCliente">Género</label>
                     <select id="slt-generoCliente">
                         <option value="">--Seleccione una opción--</option>
                         <option value="femenino">Femenino</option>
@@ -89,7 +90,7 @@
                     <input type="text" id="txt-correo">
                 </div>
                 <div class="columna">
-                    <label for="txt-cantMascotas">Correo electrónico</label>
+                    <label for="txt-cantMascotas">Cantidad de mascotas</label>
                     <input type="number" id="txt-cantMascotas">
                 </div>
             </section>
@@ -124,7 +125,7 @@
                 </div>
             </section>
             <div class="btn-registar">
-                <button>Registrar</button>
+                <button type="button" id="btn-registrarCliente">Registrar</button>
             </div>
         </form>
     </main>
