@@ -127,6 +127,10 @@ input[type=file] {
     background: none;
 }
 
+input[type=button] {
+    background: none;
+}
+
 input[type=date] {
     padding-top: 7.5px;
     padding-bottom: 7.5px;
@@ -157,6 +161,9 @@ input {
     width: calc(66% - 20px);
 }
 
+
+/* Invierte las columnas dobles 66% y 33%*/
+
 .dobleColumnaInvertida .columna:first-child,
 .simpleColumnaInvertida .columna {
     width: calc(66% - 20px);
@@ -167,15 +174,11 @@ input {
 }
 
 
-/* Invierte las columnas dobles 66% y 33%*/
+/* Genera el marco de la foto en los perfiles */
 
-.dobleColumnaInvertida .columna:first-child,
-.simpleColumna .columna {
-    width: calc(66% - 20px);
-}
-
-.dobleColumnaInvertida .columna:last-child {
-    width: calc(33% - 20px);
+.div-imgUpload img {
+    margin-top: 10px;
+    border: 2px solid #56cfe1;
 }
 
 

@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/perfilProveedor.css">
     <title>Perfil de Proveedor</title>
 </head>
 
@@ -53,8 +55,41 @@
     <main>
         <div class="contenedor">
             <h1>Perfil de proveedor</h1>
-            <h2>Empresa</h2>
 
+            <h2>Proveedor</h2>
+            <section class="contenedorColumna dobleColumna">
+
+                <div class="columna">
+                    <label for="div-imgUpload">Fotografía o avatar</label>
+                    <div class="div-imgUpload">
+                        <div class="previstaImagen" id="prevImagen">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                        </div>
+                        <span><input type="file" name="input-img" id="input-imagen"></span>
+                    </div>
+                </div>
+                <div class="columna dobleColumnaInvertida">
+                    <div class="columna">
+                        <p id="txt-nombreProveedor"><span>Nombre</span> <span>1apellido</span> <span>2apellido</span></p>
+                        <p id="txt-email">proveedor@domain.com</p>
+                        <p id="txt-genero"><span>Genero :</span> <span>Masculino</span></p>
+                        <p id="txt-telefono"><span>Telefono :</span> <span>2222-222-2222</span></p>
+                        <p id="txt-id"><span>Cedula juridica :</span> <span>12345-6789</span></p>
+                    </div>
+                    <div class="columna">
+                        <p id="txt-provincia">provincia</p>
+                        <p id="txt-canton">canton</p>
+                        <p id="txt-distrito">distrito</p>
+                        <p id="txt-direccion">direccion</p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+            <h2>Representante Legal</h2>
             <section class="contenedorColumna dobleColumna">
                 <div class="columna">
                     <label for="div-imgUpload">Fotografía o avatar</label>
@@ -67,20 +102,23 @@
                 </div>
                 <div class="columna dobleColumnaInvertida">
                     <div class="columna">
-                        <label for="txt-nombreProveedor" class="simpleColumna">Nombre</label>
-                        <label for="txt-primerApellidoCliente"> 1apellido</label>
-                        <label for="txt-segApellidoCliente">2apellido</label>
+                        <p id="txt-nombreProveedor"><span>Nombre</span> <span>1apellido</span> <span>2apellido</span></p>
+                        <p id="txt-email">proveedor@domain.com</p>
+                        <p id="txt-genero"><span>Genero :</span> <span>Masculino</span></p>
+                        <p id="txt-telefono"><span>Telefono :</span> <span>2222-222-2222</span></p>
+                        <p id="txt-id"><span>Cedula juridica :</span> <span>12345-6789</span></p>
                     </div>
                     <div class="columna">
-                        <label for="txt-primerApellidoCliente">JJJ</label>
+                        <p id="txt-provincia">provincia</p>
+                        <p id="txt-canton">canton</p>
+                        <p id="txt-distrito">distrito</p>
+                        <p id="txt-direccion">direccion</p>
 
                     </div>
+
 
                 </div>
             </section>
-
-            <h2>Representante Legal</h2>
-
         </div>
     </main>
     <footer>
