@@ -115,6 +115,7 @@ a:hover {
     border-bottom: 5px solid #6700a3;
 }
 
+textarea,
 select,
 input {
     background: #d5f3f7;
@@ -164,6 +165,17 @@ input {
 
 .dobleColumnaInvertida .columna:last-child {
     width: calc(33% - 20px);
+}
+
+.btn-registar {
+    text-align: center;
+}
+
+.btn-registar button {
+    background: #6700a3;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 

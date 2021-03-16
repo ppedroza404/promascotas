@@ -14,3 +14,23 @@ h1 {
 form div input:disabled {
     background-color: #e7e7e7;
 }
+
+.mapa {
+    position: relative;
+    text-align: center;
+    height: 500px;
+    width: 10300px;
+}
+
+.gmapas {
+    overflow: hidden;
+    background: none!important;
+    height: 500px;
+    width: 1030px;
+}
+
+iframe {
+    margin: 0 auto;
+    width: 200%;
+    height: 500px;
+}
