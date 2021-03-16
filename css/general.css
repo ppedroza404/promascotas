@@ -128,6 +128,10 @@ input[type=file] {
     background: none;
 }
 
+input[type=button] {
+    background: none;
+}
+
 input[type=date] {
     padding-top: 7.5px;
     padding-bottom: 7.5px;
@@ -164,6 +168,9 @@ input {
     width: calc(66% - 20px);
 }
 
+
+/* Invierte las columnas dobles 66% y 33%*/
+
 .dobleColumnaInvertida .columna:first-child,
 .simpleColumnaInvertida .columna {
     width: calc(66% - 20px);
@@ -182,6 +189,14 @@ input {
     color: #fff;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+
+/* Genera el marco de la foto en los perfiles */
+
+.div-imgUpload img {
+    margin-top: 10px;
+    border: 2px solid #56cfe1;
 }
 
 
