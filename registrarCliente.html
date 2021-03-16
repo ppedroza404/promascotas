@@ -11,49 +11,118 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
-    <header class="header-principal header-principal-cliente">
-        <div>
-            <a href="#"><img src="/img/logo.png"></a>
+<body class="sinRegistroBody">
+    <header class="header-principal">
+        <div class="contenedor">
+            <a href="#"><span class="logo"></a>
             <nav>
                 <div class="flotar-der">
-                    <ul>
-                        <li>
-                            <a href="#">Volver</a>
-                        </li>
+                    <li>
+                        <a href="#">Volver</a>
+                    </li>
                     </ul>
                 </div>
             </nav>
         </div>
+
     </header>
-    <main>
+    <main class="contenedor">
+        <h1>Unite a Pro Mascotas</h1>
         <h2>Formulario de registro</h2>
         <h3>Datos personales</h3>
-        <section>
-            <form>
-                <div>
+        <form>
+            <section class="contenedorColumna dobleColumna">
+                <div class="columna">
                     <label for="div-imgUpload">Fotografía o avatar</label>
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
                             <img src="img/imgPrevLogo.jpg" alt="Prevista">
                         </div>
-                        <input type="file" name="input-img" id="input-imagen">
+                        <span><input type="file" name="input-img" id="input-imagen"></span>
                     </div>
                 </div>
-                <div>
+                <div class="columna">
+                    <div>
+                        <label for="txt-nombreCliente" class="simpleColumna">Nombre</label>
+                        <input type="text" id="txt-nombreCliente">
+                    </div>
+                    <div>
+                        <label for="txt-primerApellidoCliente">Primer apellido</label>
+                        <input type="text" id="txt-primerApellidoCliente">
+                    </div>
+                    <div>
+                        <label for="txt-segApellidoCliente">Segundo apellido</label>
+                        <input type="text" id="txt-segApellidoCliente">
+                    </div>
+                </div>
+            </section>
+            <section class="contenedorColumna simpleColumna">
+                <div class="columna">
                     <label for="slt-generoCliente">Género del paciente</label>
                     <select id="slt-generoCliente">
                         <option value="">--Seleccione una opción--</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
                     </select>
                 </div>
-                <div>
+                <div class="columna">
+                    <label for="slt-tipoID">Tipo de ID</label>
+                    <select id="slt-tipoID">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="nacional">Nacional</option>
+                        <option value="dimex">Dimex</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="columna">
+                    <label for="txt-numID">Número de ID</label>
+                    <input type="text" id="txt-numID">
+                </div>
+            </section>
+            <section class="contenedorColumna simpleColumna">
+                <div class="columna">
                     <label for="txt-nacimiento">Fecha de Nacimiento</label>
                     <input type="date" id="txt-nacimiento">
                 </div>
-            </form>
-        </section>
+                <div class="columna">
+                    <label for="txt-correo">Correo electrónico</label>
+                    <input type="text" id="txt-correo">
+                </div>
+                <div class="columna">
+                    <label for="txt-cantMascotas">Correo electrónico</label>
+                    <input type="number" id="txt-cantMascotas">
+                </div>
+            </section>
+            <h3>Dirección</h3>
+            <section>
+                <div class="columna">
+                    <label for="slt-generoCliente">Género del paciente</label>
+                    <select id="slt-generoCliente">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+                </div>
+                <div class="columna">
+                    <label for="slt-tipoID">Tipo de ID</label>
+                    <select id="slt-tipoID">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="nacional">Nacional</option>
+                        <option value="dimex">Dimex</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="columna">
+                    <label for="slt-tipoID">Tipo de ID</label>
+                    <select id="slt-tipoID">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="nacional">Nacional</option>
+                        <option value="dimex">Dimex</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+            </section>
+        </form>
     </main>
     <script src="js/registrarCliente.js"></script>
 </body>
