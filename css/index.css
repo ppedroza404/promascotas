@@ -118,6 +118,12 @@
     font-size: 20px;
 }
 
+.header-principal-registrar nav div a {
+    color: #6700a3;
+    text-decoration: none;
+    font-size: 20px;
+}
+
 .header-principal nav a:hover {
     color: #b6d8d6;
     transition: 2s;
