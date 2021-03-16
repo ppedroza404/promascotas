@@ -38,6 +38,15 @@ html {
     border-bottom-width: 5px;
 }
 
+.header-principal-registrar {
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: #56cfe1;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    color: #6700a3;
+}
+
 .header-principal-admin {
     background: #000000;
     padding: 20px;

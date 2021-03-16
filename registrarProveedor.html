@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/registrarProveedor.css">
+</head>
+
+<body>
+    <header class="header-principal header-principal-registrar">
+        <div>
+            <a href="#"><img src="/img/logoMorado.png"></a>
+            <nav>
+                <div class="flotar-der">
+                    <ul>
+                        <li>
+                            <a href="#">Volver</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="contenedor">
+        <h1>Formulario de registro de proveedor</h1>
+        <h3>Datos del negocio</h3>
+        <section>
+            <form>
+                <div class="contenedorColumna dobleColumna">
+                    <div class="columna">
+                        <label for="div-imgUpload">Fotografía o avatar</label>
+                        <div class="div-imgUpload">
+                            <div class="previstaImagen" id="prevImagen">
+                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                            </div>
+                            <input type="file" name="input-img" id="input-imagen">
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div>
+                            <label for="txt-nombreNegocio">Nombre del negocio</label>
+                            <input type="text" id="txt-nombreNegocio" class="inpt-negocio">
+                        </div>
+                        <div>
+                            <label for="slt-tipoId">Tipo de identificación</label>
+                            <select id="slt-tipoId" class="inpt-negocio">
+                                <option value="">--Seleccione una opción--</option>
+                                <option value="Física">Física</option>
+                                <option value="Jurídica">Jurídica</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="txt-nombreNegocio">Cédula Jurídica</label>
+                            <input type="text" id="txt-nombreNegocio" disabled class="inpt-negocio">
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr>
+                <p class="titulo">
+                    <h3>Datos del solicitante</h3>
+                </p>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreSolicitante">Nombre</label>
+                        <input type="text" id="txt-nombreSolicitante">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-primeApellido">Primer apellido</label>
+                        <input type="text" id="txt-primeApellido">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-segundoApellido">Segundo apellido</label>
+                        <input type="text" id="txt-segundoApellido">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="slt-tipoIdSolicitante">Tipo de identificación</label>
+                        <select id="slt-tipoIdSolicitante">
+                            <option value="">--Seleccione una opción--</option>
+                            <option value="Física">Cédula</option>
+                            <option value="Jurídica">Dimex</option>
+                            <option value="Jurídica">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label for="txt-numeroID">Número ID</label>
+                        <input type="text" id="txt-numeroID">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="txt-fechaNacimiento">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-correoSolicitante">Correo</label>
+                        <input type="email" id="txt-correoSolicitante">
+                    </div>
+                </div>
+                <hr>
+                <p class="titulo">
+                    <h3>Datos del representante legal</h3>
+                </p>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreSolicitante">Nombre</label>
+                        <input type="text" id="txt-nombreSolicitante">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-primeApellido">Primer apellido</label>
+                        <input type="text" id="txt-primeApellido">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-segundoApellido">Segundo apellido</label>
+                        <input type="text" id="txt-segundoApellido">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="slt-tipoIdSolicitante">Tipo de identificación</label>
+                        <select id="slt-tipoIdSolicitante">
+                            <option value="">--Seleccione una opción--</option>
+                            <option value="Física">Cédula</option>
+                            <option value="Jurídica">Dimex</option>
+                            <option value="Jurídica">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label for="txt-numeroID">Número ID</label>
+                        <input type="text" id="txt-numeroID">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="txt-fechaNacimiento">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-correoSolicitante">Correo</label>
+                        <input type="email" id="txt-correoSolicitante">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="js/registrarProveedor.js"></script>
+</body>
+
+</html>

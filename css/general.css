@@ -100,6 +100,7 @@ input {
 .contenedorColumna {
     width: 100%;
     display: flow-root;
+    margin-bottom: 30px;
 }
 
 .contenedorColumna .columna {
@@ -115,4 +116,13 @@ input {
 
 .dobleColumna .columna:last-child {
     width: calc(66% - 20px);
+}
+
+.dobleColumnaInvertida .columna:first-child,
+.simpleColumnaInvertida .columna {
+    width: calc(66% - 20px);
+}
+
+.dobleColumnaInvertida .columna:last-child {
+    width: calc(33% - 20px);
 }
