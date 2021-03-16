@@ -56,8 +56,8 @@
                             </select>
                         </div>
                         <div>
-                            <label for="txt-nombreNegocio">Cédula Jurídica</label>
-                            <input type="text" id="txt-nombreNegocio" disabled class="inpt-negocio">
+                            <label for="txt-cedulaJuridica">Cédula Jurídica</label>
+                            <input type="text" id="txt-cedulaJuridica" disabled class="inpt-negocio">
                         </div>
                     </div>
 
@@ -73,12 +73,12 @@
                         <input type="text" id="txt-nombreSolicitante">
                     </div>
                     <div class="columna">
-                        <label for="txt-primeApellido">Primer apellido</label>
-                        <input type="text" id="txt-primeApellido">
+                        <label for="txt-primeApellidoSolicitante">Primer apellido</label>
+                        <input type="text" id="txt-primeApellidoSolicitante">
                     </div>
                     <div class="columna">
-                        <label for="txt-segundoApellido">Segundo apellido</label>
-                        <input type="text" id="txt-segundoApellido">
+                        <label for="txt-segundoApellidoSolicitante">Segundo apellido</label>
+                        <input type="text" id="txt-segundoApellidoSolicitante">
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
@@ -112,22 +112,22 @@
                 </p>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
-                        <label for="txt-nombreSolicitante">Nombre</label>
-                        <input type="text" id="txt-nombreSolicitante">
+                        <label for="txt-nombreRepresentante">Nombre</label>
+                        <input type="text" id="txt-nombreRepresentante">
                     </div>
                     <div class="columna">
-                        <label for="txt-primeApellido">Primer apellido</label>
-                        <input type="text" id="txt-primeApellido">
+                        <label for="txt-primerApellidoRepresentante">Primer apellido</label>
+                        <input type="text" id="txt-primerApellidoRepresentante">
                     </div>
                     <div class="columna">
-                        <label for="txt-segundoApellido">Segundo apellido</label>
-                        <input type="text" id="txt-segundoApellido">
+                        <label for="txt-segundoApellidoRepresentante">Segundo apellido</label>
+                        <input type="text" id="txt-segundoApellidoRepresentante">
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
-                        <label for="slt-tipoIdSolicitante">Tipo de identificación</label>
-                        <select id="slt-tipoIdSolicitante">
+                        <label for="slt-tipoIdRepresentante">Tipo de identificación</label>
+                        <select id="slt-tipoIdRepresentante">
                             <option value="">--Seleccione una opción--</option>
                             <option value="Física">Cédula</option>
                             <option value="Jurídica">Dimex</option>
@@ -135,18 +135,18 @@
                         </select>
                     </div>
                     <div class="columna">
-                        <label for="txt-numeroID">Número ID</label>
-                        <input type="text" id="txt-numeroID">
+                        <label for="txt-numeroIdRepresentante">Número ID</label>
+                        <input type="text" id="txt-numeroIdRepresentante">
                     </div>
                     <div class="columna">
-                        <label for="txt-fechaNacimiento">Fecha de nacimiento</label>
-                        <input type="date" id="txt-fechaNacimiento">
+                        <label for="txt-fechaNacimientoRepresentante">Fecha de nacimiento</label>
+                        <input type="date" id="txt-fechaNacimientoRepresentante">
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
-                        <label for="txt-correoSolicitante">Correo</label>
-                        <input type="email" id="txt-correoSolicitante">
+                        <label for="txt-correoRepresentante">Correo</label>
+                        <input type="email" id="txt-correoRepresentante">
                     </div>
                 </div>
                 <hr>
@@ -191,22 +191,39 @@
                 </div>
                 <div class="contenedorColumna">
                     <div>
-                        <label for="txt-otrasSeña">Otras Señas</label>
-                        <textarea name="txt-otrasSeñas" cols="100" rows="5"></textarea>
+                        <label for="txt-otrasSennas">Otras Señas</label>
+                        <textarea name="txt-otrasSennas" cols="100" rows="5"></textarea>
+                    </div>
+                </div>
+                <hr>
+                <p class="titulo">
+                    <h3>Descripción del servicio</h3>
+                </p>
+
+                <div class="contenedorColumna">
+                    <div>
+                        <label for="txt-descripcion">Por favor describa sus servicios</label>
+                        <textarea name="txt-descripcion" cols="100" rows="5"></textarea>
                     </div>
                 </div>
                 <hr>
                 <p class="titulo">
                     <h3>Ubicación</h3>
                 </p>
+                <div class="contenedorColumna">
+                    <div class="columna">
+                        <label for="txt-descripcion">Por favor seleccione su ubicación en el mapa</label>
+                    </div>
+                </div>
                 <div class="mapa contenedorColumna">
+
                     <div class="gmapas columna">
                         <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=cenfotec&t=&z=13&ie=UTF8&iwloc=&output=embed">
                         </iframe>
                     </div>
                 </div>
-                <div class="btn-registar">
-                    <button>Registrar</button>
+                <div class="btn-registar" type="button" id="btn-registrarProveedor">
+                    <button type="button" id="btn-registrar">Registrar</button>
                 </div>
             </form>
         </section>
