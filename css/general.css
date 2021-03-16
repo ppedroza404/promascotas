@@ -157,4 +157,16 @@ input {
 }
 
 
+/* Invierte las columnas dobles 66% y 33%*/
+
+.dobleColumnaInvertida .columna:first-child,
+.simpleColumna .columna {
+    width: calc(66% - 20px);
+}
+
+.dobleColumnaInvertida .columna:last-child {
+    width: calc(33% - 20px);
+}
+
+
 /* Inicio*/

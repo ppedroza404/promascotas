@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <title>Perfil de Proveedor</title>
+</head>
+
+<body class="proveedorBody">
+    <header class="header-principal header-principal-admin">
+        <a href="#"><img src="/img/logo.png"></a>
+        <div class="flotar-der">
+            <nav>
+                <div class="flotar-der">
+                    <ul>
+                        <li>
+                            <a href="" class="active">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="">Mis Servicios</a>
+                        </li>
+                        <li>
+                            <a href="">Reportes</a>
+                            <ul>
+                                <li>
+                                    <a href="Reportes.html">Reportes</a>
+                                </li>
+                                <li>
+                                    <a href="Listar.html">Listar</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" id="btn-cerrar-sesion">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+
+
+    <main>
+        <div class="contenedor">
+            <h1>Perfil de proveedor</h1>
+            <h2>Empresa</h2>
+
+            <section class="contenedorColumna dobleColumna">
+                <div class="columna">
+                    <label for="div-imgUpload">Fotografía o avatar</label>
+                    <div class="div-imgUpload">
+                        <div class="previstaImagen" id="prevImagen">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                        </div>
+                        <span><input type="file" name="input-img" id="input-imagen"></span>
+                    </div>
+                </div>
+                <div class="columna dobleColumnaInvertida">
+                    <div class="columna">
+                        <label for="txt-nombreProveedor" class="simpleColumna">Nombre</label>
+                        <label for="txt-primerApellidoCliente"> 1apellido</label>
+                        <label for="txt-segApellidoCliente">2apellido</label>
+                    </div>
+                    <div class="columna">
+                        <label for="txt-primerApellidoCliente">JJJ</label>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <h2>Representante Legal</h2>
+
+        </div>
+    </main>
+    <footer>
+        <p>Esta aplicación fue creada por <a href="#" targe="_blank">Colossus</a></p>
+        <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
+    </footer>
+</body>
+
+</html>
