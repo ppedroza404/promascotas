@@ -4,6 +4,35 @@ body {
     font-size: 16px;
 }
 
+html {
+    font-family: 'Righteous';
+    font-size: 16px;
+}
+
+.flotar-izq {
+    float: left;
+}
+
+.flotar-der {
+    float: right;
+}
+
+.btn {
+    background: #ffa502;
+    border: #333 solid 2px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.error {
+    border: 2px solid #B53471;
+}
+
+.ocultar {
+    display: none;
+}
+
 .contenedor {
     width: 1024px;
     margin: 0px auto;
@@ -64,7 +93,8 @@ a:hover {
 }
 
 .sinRegistroBody header {
-    background: #000000;
+    background: #FFF;
+    color: #6700a3;
 }
 
 .h1ParaAdmin {
@@ -93,6 +123,15 @@ input {
     padding: 10px 15px;
 }
 
+input[type=file] {
+    background: none;
+}
+
+input[type=date] {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+
 input {
     width: calc(100% - 30px);
 }
@@ -116,3 +155,6 @@ input {
 .dobleColumna .columna:last-child {
     width: calc(66% - 20px);
 }
+
+
+/* Inicio*/
