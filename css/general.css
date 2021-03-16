@@ -149,6 +149,12 @@ input {
     display: block;
 }
 
+.contenedorColumna textArea {
+    width: 95.3%;
+    margin-left: 10px;
+    height: 50px;
+}
+
 .dobleColumna .columna:first-child,
 .simpleColumna .columna {
     width: calc(33% - 20px);

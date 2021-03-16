@@ -33,13 +33,8 @@
         <form>
             <section class="contenedorColumna dobleColumna">
                 <div class="columna">
-                    <label for="div-imgUpload">Fotografía o avatar</label>
-                    <div class="div-imgUpload">
-                        <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                        </div>
-                        <span><input type="file" name="input-img" id="input-imagen"></span>
-                    </div>
+                    <img id="img-prev" src="img/imgPrevLogo.jpg" alt="Foto o avatar" />
+                    <input type='file' id="input-imagen" />
                 </div>
                 <div class="columna">
                     <div>
@@ -94,32 +89,33 @@
                 </div>
             </section>
             <h3>Dirección</h3>
-            <section>
+            <section class="contenedorColumna simpleColumna">
                 <div class="columna">
-                    <label for="slt-generoCliente">Género del paciente</label>
-                    <select id="slt-generoCliente">
+                    <label for="slt-provincia">Provincia</label>
+                    <select id="slt-provincia">
                         <option value="">--Seleccione una opción--</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="masculino">Masculino</option>
+                        <option value="TBD">TBD</option>
                     </select>
                 </div>
                 <div class="columna">
-                    <label for="slt-tipoID">Tipo de ID</label>
-                    <select id="slt-tipoID">
+                    <label for="slt-canton">Cantón</label>
+                    <select id="slt-canton">
                         <option value="">--Seleccione una opción--</option>
-                        <option value="nacional">Nacional</option>
-                        <option value="dimex">Dimex</option>
-                        <option value="pasaporte">Pasaporte</option>
+                        <option value="TBD">TBD</option>
                     </select>
                 </div>
                 <div class="columna">
-                    <label for="slt-tipoID">Tipo de ID</label>
-                    <select id="slt-tipoID">
+                    <label for="slt-distrito">Distrito</label>
+                    <select id="slt-distrito">
                         <option value="">--Seleccione una opción--</option>
-                        <option value="nacional">Nacional</option>
-                        <option value="dimex">Dimex</option>
-                        <option value="pasaporte">Pasaporte</option>
+                        <option value="TBD">TBD</option>
                     </select>
+                </div>
+            </section>
+            <section class="contenedorColumna"><br/>
+                <div>
+                    <label for="txtOtrasSenias">Otras señas</label>
+                    <textarea id="txtOtrasSenias" class="columna-textArea">
                 </div>
             </section>
         </form>
