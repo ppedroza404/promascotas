@@ -1,0 +1,169 @@
+p {
+    text-align: justify;
+    padding: 0px 15px;
+}
+
+h2 {
+    margin-left: 15px;
+}
+
+
+/* Asignar full width a los inputs*/
+
+.contenedor-buscar input[type=text] {
+    width: 100%;
+    padding: 12px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+
+/* Inicio: Selectores para el contenedor del input buscar con icono fontawesome */
+
+.input-contenedor {
+    padding: 16px;
+}
+
+.contenedor-buscar {
+    position: relative;
+}
+
+.contenedor-buscar i {
+    position: absolute;
+    right: 15px;
+    top: 35px;
+    color: gray;
+}
+
+
+/* Fin: Selectores para el contenedor del input buscar con icono fontawesome */
+
+
+/* Inicio: Estilos de seccion de contenedores de Proveedores y Servicios y redirigir */
+
+.contenedor-seccionProvServ {
+    width: 40%;
+    min-height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #d5f3f7;
+}
+
+.seccion-servs-proveedores {
+    display: flow-root;
+}
+
+.seccion-servs-proveedores p {
+    margin: 20px;
+    text-align: justify;
+}
+
+.seccion-servs-proveedores h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.seccion-servs-proveedores button {
+    transform: translateY(75%);
+}
+
+
+/* Fin: Estilos de seccion de contenedores de Proveedores y Servicios y redirigir */
+
+
+/* Inicio: estilos de la seccion top 20 proveedores*/
+
+.seccion-mejoresProv {
+    min-height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #d5f3f7;
+}
+
+.seccion-mejoresProv h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* Final: estilos de la seccion top 20 proveedores*/
+
+
+/* Inicio: Estilos de la sección del slider automático */
+
+.seccion-slideshow {
+    overflow: hidden;
+    height: 500px;
+    margin-top: 20px;
+}
+
+
+/* Inicio: Estilos de la sección del slider automático */
+
+
+/* Inicio: Estilos de la sección de la animación del slider automático */
+
+@-webkit-keyframes animacion_slider {
+    0% {
+        left: 0px;
+    }
+    10% {
+        left: 0px;
+    }
+    20% {
+        left: 1200px;
+    }
+    30% {
+        left: 1200px;
+    }
+    40% {
+        left: 2400px;
+    }
+    50% {
+        left: 2400px;
+    }
+    60% {
+        left: 1200px;
+    }
+    70% {
+        left: 1200px;
+    }
+    80% {
+        left: 0px;
+    }
+    90% {
+        left: 0px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.imagenes-slide {
+    width: 3600px;
+    height: 500px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: animacion_slider;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-box-direction: right;
+    -webkit-animation-play-state: running;
+}
+
+.img-contenedor {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+
+/* Inicio: Estilos de la sección de la animación del slider automático */

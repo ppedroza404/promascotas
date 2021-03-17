@@ -226,11 +226,11 @@ input {
     width: calc(33% - 20px);
 }
 
-.btn-registar {
+.btn-general {
     text-align: center;
 }
 
-.btn-registar button {
+.btn-general button {
     background: #6700a3;
     color: #fff;
     padding: 10px;
