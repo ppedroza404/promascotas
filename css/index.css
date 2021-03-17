@@ -136,3 +136,11 @@
 .logo {
     display: flow-root;
 }
+
+.footer {
+    background: #000000;
+    padding: 20px;
+    border-bottom: #56cfe1;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+}
