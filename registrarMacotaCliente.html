@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/registrarProveedor.css">
+    <link rel="stylesheet" href="css/registrarMacotaCliente.css">
+
+</head>
+
+<body class="sinRegistroBody">
+    <header class="header-principal header-principal-cliente">
+        <div>
+            <a href=" # "><img src="/img/logoMorado.png "></a>
+            <nav>
+                <div class="flotar-der ">
+                    <ul>
+                        <li>
+                            <a href="# ">Volver</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="contenedor">
+        <h1>Agregar mascota</h1>
+        <h3>Datos de la mascota</h3>
+        <section>
+            <form>
+                <div class="contenedorColumna dobleColumna">
+                    <div class="columna">
+                        <label for="div-imgUpload">Fotografía o avatar</label>
+                        <div class="div-imgUpload">
+                            <div class="previstaImagen" id="prevImagen">
+                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                            </div>
+                            <input type="file" name="input-img" id="input-imagen">
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div>
+                            <label for="txt-nombreMacota">Nombre</label>
+                            <input type="text" id="txt-nombreMascota" class="inpt-raza">
+                        </div>
+                        <div>
+                            <label for="slt-tipoMascota">Tipo de mascota</label>
+                            <select id="slt-tipoMascota" class="inpt-raza">
+                                <option value="">--Seleccione una opción--</option>
+                                <option value="Física">Gato</option>
+                                <option value="Jurídica">Perro</option>
+                            </select>
+                        </div>
+                        <div id="div-razaGato">
+                            <label for="slt-razaGato">Raza</label>
+                            <select id="slt-razaGato" class="inpt-raza">
+                                <option value="">--Seleccione una raza--</option>
+                                <option value="American wirehair">American wirehair</option>
+                                <option value="Angora">Angora</option>
+                                <option value="British Shorthair">British Shorthair</option>
+                                <option value="California Spangled">California Spangled</option>
+                                <option value="Cymric">Cymric</option>
+                                <option value="Foldex">Foldex</option>
+                                <option value="Javaneses">Javaneses</option>
+                                <option value="Khao Manee">Khao Manee</option>
+                                <option value="Montés">Montés</option>
+                                <option value="Nebelung">Nebelung</option>
+                                <option value="Oriental de pelo largo">Oriental de pelo largo</option>
+                                <option value="Rabón japonés">Rabón japonés</option>
+                                <option value="Ragamuffin">Ragamuffin</option>
+                                <option value="Ragdoll">Ragdoll</option>
+                                <option value="Raza única Gato">Raza única Gato</option>
+                                <option value="Sin pelo">Sin pelo</option>
+                                <option value="Somalí">Somalí</option>
+                                <option value="Tonquinés">Tonquinés</option>
+                            </select>
+                        </div>
+                        <div id="div-razaPerro">
+                            <label for="slt-razaPerro">Raza</label>
+                            <select id="slt-razaPerro" class="inpt-raza">
+                                <option value="">--Seleccione una raza--</option>
+                                <option value="Akita Inu">Akita Inu</option>
+                                <option value="Alaskan Malamute">Alaskan Malamute</option>
+                                <option value="Beagle">Beagle</option>
+                                <option value="Bichon Maltés">Bichon Maltés</option>
+                                <option value="Bloodhound">Bloodhound</option>
+                                <option value="Bloodhound">Bloodhound</option>
+                                <option value="Boxer">Boxer</option>
+                                <option value="Bull Terrier">Bull Terrier</option>
+                                <option value="Bulldog Francés">Bulldog Francés</option>
+                                <option value="Bulldog Inglés">Bulldog Inglés</option>
+                                <option value="Caniche">Caniche</option>
+                                <option value="Carlino">Carlino</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Chow Chow">Chow Chow</option>
+                                <option value="Cocker Americano">Cocker Americano</option>
+                                <option value="Cocker Inglés">Cocker Inglés</option>
+                                <option value="Collie">Collie</option>
+                                <option value="Dálmata">Dálmata</option>
+                                <option value="Doberman">Doberman</option>
+                                <option value="Fox Terrier">Fox Terrier</option>
+                                <option value="Golden Retriever">Golden Retriever</option>
+                                <option value="Gran Danés">Gran Danés</option>
+                                <option value="Husky Siberiano">Husky Siberiano</option>
+                                <option value="Labrador Retriever">Labrador Retriever</option>
+                                <option value="Lahsa Apso">Lahsa Apso</option>
+                                <option value="Pastor Alemán">Pastor Alemán</option>
+                                <option value="Pastor Belga">Pastor Belga</option>
+                                <option value="Pekinés">Pekinés</option>
+                                <option value="Pinscher">Pinscher</option>
+                                <option value="Pit Bull">Pit Bull</option>
+                                <option value="Raza única Perro">Raza única Perro</option>
+                                <option value="Rottweiler">Rottweiler</option>
+                                <option value="Samoyedo">Samoyedo</option>
+                                <option value="San Bernardo">San Bernardo</option>
+                                <option value="Schnauzer">Schnauzer</option>
+                                <option value="Setter Irlandés">Setter Irlandés</option>
+                                <option value="Shar Pei">Shar Pei</option>
+                                <option value="Teckel">Teckel</option>
+                                <option value="Welsh Corgi">Welsh Corgi</option>
+                                <option value="Westie">Westie</option>
+                                <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="txt-cedulaJuridica">Padecimientos</label>
+                            <input type="text" id="txt-cedulaJuridica" class="inpt-raza">
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr>
+                <p class="titulo">
+                    <h3>Vacunas</h3>
+                </p>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna">
+                    </div>
+                    <div class="columna ">
+                        <label for="txt-fechaVacuna">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante">Fabricante</label>
+                        <input type="text" id="txt-fabricante">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna1">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna1">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna1">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna1">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante1">Fabricante</label>
+                        <input type="text" id="txt-fabricante1">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna2">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna2">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna2">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna2">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante2">Fabricante</label>
+                        <input type="text" id="txt-fabricante2">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna3">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna3">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna3">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna3">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante3">Fabricante</label>
+                        <input type="text" id="txt-fabricante3">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna4">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna4">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna4">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna4">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante4">Fabricante</label>
+                        <input type="text" id="txt-fabricante4">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna5">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna5">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna5">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna5">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante5">Fabricante</label>
+                        <input type="text" id="txt-fabricante5">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna6">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna6">
+                    </div>
+                    <div class="columna ">
+                        <label for="txt-fechaVacuna6">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacun6">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante6">Fabricante</label>
+                        <input type="text" id="txt-fabricante6">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna7">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna7">
+                    </div>
+                    <div class="columna ">
+                        <label for="txt-fechaVacuna7">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna7">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante7">Fabricante</label>
+                        <input type="text" id="txt-fabricante7">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-nombreVacuna8">Nombre de la vacuna</label>
+                        <input type="text" id="txt-nombreVacuna8">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fechaVacuna8">Fecha de aplicación</label>
+                        <input type="date" id="txt-fechaVacuna8">
+                    </div>
+                    <div class="columna">
+                        <label for="txt-fabricante8">Fabricante</label>
+                        <input type="text" id="txt-fabricante">
+                    </div>
+                </div>
+
+
+                <div class="btn-registar" type="button" id="btn-registrarProveedor">
+                    <button type="button" id="btn-registrar">Agregar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
+    <script src="js/registrarMascotaCliente.js "></script>
+
+</body>
+
+</html>
