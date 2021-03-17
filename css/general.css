@@ -12,11 +12,6 @@ body {
     float: right;
 }
 
-.flotar-centro {
-    display: flex;
-    justify-content: center;
-}
-
 .centrarTexto {
     text-align: center;
 }

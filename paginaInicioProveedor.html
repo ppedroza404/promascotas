@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de inicio</title>
+    <title>Página de Inicio Proveedor</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
@@ -15,18 +15,18 @@
 
 </head>
 
-<body>
-    <header class="header-principal header-principal-registrar">
+<body class="proveedorBody">
+    <header class="header-principal header-principal-admin">
         <div class="contenedor">
             <a href="#"><img src="/img/logoMorado.png"></a>
             <nav class=".header-principal-pagInicio-Cliente">
                 <div class="flotar-der">
                     <ul>
                         <li>
-                            <a href="#">Perfil </a>
+                            <a href="/perfilProveedor.html">Perfil </a>
                         </li>
                         <li>
-                            <a href="#">Volver</a>
+                            <a href="#">Cerrar sesion</a>
                         </li>
                     </ul>
                 </div>
@@ -53,15 +53,15 @@
             </div>
         </section>
 
-        <section class="seccion-servs-proveedores">
-            <div class="flotar-izq contenedor-seccionProvServ">
+        <section class="seccion-contenedorCajas">
+            <div class="flotar-izq seccion-contenedor">
                 <h2>Solicitudes Pendientes</h2>
                 <p>para ver las nuevas Solicidues que han llegado a tu buzon ingresar.</p>
                 <div class="btn-general">
                     <button type="button" id="btn-proveedores">Proveedores</button>
                 </div>
             </div>
-            <div class="flotar-der contenedor-seccionProvServ">
+            <div class="flotar-der seccion-contenedor">
                 <h2>Perfil</h2>
                 <p>Para visitar tu perfil podres ingresar.</p>
                 <div class="btn-general">
@@ -72,20 +72,17 @@
         <br>
         <hr>
         <br>
-        <section class="seccion-slideshow">
+        <section class="contenedor seccion-slideshow">
             <div class="imagenes-slide">
-                <div class="img-contenedor">
+                <figure>
                     <img src="img/publicidadCliente1.jpg" alt="publicidad">
-                </div>
-                <div class="img-contenedor">
                     <img src="img/publicidadCliente2.jpg" alt="publicidad">
-                </div>
-                <div class="img-contenedor">
                     <img src="img/publicidadCliente3.jpg" alt="publicidad">
-                </div>
+                    <img src="img/publicidadCliente2.jpg" alt="publicidad">
+                    <img src="img/publicidadCliente3.jpg" alt="publicidad">
+                </figure>
             </div>
         </section>
-
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
