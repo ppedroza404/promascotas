@@ -13,23 +13,24 @@
 </head>
 
 <body class="sinRegistroBody">
-    <header class="header-principal">
-        <div class="contenedor">
-            <a href="#"><span class="logo"></a>
+    <header class="header-principal header-principal-registrar">
+        <div>
+            <a href="#"><img src="/img/logoMorado.png"></a>
             <nav>
                 <div class="flotar-der">
-                    <li>
-                        <a href="#">Volver</a>
-                    </li>
+                    <ul>
+                        <li>
+                            <a href="#">Volver</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
-
     </header>
     <main class="contenedor">
         <h1>Unite a Pro Mascotas</h1>
         <h2>Formulario de registro</h2>
+        <hr>
         <h3>Datos personales</h3>
         <form>
             <section class="contenedorColumna dobleColumna">
@@ -45,15 +46,15 @@
                 <div class="columna">
                     <div>
                         <label for="txt-nombreCliente" class="simpleColumna">Nombre</label>
-                        <input type="text" id="txt-nombreCliente">
+                        <input type="text" id="txt-nombreCliente" class="input-dobleColumna">
                     </div>
                     <div>
                         <label for="txt-primerApellidoCliente">Primer apellido</label>
-                        <input type="text" id="txt-primerApellidoCliente">
+                        <input type="text" id="txt-primerApellidoCliente" class="input-dobleColumna">
                     </div>
                     <div>
                         <label for="txt-segApellidoCliente">Segundo apellido</label>
-                        <input type="text" id="txt-segApellidoCliente">
+                        <input type="text" id="txt-segApellidoCliente" class="input-dobleColumna">
                     </div>
                 </div>
             </section>
@@ -94,6 +95,8 @@
                     <input type="number" id="txt-cantMascotas">
                 </div>
             </section>
+
+            <hr>
             <h3>Dirección</h3>
             <section class="contenedorColumna simpleColumna">
                 <div class="columna">

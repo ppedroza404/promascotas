@@ -16,10 +16,31 @@ const sltCanton = document.querySelector('#slt-canton');
 const sltDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
+/* Inicio: Función para calcular la edad */
+
+const calcularEdad = (nacimiento) => {
+    let fechaActual = new Date();
+    let edad = fechaActual.getFullYear() - nacimiento.getFullYear();
+
+    if (fechaActual.getMonth() < nacimiento.getMonth()) {
+        edad = edad - 1;
+    } else {
+        if ((fechaActual.getMonth() == nacimiento.getMonth()) && (fechaActual.getUTCDate() < nacimiento.getUTCDate())) {
+            edad = edad - 1;
+        }
+    }
+
+    return edad;
+};
+/* Fin: Función para calcular la edad */
+
+
 /* Inicio: Función para validar los campos requeridos */
 
 const validar = () => {
     let error = false;
+
+    let regexCorreo = /^[a-zA-Z.0-9]+\@{1}[a-zA-Z.]+$/;
 
     if (inputNombreCliente.value == '') {
         error = true;
@@ -95,6 +116,15 @@ const validar = () => {
         sltDistrito.classList.remove('error');
     }
 
+    let edad = calcularEdad();
+
+    if (edad < 18) {
+        error = true;
+        inputNacimiento.classList.add('error');
+    } else {
+        inputNacimiento.classList.remove('error');
+    }
+
     if (error == false) {
         //obtenerDatos();
     } else {
@@ -105,6 +135,8 @@ const validar = () => {
         });
     }
 }
+
+/* Inicio: Función para validar los campos requeridos */
 
 /* Inicio: Función de obtención de datos*/
 

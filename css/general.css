@@ -125,6 +125,10 @@ input {
     padding: 10px 15px;
 }
 
+.input-dobleColumna {
+    margin-bottom: 39px;
+}
+
 input[type=file] {
     background: none;
 }

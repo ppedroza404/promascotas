@@ -7,10 +7,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.inpt-negocio {
-    margin-bottom: 39px;
-}
-
 form div input:disabled {
     background-color: #e7e7e7;
 }
