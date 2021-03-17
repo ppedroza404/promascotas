@@ -44,7 +44,7 @@ h2 {
 
 /* Inicio: Estilos de seccion de contenedores de Proveedores y Servicios y redirigir */
 
-.contenedor-seccionProvServ {
+.seccion-contenedor {
     width: 40%;
     min-height: 250px;
     border: 1px solid #ccc;
@@ -54,21 +54,21 @@ h2 {
     background-color: #d5f3f7;
 }
 
-.seccion-servs-proveedores {
+.seccion-contenedorCajas {
     display: flow-root;
 }
 
-.seccion-servs-proveedores p {
+.seccion-contenedorCajas p {
     margin: 20px;
     text-align: justify;
 }
 
-.seccion-servs-proveedores h2 {
+.seccion-contenedorCajas h2 {
     text-align: center;
     margin-top: 15px;
 }
 
-.seccion-servs-proveedores button {
+.seccion-contenedorCajas button {
     transform: translateY(75%);
 }
 
