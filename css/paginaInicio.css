@@ -1,0 +1,148 @@
+    p {
+        text-align: justify;
+        padding: 0px 15px;
+    }
+    
+    h2 {
+        margin-left: 15px;
+    }
+    /* Asignar full width a los inputs*/
+    
+    .contenedor-buscar input[type=text] {
+        width: 100%;
+        padding: 12px 40px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    /* Inicio: Selectores para el contenedor del input buscar con icono fontawesome */
+    
+    .input-contenedor {
+        padding: 16px;
+    }
+    
+    .contenedor-buscar {
+        position: relative;
+    }
+    
+    .contenedor-buscar i {
+        position: absolute;
+        right: 15px;
+        top: 35px;
+        color: gray;
+    }
+    /* Fin: Selectores para el contenedor del input buscar con icono fontawesome */
+    /* Inicio: Estilos de seccion de contenedores de Proveedores y Servicios y redirigir */
+    /* Como no se puede centrar por el parametro float root creamos este container para tener el div en el centro
+       Reusar para centrar un solo container en el centro de una seccion-contenedor
+    */
+    
+    .fix {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .flotar-cent {
+        margin: auto;
+    }
+    /* ---------------------------------- */
+    
+    .seccion-contenedor {
+        width: 40%;
+        min-height: 250px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-left: 15px;
+        margin-right: 15px;
+        background-color: #d5f3f7;
+    }
+    
+    .seccion-contenedorCajas {
+        display: flow-root;
+    }
+    
+    .seccion-contenedorCajas p {
+        margin: 20px;
+        text-align: justify;
+    }
+    
+    .seccion-contenedorCajas h2 {
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .seccion-contenedorCajas button {
+        transform: translateY(75%);
+    }
+    /* Fin: Estilos de seccion de contenedores de Proveedores y Servicios y redirigir */
+    /* Inicio: estilos de la seccion top 20 proveedores*/
+    
+    .seccion-mejoresProv {
+        min-height: 250px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-left: 15px;
+        margin-right: 15px;
+        background-color: #d5f3f7;
+    }
+    
+    .seccion-mejoresProv h2 {
+        text-align: center;
+        margin-top: 15px;
+    }
+    /* Final: estilos de la seccion top 20 proveedores*/
+    /* Inicio: Estilos de la sección del slider automático */
+    
+    .imagenes-slide {
+        overflow: hidden;
+        height: 300px;
+    }
+    
+    .imagenes-slide figure {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        animation: 15s slider infinite;
+    }
+    
+    .imagenes-slide figure img {
+        width: 20%;
+        float: left;
+    }
+    /* Inicio: Estilos de la sección del slider automático */
+    /* Inicio: Estilos de la sección de la animación del slider automático */
+    
+    @keyframes slider {
+        0% {
+            left: 0;
+        }
+        20% {
+            left: 0;
+        }
+        25% {
+            left: -100%;
+        }
+        45% {
+            left: -100%;
+        }
+        50% {
+            left: -200%;
+        }
+        70% {
+            left: -200%;
+        }
+        75% {
+            left: -300%;
+        }
+        95% {
+            left: -300%;
+        }
+        100% {
+            left: -400%;
+        }
+    }
+    /* Inicio: Estilos de la sección de la animación del slider automático */

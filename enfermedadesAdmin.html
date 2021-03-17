@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/listarInformacion.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
+    <title>Enfermedades Admin</title>
+    <!--listar y registrar-->
+</head>
+
+<body class="adminBody">
+    <header class="header-principal header-principal-admin">
+
+        <div class="contenedor">
+            <a href="#"><img src="/img/logoMorado.png"></a>
+            <nav class=".header-principal-pagInicio-Cliente">
+
+                <div class="flotar-der">
+                    <ul>
+                        <li>
+                            <a href="">Aprobaciones</a>
+                        </li>
+                        <li>
+                            <a href="">Reportes</a>
+
+                        </li>
+                        <li>
+                            <a href="#">Bitácora</a>
+                        </li>
+                        <li>
+                            <a href="#">Mantenimiento</a>
+                        </li>
+                        <li>
+                            <a href="#" id="btn-cerrar-sesion">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <h1>Bienvenido Administrador</h1>
+        <section class="contenedor-listar">
+            <section>
+                <div>
+                    <label for="slt-catalogo">Catalogo</label>
+                    <select id="slt-catalogo">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="enfermedades">Enfermedades</option>
+                        <option value="razas">Razas</option>
+                        <option value="vacunas">Vacunas</option>
+                </select>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <table id="tbl-enfermedades" class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Enfermedades</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Sarna</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rabia</td>
+                        </tr>
+
+                        <tr>
+                            <td>Parvovirus</td>
+                        </tr>
+
+                        <tr>
+                            <td>Moquillo</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </section>
+
+
+            <div class="btn-general">
+                <button type="button" id="btn-servicios">Registrar</button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <section class="header-principal header-principal-admin">
+        <footer class="contenedor-listar">
+            <p>Esta aplicación fue creada por <a href="#" targe="_blank">Colossus</a></p>
+            <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021Todos los derechos reservados 2021</p>
+        </footer>
+    </section>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/mascotasAdmin.js"></script>
+</body>
+
+</html>
