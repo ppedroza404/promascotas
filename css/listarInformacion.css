@@ -1,0 +1,12 @@
+.contenedor-listar {
+    width: 720px;
+    margin: 0px auto;
+}
+
+.contenedor-listar section div button {
+    align-items: center;
+}
+
+.contenedor-listar {
+    padding-top: 25px;
+}

@@ -9,103 +9,82 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tabla.css">
-    <link rel="icon" href="img/pawIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/listarInformacion.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <title>Enfermedades Admin</title>
     <!--listar y registrar-->
-
-
 </head>
 
 <body class="adminBody">
 
 
-    <header class="header-principal header-principal-admin">
-
-        <a href="#"><span class="logo"></a>
-
-        <nav>
-
-            <div class="flotar-der">
-                <ul>
-                    <li>
-                        <a href="#">Aprobaciones</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Reportes</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Bitácora</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Mantenimiento</a>
-                    </li>
-
-                    <li>
-                        <a href="#" id="btn">Cerrar sesión</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+    <header class="header-principal header-principal-registrar">
+        <div class="contenedor">
+            <a href="#"><img src="/img/logoMorado.png"></a>
+            <nav class=".header-principal-pagInicio-Cliente">
+                <div class="flotar-der">
+                    <ul>
+                        <li>
+                            <a href="#">Perfil </a>
+                        </li>
+                        <li>
+                            <a href="#">Volver</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-
     </header>
+
 
     <main class="contenedor">
 
         <h1>Bienvenido Administrador</h1>
-        <section>
-            <div>
-                <label for="slt-catalogo">Catalogo</label>
-                <select id="slt-catalogo">
+        <section class="contenedor-listar">
+            <section>
+                <div>
+                    <label for="slt-catalogo">Catalogo</label>
+                    <select id="slt-catalogo">
                         <option value="">--Seleccione una opción--</option>
                         <option value="enfermedades">Enfermedades</option>
                         <option value="razas">Razas</option>
                         <option value="vacunas">Vacunas</option>
                 </select>
-            </div>
-        </section>
-        <section>
-            <div>
-                <table id="tbl-enfermedades" class="tabla">
-                    <thead>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <table id="tbl-enfermedades" class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Enfermedades</th>
+                            </tr>
+                        </thead>
                         <tr>
-                            <th>Enfermedades</th>
+                            <td>Sarna</td>
                         </tr>
-                    </thead>
-                    <tr>
-                        <td>Sarna</td>
-                    </tr>
 
-                    <tr>
-                        <td>Rabia</td>
-                    </tr>
+                        <tr>
+                            <td>Rabia</td>
+                        </tr>
 
-                    <tr>
-                        <td>Parvovirus</td>
-                    </tr>
+                        <tr>
+                            <td>Parvovirus</td>
+                        </tr>
 
-                    <tr>
-                        <td>Moquillo</td>
-                    </tr>
+                        <tr>
+                            <td>Moquillo</td>
+                        </tr>
 
-                </table>
+                    </table>
+                </div>
+            </section>
+
+
+            <div class="btn-general">
+                <button type="button" id="btn-servicios">Registrar</button>
             </div>
         </section>
-
-
-        <section>
-            <div class="btn-registar">
-                <button type="button" class="button">Registrar otra enfermedad</button>
-            </div>
-        </section>
-
-
-
-
 
     </main>
     <footer class="header-principal header-principal-admin">
