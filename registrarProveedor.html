@@ -86,9 +86,9 @@
                         <label for="slt-tipoIdSolicitante">Tipo de identificación</label>
                         <select id="slt-tipoIdSolicitante">
                             <option value="">--Seleccione una opción--</option>
-                            <option value="Física">Cédula</option>
-                            <option value="Jurídica">Dimex</option>
-                            <option value="Jurídica">Pasaporte</option>
+                            <option value="Cédula">Cédula</option>
+                            <option value="Dimex">Dimex</option>
+                            <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
                     <div class="columna">
@@ -113,40 +113,40 @@
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
                         <label for="txt-nombreRepresentante">Nombre</label>
-                        <input type="text" id="txt-nombreRepresentante">
+                        <input type="text" id="txt-nombreRepresentante" disabled>
                     </div>
                     <div class="columna">
                         <label for="txt-primerApellidoRepresentante">Primer apellido</label>
-                        <input type="text" id="txt-primerApellidoRepresentante">
+                        <input type="text" id="txt-primerApellidoRepresentante" disabled>
                     </div>
                     <div class="columna">
                         <label for="txt-segundoApellidoRepresentante">Segundo apellido</label>
-                        <input type="text" id="txt-segundoApellidoRepresentante">
+                        <input type="text" id="txt-segundoApellidoRepresentante" disabled>
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
                         <label for="slt-tipoIdRepresentante">Tipo de identificación</label>
-                        <select id="slt-tipoIdRepresentante">
+                        <select id="slt-tipoIdRepresentante" disabled>
                             <option value="">--Seleccione una opción--</option>
-                            <option value="Física">Cédula</option>
-                            <option value="Jurídica">Dimex</option>
-                            <option value="Jurídica">Pasaporte</option>
+                            <option value="Cédula">Cédula</option>
+                            <option value="Dimex">Dimex</option>
+                            <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
                     <div class="columna">
                         <label for="txt-numeroIdRepresentante">Número ID</label>
-                        <input type="text" id="txt-numeroIdRepresentante">
+                        <input type="text" id="txt-numeroIdRepresentante" disabled>
                     </div>
                     <div class="columna">
                         <label for="txt-fechaNacimientoRepresentante">Fecha de nacimiento</label>
-                        <input type="date" id="txt-fechaNacimientoRepresentante">
+                        <input type="date" id="txt-fechaNacimientoRepresentante" disabled>
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
                         <label for="txt-correoRepresentante">Correo</label>
-                        <input type="email" id="txt-correoRepresentante">
+                        <input type="email" id="txt-correoRepresentante" disabled>
                     </div>
                 </div>
                 <hr>
@@ -192,7 +192,7 @@
                 <div class="contenedorColumna">
                     <div>
                         <label for="txt-otrasSennas">Otras Señas</label>
-                        <textarea name="txt-otrasSennas" cols="100" rows="5"></textarea>
+                        <textarea name="txt-otrasSennas" id="txt-otrasSennas" cols="100" rows="5"></textarea>
                     </div>
                 </div>
                 <hr>
@@ -203,12 +203,13 @@
                 <div class="contenedorColumna">
                     <div>
                         <label for="txt-descripcion">Por favor describa sus servicios</label>
-                        <textarea name="txt-descripcion" cols="100" rows="5"></textarea>
+                        <textarea name="txt-descripcion" id="txt-descripcion" cols="100" rows="5"></textarea>
                     </div>
                 </div>
                 <hr>
                 <p class="titulo">
                     <h3>Ubicación</h3>
+
                 </p>
                 <div class="contenedorColumna">
                     <div class="columna">
@@ -228,7 +229,10 @@
             </form>
         </section>
     </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/registrarProveedor.js"></script>
+
 </body>
 
 </html>
