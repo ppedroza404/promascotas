@@ -5,30 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tabla.css">
     <title>Base de HTML</title>
 </head>
 
 <body class="proveedorBody">
     <header>
         <div class="contenedor">
-            logo
+            <a href="#"><span class="logo"></a>
             <nav>
-                <a href="perfil.html">Perfil</a>
-                <a href="bitacora.html">Bitácora</a>
-                <a href="bitacora.html">Bitácora 2</a>
-                <a href="bitacora.html">Bitácora 25</a>
-                <a href="/iniciarSesion.html">Crear perfil</a>
-                <a href="/iniciarSesion.html">Inciar sesión</a>
-                <a href="bitacora.html">Bitácora 2</a>
-                <a href="bitacora.html">Bitácora 25</a>
-                <a href="/iniciarSesion.html">Inciar sesión</a>
-                <a href="/iniciarSesion.html">Crear perfil</a>
             </nav>
 
         </div>
     </header>
     <main>
-        <div class="contenedor">
+        <section class="contenedor">
             <h1>H1</h1>
             <h2>H2</h2>
             <h3>H3</h3>
@@ -37,6 +33,7 @@
             <p><strong>Recuerden estos pasos</strong></p>
             <ul>
                 <li>Cambiar en la etiqueta de html el lang, pasarlo a "es"</li>
+                <li>Recordar incluir los llamados del font family (línea 9 y 10 de este documento)</li>
                 <li>Completar el head con la información correcta: <br> hojas de estilos <br> title </li>
                 <li>Poner la clase del tipo de usuario de la página que van a crear: <br> class="administradorBody" <br> class="duenoBody" <br> class="proveedorBody" <br> class="sinRegistroBody"</li>
                 <li>Usar la clase contenedor cuando sea necesaria</li>
@@ -45,7 +42,41 @@
                 <li>De momento no le hagan caso a los estilos de esta página, ya que no tiene, pero lo voy a hacer unos que tengan la mayoría de las clases</li>
                 <li>Mucho éxito maes, vamos a patear sentaderas con esta app!!!</li>
             </ul>
-        </div>
+        </section>
+        <section class="contenedor">
+            <h1>Ejemplos de columnas</h1>
+            <form>
+                <div class="dobleColumna contenedorColumna">
+                    <div class="columna">
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="simpleColumna contenedorColumna">
+                    <div class="columna">
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <input type="text">
+                    </div>
+                    <div class="columna">
+                        <input type="text">
+                    </div>
+                </div>
+            </form>
+            <hr>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="#" targe="_blank">Colossus</a></p>
