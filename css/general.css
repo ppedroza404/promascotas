@@ -4,11 +4,6 @@ body {
     font-size: 16px;
 }
 
-html {
-    font-family: 'Righteous';
-    font-size: 16px;
-}
-
 .flotar-izq {
     float: left;
 }
@@ -52,6 +47,10 @@ html {
 .contenedor {
     width: 1024px;
     margin: 0px auto;
+}
+
+section.contenedor {
+    margin: 25px auto;
 }
 
 
@@ -226,11 +225,11 @@ input {
     width: calc(33% - 20px);
 }
 
-.btn-registar {
+.btn-general {
     text-align: center;
 }
 
-.btn-registar button {
+.btn-general button {
     background: #6700a3;
     color: #fff;
     padding: 10px;

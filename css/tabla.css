@@ -1,29 +1,28 @@
 .tabla {
-    margin: auto;
-    width: 80%;
-    margin-top: 30px;
-}
-
-.tabla tr {
-    height: 35px;
+    width: 100%;
+    margin: 30px 0px 25px;
 }
 
 .tabla thead tr {
-    background: #6700a3;
-    color: #fff;
+    border-top: 10px solid #6700a3;
+}
+
+.tabla th,
+.tabla td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(106, 0, 163, 0.5);
 }
 
 .tabla thead tr th {
-    width: 200px;
-    text-align: center;
-}
-
-.tabla tbody tr:nth-child(even) {
-    background: #b6d8d6;
     color: #6700a3;
+    text-align: center;
 }
 
 .tabla tbody tr td {
-    width: 200px;
     text-align: center;
+    color: #3d3d46;
+}
+
+.tabla tbody tr td:first-child {
+    text-align: left;
 }
