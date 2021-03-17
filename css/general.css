@@ -17,16 +17,32 @@ html {
     float: right;
 }
 
-.btn {
-    background: #ffa502;
-    border: #333 solid 2px;
-    border-radius: 10px;
-    font-size: 18px;
-    padding: 15px;
+.centrarTexto {
+    text-align: center;
+}
+
+.btn,
+.swal2-container .swal2-styled.swal2-confirm {
+    background: #6700a3;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
+
+.btn:hover,
+.swal2-container .swal2-styled.swal2-confirm:hover {
+    box-shadow: 0px 0px 10px 2px rgba(86, 207, 225, 0.8);
+    transition: all 0.5s ease 0s;
 }
 
 .error {
-    border: 2px solid #B53471;
+    border: 2px solid #f20089;
 }
 
 .ocultar {
@@ -37,6 +53,31 @@ html {
     width: 1024px;
     margin: 0px auto;
 }
+
+
+/****Sweet alert****/
+
+.swal2-container .swal2-icon.swal2-warning {
+    border-color: rgba(103, 0, 163, 0.4);
+    color: rgba(103, 0, 163, 0.7);
+}
+
+.swal2-container .swal2-icon.swal2-success .swal2-success-ring {
+    border-color: rgba(86, 207, 225, 0.4);
+    color: rgba(86, 207, 225, 0.7);
+}
+
+.swal2-container .swal2-icon.swal2-success,
+.swal2-container .swal2-icon.swal2-success [class^=swal2-success-line] {
+    color: rgba(86, 207, 225, 0.7);
+}
+
+.swal2-container .swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: rgba(86, 207, 225, 0.7);
+}
+
+
+/****fin sweet alert****/
 
 h1,
 h2,

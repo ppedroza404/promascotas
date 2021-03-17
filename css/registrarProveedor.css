@@ -11,6 +11,10 @@ form div input:disabled {
     background-color: #e7e7e7;
 }
 
+form div select:disabled {
+    background-color: #e7e7e7;
+}
+
 .mapa {
     position: relative;
     text-align: center;

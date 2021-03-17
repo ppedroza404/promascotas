@@ -19,8 +19,30 @@
         <section class="capturaContenedor">
             <h1>Inicio de sesión</h1>
             <h2>Nos alegra que volvás</h2>
+            <form class="formularioInicioSesion">
+                <div>
+                    <label for="txt-correo">Correo electrónico</label>
+                    <input type="email" id="txt-correo" placeholder="administrador@website.com">
+                </div>
+                <div>
+                    <label for="txt-contrasenna">Contraseña</label>
+                    <input type="password" id="txt-contrasenna">
+                </div>
+                <div class="centrarTexto">
+                    <a href="#">¿Olvidaste la contraseña?</a>
+                </div>
+                <div class="centrarTexto">
+                    <button type="button" class="btn" id="btn-iniciar">Iniciar sesión</button>
+                </div>
+                <div class="centrarTexto">
+                    ¿Todavía no tenés cuenta? Podés registrarte por <a href="#">acá</a>
+                </div>
+            </form>
         </section>
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/inicio-sesion.js"></script>
 </body>
 
 </html>
