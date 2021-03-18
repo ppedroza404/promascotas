@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/listarInformacion.css">
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <title>Listar usuarios admin </title>
 </head>
@@ -56,13 +57,22 @@
 
     <main>
         <div class="contenedor">
-
             <section>
-                <div>
 
-                    <label for="slt-tipoUsiario">Tipo de usuario :</label>
-                    <select name="slt-tipoUsiario" id="slt-tipoUsiario">
-                        <option value="">--Seleccione una opción--</option>
+                <div class='contenedor'>
+
+                    <label for="slt-tipoUsuario">Tipo de usuario :</label>
+                    <select name="slt-tipoUsuario" id="slt-tipoUsuario">
+                        <option value="enfermedades">Usuarios</option>
+                        <option value="razas">Proveedores</option>
+                    </select>
+
+                </div>
+
+                <div class='contenedor'>
+
+                    <label for="slt-tipoUsuario">Tipo de usuario :</label>
+                    <select name="slt-tipoUsuario" id="slt-tipoUsuario2">
                         <option value="enfermedades">Usuarios</option>
                         <option value="razas">Proveedores</option>
                     </select>
@@ -70,7 +80,6 @@
                 </div>
 
             </section>
-
         </div>
 
 
@@ -94,6 +103,7 @@
 
             </tbody>
         </table>
+
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>

@@ -1,18 +1,18 @@
 'use strict';
 
-const tabla2 = document.querySelector('#tbl-usuarios tbody');
+const tablaTipoUsuario = document.querySelector('#tbl-usuarios tbody');
 
 
-const mostrarTabla = () => {
+const mostrarTablaUsuario = () => {
 
     listaUsuarios.forEach(usuario => {
-        let fila = tabla2.insertRow();
+        let fila = tablaTipoUsuario.insertRow();
         if (usuario.tipo == 'Cliente') {
             fila.insertCell().innerHTML = usuario.nombre;
             fila.insertCell().innerHTML = usuario.primerApellido;
             fila.insertCell().innerHTML = usuario.segundoApellido;
             fila.insertCell().innerHTML = usuario.correo;
-            fila.insertCell().innerHTML = usuario.CANTIDADMASCOTAS;
+            fila.insertCell().innerHTML = usuario.cantidadmascotas;
             fila.insertCell().innerHTML = usuario.telefono;
             fila.insertCell().innerHTML = usuario.tipoID;
             fila.insertCell().innerHTML = usuario.id;
@@ -27,4 +27,4 @@ const mostrarTabla = () => {
 };
 
 
-mostrarTabla();
+mostrarTablaUsuario();
