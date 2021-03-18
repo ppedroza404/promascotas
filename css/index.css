@@ -17,27 +17,20 @@
     color: #6700a3;
 }
 
-.header-principal-admin {
+.administradorBody header {
     background: #000000;
     padding: 20px;
-    border-bottom: #56cfe1;
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
+    border-bottom: 5px solid #56cfe1;
+    display: flow-root;
 }
 
-.header-principal nav {
-    position: absolute;
-    top: -220px;
-    left: 0px;
+.administradorBody header .logo {
+    float: left;
+}
+
+.administradorBody header nav {
+    float: right;
     padding: 50px 0 0 0;
-    width: 100%;
-    margin-left: 70px;
-    /*margin-top: 20px;
-    display: block;
-    position: absolute;
-    text-align: center;
-    margin-top: -30px;
-    padding: 10px 16px;*/
 }
 
 .header-principal nav::after {
@@ -98,10 +91,6 @@
 
 .header-principal nav div ul ul li {
     position: relative;
-}
-
-.header-principal nav>div>ul {
-    padding: 200px;
 }
 
 .header-principal nav>div>ul>li {

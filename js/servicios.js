@@ -354,6 +354,24 @@ const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCl
     lista_clientes.push(nuevoCliente);
 }
 
+const tipoUsuario = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    switch (usuario.tipo) {
+        case 'Administrador':
+            window.location.href = 'pruebaAdministrador.html';
+            break;
+        case 'Proveedor':
+            window.location.href = 'pruebaProveedor.html';
+            break;
+        case 'Cliente':
+            window.location.href = 'pruebaCliente.html';
+            break;
+    }
+};
+
+
+
+
 const iniciarSesion = (correo, contrasenna) => {
     let credencialesCorrectas = false;
     listaUsuarios.forEach(usuario => {
@@ -372,7 +390,7 @@ const iniciarSesion = (correo, contrasenna) => {
             'text': 'Ha iniciado sesión correctamente',
             'confirmButtonText': 'Entendido'
         }).then(() => {
-            window.location.href = 'dashboard.html';
+            tipoUsuario();
         });
     } else {
         Swal.fire({
