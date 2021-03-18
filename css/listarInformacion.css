@@ -1,6 +1,7 @@
 .contenedor-listar {
     width: 720px;
     margin: 0px auto;
+    text-align: center;
 }
 
 .contenedor-listar section div button {

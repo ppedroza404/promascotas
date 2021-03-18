@@ -346,6 +346,60 @@ let listaUsuarios = [{
     }
 ];
 
+let enfermedades_admin = [{
+        "enfermedad": "Sarna",
+    },
+    {
+        "enfermedad": "Rabia",
+    },
+    {
+        "enfermedad": "Mastitis",
+    },
+    {
+        "enfermedad": "Parvovirus",
+    },
+    {
+        "enfermedad": "Moquillo",
+    },
+];
+
+
+let razas_admin = [{
+        "razas": "Pastor Aleman",
+    },
+    {
+        "razas": "Siberiano",
+    },
+    {
+        "razas": "Standford",
+    },
+    {
+        "razas": "Chihuahua",
+    },
+    {
+        "razas": "Golden",
+    },
+];
+
+
+let vacunas_admin = [{
+        "vacunas": "Vacuna trivalente",
+    },
+    {
+        "vacunas": "Vacuna contra la leptospirosis",
+    },
+    {
+        "vacunas": "Vacuna contra la rabia",
+    },
+    {
+        "vacunas": "Vacuna contra el moquillo canino",
+    },
+    {
+        "vacunas": "Vacuna contra la parvovirosis	",
+    },
+];
+
+
 const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
     let nuevoCliente = [];
 
