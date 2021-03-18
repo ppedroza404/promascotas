@@ -6,20 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Enfermedades Admin</title>
+    <title>Contactános</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="css/listarInformacion.css">
-    <link rel="stylesheet" href="css/tabla.css">
-
-    <!--listar y registrar-->
 </head>
 
-<body class="administradorBody">
+<body class="sinAutenticarBody">
     <header>
         <section class="contenedor">
             <div>
@@ -135,9 +131,6 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
-                            <a href="inicioSesion.html">Inicio sesión</a>
-                        </li>
-                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -150,92 +143,15 @@
             </div>
         </section>
     </header>
-
-    <main class="contenedor">
-
-        <h1>Bienvenido Administrador</h1>
-        <section class="contenedor-listar">
-            <section>
-                <div>
-                    <label for="slt-catalogo">Catálogo</label>
-                    <select id="slt-catalogo">
-                        <option value="">--Seleccione una opción--</option>
-                        <option value="enfermedades">Enfermedades</option>
-                        <option value="razas">Razas</option>
-                        <option value="vacunas">Vacunas</option>
-                    </select>
-                </div>
-            </section>
-
-            <section class="contenedor-listar">
-                <div>
-                    <table id="tbl-enfermedades" class="tabla">
-                        <thead>
-                            <tr>
-                                <th>Enfermedades</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </section>
-
-
-            <div class="btn-general">
-                <button type="button" id="btn-servicios">Registrar</button>
-            </div>
-        </section>
-
-
-
-        <section class="contenedor-listar">
-            <div>
-                <table id="tbl-razas" class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Razas</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </section>
-
-
-        <div class="btn-general">
-            <button type="button" id="btn-servicios">Registrar</button>
-        </div>
-        </section>
-
-        <section class="contenedor-listar">
-            <div>
-                <table id="tbl-vacunas" class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Vacunas</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </section>
-
-
-        <div class="btn-general">
-            <button type="button" id="btn-servicios">Registrar</button>
-        </div>
-        </section>
-
+    <main>
+        <h1>Contactános</h1>
     </main>
-
-
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/listarEnfermedadesAdmin.js"></script>
-
-
 </body>
 
 </html>

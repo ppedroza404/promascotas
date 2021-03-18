@@ -5,28 +5,147 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Tienen que ir en todas las internas-->
     <title>Listar usuarios Proveedor</title>
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--Tienen que ir en todas las internas-->
     <link rel="stylesheet" href="css/registrarProveedor.css">
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
 </head>
 
-<body class="sinRegistroBody">
-    <header class="header-principal header-principal-registrar">
-        <div>
-            <a href="#"><img src="/img/logoMorado.png"></a>
-            <nav>
-                <div class="flotar-der">
-                    <ul>
+<body class="sinAutenticarBody">
+    <header>
+        <section class="contenedor">
+            <div>
+                <a href="index.html" class="logo"><span></span></a>
+                <nav class="navPrincipal">
+                    <ul id="menuUlCliente">
+                        <!--Inicia menu cliente-->
                         <li>
-                            <a href="#">Volver</a>
+                            <a href="paginaInicioCliente.html"><span id="nombreClienteMenu"></span></a>
+                        </li>
+                        <li>
+                            <a href="perfilCliente.html">Mi Perfil</a>
+                        </li>
+                        <li>
+                            <a href="###">Reportes</a>
+                        </li>
+                        <li>
+                            <a href="###">Carrito de compras</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Pagos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Mis mascotas</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Mantenimiento</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Servicios</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Detalle</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Finaliza menu cliente-->
+                    </ul>
+                    <ul id="menuUlProveedor">
+                        <!--Inicia menu proveedor-->
+                        <li>
+                            <a href="paginaInicioProveedor.html"><span id="nombreProveedorMenu"></span></a>
+                        </li>
+                        <li>
+                            <a href="perfilProveedor.html">Mi Perfil</a>
+                        </li>
+                        <li>
+                            <a href="###">Reportes</a>
+                        </li>
+                        <li>
+                            <a href="###">Mantenimiento de servicios</a>
+                        </li>
+                        <!--Finaliza menu proveedor-->
+                    </ul>
+                    <ul id="menuUlAdministrador">
+                        <!--Inicia menu administrador-->
+                        <li>
+                            <a href="paginaInicioProveedor.html"><span id="nombreAdministradorMenu"></span></a>
+                        </li>
+                        <li>
+                            <a href="perfilAdministrador.html">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="###">Proveedores</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Pendientes de aprobar</a>
+                                </li>
+                                <li>
+                                    <a href="###">Reportes de proveedores</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Mascotas</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Enfermedades</a>
+                                </li>
+                                <li>
+                                    <a href="###">Mascotas por raza</a>
+                                </li>
+                                <li>
+                                    <a href="###">Vacunas por mascota</a>
+                                </li>
+                                <li>
+                                    <a href="###">Razas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Usuarios</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Usuarios denunciados</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Bitácora transaccional</a>
+                        </li>
+                        <li>
+                            <a href="###">Mantenimiento</a>
+                        </li>
+                        <!--Finaliza menu administrador-->
+                    </ul>
+                    <ul id="menuUlSinAutenticar">
+                        <li>
+                            <a href="registrarCliente.html">Registráte</a>
+                        </li>
+                        <li>
+                            <a href="inicioSesion.html">Iniciá sesión</a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
-                </div>
-            </nav>
-        </div>
+                    <ul>
+                        <li>
+                            <a href="#" id="btn-cerrar-sesion">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
     </header>
     <main class="contenedor">
         <h1>Formulario de registro de proveedor</h1>
@@ -231,7 +350,14 @@
         </section>
     </main>
 
+
+    <footer>
+        <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
+        <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
+    </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/navegacion.js"></script>
     <script src="js/registrarProveedor.js"></script>
 
 </body>
