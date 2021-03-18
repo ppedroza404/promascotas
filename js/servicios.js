@@ -358,13 +358,13 @@ const tipoUsuario = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     switch (usuario.tipo) {
         case 'Administrador':
-            window.location.href = 'pruebaAdministrador.html';
+            window.location.href = 'paginaInicioAdmin.html';
             break;
         case 'Proveedor':
-            window.location.href = 'pruebaProveedor.html';
+            window.location.href = 'paginaInicioCliente.html';
             break;
         case 'Cliente':
-            window.location.href = 'pruebaCliente.html';
+            window.location.href = 'paginaInicioProveedor.html';
             break;
     }
 };
