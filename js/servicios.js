@@ -148,7 +148,7 @@ let lista_clientes = [];
 
 let listaUsuarios = [{
         "correo": "admin@promascotas.com",
-        "tipo": "administrador",
+        "tipo": "Administrador",
         "nombre": "admin",
         "primerApellido": "admin",
         "segundoApellido": "admin",

@@ -1,13 +1,13 @@
 'use strict';
 
 const tablaTipoUsuario = document.querySelector('#tbl-usuarios tbody');
-
+const selectTipoUsuario = document.querySelector('#slt-tipoUsuario');
 
 const mostrarTablaUsuario = () => {
 
     listaUsuarios.forEach(usuario => {
         let fila = tablaTipoUsuario.insertRow();
-        if (usuario.tipo == 'Cliente') {
+        if (usuario.tipo == selectTipoUsuario.value) {
             fila.insertCell().innerHTML = usuario.nombre;
             fila.insertCell().innerHTML = usuario.primerApellido;
             fila.insertCell().innerHTML = usuario.segundoApellido;
@@ -26,5 +26,5 @@ const mostrarTablaUsuario = () => {
 
 };
 
-
 mostrarTablaUsuario();
+selectTipoUsuario.addEventListener('change', mostrarTablaUsuario);
