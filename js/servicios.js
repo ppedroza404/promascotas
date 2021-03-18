@@ -361,10 +361,10 @@ const tipoUsuario = () => {
             window.location.href = 'paginaInicioAdmin.html';
             break;
         case 'Proveedor':
-            window.location.href = 'paginaInicioCliente.html';
+            window.location.href = 'paginaInicioProveedor.html';
             break;
         case 'Cliente':
-            window.location.href = 'paginaInicioProveedor.html';
+            window.location.href = 'paginaInicioCliente.html';
             break;
     }
 };
