@@ -1,6 +1,6 @@
 'use strict';
 
-const tabla = document.querySelector('#tbl-usuarios tbody');
+const tabla = document.querySelector('#tbl-mascotas tbody');
 
 const mostrarTabla = () => {
     mascotas.forEach(mascota => {
@@ -11,6 +11,7 @@ const mostrarTabla = () => {
         fila.insertCell().innerHTML = mascota.cliente;
         fila.insertCell().innerHTML = mascota.fechaIngreso;
         fila.insertCell().innerHTML = mascota.servicios;
+
 
         /*let celdaAcciones = fila.insertCell();*/
 

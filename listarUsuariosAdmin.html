@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tabla.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <title>Listar usuarios admin </title>
 </head>
 
@@ -54,16 +55,39 @@
     </header>
 
     <main>
+        <div class="contenedor">
+
+            <section>
+                <div>
+
+                    <label for="slt-tipoUsiario">Tipo de usuario :</label>
+                    <select name="slt-tipoUsiario" id="slt-tipoUsiario">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="enfermedades">Usuarios</option>
+                        <option value="razas">Proveedores</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
         <table id="tbl-usuarios" class="tabla">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Raza</th>
-                    <th>Tipo de mascota</th>
-                    <th>Dueño</th>
-                    <th>Fecha de ingreso</th>
-                    <th>Cantidad de servicios</th>
-
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Correo</th>
+                    <th>Cantidad Mascotas</th>
+                    <th>Telefono</th>
+                    <th>Tipo ID</th>
+                    <th>Numero de ID</th>
+                    <th>Provincia</th>
+                    <th>Canton</th>
+                    <th>Distrito</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,7 +98,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/mascotasAdmin.js"></script>
+    <script src="js/listarClientesAdmin.js"></script>
+
 </body>
 
 </html>
