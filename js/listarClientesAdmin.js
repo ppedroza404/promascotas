@@ -3,7 +3,16 @@
 const tablaTipoUsuario = document.querySelector('#tbl-usuarios tbody');
 const selectTipoUsuario = document.querySelector('#slt-tipoUsuario');
 
+
+const limpiarTabla = () => {
+    for (var i = tablaTipoUsuario.rows.length - 1; i > 0; i--) {
+        tablaTipoUsuario.deleteRow(i);
+    }
+}
+
 const mostrarTablaUsuario = () => {
+
+    limpiarTabla();
 
     listaUsuarios.forEach(usuario => {
         let fila = tablaTipoUsuario.insertRow();
@@ -22,8 +31,6 @@ const mostrarTablaUsuario = () => {
         }
 
     });
-
-
 };
 
 mostrarTablaUsuario();
