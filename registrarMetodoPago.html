@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/registrarProveedor.css">
     <link rel="stylesheet" href="css/registrarMacotaCliente.css">
+    <link rel="stylesheet" href="css/registrarMetodoPago.css">
+    <link rel="stylesheet" href="css/tabla.css  ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -29,11 +31,99 @@
             </nav>
         </div>
     </header>
-    <section class="contenedor">
-        <h2>Método de pago</h2>
-        <h3>Tarjetas de crédito o débito</h3>
+    <main class="contenedor">
+        <section class="contenedor">
+            <h2>Método de pago</h2>
+            <h3>Tarjetas de crédito o débito</h3>
+        </section>
+        <form>
+            <section class="contenedorColumna simpleColumna">
+                <div class="columna">
+                    <label for="div-imgUpload">Tipo de tarjeta</label>
+                    <section class="div-tarjetas">
+                        <div>
+                            <img src="img/visa_logo_no_color.jpg" alt="Visa Logo - Inactivo">
+                            <img src="img/mastercard_logo_no_color.jpg" alt="Visa Logo - Inactivo">
+                            <img src="img/amex_logo_no_color.jpg" alt="Amex Logo - Inactivo">
+                        </div>
+                    </section>
+                </div>
+                <div class="columna">
+                    <div>
+                        <label for="txt-nombreTarjeta">Número de la tarjeta</label>
+                        <input type="number" id="txt-nombreTarjeta" class="input-dobleColumna">
+                    </div>
+                </div>
+                <div class="columna">
+                    <div>
+                        <label for="txt-nombreTarjeta">Nombre en la tarjeta</label>
+                        <input type="number" id="txt-nombreTarjeta" class="input-dobleColumna">
+                    </div>
+                </div>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-mesExpiracion" class="simpleColumna">Fecha de expiración - mes</label>
+                        <select id="slt-mesExpiracion" class="input-dobleColumna">
+                            <option value="">--Seleccione una opción--</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label for="txt-annoExpiracion" class="simpleColumna">Fecha de expiración - año</label>
+                        <select id="slt-annoExpiracion" class="input-dobleColumna">
+                            <option value="">--Seleccione una opción--</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <div><label for="txt-codigoVerificacion">CVC</label></div>
+                        <input type="number" id="txt-codigoVerificacion">
+                        <img src="img/cvc_logo1.jpg" class="img-codigoVerificacion" alt="">
+                    </div>
+            </section>
+            <div class="btn-general">
+                <button type="button" id="btn-registrarCliente">Registrar tarjeta</button>
+            </div>
+        </form>
+        <section>
+            <table id="tbl-metodosPago" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Correo</th>
+                        <th>Cantidad Mascotas</th>
+                        <th>Telefono</th>
+                        <th>Tipo ID</th>
+                        <th>Numero de ID</th>
+                        <th>Provincia</th>
+                        <th>Canton</th>
+                        <th>Distrito</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-    </section>
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 
 </html>

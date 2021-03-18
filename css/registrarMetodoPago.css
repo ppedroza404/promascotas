@@ -1,0 +1,19 @@
+.div-tarjetas {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 28px;
+}
+
+.div-tarjetas div img {
+    margin: 0px 10px;
+}
+
+#txt-codigoVerificacion {
+    width: 40%;
+    float: left;
+}
+
+.img-codigoVerificacion {
+    float: right;
+}
