@@ -400,6 +400,89 @@ let vacunas_admin = [{
 ];
 
 
+let lista_catalogo = [{
+
+
+        "enfermedades": "Sarna",
+        "tipo": "enfermedades",
+        "undefined": "xxxxxxxxxxxxxxxxxxxxxxxx",
+
+    },
+    {
+        "enfermedades": "Rabia",
+        "tipo": "enfermedades",
+
+    },
+    {
+        "enfermedades": "Mastitis",
+        "tipo": "enfermedades",
+
+    },
+    {
+        "enfermedades": "Parvovirus",
+        "tipo": "enfermedades",
+
+    },
+    {
+        "enfermedades": "Moquillo",
+        "tipo": "enfermedades",
+
+    },
+    {
+        "razas": "Pastor Aleman",
+        "tipo": "razas",
+        "undefined": "yyyyyyyyyyyyyyyyyyyyyyyyyyy",
+
+
+    },
+    {
+        "razas": "Siberiano",
+        "tipo": "razas",
+
+    },
+    {
+        "razas": "Standford",
+        "tipo": "razas",
+
+    },
+    {
+        "razas": "Chihuahua",
+        "tipo": "razas",
+
+    },
+    {
+        "razas": "Golden",
+        "tipo": "razas",
+
+    },
+    {
+        "vacunas": "Vacuna trivalente",
+        "tipo": "vacunas",
+        "undefined": "zzzzzzzzzzzzzzzzzz",
+
+    },
+    {
+        "vacunas": "Vacuna contra la leptospirosis",
+        "tipo": "vacunas",
+
+    },
+    {
+        "vacunas": "Vacuna contra la rabia",
+        "tipo": "vacunas",
+
+    },
+    {
+        "vacunas": "Vacuna contra el moquillo canino",
+        "tipo": "vacunas",
+
+    },
+    {
+        "vacunas": "Vacuna contra la parvovirosis	",
+        "tipo": "vacunas",
+
+    },
+];
+
 const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
     let nuevoCliente = [];
 

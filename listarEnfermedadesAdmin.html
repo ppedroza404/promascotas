@@ -158,8 +158,8 @@
             <section>
                 <div>
                     <label for="slt-catalogo">Catálogo</label>
-                    <select id="slt-catalogo">
-                        <option value="">--Seleccione una opción--</option>
+                    <select name="slt-catalogo" id="slt-catalogo">
+                         <option value="">--Seleccione una opción--</option>
                         <option value="enfermedades">Enfermedades</option>
                         <option value="razas">Razas</option>
                         <option value="vacunas">Vacunas</option>
@@ -167,60 +167,21 @@
                 </div>
             </section>
 
-            <section class="contenedor-listar">
-                <div>
-                    <table id="tbl-enfermedades" class="tabla">
-                        <thead>
-                            <tr>
-                                <th>Enfermedades</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </section>
 
+            <table id="tbl-catalogos" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Catálogo</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
 
             <div class="btn-general">
                 <button type="button" id="btn-servicios">Registrar</button>
             </div>
-        </section>
-
-
-
-        <section class="contenedor-listar">
-            <div>
-                <table id="tbl-razas" class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Razas</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </section>
-
-
-        <div class="btn-general">
-            <button type="button" id="btn-servicios">Registrar</button>
-        </div>
-        </section>
-
-        <section class="contenedor-listar">
-            <div>
-                <table id="tbl-vacunas" class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Vacunas</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </section>
-
-
-        <div class="btn-general">
-            <button type="button" id="btn-servicios">Registrar</button>
-        </div>
         </section>
 
     </main>
