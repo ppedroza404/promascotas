@@ -405,7 +405,6 @@ let lista_catalogo = [{
 
         "enfermedades": "Sarna",
         "tipo": "enfermedades",
-        "undefined": "xxxxxxxxxxxxxxxxxxxxxxxx",
 
     },
     {
@@ -431,7 +430,6 @@ let lista_catalogo = [{
     {
         "razas": "Pastor Aleman",
         "tipo": "razas",
-        "undefined": "yyyyyyyyyyyyyyyyyyyyyyyyyyy",
 
 
     },
@@ -458,7 +456,6 @@ let lista_catalogo = [{
     {
         "vacunas": "Vacuna trivalente",
         "tipo": "vacunas",
-        "undefined": "zzzzzzzzzzzzzzzzzz",
 
     },
     {

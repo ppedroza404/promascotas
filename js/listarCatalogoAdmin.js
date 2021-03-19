@@ -13,20 +13,47 @@ const limpiarTabla = () => {
 const mostrarCatalogoSeleccionado = () => {
 
     limpiarTabla();
+    if (selectCatalogo.value == 'enfermedades') {
+        monstrartablaenfermedades()
+    } else if (selectCatalogo.value == 'razas') {
+        monstrartablarazas()
+    } else if (selectCatalogo.value == 'vacunas') {
+        mostrartablavacunas()
+    }
 
 
-
-    lista_catalogo.forEach(catalogo => {
-        let fila = tablaCatalogo.insertRow();
-
-
-        if (catalogo.tipo == selectCatalogo.value) {
-            fila.insertCell().innerHTML = catalogo.enfermedades;
-            fila.insertCell().innerHTML = catalogo.razas;
-            fila.insertCell().innerHTML = catalogo.vacunas;
-        }
-
-    });
 };
-mostrarCatalogoSeleccionado();
+
+const monstrartablaenfermedades = () => {
+    limpiarTabla();
+    enfermedades_admin.forEach(item => {
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.enfermedad;
+
+    })
+
+}
+
+const monstrartablarazas = () => {
+    limpiarTabla();
+    razas_admin.forEach(item => {
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.razas;
+
+    })
+
+}
+
+const mostrartablavacunas = () => {
+    limpiarTabla();
+    vacunas_admin.forEach(item => {
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.vacunas;
+
+    })
+
+}
+
+
+
 selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
