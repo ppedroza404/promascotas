@@ -1,6 +1,5 @@
 'use strict';
 
-
 const tablaCatalogo = document.querySelector('#tbl-catalogos');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 
@@ -13,47 +12,43 @@ const limpiarTabla = () => {
 const mostrarCatalogoSeleccionado = () => {
 
     limpiarTabla();
+
     if (selectCatalogo.value == 'enfermedades') {
-        monstrartablaenfermedades()
+        monstrarTablaEnfermedades()
     } else if (selectCatalogo.value == 'razas') {
-        monstrartablarazas()
+        monstrarTablaRazas()
     } else if (selectCatalogo.value == 'vacunas') {
-        mostrartablavacunas()
+        mostrarTablaVacunas()
     }
-
-
 };
 
-const monstrartablaenfermedades = () => {
+const monstrarTablaEnfermedades = () => {
+
     limpiarTabla();
-    enfermedades_admin.forEach(item => {
+
+    enfermedadesAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.enfermedad;
-
+        fila.insertCell().innerHTML = item.enfermedades;
     })
-
 }
 
-const monstrartablarazas = () => {
+const monstrarTablaRazas = () => {
+
     limpiarTabla();
-    razas_admin.forEach(item => {
+    razasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.razas;
-
     })
-
 }
 
-const mostrartablavacunas = () => {
+const mostrarTablaVacunas = () => {
+
     limpiarTabla();
-    vacunas_admin.forEach(item => {
+
+    vacunasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.vacunas;
-
     })
-
 }
-
-
 
 selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);

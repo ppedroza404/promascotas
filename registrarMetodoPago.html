@@ -162,22 +162,22 @@
                     <label for="div-imgUpload">Tipo de tarjeta</label>
                     <section class="div-tarjetas">
                         <div>
-                            <img src="img/visa_logo_no_color.jpg" alt="Visa Logo - Inactivo">
-                            <img src="img/mastercard_logo_no_color.jpg" alt="Visa Logo - Inactivo">
-                            <img src="img/amex_logo_no_color.jpg" alt="Amex Logo - Inactivo">
+                            <img src="img/visa_logo_no_color.jpg" alt="Visa Logo - Inactivo" id="img-tarjetaVisa">
+                            <img src="img/mastercard_logo_no_color.jpg" alt="Visa Logo - Inactivo" id="img-tarjetaMasterC">
+                            <img src="img/amex_logo_no_color.jpg" alt="Amex Logo - Inactivo" id="img-tarjetaAmex">
                         </div>
                     </section>
                 </div>
                 <div class="columna">
                     <div>
-                        <label for="txt-nombreTarjeta">Número de la tarjeta</label>
-                        <input type="number" id="txt-nombreTarjeta" class="input-dobleColumna">
+                        <label for="txt-numeroTarjeta">Número de la tarjeta</label>
+                        <input type="number" id="txt-numeroTarjeta" class="input-dobleColumna">
                     </div>
                 </div>
                 <div class="columna">
                     <div>
                         <label for="txt-nombreTarjeta">Nombre en la tarjeta</label>
-                        <input type="number" id="txt-nombreTarjeta" class="input-dobleColumna">
+                        <input type="text" id="txt-nombreTarjeta" class="input-dobleColumna">
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
@@ -200,8 +200,8 @@
                         </select>
                     </div>
                     <div class="columna">
-                        <label for="txt-annoExpiracion" class="simpleColumna">Fecha de expiración - año</label>
-                        <select id="slt-annoExpiracion" class="input-dobleColumna">
+                        <label for="slt-annioExpiracion" class="simpleColumna">Fecha de expiración - año</label>
+                        <select id="slt-annioExpiracion" class="input-dobleColumna">
                             <option value="">--Seleccione una opción--</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
@@ -212,13 +212,13 @@
                         </select>
                     </div>
                     <div class="columna">
-                        <div><label for="txt-codigoVerificacion">CVC</label></div>
-                        <input type="number" id="txt-codigoVerificacion">
-                        <img src="img/cvc_logo1.jpg" class="img-codigoVerificacion" alt="">
+                        <div><label for="txt-codigoSeguridad">CVC</label></div>
+                        <input type="number" id="txt-codigoSeguridad">
+                        <img src="img/cvc_logo1.jpg" class="img-codigoSeguridad" alt="">
                     </div>
             </section>
             <div class="btn-general">
-                <button type="button" id="btn-registrarCliente">Registrar tarjeta</button>
+                <button type="button" id="btn-registrarCC">Registrar tarjeta</button>
             </div>
         </form>
         <section>
@@ -249,8 +249,10 @@
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/metodoPago.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
+
 </body>
 
 </html>

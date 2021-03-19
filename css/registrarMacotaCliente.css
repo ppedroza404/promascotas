@@ -9,3 +9,16 @@
 .mostrar {
     display: block;
 }
+
+.morada {
+    font-size: 20px;
+    color: #6700a3;
+    float: right;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-mascota {
+    margin-top: 55px;
+}

@@ -12,7 +12,7 @@ const habilitarCanton = () => {
     } else {
         canton.disabled = true;
     }
-}
+};
 const habilitarDistrito = () => {
     if (canton != '') {
         distrito.disabled = false;
@@ -20,7 +20,7 @@ const habilitarDistrito = () => {
         distrito.disabled = true;
     }
 
-}
+};
 provincia.addEventListener('change', habilitarCanton);
 canton.addEventListener('change', habilitarDistrito);
 
@@ -40,13 +40,19 @@ const sltCanton = document.querySelector('#slt-canton');
 const sltDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
+const imprimir = () => {
+    console.log('hola Mundo');
+}
 
-const validarEdad = (inputNacimiento) => {
+
+const validarEdad = () => {
+    let nacimiento = new Date(inputNacimiento.value);
     const edadMin = 18;
-    let edad = calcularEdad(inputNacimiento)
+
+    let edad = new Date(calcularEdad(nacimiento));
 
     if (edad >= edadMin) {
-        validarInfo();
+        imprimir();
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -59,14 +65,16 @@ const validarEdad = (inputNacimiento) => {
 
 const calcularEdad = (nacimiento) => {
     let fechaActual = new Date();
-    let edad = fechaActual.getFullYear() - inputNacimiento.getFullYear();
+    let edad = fechaActual.getFullYear() - nacimiento.getFullYear();
 
-    if (fechaActual.getMonth() < inputNacimiento.getMonth()) {
+    if (fechaActual.getMonth() < nacimiento.getMonth()) {
         edad = edad - 1;
     } else {
-        if ((fechaActual.getMonth() == inputNacimiento.getMonth()) && (fechaActual.getUTCDate() < inputNacimiento.getUTCDate())) {
+        if ((fechaActual.getMonth() == nacimiento.getMonth()) && (fechaActual.getUTCDate() < nacimiento.getUTCDate())) {
             edad = edad - 1;
         }
     }
     return edad;
 };
+
+btnRegistrarCliente.addEventListener('click', validarEdad);
