@@ -2811,8 +2811,6 @@ const sltProvincia = document.querySelector("#provincias");
 const sltCanton = document.querySelector("#cantones");
 const sltDistritos = document.querySelector("#distritos");
 const labelslct = document.querySelector("#labelslct");
-let distritosDisponibles = sltDistritos.options.length;
-let cantonesDisponibles = sltCanton.options.length;
 
 const mostrarSltProvincia = () => {
 
@@ -2848,10 +2846,6 @@ const mostrarSltDistrito = () => {
             sltDistritos.add(option);
         }
     });
-}
-
-const getselect = () => {
-    console.log(sltCanton.value);
 }
 
 const clearSltCanton = () => {
