@@ -346,25 +346,40 @@ let listaUsuarios = [{
     }
 ];
 
-let enfermedades_admin = [{
-        "enfermedad": "Sarna",
+let enfermedadesAdmin = [{
+        "enfermedades": "Sarna",
     },
     {
-        "enfermedad": "Rabia",
+        "enfermedades": "Rabia",
     },
     {
-        "enfermedad": "Mastitis",
+        "enfermedades": "Mastitis",
     },
     {
-        "enfermedad": "Parvovirus",
+        "enfermedades": "Parvovirus",
     },
     {
-        "enfermedad": "Moquillo",
+        "enfermedades": "Moquillo",
+    },
+    {
+        "enfermedades": "Calcivirosis",
+    },
+    {
+        "enfermedades": "Rinotraqueitis",
+    },
+    {
+        "enfermedades": "Leucemia",
+    },
+    {
+        "enfermedades": "Leptospirosis",
+    },
+    {
+        "enfermedades": "Bronquitis infecciosa	",
     },
 ];
 
 
-let razas_admin = [{
+let razasAdmin = [{
         "razas": "Pastor Aleman",
     },
     {
@@ -379,10 +394,25 @@ let razas_admin = [{
     {
         "razas": "Golden",
     },
+    {
+        "razas": "Azul Ruso",
+    },
+    {
+        "razas": "Birmano",
+    },
+    {
+        "razas": "Bombay",
+    },
+    {
+        "razas": "Balinés",
+    },
+    {
+        "razas": "Bengalí",
+    },
 ];
 
 
-let vacunas_admin = [{
+let vacunasAdmin = [{
         "vacunas": "Vacuna trivalente",
     },
     {
@@ -397,8 +427,25 @@ let vacunas_admin = [{
     {
         "vacunas": "Vacuna contra la parvovirosis	",
     },
+    {
+        "vacunas": "Vacuna leucemia",
+    },
+    {
+        "vacunas": "Vacuna Distemper",
+    },
+    {
+        "vacunas": "Vacuna parvovirus felino",
+    },
+    {
+        "vacunas": "Vacuna Hepatitis infecciosa canina",
+    },
+    {
+        "vacunas": "Vacuna calicivirus felino",
+    },
 ];
 
+
+/* SIN USO
 
 let lista_catalogo = [{
 
@@ -479,6 +526,7 @@ let lista_catalogo = [{
 
     },
 ];
+*/
 
 const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
     let nuevoCliente = [];
