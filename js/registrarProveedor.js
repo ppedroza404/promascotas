@@ -64,6 +64,32 @@ const inputDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
 const inputDescripcion = document.getElementById('txt-descripcion');
 
+const habilitarCanton = () => {
+    if (inputProvincia.value != '') {
+        inputCanton.disabled = false;
+        if (inputCanton.value != '') {
+            inputDistrito.disabled = false;
+        }
+    } else {
+        inputCanton.disabled = true;
+        inputDistrito.disabled = true;
+    }
+
+};
+
+inputProvincia.addEventListener('change', habilitarCanton);
+
+const habilitarDistrito = () => {
+    if (inputCanton.value != '') {
+        inputDistrito.disabled = false;
+    } else {
+        inputDistrito.disabled = true;
+    }
+
+};
+
+inputCanton.addEventListener('change', habilitarDistrito);
+
 
 
 //Validación 
@@ -257,16 +283,16 @@ const imprimir = () => {
     let segundoApellidoSolicitante = inputSegundoApellidoSolicitante.value;
     let tipoIdSolicitante = inputTipoIdSolicitante.value;
     let numeroID = inputNumeroId.value;
-    let fechaNacimiento = inputFechaNacimiento.value;
-    //let edad = calcularEdad(fechaNacimiento);
+    let fechaNacimiento = new Date(inputFechaNacimiento.value);
+    let edad = calcularEdad(fechaNacimiento);
     let correoSolicitante = inputCorreoSolicitante.value;
     let nombreRepresentante = inputNombreRepresentante.value;
     let primerApellidoRepresentante = inputPrimerApellidoRepresentante.value;
     let segundoApellidoRepresentante = inputSegundoApellidoRepresentante.value;
     let tipoIdRepresentante = inputTipoIdRepresentante.value;
     let numeroIdRepresentante = inputNumeroIdRepresentante.value;
-    let fechaNacimientoRepresentante = inputFechaNacimientoRepresentante.value;
-    //let edadRepresentante = calcularEdad(fechaNacimientoRepresentante);
+    let fechaNacimientoRepresentante = new Date(inputFechaNacimientoRepresentante.value);
+    let edadRepresentante = calcularEdad(fechaNacimientoRepresentante);
     let correoRepresentante = inputCorreoRepresentante.value;
     let provincia = inputProvincia.value;
     let canton = inputCanton.value;
@@ -274,34 +300,45 @@ const imprimir = () => {
     let otrasSennas = inputOtrasSennas.value;
     let descripcion = inputDescripcion.value;
 
-
+    console.log('Info del negocio');
+    console.log('=====================');
     console.log(imagen);
     console.log(nombreNegocio);
     console.log(tipoId);
-    console.log(cedulaJuridica);
+    console.log('');
+    console.log('Información Solicitante');
+    console.log('-------------------');
     console.log(nombreSolicitante);
     console.log(primeApellidoSolicitante);
     console.log(segundoApellidoSolicitante);
     console.log(tipoIdSolicitante);
     console.log(numeroID);
     console.log(fechaNacimiento);
-    //console.log(edad);
+    console.log('edad: ' + edad);
     console.log(correoSolicitante);
-    console.log(nombreRepresentante);
-    console.log(primerApellidoRepresentante);
-    console.log(segundoApellidoRepresentante);
-    console.log(tipoIdRepresentante);
-    console.log(numeroIdRepresentante);
-    console.log(fechaNacimientoRepresentante);
-    //console.log(edadRepresentante);
-    console.log(correoRepresentante);
+    console.log('');
+    console.log('Dirección');
+    console.log('-------------------');
     console.log(provincia);
     console.log(canton);
     console.log(distrito);
     console.log(otrasSennas);
     console.log(descripcion);
 
-
+    if (inputTipoId.value == 'Jurídica') {
+        console.log('');
+        console.log('Información Jurídica');
+        console.log('=====================');
+        console.log('Cédula Juridica: ' + cedulaJuridica);
+        console.log(nombreRepresentante);
+        console.log(primerApellidoRepresentante);
+        console.log(segundoApellidoRepresentante);
+        console.log(tipoIdRepresentante);
+        console.log(numeroIdRepresentante);
+        console.log(fechaNacimientoRepresentante);
+        console.log('edad: ' + edadRepresentante);
+        console.log(correoRepresentante);
+    }
     Swal.fire({
         'icon': 'success',
         'title': 'Su solicitud se proceso con éxito',

@@ -15,7 +15,7 @@
     <!--Tienen que ir en todas las internas-->
     <link rel="stylesheet" href="css/registrarProveedor.css">
     <link rel="stylesheet" href="css/registrarMacotaCliente.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="duennoBody">
@@ -253,6 +253,11 @@
                             <label for="txt-padecimientos">Padecimientos</label>
                             <input type="text" id="txt-padecimientos" class="inpt-raza">
                         </div>
+
+                        <div>
+                            <label for="txt-fechaNacimiento">Fecha de nacimiento</label>
+                            <input type="date" id="txt-fechaNacimiento" class="inpt-raza">
+                        </div>
                     </div>
 
                 </div>
@@ -261,7 +266,7 @@
                 <p class="titulo">
                     <h3>Vacunas</h3>
                 </p>
-                <div class="contenedorColumna simpleColumna">
+                <div class="contenedorColumna simpleColumna" id="div-vacuna0">
                     <div class="columna">
                         <label for="txt-nombreVacuna">Nombre de la vacuna</label>
                         <input type="text" id="txt-nombreVacuna">
@@ -275,7 +280,11 @@
                         <input type="text" id="txt-fabricante">
                     </div>
                 </div>
-                <div class="contenedorColumna simpleColumna">
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna1"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+                <div class="contenedorColumna simpleColumna" id="div-vacuna1">
+                    <hr>
                     <div class="columna">
                         <label for="txt-nombreVacuna1">Nombre de la vacuna</label>
                         <input type="text" id="txt-nombreVacuna1">
@@ -289,7 +298,16 @@
                         <input type="text" id="txt-fabricante1">
                     </div>
                 </div>
-                <div class="contenedorColumna simpleColumna">
+
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna1Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna1Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+
+                <div class="contenedorColumna simpleColumna" id="div-vacuna2">
+                    <hr>
                     <div class="columna">
                         <label for="txt-nombreVacuna2">Nombre de la vacuna</label>
                         <input type="text" id="txt-nombreVacuna2">
@@ -303,7 +321,14 @@
                         <input type="text" id="txt-fabricante2">
                     </div>
                 </div>
-                <div class="contenedorColumna simpleColumna">
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna2Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna2Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+                <div class="contenedorColumna simpleColumna" id="div-vacuna3">
+                    <hr>
                     <div class="columna">
                         <label for="txt-nombreVacuna3">Nombre de la vacuna</label>
                         <input type="text" id="txt-nombreVacuna3">
@@ -317,7 +342,14 @@
                         <input type="text" id="txt-fabricante3">
                     </div>
                 </div>
-                <div class="contenedorColumna simpleColumna">
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna3Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna3Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+                <div class="contenedorColumna simpleColumna" id="div-vacuna4">
+                    <hr>
                     <div class="columna">
                         <label for="txt-nombreVacuna4">Nombre de la vacuna</label>
                         <input type="text" id="txt-nombreVacuna4">
@@ -331,65 +363,13 @@
                         <input type="text" id="txt-fabricante4">
                     </div>
                 </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-nombreVacuna5">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna5">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fechaVacuna5">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacuna5">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante5">Fabricante</label>
-                        <input type="text" id="txt-fabricante5">
-                    </div>
-                </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-nombreVacuna6">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna6">
-                    </div>
-                    <div class="columna ">
-                        <label for="txt-fechaVacuna6">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacun6">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante6">Fabricante</label>
-                        <input type="text" id="txt-fabricante6">
-                    </div>
-                </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-nombreVacuna7">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna7">
-                    </div>
-                    <div class="columna ">
-                        <label for="txt-fechaVacuna7">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacuna7">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante7">Fabricante</label>
-                        <input type="text" id="txt-fabricante7">
-                    </div>
-                </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-nombreVacuna8">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna8">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fechaVacuna8">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacuna8">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante8">Fabricante</label>
-                        <input type="text" id="txt-fabricante">
-                    </div>
+                <div>
+                    <button class="morada" type="button" id="btn-vacuna4Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
 
 
-                <div class="btn-registar" type="button" id="btn-registrarProveedor">
+
+                <div class="btn-registar btn-general btn-mascota " type="button" id="btn-registrarProveedor">
                     <button type="button" id="btn-registrar">Agregar</button>
                 </div>
             </form>
