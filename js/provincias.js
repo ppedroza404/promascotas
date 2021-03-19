@@ -17,7 +17,7 @@ let listaProvincias = [{
     },
     {
         "Provincia": "5",
-        "Nombre": "Guancaste"
+        "Nombre": "Guanacaste"
     },
     {
         "Provincia": "6",

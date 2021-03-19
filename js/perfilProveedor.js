@@ -13,7 +13,7 @@ const provinciaUsuario = document.querySelector('#txt-provincia');
 const cantonUsuario = document.querySelector('#txt-canton');
 const distritoUsuario = document.querySelector('#txt-distrito');
 const direccionUsuario = document.querySelector('#txt-direccion');
-const tipoUsuario = document.querySelector('#txt-tipoUsuario');
+const tipoUsuarioPerfil = document.querySelector('#txt-tipoUsuario');
 
 
 
@@ -28,7 +28,7 @@ sApellidoUsuario.innerText = usuario.segundoApellido;
 correoUsuario.innerText = usuario.correo;
 generoUsuario.innerText = usuario.sexo;
 telefonoUsuario.innerText = usuario.telefono;
-tipoUsuario.innerText = usuario.tipo;
+tipoUsuarioPerfil.innerText = usuario.tipo;
 tipoIdUsuario.innerText = usuario.tipoID;
 numIdUsuario.innerText = usuario.id;
 provinciaUsuario.innerText = usuario.provincia;
