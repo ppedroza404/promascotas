@@ -1,6 +1,6 @@
 'use strict';
 
-const tablaCatalogo = document.querySelector('#tbl-catalogos');
+const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 
 const limpiarTabla = () => {
@@ -35,6 +35,7 @@ const monstrarTablaEnfermedades = () => {
 const monstrarTablaRazas = () => {
 
     limpiarTabla();
+
     razasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.razas;
