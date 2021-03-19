@@ -12,10 +12,10 @@ let validar = () => {
 
     for (let i = 0; i < inputs_requeridos.length; i++) {
         if (inputs_requeridos[i].value == '') {
-            inputs_requeridos[i].classList.add('input-error');
+            inputs_requeridos[i].classList.add('error');
             error = true;
         } else {
-            inputs_requeridos[i].classList.remove('input-error');
+            inputs_requeridos[i].classList.remove('error');
         }
     }
 
@@ -26,8 +26,8 @@ let limpiar = () => {
     txtNombreProveedor.value = "";
     txtNombreServicio.value = "";
     txtDescripcionServicio.value = "";
-    txtMetodoPago = "";
-    txtPagoTotal = "";
+    txtMetodoPago.value = "";
+    txtPagoTotal.value = "";
 };
 
 let obtener_datos = () => {
@@ -40,11 +40,13 @@ let obtener_datos = () => {
             'icon': 'warning'
         });
     } else {
-        console.log(txtNombreProveedor.value);
-        console.log(txtNombreServicio.value);
-        console.log(txtDescripcionServicio.value);
-        console.log(txtMetodoPago.value);
-        console.log(txtPagoTotal.value);
+        console.log('Info del servicio registrado');
+        console.log('=========================================================');
+        console.log('Nombre del proveedor: ' + txtNombreProveedor.value);
+        console.log('Nombre del servicio: ' + txtNombreServicio.value);
+        console.log('Descripción: ' + txtDescripcionServicio.value);
+        console.log('Método de pago utilizado: ' + txtMetodoPago.value);
+        console.log('Costo total del servicio: ' + txtPagoTotal.value);
 
         Swal.fire({
             'title': 'Proceso realizado con éxito',
