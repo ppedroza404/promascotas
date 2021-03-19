@@ -40,8 +40,8 @@ let obtener_datos = () => {
             'icon': 'warning'
         });
     } else {
-        console.log('Info del servicio registrado');
-        console.log('=========================================================');
+        console.log('Información del servicio registrado');
+        console.log('=====================================================');
         console.log('Nombre del proveedor: ' + txtNombreProveedor.value);
         console.log('Nombre del servicio: ' + txtNombreServicio.value);
         console.log('Descripción: ' + txtDescripcionServicio.value);
