@@ -444,6 +444,13 @@ let vacunasAdmin = [{
     },
 ];
 
+let tiposMascotaAdmin = [{
+        "tiposMascota": "Perro",
+    },
+    {
+        "tiposMascota": "Gato",
+    },
+];
 
 /* SIN USO
 

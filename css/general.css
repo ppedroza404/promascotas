@@ -210,13 +210,14 @@ input {
     text-align: center;
 }
 
-.div-imgUpload span input {
-    margin-left: 55px;
-}
-
 .div-imgUpload img {
     margin-top: 10px;
     border: 2px solid #56cfe1;
+}
+
+#imagen-prev {
+    width: 180px;
+    height: 180px;
 }
 
 

@@ -34,7 +34,7 @@ let obtener_datos = () => {
     } else {
         console.log('Informacion del catálogo registrado');
         console.log('=========================================================');
-        console.log('Se agregó: ' + txtNombreCatalogo.value + 'al catálogo del administrador : ');
+        console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
 
 
         Swal.fire({

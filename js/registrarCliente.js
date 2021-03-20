@@ -26,6 +26,7 @@ canton.addEventListener('change', habilitarDistrito);
 
 
 const btnRegistrarCliente = document.querySelector('#btn-registrarCliente');
+const inputImagen = document.querySelector('#input-imagen');
 const inputNombreCliente = document.querySelector('#txt-nombreCliente');
 const inputPrimApellidoCliente = document.querySelector('#txt-primerApellidoCliente');
 const inputSegApellidoCliente = document.querySelector('#txt-segApellidoCliente');
@@ -40,10 +41,7 @@ const sltCanton = document.querySelector('#slt-canton');
 const sltDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
-const imprimir = () => {
-    console.log('hola Mundo');
-}
-
+/* Inicio: Función para validar la edad */
 
 const validarEdad = () => {
     let nacimiento = new Date(inputNacimiento.value);
@@ -52,7 +50,7 @@ const validarEdad = () => {
     let edad = new Date(calcularEdad(nacimiento));
 
     if (edad >= edadMin) {
-        imprimir();
+        validarDatos();
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -62,6 +60,11 @@ const validarEdad = () => {
         });
     }
 };
+
+/* Fin: Función para validar la edad */
+
+
+/* Inicio: Función para calcular la edad */
 
 const calcularEdad = (nacimiento) => {
     let fechaActual = new Date();
@@ -77,4 +80,203 @@ const calcularEdad = (nacimiento) => {
     return edad;
 };
 
+/* Fin: Función para calcular la edad */
+
+/* Inicio: Función para obtener la prevista de la imagen o avatar */
+
+
+
+/* Fin: Función para obtener la prevista de la imagen o avatar */
+
+/* Inicio: Función para validar los datos del cliente */
+
+const validarDatos = () => {
+    let error = false;
+
+    let regexCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let regexCedNacional = /^[1-9]-?\d{4}-?\d{4}$/;
+    let regexDimex1 = /^\d{11}$/;
+    let regexDimex2 = /^\d{12}$/;
+
+    Validación por núm de ID(regex) por tipo de ID
+
+    if (inputImagen.value == '') {
+        error = true;
+        inputImagen.classList.add('error');
+    } else {
+        inputImagen.classList.remove('error');
+    }
+    if (inputNombreCliente.value == '') {
+        error = true;
+        inputNombreCliente.classList.add('error');
+    } else {
+        inputNombreCliente.classList.remove('error');
+    }
+    if (inputPrimApellidoCliente.value == '') {
+        error = true;
+        inputPrimApellidoCliente.classList.add('error');
+    } else {
+        inputPrimApellidoCliente.classList.remove('error');
+    }
+    if (inputSegApellidoCliente.value == '') {
+        error = true;
+        inputSegApellidoCliente.classList.add('error');
+    } else {
+        inputSegApellidoCliente.classList.remove('error');
+    }
+    if (sltGenero.value == '') {
+        error = true;
+        sltGenero.classList.add('error');
+    } else {
+        sltGenero.classList.remove('error');
+    }
+    if (sltTipoId.value == '') {
+        error = true;
+        sltTipoId.classList.add('error');
+    } else {
+        sltTipoId.classList.remove('error');
+    }
+    /*
+    if (sltTipoId.value == 'nacional') {
+        if (regexCedNacional.test(inputNumId.value) == false) {
+            error = true;
+            inputNumId.classList.add('error');
+        } else {
+            inputNumId.classList.remove('error');
+        }
+    } else if (sltTipoId.value == 'dimex') {
+        if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
+            error = true;
+            inputNumId.classList.add('error');
+        } else {
+            inputNumId.classList.remove('error');
+        }
+    } else if (sltTipoId.value == 'pasaporte') {
+        if (regexPasaporte.test(inputNumId.value) == false) {
+            error = true;
+            inputNumId.classList.add('error');
+        } else {
+            inputNumId.classList.remove('error');
+        }
+    } else {
+        sltTipoId.classList.remove('error');
+    }
+    */
+
+    if (inputNumId.value == '') {
+        error = true;
+        inputNumId.classList.add('error');
+    } else {
+        inputNumId.classList.remove('error');
+    }
+    if (inputNacimiento.value == '') {
+        error = true;
+        inputNacimiento.classList.add('error');
+    } else {
+        inputNacimiento.classList.remove('error');
+    }
+    if (regexCorreo.test(inputCorreo.value) == false) {
+        error = true;
+        inputCorreo.classList.add('error');
+    } else {
+        inputCorreo.classList.remove('error');
+    }
+    if (inputCantMascotas.value == '') {
+        error = true;
+        inputCantMascotas.classList.add('error');
+    } else {
+        inputCantMascotas.classList.remove('error');
+    }
+    if (sltProvincia.value == '') {
+        error = true;
+        sltProvincia.classList.add('error');
+    } else {
+        sltProvincia.classList.remove('error');
+    }
+    if (sltCanton.value == '') {
+        error = true;
+        sltCanton.classList.add('error');
+    } else {
+        sltCanton.classList.remove('error');
+    }
+    if (sltDistrito.value == '') {
+        error = true;
+        sltDistrito.classList.add('error');
+    } else {
+        sltDistrito.classList.remove('error');
+    }
+    if (inputOtrasSenias.value == '') {
+        error = true;
+        inputOtrasSenias.classList.add('error');
+    } else {
+        inputOtrasSenias.classList.remove('error');
+    }
+
+    if (error == false) {
+        imprimirDatos();
+    } else {
+        Swal.fire({
+            'icon': 'warning',
+            'title': 'No se ha registrado',
+            'text': 'Por favor revise los campos resaltados'
+        });
+    }
+}
+
+/* fin: Función para validar los datos del cliente */
+
+/* Inicio: Función para imprimir los datos del cliente */
+
+const imprimirDatos = () => {
+
+    let sImagen = inputImagen.value;
+    let sNombre = inputNombreCliente.value;
+    let sPrimApellido = inputPrimApellidoCliente.value;
+    let sSegApellido = inputSegApellidoCliente.value;
+    let sGenero = sltGenero.value;
+    let sTipoId = sltTipoId.value;
+    let sNumId = inputNumId.value;
+    let sFechaNac = inputNacimiento.value;
+    let sCorreo = inputCorreo.value;
+    let sCantMasc = inputCantMascotas.value;
+    let sProvincia = sltProvincia.value;
+    let sCanton = sltCanton.value;
+    let sDistrito = sltDistrito.value;
+    let sOtrasSennias = inputOtrasSenias.value;
+
+    console.log('Datos personales');
+    console.log('=====================');
+    console.log(sImagen);
+    console.log(`${sNombre} ${sPrimApellido} ${sSegApellido}`);
+    console.log(sGenero);
+    console.log(sTipoId);
+    console.log(sNumId);
+    console.log(sFechaNac);
+    console.log(sCorreo);
+    console.log(sCantMasc);
+    console.log('');
+    console.log('Dirección');
+    console.log('-------------------');
+    console.log(sProvincia);
+    console.log(sCanton);
+    console.log(sDistrito);
+    console.log(sOtrasSennias);
+
+    Swal.fire({
+            'icon': 'success',
+            'title': 'Su solicitud se proceso con éxito',
+            'text': 'Pronto recibirá un correo electrónico',
+            'confirmButtonText': 'Entendido'
+        })
+        /*.then(() => {
+            window.location.href = 'inicio-sesion.html';
+        });*/
+
+}
+
+/* Fin: Función para obtener los datos del cliente */
+
 btnRegistrarCliente.addEventListener('click', validarEdad);
+
+/* Inicio: Función para...*/
+/* fin: Función para... */

@@ -213,7 +213,7 @@
                     </div>
                     <div class="columna">
                         <div><label for="txt-codigoSeguridad">CVC</label></div>
-                        <input type="number" id="txt-codigoSeguridad">
+                        <input type="number" id="txt-codigoSeguridad" maxlength="3">
                         <img src="img/cvc_logo1.jpg" class="img-codigoSeguridad" alt="">
                     </div>
             </section>
@@ -225,17 +225,10 @@
             <table id="tbl-metodosPago" class="tabla">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Correo</th>
-                        <th>Cantidad Mascotas</th>
-                        <th>Telefono</th>
-                        <th>Tipo ID</th>
-                        <th>Numero de ID</th>
-                        <th>Provincia</th>
-                        <th>Canton</th>
-                        <th>Distrito</th>
+                        <th>Tipo</th>
+                        <th>Información de la tarjeta</th>
+                        <th>Nombre en la tarjeta</th>
+                        <th>Fecha de expiración</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -249,7 +242,7 @@
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/metodoPago.js"></script>
+    <script src="js/registrarMetodoPago.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
 
