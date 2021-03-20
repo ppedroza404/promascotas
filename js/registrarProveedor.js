@@ -350,3 +350,28 @@ const imprimir = () => {
 
 };
 btnRegistrarProveedor.addEventListener('click', validar);
+
+//cambiar imagen
+const imgPerfil = document.querySelector('#img-proveedor');
+const archivoCambiado = (evento) => {
+    let elArchivo = evento.target.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(evt) {
+        let datosImagen = evt.target.result;
+
+        imgPerfil.src = event.target.result;
+    }
+    reader.readAsDataURL(elArchivo);
+
+}
+const readUrl = () => {
+    let tieneArchivoApi = (window.File && window.FileReader);
+
+    if (!tieneArchivoApi) {
+        console.log('El browser no soporta API');
+        return;
+    }
+    inputImagen.addEventListener('change', archivoCambiado)
+}
+window.addEventListener('load', readUrl);
