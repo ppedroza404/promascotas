@@ -5,6 +5,7 @@ const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
 const itemsAdministrador = document.querySelector('#menuUlAdministrador');
 const itemsSinAutenticar = document.querySelector('#menuUlSinAutenticar');
+const nombreUsuario = document.querySelector('#nombreClienteMenu');
 
 const mostrarOpcionesMenu = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
@@ -27,6 +28,14 @@ const mostrarOpcionesMenu = () => {
             break;
     }
 };
+
+const nombreUsuarioConectado = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    nombreUsuario.innerHTML = usuario.nombre
+};
+
+
+
 const menuSinAutenticar = () => {
     itemsCliente.classList.add('ocultar');
     itemsProveedor.classList.add('ocultar');
@@ -40,7 +49,6 @@ const cerrarSesion = () => {
 };
 
 if (sessionStorage.getItem('usuarioConectado')) {
-    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     mostrarOpcionesMenu();
 } else {
     menuSinAutenticar();

@@ -1,12 +1,28 @@
 'use strict';
 //Menu
-let headerContenedor = document.querySelector('#header')
+let headerContenedor = document.querySelector('#header');
 let botonActivador = document.querySelector('#btn-menuPricipal');
 
 botonActivador.addEventListener('click', () => {
-    //sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
     headerContenedor.classList.toggle('Activado')
 });
+
+
+//Header con clase fixed
+window.onscroll = function() { funcionScroll() };
+let header = document.querySelector('#header');
+let headerFixed = header.offsetTop;
+
+const funcionScroll = () => {
+    if (window.pageYOffset > headerFixed) {
+        header.classList.add('fixed');
+    } else {
+        header.classList.remove('fixed');
+    }
+};
+
+
+
 
 
 //Slider

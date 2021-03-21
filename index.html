@@ -9,52 +9,122 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/landingpage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <title>Pro Mascotas | Landing page</title>
 </head>
 
 <body>
     <!--Inicia header-->
-    <header>
-
+    <header id="header">
+        <div class="contenedor">
+            <h1 class="flotar-izq">
+                <a href="/"><span class="logo"></span></a>
+                <span class="ocultar">Pro Mascotas</span>
+            </h1>
+            <div class="flotar-der">
+                <div class="menuPrincipal-Activador" id="btn-menuPricipal"><span></span></div>
+            </div>
+            <ul class="menuPrincipal">
+                <li><a href="#seccionAcercaNosotros">Nosotros</a></li>
+                <li><a href="#seccionInteraccion">¿Interactuamos?</a></li>
+                <li><a href="#seccionUnirme">Unirme</a></li>
+                <li><a href="#seccionPatrocinadores">Patrocinadores</a></li>
+                <li><a href="#seccionContactanos">Contactános</a></li>
+                <li><a href="inicioSesion.html">Iniciar sesión</a></li>
+            </ul>
+        </div>
     </header>
     <!--Finaliza header-->
     <!--Inicia slider-->
-    <section>
-
+    <section id="sliderContenedor">
+        <div class="sliderContenedor">
+            <div class="slide fade">
+                <span class="sliderImagen1"></span>
+                <div class="sliderInformacion animacionTitulo">
+                    <p class="titulo">Productos nacionales</p>
+                    <p>Con tu compra, no solo chineás a tu mascota, también apoyás emprendimientos nacionales</p>
+                </div>
+            </div>
+            <div class="slide fade">
+                <span class="sliderImagen2"></span>
+                <div class="sliderInformacion animacionTitulo">
+                    <p class="titulo">Contacto directo</p>
+                    <p>Podés contactardirectamente conlos proveedorespara un serviciomás personalizado</p>
+                </div>
+            </div>
+            <div class="slide fade">
+                <span class="sliderImagen3"></span>
+                <div class="sliderInformacion animacionTitulo">
+                    <p class="titulo">De todo para tu mascota</p>
+                    <p>Acá encontrarás mucha variedad de productos especialazados</p>
+                </div>
+            </div>
+        </div>
     </section>
     <!--Finaliza slider-->
     <!--Inicia main-->
     <main>
         <!--Inicia acerca de nosotros-->
-        <section>
-
+        <section id="seccionAcercaNosotros">
+            <h2>Acerca de nosotros</h2>
+            el título es en h2 por la cuestión de que no se pueden repetir h1 en una misma página<br>
         </section>
         <!--Finaliza acerca de nosotros-->
         <!--Inicia interactuamos-->
-        <section>
+        <section id="seccionInteraccion">
+            <h2>Interactuamos</h2>
+            el título es en h2 por la cuestión de que no se pueden repetir h1 en una misma página<br> color de background: #56cfe1
+            <div>
+                las imágenes de background para los botones, están en la carpeta index dentro de img, comienzan con interactuamos.<br> Para que aparezca una imagen diferente de background, hay que cambiar la clase que está junto con la clase imgBtn, y
+                a esa clase agregarle el llamado en el css.<br> ejemplo de botones:<br>
 
+                <a href="#" class="imgBtn eventosSaludAnimal">
+                    <span class="accionesContenedor">
+                    <span class="masInfo">+ Info</span>
+                    <span class="llamarAccion">Ver eventos</span>
+                    </span>
+                </a>
+            </div>
         </section>
         <!--Finaliza interactuamos-->
         <!--Inicia publicidad-->
-        <section>
+        <section id="seccionPublicidad">
+            color de background: #cccde2<br> la imagen está en la carpeta index dentro de img, comienzan con publicidad
 
         </section>
         <!--Finaliza publicidad-->
 
         <!--Inicia te unis-->
-        <section>
+        <section id="seccionUnirme">
+            <h2>Unirme</h2>
+            el título es en h2 por la cuestión de que no se pueden repetir h1 en una misma página<br>
+            <div>
+                las imágenes de background para los botones, están en la carpeta index dentro de img, comienzan con unirme.<br> Para que aparezca una imagen diferente de background, hay que cambiar la clase que está junto con la clase imgBtn, y a esa
+                clase agregarle el llamado en el css.<br> ejemplo de botones:<br>
 
+                <a href="#" class="imgBtn eventosSaludAnimal">
+                    <span class="accionesContenedor">
+                    <span class="llamarAccion">Soy dueño de mascota</span>
+                    </span>
+                </a>
+            </div>
         </section>
         <!--Finaliza te unis-->
 
         <!--Inicia Patrocinadores-->
-        <section>
+        <section id="seccionPatrocinadores">
+            <h2>Patrocinadores</h2>
+            el título es en h2 por la cuestión de que no se pueden repetir h1 en una misma página<br> color de background: #56cfe1<br> las imágenes están en la carpeta index dentro de img, comienzan con patrocinadores.<br>
 
         </section>
         <!--Finaliza Patrocinadores-->
         <!--Inicia Contactenos-->
-        <section>
+        <section id="seccionContactanos">
+            <h2>Contactános</h2>
+            el título es en h2 por la cuestión de que no se pueden repetir h1 en una misma página<br> aquí <a href="https://cssgradient.io/" target="_blank">https://cssgradient.io/</a> se puede hacer el gradiente. <br> se usan 3 valores de color: el primero
+            es #1e494f y se encuentra en la posición 0, el segundo es #000000 y está en la posición 50 y el tercero es #290041 en la posición 100<br> linear, y con una inclinación de 45 grados... cualquier cosa me avisa
+
 
         </section>
         <!--Finaliza contactenos-->
@@ -64,6 +134,8 @@
     <footer>
 
     </footer>
+    <script src="js/index.js"></script>
+
     <!--finaliza footer-->
 </body>
 
