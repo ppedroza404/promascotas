@@ -1,0 +1,40 @@
+.duennoBody .columna-noMargenBottom div input,
+h3,
+h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.duennoBody .contenedor .btn-editarPerfil {
+    float: right;
+    margin-right: 25px;
+}
+
+.duennoBody .div-imgUpload #btn-editarFoto {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.duennoBody .seccion-mascota table {
+    margin-top: 0px;
+}
+
+.duennoBody .seccion-mascota .contenedorColumna,
+table {
+    margin-bottom: 10px;
+}
+
+.show {
+    opacity: 1;
+}
+
+#seccion-infoMascotas {
+    opacity: 0;
+    transition: opacity 0.6s linear;
+}
+
+.duennoBody .seccion-mascota #imagen-prev:hover {
+    cursor: pointer;
+}
