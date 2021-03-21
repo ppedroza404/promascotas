@@ -151,7 +151,7 @@
     </header>
     <main class="contenedor">
         <h1>Mi perfil</h1>
-        <div class="btn-editarPerfil">
+        <div class="btn-editar">
             <a href="">
                 <i class="fa fa-edit fa-2x"></i>
             </a>
@@ -282,8 +282,49 @@
             </section>
         </section>
         <hr>
-        <section>
-
+        <h2>Denuncias</h2>
+        <div class="btn-editar">
+            <a href="">
+                <i class="fa fa-edit fa-2x"></i>
+            </a>
+        </div>
+        <section class="seccion-denuncias">
+            <section class="contenedorColumna dobleColumna">
+                <div class="columna">
+                    <div class="columna">
+                        <label for="txt-comentario">Favor ingrese un comentario</label>
+                        <textarea id="txt-comentario" disabled></textarea>
+                    </div>
+                </div>
+                <section class="columna">
+                    <div id="seccion-infoMascota" class="seccion-infoMascota">
+                        <section class="columnaDoble-50">
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="slt-listaProveedor">Reportar Proveedor</h4>
+                                    <select id="slt-listaProveedor" disabled>
+                                        <option value="">-- Seleccione un proveedor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-razonDenuncia">Razón de la denuncia</h4>
+                                    <input type="text" id="txt-razonDenuncia" class="input-dobleColumna" disabled>
+                                </div>
+                            </div>
+                            <div class="btn-general">
+                                <button type="button" id="btn-denunciarProv" class="ocultar">Enviar</button>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <hr>
+        <section class="seccion-mejoresProv">
+            <h2>Top 20 Proveedores</h2>
+            <!--Falta JS para obtener lista de proveedores mejor calificados-->
         </section>
     </main>
 

@@ -457,12 +457,12 @@ footer p {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 2.5s;
 }
 
 @-webkit-keyframes fade {
     from {
-        opacity: .4
+        opacity: .1
     }
     to {
         opacity: 1
@@ -471,9 +471,29 @@ footer p {
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: .1
     }
     to {
         opacity: 1
     }
 }
+
+
+/* Inicio: estilos de la seccion top 20 proveedores*/
+
+.seccion-mejoresProv {
+    min-height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #d5f3f7;
+}
+
+.seccion-mejoresProv h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* Final: estilos de la seccion top 20 proveedores*/

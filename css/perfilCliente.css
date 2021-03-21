@@ -5,7 +5,7 @@ h4 {
     margin-bottom: 5px;
 }
 
-.duennoBody .contenedor .btn-editarPerfil {
+.duennoBody .contenedor .btn-editar {
     float: right;
     margin-right: 25px;
 }
@@ -37,4 +37,16 @@ table {
 
 .duennoBody .seccion-mascota #imagen-prev:hover {
     cursor: pointer;
+}
+
+.seccion-denuncias {
+    display: flow-root;
+}
+
+.duennoBody .seccion-denuncias select {
+    height: 35px;
+}
+
+.duennoBody .seccion-denuncias input {
+    margin-top: 5px;
 }
