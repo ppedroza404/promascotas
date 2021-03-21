@@ -207,8 +207,9 @@
         </section>
         <hr>
         <section class="seccion-mascota">
-            <section class="contenedorColumna simpleColumna">
-                <h2>Mascotas</h2>
+            <h2>Mascotas</h2>
+            <section class="contenedorColumna dobleColumna">
+
                 <div class="columna">
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
@@ -219,62 +220,87 @@
                         </div>
                     </div>
                 </div>
-                <section id="seccion-infoMascota">
-                    <section>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-nombreMascota">Nombre</h4>
-                                <input type="text" id="txt-nombreMascota" class="input-dobleColumna" disabled>
+                <section class="columna">
+                    <div id="seccion-infoMascota" class="seccion-infoMascota fade ocultar">
+                        <section class="columnaDoble-50">
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-nombreMascota">Nombre</h4>
+                                    <input type="text" id="txt-nombreMascota" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-tipoMascota">Tipo de mascota</h4>
-                                <input type="text" id="txt-tipoMascota" class="input-dobleColumna" disabled>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-tipoMascota">Tipo de mascota</h4>
+                                    <input type="text" id="txt-tipoMascota" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-raza">Raza</h4>
-                                <input type="text" id="txt-raza" class="input-dobleColumna" disabled>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-raza">Raza</h4>
+                                    <input type="text" id="txt-raza" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-edadMascota">Edad</h4>
-                                <input type="text" id="txt-edadMascota" class="input-dobleColumna" disabled>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-edadMascota">Edad</h4>
+                                    <input type="text" id="txt-edadMascota" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-genero">Género</h4>
-                                <input type="text" id="txt-generoMascota" class="input-dobleColumna" disabled>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-genero">Género</h4>
+                                    <input type="text" id="txt-generoMascota" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="columna columna-noMargenBottom">
-                            <div>
-                                <h4 for="txt-padecimientos">Padecimientos</h4>
-                                <input type="text" id="txt-padecimientos" class="input-dobleColumna" disabled>
+                            <div class="columna columna-noMargenBottom">
+                                <div>
+                                    <h4 for="txt-padecimientos">Padecimientos</h4>
+                                    <input type="text" id="txt-padecimientos" class="input-dobleColumna" disabled>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <h3>Vacunas</h3>
-                    <section class="contenedorColumna simpleColumna">
-                        <table id="tbl-vacunasMascota" class="tabla">
-                            <thead>
-                                <tr>
-                                    <th>Catálogo</th>
-                                    <th>Fecha de aplicación</th>
-                                    <th>fabricante</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </section>
+                        </section>
+                    </div>
                 </section>
             </section>
+            <section id="seccion-tablaMascotas" class="ocultar">
+                <h3>Vacunas</h3>
+                <section>
+                    <table id="tbl-vacunasMascota" class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Catálogo</th>
+                                <th>Fecha de aplicación</th>
+                                <th>fabricante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+        <hr>
+        <h2>Denuncias</h2>
+        <h3>Reportar proveedor</h3>
+        <section class="contenedorColumna .dobleColumna">
+            <div class="columna">
+                <label for="slt-generoCliente">Género</label>
+                <select id="slt-generoCliente">
+                        <option value="">--Seleccione una opción--</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+            </div>
+            <div class="columna">
+                <label for="txt-razonDenuncia">Razón de la denuncia</label>
+                <input type="text" id="txt-razonDenuncia">
+            </div>
+            <div class="columna">
+                <label for="txt-comentarioDenuncia">Comentario</label>
+                <textarea type="text" id="txt-comentarioDenuncia">
+            </div>
         </section>
     </main>
 

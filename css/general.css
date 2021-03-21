@@ -153,7 +153,8 @@ input {
     width: calc(100% - 30px);
 }
 
-.contenedorColumna {
+.contenedorColumna,
+.columnaDoble-50 {
     width: 100%;
     display: flow-root;
     margin-bottom: 30px;
@@ -174,6 +175,10 @@ input {
 .dobleColumna .columna:first-child,
 .simpleColumna .columna {
     width: calc(33% - 20px);
+}
+
+.columnaDoble-50 .columna {
+    width: calc(50% - 20px) !important;
 }
 
 .dobleColumna .columna:last-child {
