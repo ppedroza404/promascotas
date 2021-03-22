@@ -17,5 +17,4 @@ function mostrarInfo() {
         infoVacunas.style.display = "none";
     }
 }
-
 fotoMascota.addEventListener('onclick', mostrarInfo);
