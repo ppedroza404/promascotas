@@ -302,6 +302,14 @@ h2 {
     background-image: url("../img/index/interactuamosBtn1.jpg");
 }
 
+.imgBtn.voluntarios {
+    background-image: url("../img/index/interactuamosBtn2.jpg");
+}
+
+.imgBtn.donaciones {
+    background-image: url("../img/index/interactuamosBtn3.jpg");
+}
+
 .imgBtn span.accionesContenedor {
     text-align: center;
     background: rgba(255, 255, 255, 0);
@@ -360,3 +368,71 @@ h2 {
     width: 0;
     height: 0;
 }*/
+
+
+/* Inicio: Estilos de la sección "Acerca de nosotros" de Pro Mascotas LP */
+
+#seccionAcercaNosotros .contenedor p {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+#seccionAcercaNosotros .contenedor h3 {
+    color: black;
+    font-size: 20px;
+}
+
+
+/* Inicio: Estilos de la sección "Acerca de nosotros" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
+
+#seccionInteraccion {
+    background: #56cfe1;
+    min-height: 600px;
+}
+
+.interactuamos {
+    display: flow-root;
+}
+
+.seccion-izq,
+.seccion-der {
+    width: calc(50% - 50px);
+    padding: 25px;
+    min-height: 145px;
+}
+
+.seccion-izq {
+    float: left;
+}
+
+.seccion-der {
+    float: right;
+}
+
+.seccion-izq div {
+    border-right: #ddd solid 1px;
+    padding: 10px 0;
+}
+
+.seccion-der div {
+    padding: 10px 0;
+}
+
+.seccion-izq h3,
+.seccion-der h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.seccion-izq p,
+.seccion-der p {
+    width: 409px;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+
+/* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */

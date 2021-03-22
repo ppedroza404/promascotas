@@ -79,6 +79,10 @@ a:hover {
     transition: all 0.5s ease 0s;
 }
 
+.contenedor p {
+    letter-spacing: 1px;
+}
+
 
 /**** Botones y Sweet alert****/
 
