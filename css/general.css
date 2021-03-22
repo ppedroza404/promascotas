@@ -172,8 +172,7 @@ input {
 }
 
 .contenedorColumna textArea {
-    width: 94%;
-    margin-left: 10px;
+    width: calc(100% - 30px);
     height: 50px;
 }
 
@@ -188,6 +187,10 @@ input {
 
 .dobleColumna .columna:last-child {
     width: calc(66% - 20px);
+}
+
+.unicaColumna .columna {
+    width: calc(100% - 20px);
 }
 
 
