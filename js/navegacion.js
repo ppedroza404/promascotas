@@ -1,5 +1,6 @@
 'use strict';
 
+const btnAdmin = document.querySelector('#btn-admin');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -57,3 +58,14 @@ if (sessionStorage.getItem('usuarioConectado')) {
 bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
+
+/* Inicio de redirectProveedor de página inicio admin a página inicio porveedores*/
+const redirectProveedor = () => {
+    window.location.href = 'paginaInicioProveedor.html';
+};
+
+btnAdmin.addEventListener('click', () => {
+    redirectProveedor();
+});
+
+/* Fin de redirectProveedor de página inicio admin a página inicio porveedores*/
