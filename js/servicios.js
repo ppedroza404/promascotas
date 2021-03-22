@@ -144,6 +144,20 @@ let mascotasCliente = [{
     }
 ]
 
+let mascotasClientePerfil = [{
+    'nombre': 'Cloe',
+    'tipo': 'Perro',
+    'raza': 'Chihuahua',
+    'edad': 3,
+    'padecimientos': 'estreñimiento, zarna',
+    'vacunas': [
+        { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+        { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+        { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+    ],
+    'servicios': '15'
+}]
+
 let lista_clientes = [];
 
 let listaUsuarios = [{

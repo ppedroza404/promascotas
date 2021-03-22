@@ -302,42 +302,42 @@ const imprimir = () => {
 
     console.log('Info del negocio');
     console.log('=====================');
-    console.log(imagen);
-    console.log(nombreNegocio);
-    console.log(tipoId);
+    console.log('Imagen pefil: ' + imagen);
+    console.log('Nombre del negocio: ' + nombreNegocio);
+    console.log('Tipo de identificación: ' + tipoId);
     console.log('');
     console.log('Información Solicitante');
     console.log('-------------------');
-    console.log(nombreSolicitante);
-    console.log(primeApellidoSolicitante);
-    console.log(segundoApellidoSolicitante);
-    console.log(tipoIdSolicitante);
-    console.log(numeroID);
-    console.log(fechaNacimiento);
-    console.log('edad: ' + edad);
-    console.log(correoSolicitante);
+    console.log('Nombre: ' + nombreSolicitante);
+    console.log('Apellido: ' + primeApellidoSolicitante);
+    console.log('Apellido 2: ' + segundoApellidoSolicitante);
+    console.log('Tipo de identificación: ' + tipoIdSolicitante);
+    console.log('Numero ID: ' + numeroID);
+    console.log('Fecha de nacimiento: ' + fechaNacimiento);
+    console.log('Edad: ' + edad);
+    console.log('Correo: ' + correoSolicitante);
     console.log('');
     console.log('Dirección');
     console.log('-------------------');
-    console.log(provincia);
-    console.log(canton);
-    console.log(distrito);
-    console.log(otrasSennas);
-    console.log(descripcion);
+    console.log('Provincia: ' + provincia);
+    console.log('Canton: ' + canton);
+    console.log('Distrito: ' + distrito);
+    console.log('Otras señas: ' + otrasSennas);
+    console.log('Descripción del negocio: ' + descripcion);
 
     if (inputTipoId.value == 'Jurídica') {
         console.log('');
         console.log('Información Jurídica');
         console.log('=====================');
         console.log('Cédula Juridica: ' + cedulaJuridica);
-        console.log(nombreRepresentante);
-        console.log(primerApellidoRepresentante);
-        console.log(segundoApellidoRepresentante);
-        console.log(tipoIdRepresentante);
-        console.log(numeroIdRepresentante);
-        console.log(fechaNacimientoRepresentante);
-        console.log('edad: ' + edadRepresentante);
-        console.log(correoRepresentante);
+        console.log('Nombre: ' + nombreRepresentante);
+        console.log('Apellido: ' + primerApellidoRepresentante);
+        console.log('Apellido 2: ' + segundoApellidoRepresentante);
+        console.log('Tipo de identificación: ' + tipoIdRepresentante);
+        console.log('Numero ID: ' + numeroIdRepresentante);
+        console.log('Fecha de nacimiento: ' + fechaNacimientoRepresentante);
+        console.log('Edad: ' + edadRepresentante);
+        console.log('Correo: ' + correoRepresentante);
     }
     Swal.fire({
         'icon': 'success',

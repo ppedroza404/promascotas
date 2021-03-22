@@ -6,12 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Listar mascotas cliente</title>
+    <title>Perfil de mascota</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--Tienen que ir en todas las internas-->
+    <link rel="stylesheet" href="css/registrarProveedor.css">
+    <link rel="stylesheet" href="css/registrarMacotaCliente.css">
+    <link rel="stylesheet" href="css/perfilMascota.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Tienen que ir en todas las internas-->
     <link rel="stylesheet" href="css/tabla.css">
 </head>
@@ -147,22 +152,114 @@
             </div>
         </section>
     </header>
-
     <main class="contenedor">
-        <table id="tbl-usuarios" class="tabla">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Raza</th>
-                    <th>Vacunas</th>
-                    <th>Cantidad de servicios</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
+        <h1>Perfil de mascotas</h1>
+        <h2>Mi mascota</h2>
+        <h3 id="h3-nombreMascota"></h3>
+        <section>
+            <form>
+                <div class="contenedorColumna simpleColumna">
+                    <div class="columna">
+                        <label for="txt-tipoMascota">Tipo de mascota</label>
+                        <input type="text" id="txt-tipoMascota">
+                    </div>
 
-            </tbody>
-        </table>
+                    <div class="columnaMascota">
+                        <label for="txt-raza">Raza</label>
+                        <input id="txt-raza" type="text">
+
+                    </div>
+                    <div class="columnaMascota">
+                        <label for="txt-edad">Edad</label>
+                        <input type="text" id="txt-edad">
+                    </div>
+                </div>
+                <div class="contenedorColumna dobleColumna">
+                    <div class="columna">
+
+                        <div class="div-imgUpload">
+                            <div class="previstaImagen" id="prevImagen">
+                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div>
+                            <label for="txt-padecimientos">Padecimientos</label>
+                            <input type="text" id="txt-padecimientos" class="inpt-raza">
+                        </div>
+                        <div class="columna">
+                            <span>Vacunas</span>
+                            <div class="contenedor">
+                                <table id="tbl-mascotas" class="tabla">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Fecha</th>
+                                            <th>Fabricante</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3>Agregar vacunas</h3>
+                <hr>
+                <div class="columna">
+                    <div class="contenedorColumna simpleColumna" id="div-vacuna0">
+                        <div class="columna">
+                            <label for="txt-nombreVacuna">Nombre de la vacuna</label>
+                            <input type="text" id="txt-nombreVacuna">
+                        </div>
+                        <div class="columna ">
+                            <label for="txt-fechaVacuna">Fecha de aplicación</label>
+                            <input type="date" id="txt-fechaVacuna">
+                        </div>
+                        <div class="columna">
+                            <label for="txt-fabricante">Fabricante</label>
+                            <input type="text" id="txt-fabricante">
+                        </div>
+                    </div>
+                    <div>
+                        <button class="morada" type="button" id="btn-vacuna1"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="contenedorColumna simpleColumna" id="div-vacuna1">
+                        <hr>
+                        <div class="columna">
+                            <label for="txt-nombreVacuna1">Nombre de la vacuna</label>
+                            <input type="text" id="txt-nombreVacuna1">
+                        </div>
+                        <div class="columna">
+                            <label for="txt-fechaVacuna1">Fecha de aplicación</label>
+                            <input type="date" id="txt-fechaVacuna1">
+                        </div>
+                        <div class="columna">
+                            <label for="txt-fabricante1">Fabricante</label>
+                            <input type="text" id="txt-fabricante1">
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button class="morada" type="button" id="btn-vacuna1Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </div>
+
+
+                </div>
+                <div class="btn-registar btn-general btn-mascota " type="button" id="btn-guardarMascota">
+                    <button type="button" id="btn-registrar">Guardar</button>
+                </div>
+
+            </form>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
@@ -171,7 +268,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/mascotasCliente.js"></script>
+    <script src="js/perfilMascota.js "></script>
+
 </body>
 
 </html>

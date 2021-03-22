@@ -1,0 +1,8 @@
+.contenedorColumna .columnaMascota {
+    float: left;
+    padding: 5px 10px;
+}
+
+.simpleColumna .columnaMascota {
+    width: calc(33% - 20px);
+}

@@ -389,43 +389,47 @@ const imprimir = () => {
     let nacimiento = new Date(inputFechaNacimiento.value);
     let edad = calcularEdad(nacimiento);
 
-
-    console.log(imagen);
-    console.log(nombreMascota);
-    console.log(tipoMascota);
+    console.log('Información de la mascota');
+    console.log('=====================');
+    console.log('Imagen pefil: ' + imagen);
+    console.log('Nombre: ' + nombreMascota);
+    console.log('Tipo: ' + tipoMascota);
     if (inputTipoMascota.value == 'Gato') {
-        console.log(razaGato);
+        console.log('Raza: ' + razaGato);
     } else {
-        console.log(razaPerro);
+        console.log('Raza: ' + razaPerro);
     }
-    console.log(padecimientos);
-    console.log(nacimiento);
-    console.log('edad: ' + edad);
+    console.log('Padecimientos: ' + padecimientos);
+    console.log('Fecha de nacimiento: ' + nacimiento);
+    console.log('Edad: ' + edad);
+    console.log('');
+    console.log('Información de las vacunas');
+    console.log('=====================');
     if (inputNombreVacuna.value != '') {
-        console.log(nombreVacuna);
-        console.log(fechaVacuna);
-        console.log(fabricante);
+        console.log('Nombre: ' + nombreVacuna);
+        console.log('Fecha de aplicación: ' + fechaVacuna);
+        console.log('Fabricante: ' + fabricante);
     }
     if (inputNombreVacuna1.value != '') {
-        console.log(nombreVacuna1);
-        console.log(fechaVacuna1);
-        console.log(fabricante1);
+        console.log('Nombre: ' + nombreVacuna1);
+        console.log('Fecha de aplicación: ' + fechaVacuna1);
+        console.log('Fabricante: ' + fabricante1);
     }
     if (inputNombreVacuna2.value != '') {
-        console.log(nombreVacuna2);
-        console.log(fechaVacuna2);
-        console.log(fabricante2);
+        console.log('Nombre: ' + nombreVacuna2);
+        console.log('Fecha de aplicación: ' + fechaVacuna2);
+        console.log('Fabricante: ' + fabricante2);
     }
     if (inputNombreVacuna3.value != '') {
-        console.log(nombreVacuna3);
-        console.log(fechaVacuna3);
-        console.log(fabricante3);
+        console.log('Nombre: ' + nombreVacuna3);
+        console.log('Fecha de aplicación: ' + fechaVacuna3);
+        console.log('Fabricante: ' + fabricante3);
     }
 
     if (inputNombreVacuna4.value != '') {
-        console.log(nombreVacuna4);
-        console.log(fechaVacuna4);
-        console.log(fabricante4);
+        console.log('Nombre: ' + nombreVacuna4);
+        console.log('Fecha de aplicación: ' + fechaVacuna4);
+        console.log('Fabricante: ' + fabricante4);
     }
 
     Swal.fire({
@@ -440,3 +444,28 @@ const imprimir = () => {
 };
 
 btnRegistrarMascota.addEventListener('click', validar);
+
+//cambiar imagen
+const imgPerfil = document.querySelector('#img-proveedor');
+const archivoCambiado = (evento) => {
+    let elArchivo = evento.target.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(evt) {
+        let datosImagen = evt.target.result;
+
+        imgPerfil.src = event.target.result;
+    }
+    reader.readAsDataURL(elArchivo);
+
+}
+const readUrl = () => {
+    let tieneArchivoApi = (window.File && window.FileReader);
+
+    if (!tieneArchivoApi) {
+        console.log('El browser no soporta API');
+        return;
+    }
+    inputImagen.addEventListener('change', archivoCambiado)
+}
+window.addEventListener('load', readUrl);

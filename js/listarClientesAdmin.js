@@ -28,6 +28,9 @@ const mostrarTablaUsuario = () => {
             fila.insertCell().innerHTML = usuario.provincia;
             fila.insertCell().innerHTML = usuario.canton;
             fila.insertCell().innerHTML = usuario.distrito;
+
+
+
         }
 
     });

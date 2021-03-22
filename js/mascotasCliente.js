@@ -10,6 +10,18 @@ const mostrarTabla = () => {
         fila.insertCell().innerHTML = mascota.vacunas;
         fila.insertCell().innerHTML = mascota.servicios;
 
+        let celdaAcciones = fila.insertCell();
+
+        let botonModificar = document.createElement('button');
+        botonModificar.classList.add('btn-mascota');
+        botonModificar.innerText = 'Ver / Editar';
+        botonModificar.addEventListener('click', () => {
+            /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
+            window.location.href = 'perfilMascota.html';
+        });
+
+        celdaAcciones.appendChild(botonModificar);
+
         /*let celdaAcciones = fila.insertCell();*/
 
         /*let botonModificar = document.createElement('button');
