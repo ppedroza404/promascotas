@@ -1,6 +1,10 @@
 'use strict';
 
-const btnAdmin = document.querySelector('#btn-admin');
+
+const btnCatalogo = document.querySelector('#btn-registrarCatalogo');
+
+
+
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -59,13 +63,16 @@ bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
 
-/* Inicio de redirectProveedor de página inicio admin a página inicio porveedores*/
-const redirectProveedor = () => {
-    window.location.href = 'paginaInicioProveedor.html';
+/* Inicio para redirect a registrar nuevo catálogo*/
+
+
+const registrarCatalogo = () => {
+    window.location.href = 'registrarCatalogoAdmin.html';
 };
 
-btnAdmin.addEventListener('click', () => {
-    redirectProveedor();
+btnCatalogo.addEventListener('click', () => {
+    registrarCatalogo();
 });
 
-/* Fin de redirectProveedor de página inicio admin a página inicio porveedores*/
+
+/*FIN de redirect a registrar nuevo catálogo*/
