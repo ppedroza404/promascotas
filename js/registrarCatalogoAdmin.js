@@ -1,4 +1,7 @@
 'use strict';
+
+
+
 const btnRegistrarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 const txtNombreCatalogo = document.querySelector('#txt-nombreCatalogo');
 

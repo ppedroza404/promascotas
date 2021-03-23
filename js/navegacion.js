@@ -1,10 +1,5 @@
 'use strict';
-
-
 const btnCatalogo = document.querySelector('#btn-registrarCatalogo');
-
-
-
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -39,8 +34,6 @@ const nombreUsuarioConectado = () => {
     nombreUsuario.innerHTML = usuario.nombre
 };
 
-
-
 const menuSinAutenticar = () => {
     itemsCliente.classList.add('ocultar');
     itemsProveedor.classList.add('ocultar');
@@ -64,8 +57,6 @@ bntCerrarSesion.addEventListener('click', () => {
 });
 
 /* Inicio para redirect a registrar nuevo catálogo*/
-
-
 const registrarCatalogo = () => {
     const var1 = 2;
     let var2 = 4;
@@ -77,7 +68,13 @@ const registrarCatalogo = () => {
     // no pude determinar que era. Pendiente para revisión.
 };
 
+<<<<<<< HEAD
 btnCatalogo.addEventListener('click', registrarCatalogo);
 
 
+=======
+btnCatalogo.addEventListener('click', () => {
+    registrarCatalogo();
+});
+>>>>>>> c09fc72b60b0d9de5fe29f93cd5a2668bf16b933
 /*FIN de redirect a registrar nuevo catálogo*/
