@@ -56,8 +56,10 @@ bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
 
+
+
 /* Inicio para redirect a registrar nuevo catálogo*/
-const registrarCatalogo = () => {
+/*const registrarCatalogo = () => {
     const var1 = 2;
     let var2 = 4;
 
@@ -68,13 +70,7 @@ const registrarCatalogo = () => {
     // no pude determinar que era. Pendiente para revisión.
 };
 
-<<<<<<< HEAD
-btnCatalogo.addEventListener('click', registrarCatalogo);
-
-
-=======
 btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
-});
->>>>>>> c09fc72b60b0d9de5fe29f93cd5a2668bf16b933
+});*/
 /*FIN de redirect a registrar nuevo catálogo*/
