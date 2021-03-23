@@ -67,12 +67,17 @@ bntCerrarSesion.addEventListener('click', () => {
 
 
 const registrarCatalogo = () => {
-    window.location.href = 'registrarCatalogoAdmin.html';
+    const var1 = 2;
+    let var2 = 4;
+
+    console.log(var1 + var2);
+
+    // Esto es una prueba para determinar que causa el addEventListener error
+    //cannot read property 'addeventlistener' of null
+    // no pude determinar que era. Pendiente para revisión.
 };
 
-btnCatalogo.addEventListener('click', () => {
-    registrarCatalogo();
-});
+btnCatalogo.addEventListener('click', registrarCatalogo);
 
 
 /*FIN de redirect a registrar nuevo catálogo*/

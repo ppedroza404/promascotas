@@ -1,29 +1,5 @@
 'use strict';
 
-/* Función para habilitar o deshabilitar los campos de Cantón y Distrito */
-
-const provincia = document.querySelector('#slt-provincia');
-const canton = document.querySelector('#slt-canton');
-const distrito = document.querySelector('#slt-distrito');
-
-const habilitarCanton = () => {
-    if (provincia != '') {
-        canton.disabled = false;
-    } else {
-        canton.disabled = true;
-    }
-};
-const habilitarDistrito = () => {
-    if (canton != '') {
-        distrito.disabled = false;
-    } else {
-        distrito.disabled = true;
-    }
-
-};
-provincia.addEventListener('change', habilitarCanton);
-canton.addEventListener('change', habilitarDistrito);
-
 
 const btnRegistrarCliente = document.querySelector('#btn-registrarCliente');
 const inputImagen = document.querySelector('#input-imagen');
@@ -40,6 +16,36 @@ const sltProvincia = document.querySelector('#slt-provincia');
 const sltCanton = document.querySelector('#slt-canton');
 const sltDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
+
+/* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
+
+const habilitarCanton = () => {
+    if (sltProvincia.value != '') {
+        sltCanton.disabled = false;
+        if (sltCanton.value != '') {
+            sltDistrito.disabled = false;
+        }
+    } else {
+        sltCanton.disabled = true;
+        sltDistrito.disabled = true;
+    }
+
+};
+
+sltProvincia.addEventListener('change', habilitarCanton);
+
+const habilitarDistrito = () => {
+    if (sltCanton.value != '') {
+        sltDistrito.disabled = false;
+    } else {
+        sltDistrito.disabled = true;
+    }
+
+};
+
+sltCanton.addEventListener('change', habilitarDistrito);
+
+/* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
 
 /* Inicio: Función para validar la edad */
 
@@ -82,6 +88,37 @@ const calcularEdad = (nacimiento) => {
 
 /* Fin: Función para calcular la edad */
 
+/* Inicio: Función para definir formato del tipo de ID */
+
+/*
+if (sltTipoId.value == 'nacional') {
+    if (regexCedNacional.test(inputNumId.value) == false) {
+        error = true;
+        inputNumId.classList.add('error');
+    } else {
+        inputNumId.classList.remove('error');
+    }
+} else if (sltTipoId.value == 'dimex') {
+    if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
+        error = true;
+        inputNumId.classList.add('error');
+    } else {
+        inputNumId.classList.remove('error');
+    }
+} else if (sltTipoId.value == 'pasaporte') {
+    if (regexPasaporte.test(inputNumId.value) == false) {
+        error = true;
+        inputNumId.classList.add('error');
+    } else {
+        inputNumId.classList.remove('error');
+    }
+} else {
+    sltTipoId.classList.remove('error');
+}
+*/
+
+/* Fin: Función para definir formato del tipo de ID */
+
 /* Inicio: Función para obtener la prevista de la imagen o avatar */
 
 
@@ -98,7 +135,7 @@ const validarDatos = () => {
     let regexDimex1 = /^\d{11}$/;
     let regexDimex2 = /^\d{12}$/;
 
-    Validación por núm de ID(regex) por tipo de ID
+    //Validación por núm de ID(regex) por tipo de ID
 
     if (inputImagen.value == '') {
         error = true;
@@ -136,33 +173,6 @@ const validarDatos = () => {
     } else {
         sltTipoId.classList.remove('error');
     }
-    /*
-    if (sltTipoId.value == 'nacional') {
-        if (regexCedNacional.test(inputNumId.value) == false) {
-            error = true;
-            inputNumId.classList.add('error');
-        } else {
-            inputNumId.classList.remove('error');
-        }
-    } else if (sltTipoId.value == 'dimex') {
-        if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
-            error = true;
-            inputNumId.classList.add('error');
-        } else {
-            inputNumId.classList.remove('error');
-        }
-    } else if (sltTipoId.value == 'pasaporte') {
-        if (regexPasaporte.test(inputNumId.value) == false) {
-            error = true;
-            inputNumId.classList.add('error');
-        } else {
-            inputNumId.classList.remove('error');
-        }
-    } else {
-        sltTipoId.classList.remove('error');
-    }
-    */
-
     if (inputNumId.value == '') {
         error = true;
         inputNumId.classList.add('error');
