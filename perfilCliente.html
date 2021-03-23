@@ -197,7 +197,7 @@
             <div class="columna columna-noMargenBottom">
                 <div>
                     <h3 for="txt-numId">Número de ID</h3>
-                    <input type="text" id="txt-nuId" class="input-dobleColumna" disabled>
+                    <input type="text" id="txt-numId" class="input-dobleColumna" disabled>
                 </div>
 
             </div>
@@ -216,7 +216,7 @@
                 <div class="columna">
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev" onclick="mostrarInfo()" cursor:>
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev" onclick="mostrarInfoMascota()">
                         </div>
                         <div class="btn-general">
                             <button type="button" id="btn-editarFoto">Cambiar foto</button>
@@ -330,7 +330,8 @@
             <!--Falta JS para obtener lista de proveedores mejor calificados-->
         </section>
     </main>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/perfilCliente.js"></script>
 </body>
