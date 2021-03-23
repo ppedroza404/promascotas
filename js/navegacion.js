@@ -74,3 +74,15 @@ btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });*/
 /*FIN de redirect a registrar nuevo catálogo*/
+
+
+/*  ---------------  */
+/*const registrarCatalogo = () => {
+    window.location.href = 'registrarCatalogoAdmin.html';
+};
+
+btnCatalogo.addEventListener('click', () => {
+    registrarCatalogo();
+});*/
+
+/*  ---------------  */
