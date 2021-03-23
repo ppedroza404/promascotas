@@ -1,5 +1,4 @@
 'use strict';
-const btnCatalogo = document.querySelector('#btn-registrarCatalogo');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -55,15 +54,3 @@ if (sessionStorage.getItem('usuarioConectado')) {
 bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
-
-
-/*  ---------------  */
-const registrarCatalogo = () => {
-    window.location.href = 'registrarCatalogoAdmin.html';
-};
-
-btnCatalogo.addEventListener('click', () => {
-    registrarCatalogo();
-});
-
-/*  ---------------  */
