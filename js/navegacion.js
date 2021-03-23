@@ -1,10 +1,12 @@
 'use strict';
 
+const btnAdmin = document.querySelector('#btn-admin');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
 const itemsAdministrador = document.querySelector('#menuUlAdministrador');
 const itemsSinAutenticar = document.querySelector('#menuUlSinAutenticar');
+const nombreUsuario = document.querySelector('#nombreClienteMenu');
 
 const mostrarOpcionesMenu = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
@@ -27,6 +29,14 @@ const mostrarOpcionesMenu = () => {
             break;
     }
 };
+
+const nombreUsuarioConectado = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    nombreUsuario.innerHTML = usuario.nombre
+};
+
+
+
 const menuSinAutenticar = () => {
     itemsCliente.classList.add('ocultar');
     itemsProveedor.classList.add('ocultar');
@@ -40,7 +50,6 @@ const cerrarSesion = () => {
 };
 
 if (sessionStorage.getItem('usuarioConectado')) {
-    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     mostrarOpcionesMenu();
 } else {
     menuSinAutenticar();
@@ -49,3 +58,14 @@ if (sessionStorage.getItem('usuarioConectado')) {
 bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
+
+/* Inicio de redirectProveedor de página inicio admin a página inicio porveedores*/
+const redirectProveedor = () => {
+    window.location.href = 'paginaInicioProveedor.html';
+};
+
+btnAdmin.addEventListener('click', () => {
+    redirectProveedor();
+});
+
+/* Fin de redirectProveedor de página inicio admin a página inicio porveedores*/

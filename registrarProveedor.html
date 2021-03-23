@@ -157,7 +157,7 @@
                         <label for="div-imgUpload">Fotografía o avatar</label>
                         <div class="div-imgUpload">
                             <div class="previstaImagen" id="prevImagen">
-                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                                <img src="img/imgPrevLogo.jpg" alt="Prevista" id="img-proveedor" class="img-proveedor">
                             </div>
                             <input type="file" name="input-img" id="input-imagen">
                         </div>
@@ -222,6 +222,10 @@
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
+                        <label for="txt-telefono">Teléfono</label>
+                        <input type="tel" id="txt-telefono">
+                    </div>
+                    <div class="columna">
                         <label for="txt-correoSolicitante">Correo</label>
                         <input type="email" id="txt-correoSolicitante">
                     </div>
@@ -265,10 +269,15 @@
                 </div>
                 <div class="contenedorColumna simpleColumna">
                     <div class="columna">
+                        <label for="txt-telefonoRepresentante">Teléfono</label>
+                        <input type="tel" id="txt-telefonoRepresentante" disabled>
+                    </div>
+                    <div class="columna">
                         <label for="txt-correoRepresentante">Correo</label>
                         <input type="email" id="txt-correoRepresentante" disabled>
                     </div>
                 </div>
+
                 <hr>
                 <p class="titulo">
                     <h3>Dirección</h3>
@@ -309,8 +318,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="contenedorColumna">
-                    <div>
+                <div class="contenedorColumna unicaColumna">
+                    <div class="columna">
                         <label for="txt-otrasSennas">Otras Señas</label>
                         <textarea name="txt-otrasSennas" id="txt-otrasSennas" cols="100" rows="5"></textarea>
                     </div>
@@ -321,9 +330,22 @@
                 </p>
 
                 <div class="contenedorColumna">
-                    <div>
-                        <label for="txt-descripcion">Por favor describa sus servicios</label>
-                        <textarea name="txt-descripcion" id="txt-descripcion" cols="100" rows="5"></textarea>
+                    <div class="contenedorColumna simpleColumna">
+                        <div class="columna">
+                            <label for="slt-tipoServicio">Tipo de servicio</label>
+                            <select id="slt-tipoServicio">
+                                <option value="">--Seleccione una provincia--</option>
+                                <option value="Corte de pelo">Corte de pelo</option>
+                                <option value="Alimentos">Alimentos</option>
+                                <option value="Servicios medicos">Servicios medicos</option> 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="contenedorColumna unicaColumna">
+                        <div class="columna">
+                            <label for="txt-descripcion">Por favor describa sus servicios</label>
+                            <textarea name="txt-descripcion" id="txt-descripcion" cols="100" rows="5"></textarea>
+                        </div>
                     </div>
                 </div>
                 <hr>

@@ -10,6 +10,9 @@ const tipoIdRepresentante = document.querySelector('#slt-tipoIdRepresentante');
 const numeroIdRepresentante = document.querySelector('#txt-numeroIdRepresentante');
 const fechaNacimientoRepresentante = document.querySelector('#txt-fechaNacimientoRepresentante');
 const correoRepresentante = document.querySelector('#txt-correoRepresentante');
+const telefonoRep = document.querySelector('#txt-telefonoRepresentante');
+const telefonoCliente = document.querySelector('#txt-telefono');
+const tipoServicio = document.querySelector('#slt-tipoServicio');
 
 const enableSelect = () => {
     if (tipoId.value == 'Jurídica') {
@@ -21,6 +24,7 @@ const enableSelect = () => {
         numeroIdRepresentante.disabled = false;
         fechaNacimientoRepresentante.disabled = false;
         correoRepresentante.disabled = false;
+        telefonoRep.disabled = false;
     } else {
         juridica.disabled = true;
         nombreRepresentante.disabled = true;
@@ -30,6 +34,7 @@ const enableSelect = () => {
         numeroIdRepresentante.disabled = true;
         fechaNacimientoRepresentante.disabled = true;
         correoRepresentante.disabled = true;
+        telefonoRep.disabled = true;
 
     }
 
@@ -63,6 +68,10 @@ const inputCanton = document.querySelector('#slt-canton');
 const inputDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
 const inputDescripcion = document.getElementById('txt-descripcion');
+const inputTelefonoRep = document.querySelector('#txt-telefonoRepresentante');
+const inputTelefonoCliente = document.querySelector('#txt-telefono');
+const inputTipoServicio = document.querySelector('#slt-tipoServicio');
+
 
 const habilitarCanton = () => {
     if (inputProvincia.value != '') {
@@ -163,6 +172,12 @@ const validar = () => {
     } else {
         inputFechaNacimiento.classList.remove('error');
     }
+    if (inputTelefonoCliente.value == '') {
+        error = true;
+        inputTelefonoCliente.classList.add('error');
+    } else {
+        inputTelefonoCliente.classList.remove('error');
+    }
     if (regexCorreo.test(inputCorreoSolicitante.value) == false) {
         error = true;
         inputCorreoSolicitante.classList.add('error');
@@ -205,6 +220,13 @@ const validar = () => {
         inputFechaNacimientoRepresentante.classList.add('error');
     } else {
         inputFechaNacimientoRepresentante.classList.remove('error');
+    }
+
+    if ((inputTelefonoRep.value == '') && (inputTelefonoRep.disabled == false)) {
+        error = true;
+        inputTelefonoRep.classList.add('error');
+    } else {
+        inputTelefonoRep.classList.remove('error');
     }
     if ((regexCorreo.test(inputCorreoRepresentante.value) == false) && (correoRepresentante.disabled == false)) {
         error = true;
@@ -299,45 +321,61 @@ const imprimir = () => {
     let distrito = inputDistrito.value;
     let otrasSennas = inputOtrasSennas.value;
     let descripcion = inputDescripcion.value;
+    let telefono = inputTelefonoCliente.value;
+    let telefonoRep = inputTelefonoRep.value;
+    let tipoServicio = inputTipoServicio.value;
 
     console.log('Info del negocio');
     console.log('=====================');
-    console.log(imagen);
-    console.log(nombreNegocio);
-    console.log(tipoId);
+    console.log('Imagen pefil: ' + imagen);
+    console.log('Nombre del negocio: ' + nombreNegocio);
+    console.log('Tipo de identificación: ' + tipoId);
     console.log('');
     console.log('Información Solicitante');
     console.log('-------------------');
-    console.log(nombreSolicitante);
-    console.log(primeApellidoSolicitante);
-    console.log(segundoApellidoSolicitante);
-    console.log(tipoIdSolicitante);
-    console.log(numeroID);
-    console.log(fechaNacimiento);
-    console.log('edad: ' + edad);
-    console.log(correoSolicitante);
+    console.log('Nombre: ' + nombreSolicitante);
+    console.log('Apellido: ' + primeApellidoSolicitante);
+    console.log('Apellido 2: ' + segundoApellidoSolicitante);
+    console.log('Tipo de identificación: ' + tipoIdSolicitante);
+    console.log('Numero ID: ' + numeroID);
+    console.log('Fecha de nacimiento: ' + fechaNacimiento);
+    console.log('Edad: ' + edad);
+    console.log('Teléfono: ' + telefono);
+    console.log('Correo: ' + correoSolicitante);
     console.log('');
     console.log('Dirección');
     console.log('-------------------');
-    console.log(provincia);
-    console.log(canton);
-    console.log(distrito);
-    console.log(otrasSennas);
-    console.log(descripcion);
+    console.log('Provincia: ' + provincia);
+    console.log('Canton: ' + canton);
+    console.log('Distrito: ' + distrito);
+    console.log('Otras señas: ' + otrasSennas);
+    console.log('Tipo de servicio: ' + tipoServicio);
+    console.log('Descripción del negocio: ' + descripcion);
 
     if (inputTipoId.value == 'Jurídica') {
         console.log('');
         console.log('Información Jurídica');
         console.log('=====================');
         console.log('Cédula Juridica: ' + cedulaJuridica);
-        console.log(nombreRepresentante);
-        console.log(primerApellidoRepresentante);
-        console.log(segundoApellidoRepresentante);
-        console.log(tipoIdRepresentante);
-        console.log(numeroIdRepresentante);
-        console.log(fechaNacimientoRepresentante);
-        console.log('edad: ' + edadRepresentante);
-        console.log(correoRepresentante);
+        console.log('Nombre: ' + nombreRepresentante);
+        console.log('Apellido: ' + primerApellidoRepresentante);
+        console.log('Apellido 2: ' + segundoApellidoRepresentante);
+        console.log('Tipo de identificación: ' + tipoIdRepresentante);
+        console.log('Numero ID: ' + numeroIdRepresentante);
+        console.log('Fecha de nacimiento: ' + fechaNacimientoRepresentante);
+        console.log('Edad: ' + edadRepresentante);
+        console.log('Teléfono: ' + telefonoRep);
+        console.log('Correo: ' + correoRepresentante);
+    }
+    console.log('');
+    if (edad < 18) {
+        console.log('=====================');
+        console.log('NO ES MAYOR DE EDAD')
+        console.log('!!!!!!!!!!!!!!!!!!!!');
+    } else {
+        console.log('=====================');
+        console.log('ES MAYOR DE EDAD')
+        console.log('=====================');
     }
     Swal.fire({
         'icon': 'success',
@@ -345,8 +383,33 @@ const imprimir = () => {
         'text': 'Pronto recibirá un correo electrónico',
         'confirmButtonText': 'Entendido'
     }).then(() => {
-        window.location.href = 'inicio-sesion.html';
+        window.location.href = 'index.html';
     });
 
 };
 btnRegistrarProveedor.addEventListener('click', validar);
+
+//cambiar imagen
+const imgPerfil = document.querySelector('#img-proveedor');
+const archivoCambiado = (evento) => {
+    let elArchivo = evento.target.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(evt) {
+        let datosImagen = evt.target.result;
+
+        imgPerfil.src = event.target.result;
+    }
+    reader.readAsDataURL(elArchivo);
+
+}
+const readUrl = () => {
+    let tieneArchivoApi = (window.File && window.FileReader);
+
+    if (!tieneArchivoApi) {
+        console.log('El browser no soporta API');
+        return;
+    }
+    inputImagen.addEventListener('change', archivoCambiado)
+}
+window.addEventListener('load', readUrl);

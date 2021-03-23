@@ -1,10 +1,16 @@
+html {
+    background: rgb(28, 1, 43);
+    background: linear-gradient(62deg, rgba(28, 1, 43, 0.9976191160057774) 0%, rgba(0, 0, 0, 1) 27%);
+}
+
 body {
-    background-color: #070c0f;
-    background-image: url('../img/bgrInicioSesion.jpg');
-    background-repeat: no-repeat;
-    background-position: 5% 0%;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
+    background-color: transparent;
+    background-image: url('../img/bgrInicioSesion.jpg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 100px) -75%;
+    min-height: 100vh;
 }
 
 a:hover {
@@ -25,11 +31,11 @@ a:hover {
     display: block;
     height: 289px;
     width: 584px;
-    margin: 3% auto 0;
+    margin: 25px auto 50px;
 }
 
 .capturaContenedor {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(70, 70, 70, 0.1);
     display: block;
     margin: 0 auto;
     padding: 20px;

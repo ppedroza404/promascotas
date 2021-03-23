@@ -9,11 +9,11 @@
     margin: 0px 10px;
 }
 
-#txt-codigoVerificacion {
+#txt-codigoSeguridad {
     width: 40%;
     float: left;
 }
 
-.img-codigoVerificacion {
+.img-codigoSeguridad {
     float: right;
 }

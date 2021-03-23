@@ -16,10 +16,11 @@ form div select:disabled {
 }
 
 .mapa {
-    position: relative;
+    /*position: relative;*/
     text-align: center;
     height: 500px;
-    width: 10300px;
+    width: 1030px;
+    margin: 0 auto;
 }
 
 .gmapas {
@@ -27,10 +28,20 @@ form div select:disabled {
     background: none!important;
     height: 500px;
     width: 1030px;
+    margin: 0 auto;
 }
 
 iframe {
     margin: 0 auto;
-    width: 200%;
+    width: 100%;
     height: 500px;
+}
+
+.img-proveedor {
+    height: 177px;
+    width: 175px;
+}
+
+#btn-registrarProveedor {
+    margin-top: 30px;
 }

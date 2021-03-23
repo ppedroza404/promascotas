@@ -4,7 +4,7 @@ const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 
 const limpiarTabla = () => {
-    for (var i = tablaCatalogo.rows.length - 1; i > 0; i--) {
+    for (var i = tablaCatalogo.rows.length - 1; i >= 0; i--) {
         tablaCatalogo.deleteRow(i);
     }
 }
@@ -14,15 +14,17 @@ const mostrarCatalogoSeleccionado = () => {
     limpiarTabla();
 
     if (selectCatalogo.value == 'enfermedades') {
-        monstrarTablaEnfermedades()
+        mostrarTablaEnfermedades()
+    } else if (selectCatalogo.value == 'tiposMascota') {
+        mostrarTablaTiposMascota()
     } else if (selectCatalogo.value == 'razas') {
-        monstrarTablaRazas()
+        mostrarTablaRazas()
     } else if (selectCatalogo.value == 'vacunas') {
         mostrarTablaVacunas()
     }
 };
 
-const monstrarTablaEnfermedades = () => {
+const mostrarTablaEnfermedades = () => {
 
     limpiarTabla();
 
@@ -32,13 +34,23 @@ const monstrarTablaEnfermedades = () => {
     })
 }
 
-const monstrarTablaRazas = () => {
+const mostrarTablaRazas = () => {
 
     limpiarTabla();
 
     razasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.razas;
+    })
+}
+
+const mostrarTablaTiposMascota = () => {
+
+    limpiarTabla();
+
+    tiposMascotaAdmin.forEach(item => {
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.tiposMascota;
     })
 }
 

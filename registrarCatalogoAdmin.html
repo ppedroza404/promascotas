@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Listar usuarios admin </title>
+    <title>Registrar Catálogo Admin</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
     <link rel="stylesheet" href="css/tabla.css">
-    <link rel="stylesheet" href="css/listarInformacion.css">
 
 </head>
 
@@ -117,9 +116,6 @@
                             <a href="###">Usuarios</a>
                             <ul>
                                 <li>
-                                    <a href="listarUsuariosAdmin.html">Usuarios</a>
-                                </li>
-                                <li>
                                     <a href="###">Usuarios denunciados</a>
                                 </li>
                             </ul>
@@ -153,51 +149,42 @@
         </section>
     </header>
 
-    <main>
-        <div class="contenedor">
-            <section>
+    <main class="contenedor">
+        <h1>Registro de un catálogo</h1>
+        <h2>Formulario para registro de una nueva enfermedad, una nueva raza o una nueva vacuna.</h2>
+        <hr>
+        <form id="frm-contacto">
+            <section class="contenedorColumna simpleColumna">
 
-                <div class='contenedor'>
 
-                    <label for="slt-tipoUsuario">Tipo de usuario :</label>
-                    <select name="slt-tipoUsuario" id="slt-tipoUsuario">
-<<<<<<< HEAD
-                        <option value="" selected>Seleccione una opcion</option>
-=======
-                        <option value="">-- Seleccione un tipo de usuario --</option>
->>>>>>> a270ced27925d637345d221ada5dcab280038d47
-                        <option value="Cliente">Usuarios</option>
-                        <option value="Proveedor">Proveedores</option>
-                    </select>
+                <div class="columna">
+
+
+                    <div>
+                        <label for="slt-catalogo">Catálogo del administrador</label>
+                        <select name="slt-catalogo" id="slt-catalogo" class="input-dobleColumna" required>
+                             <option value="">Seleccione una opción del catálogo</option>
+                            <option value="enfermedades">Enfermedades</option>
+                            <option value="razas">Razas</option>
+                            <option value="vacunas">Vacunas</option>
+                            <option value="tipoMascota">Tipo de mascota</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="txt-nombreCatalogo">Nombre</label>
+                        <input type="text" id="txt-nombreCatalogo" class="input-dobleColumna" required>
+                    </div>
 
                 </div>
 
-
             </section>
-        </div>
 
-        <div class="contenedor">
-            <table id="tbl-usuarios" class="tabla">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Correo</th>
-                        <th>Cantidad Mascotas</th>
-                        <th>Telefono</th>
-                        <th>Tipo ID</th>
-                        <th>Numero de ID</th>
-                        <th>Provincia</th>
-                        <th>Canton</th>
-                        <th>Distrito</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
+            <hr>
+            <div class="btn-general">
+                <button type="button" id="btn-registrarCatalogo">Registrar</button>
+            </div>
+        </form>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
@@ -206,8 +193,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/listarClientesAdmin.js"></script>
-
+    <script src="js/registrarCatalogoAdmin.js"></script>
 </body>
 
 </html>

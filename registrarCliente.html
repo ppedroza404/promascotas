@@ -158,9 +158,10 @@
                     <label for="div-imgUpload">Fotografía o avatar</label>
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
                         </div>
-                        <span><input type="file" name="input-img" id="input-imagen"></span>
+                        <span><input type="file" name="input-img" id="input-imagen" onchange="document.getElementById('imagen-prev').src = window.URL.createObjectURL(this.files[0])"></span>
+                        <!--PS: createObjectURL is short string referencing the file data in-memory -->
                     </div>
                 </div>
                 <div class="columna">

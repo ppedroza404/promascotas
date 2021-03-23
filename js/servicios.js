@@ -144,6 +144,20 @@ let mascotasCliente = [{
     }
 ]
 
+let mascotasClientePerfil = [{
+    'nombre': 'Cloe',
+    'tipo': 'Perro',
+    'raza': 'Chihuahua',
+    'edad': 3,
+    'padecimientos': 'estreñimiento, zarna',
+    'vacunas': [
+        { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+        { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+        { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+    ],
+    'servicios': '15'
+}]
+
 let lista_clientes = [];
 
 let listaUsuarios = [
@@ -259,6 +273,109 @@ let vacunasAdmin = [{
     },
 ];
 
+let tiposMascotaAdmin = [{
+        "tiposMascota": "Perro",
+    },
+    {
+        "tiposMascota": "Gato",
+    },
+];
+
+let informacionProveedor = [{
+        "proveedor": "Pet salón",
+        "tipoId": "física",
+        "nombreProveedor": "Carmen",
+        "primerApellidoProveedor": "Granados",
+        "segundoApellidoProveedor": "Rojas",
+        "tipoIdProveedor": "dimex",
+        "numeroIdProveedor": "123000683974",
+        "fechaNacimientoProveedor": "'7-2-1985'",
+        "telefonoProveedor": "2777-3893",
+        "correoElectronicoProveedor": "cagraro@gmail.com",
+        "tipoServicio": "Grooming",
+        "nombreRepresentanteLegal": "",
+        "primerApellidoRepresentanteLegal": "",
+        "segundoApellidoRepresentanteLegal": "",
+        "tipoIdRepresentanteLegal": "",
+        "numeroIdRepresentanteLegal": "",
+        "fechaNacimientoRepresentanteLegal": "",
+        "telefonoRepresentanteLegal": "",
+        "correoElectronicoRepresentanteLegal": "",
+        "Provincia": "San José",
+        "Canton": "Montes de oca",
+        "Distrito": "Sabanilla",
+        "Otras señas": "De la choza del indio 600 metros al norte",
+    },
+    {
+        "proveedor": "Petluquería",
+        "tipoId": "física",
+        "nombreProveedor": "Carlos",
+        "primerApellidoProveedor": "Morales",
+        "segundoApellidoProveedor": "Vanegas",
+        "tipoIdProveedor": "física",
+        "numeroIdProveedor": "1-1585-5479",
+        "fechaNacimientoProveedor": "'8-10-1971'",
+        "correoElectronicoProveedor": "contacto@petluqueria.com",
+        "tipoServicio": "Grooming",
+        "nombreRepresentanteLegal": "",
+        "primerApellidoRepresentanteLegal": "",
+        "segundoApellidoRepresentanteLegal": "",
+        "tipoIdRepresentanteLegal": "",
+        "numeroIdRepresentanteLegal": "",
+        "fechaNacimientoRepresentanteLegal": "",
+        "correoElectronicoRepresentanteLegal": "",
+        "Provincia": "Alajuela",
+        "Canton": "Alajuela",
+        "Distrito": "Alajuela",
+        "Otras señas": "En la calle ancha, barrio La Agonía",
+    },
+    {
+        "proveedor": "Pet friends",
+        "tipoId": "física",
+        "nombreProveedor": "Claudia",
+        "primerApellidoProveedor": "Carrillo",
+        "segundoApellidoProveedor": "Robles",
+        "tipoIdProveedor": "física",
+        "numeroIdProveedor": "7-1685-1475",
+        "fechaNacimientoProveedor": "'1-2-1987'",
+        "correoElectronicoProveedor": "servicios@pet-friends.com",
+        "tipoServicio": "Alimentos",
+        "nombreRepresentanteLegal": "",
+        "primerApellidoRepresentanteLegal": "",
+        "segundoApellidoRepresentanteLegal": "",
+        "tipoIdRepresentanteLegal": "",
+        "numeroIdRepresentanteLegal": "",
+        "fechaNacimientoRepresentanteLegal": "",
+        "correoElectronicoRepresentanteLegal": "",
+        "Provincia": "Heredia",
+        "Canton": "Santo Domingo",
+        "Distrito": "Santa Rosa",
+        "Otras señas": "500 metros al oeste del INBio",
+    },
+    {
+        "proveedor": "Caminantes",
+        "tipoId": "física",
+        "nombreProveedor": "Gertrudis",
+        "primerApellidoProveedor": "Zapata",
+        "segundoApellidoProveedor": "Rangel",
+        "tipoIdProveedor": "dimex",
+        "numeroIdProveedor": "145023698125",
+        "fechaNacimientoProveedor": "'11-10-1983'",
+        "correoElectronicoProveedor": "ger15za@hotmail.com",
+        "tipoServicio": "Paseadores",
+        "nombreRepresentanteLegal": "",
+        "primerApellidoRepresentanteLegal": "",
+        "segundoApellidoRepresentanteLegal": "",
+        "tipoIdRepresentanteLegal": "",
+        "numeroIdRepresentanteLegal": "",
+        "fechaNacimientoRepresentanteLegal": "",
+        "correoElectronicoRepresentanteLegal": "",
+        "Provincia": "Cartago",
+        "Canton": "Cartago",
+        "Distrito": "Carmen",
+        "Otras señas": "De la iglesia, 25 metros al oeste, calle sin salida",
+    }
+];
 
 
 const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
