@@ -1,5 +1,8 @@
 'use strict';
-const btnRegistrarCatalogo = document.querySelector('#btn-registrarCatalogo');
+
+
+
+const btnRegistrarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 const txtNombreCatalogo = document.querySelector('#txt-nombreCatalogo');
 
 let validar = () => {

@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tienen que ir en todas las internas-->
-    <title>Registrar Catálogo Admin</title>
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
+    <title>Servicios</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfilCliente.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="css/tabla.css">
-
 </head>
 
-<body class="administradorBody">
+<body class="duennoBody">
     <header>
         <section class="contenedor">
             <div>
@@ -133,9 +132,6 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
-                            <a href="inicioSesion.html">Iniciá sesión</a>
-                        </li>
-                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -148,52 +144,73 @@
             </div>
         </section>
     </header>
-
-    <main class="contenedor">
-        <h1>Registro de un catálogo</h1>
-        <h2>Formulario para registro de una nueva enfermedad, una nueva raza o una nueva vacuna.</h2>
-        <hr>
-        <form id="frm-contacto">
-            <section class="contenedorColumna simpleColumna">
-
-
-                <div class="columna">
-
-
-                    <div>
-                        <label for="slt-catalogo">Catálogo del administrador</label>
-                        <select name="slt-catalogo" id="slt-catalogo" class="input-dobleColumna" required>
-                             <option value="">Seleccione una opción del catálogo</option>
-                            <option value="enfermedades">Enfermedades</option>
-                            <option value="razas">Razas</option>
-                            <option value="vacunas">Vacunas</option>
-                            <option value="tipoMascota">Tipo de mascota</option>
+    <main>
+        <h1>Servicios</h1>
+        <form>
+            <section class="contenedor">
+                <div class="simpleColumna contenedorColumna">
+                    <div class="columna" id="ubicacionContenedor">
+                        <label for="slt-ubicacionServicio">Ubicación</label>
+                        <select id="slt-ubicacionServicio">
+                                <option value="">-- Seleccione una ubicación --</option>
+                                <option value="San José">San José</option>
+                                <option value="Alajuela">Alajuela</option>
+                                <option value="Cartago">Cartago</option>
+                                <option value="Heredia">Heredia</option>
+                                <option value="Puntarenas">Puntarenas</option>
+                                <option value="Guanacaste">Guanacaste</option>
+                                <option value="Limón">Limón</option>
+                            </select>
+                    </div>
+                    <div class=" ocultar">
+                        <label for="slt-tipoBuscador">Buscar servicios por:</label>
+                        <select id="slt-tipoBuscador">
+                            <option value="">-- Seleccione una ubicación --</option>
+                            <option value="Ubicacion">Ubicación</option>
+                            <option value="TipoServicio">Tipo de servicio</option>
                         </select>
                     </div>
-
-                    <div>
-                        <label for="txt-nombreCatalogo">Nombre</label>
-                        <input type="text" id="txt-nombreCatalogo" class="input-dobleColumna" required>
+                    <div class="columna">
+                        <div class="" id="servicioContenedor">
+                            <label for="slt-tipoServicio">Tipo de servicio</label>
+                            <select id="slt-tipoServicio">
+                                <option value="">-- Seleccione un servicio --</option>
+                                <option value="Grooming">Grooming</option>
+                                <option value="Alimentos">Alimentos</option>
+                                <option value="Paseadores">Paseadores</option>
+                                <option value="Ropa">Ropa</option>
+                            </select>
+                        </div>
                     </div>
-
                 </div>
+                <div>
+                    <h3>Lista de servicios</h3>
+                    <table id="tbl-usuarios" class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Proveedor</th>
+                                <th>Servicio</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Ubicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            <hr>
-            <div class="btn-general">
-                <button type="button" id="btn-registrarCatalogo">Registrar nuevo catálogo</button>
-            </div>
         </form>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/registrarCatalogoAdmin.js"></script>
+    <script src="js/serviciosCliente.js"></script>
 </body>
 
 </html>

@@ -80,6 +80,8 @@ const validarExpiracion = () => {
 
     if (annioTarjeta <= annioActual) {
         if (mesTarjeta < mesActual) {
+            inputExpiracionMes.classList.add('error');
+            inputExpiracionAnnio.classList.add('error');
             Swal.fire({
                 'icon': 'warning',
                 'title': 'Favor revisar',
@@ -87,17 +89,12 @@ const validarExpiracion = () => {
                 'confirmButtonText': 'Entendido'
             });
         }
+    } else {
+        imprimirDatos();
     }
 }
 
-
-
-/* Inicio: Función para validar la fecha de expiración */
-
-
-/* Fin: Validación de tipo de tarjeta */
-
-
+/* Fin: Función para validar la fecha de expiración */
 
 /* Inicio: Función para obtener solamente los últimos 4 dígitos de la tarjeta */
 
@@ -110,60 +107,63 @@ const obtenerSubStr = (pnumeroTarjeta) => {
 
 /* Fin: Función para obtener solamente los últimos 4 dígitos de la tarjeta */
 
-
-/* Inicio: Función para validar que se encuentren los datos requeridos */
-
-const validarDatos = () => {
+const validar = () => {
     let error = false;
 
-    if (numTarjeta == '') {
+    if (numTarjeta.value == "") {
         error = true;
         numTarjeta.classList.add('error');
     } else {
         numTarjeta.classList.remove('error');
     }
-
-    if (inputNombreTarjeta == '') {
+    if (inputNombreTarjeta.value == "") {
         error = true;
         inputNombreTarjeta.classList.add('error');
     } else {
         inputNombreTarjeta.classList.remove('error');
     }
-
-    if (inputExpiracionMes == '') {
+    if (inputExpiracionMes.value == "") {
         error = true;
         inputExpiracionMes.classList.add('error');
     } else {
         inputExpiracionMes.classList.remove('error');
     }
-
-    if (inputExpiracionAnnio == '') {
+    if (inputExpiracionAnnio.value == "") {
         error = true;
         inputExpiracionAnnio.classList.add('error');
     } else {
         inputExpiracionAnnio.classList.remove('error');
     }
-
-    if (inputCodigoSeguridad == '') {
+    if (inputCodigoSeguridad.value == "") {
         error = true;
         inputCodigoSeguridad.classList.add('error');
     } else {
-        error = true;
         inputCodigoSeguridad.classList.remove('error');
     }
-    if (error == false) {
 
+    if (error == false) {
+        validarExpiracion();
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'Método de pago puede ser registrado',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo registrar su solicitud',
+            'text': 'Por favor revise los campos resaltados',
+            'confirmButtonText': 'Entendido'
         });
+
     }
+};
+
+/* Fin: Función para validar que se encuentren los datos requeridos */
+
+/* Inicio: Función para limpiar el formulario una vez que se registra el método de pago */
+
+const limpiarFormulario = () => {
+    let nuim = 1 + 1;
 }
 
 
-/* Inicio: Función para validar que se encuentren los datos requeridos */
+/* Fin: Función para limpiar el formulario una vez que se registra el método de pago */
 
 
 /* Inicio: Función para imprimir los datos del método de pago registrado */
@@ -192,11 +192,11 @@ const imprimirDatos = () => {
     console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
     console.log(`Fecha de expiración: 0${mes}/${annio}`);
 
+    limpiarFormulario();
+
 }
 
 /* Fin: Función para imprimir los datos del método de pago registrado */
 
-
-inputExpiracionAnnio.addEventListener('change', validarExpiracion);
-btnRegistrarCC.addEventListener('click', imprimirDatos);
+btnRegistrarCC.addEventListener('click', validar);
 numTarjeta.addEventListener('input', validarTipoTarjeta);

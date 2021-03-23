@@ -1,6 +1,5 @@
 'use strict';
-
-const btnAdmin = document.querySelector('#btn-admin');
+const btnCatalogo = document.querySelector('#btn-registrarCatalogo');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -35,8 +34,6 @@ const nombreUsuarioConectado = () => {
     nombreUsuario.innerHTML = usuario.nombre
 };
 
-
-
 const menuSinAutenticar = () => {
     itemsCliente.classList.add('ocultar');
     itemsProveedor.classList.add('ocultar');
@@ -59,13 +56,21 @@ bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
 
-/* Inicio de redirectProveedor de página inicio admin a página inicio porveedores*/
-const redirectProveedor = () => {
-    window.location.href = 'paginaInicioProveedor.html';
+
+
+/* Inicio para redirect a registrar nuevo catálogo*/
+/*const registrarCatalogo = () => {
+    const var1 = 2;
+    let var2 = 4;
+
+    console.log(var1 + var2);
+
+    // Esto es una prueba para determinar que causa el addEventListener error
+    //cannot read property 'addeventlistener' of null
+    // no pude determinar que era. Pendiente para revisión.
 };
 
-btnAdmin.addEventListener('click', () => {
-    redirectProveedor();
-});
-
-/* Fin de redirectProveedor de página inicio admin a página inicio porveedores*/
+btnCatalogo.addEventListener('click', () => {
+    registrarCatalogo();
+});*/
+/*FIN de redirect a registrar nuevo catálogo*/
