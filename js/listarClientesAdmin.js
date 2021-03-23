@@ -2,6 +2,7 @@
 
 const tablaTipoUsuario = document.querySelector('#tbl-usuarios tbody');
 const selectTipoUsuario = document.querySelector('#slt-tipoUsuario');
+const thCantidadMacotas = document.querySelector('.th-cantidadmascotas');
 
 
 const limpiarTabla = () => {
@@ -16,7 +17,8 @@ const mostrarTablaUsuario = () => {
 
     listaUsuarios.forEach(usuario => {
         let fila = tablaTipoUsuario.insertRow();
-        if (usuario.tipo == selectTipoUsuario.value) {
+        if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Cliente') {
+            thCantidadMacotas.classList.remove('ocultar');
             fila.insertCell().innerHTML = usuario.nombre;
             fila.insertCell().innerHTML = usuario.primerApellido;
             fila.insertCell().innerHTML = usuario.segundoApellido;
@@ -29,10 +31,21 @@ const mostrarTablaUsuario = () => {
             fila.insertCell().innerHTML = usuario.canton;
             fila.insertCell().innerHTML = usuario.distrito;
 
-
+        }
+        if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Proveedor') {
+            thCantidadMacotas.classList.add('ocultar');
+            fila.insertCell().innerHTML = usuario.nombre;
+            fila.insertCell().innerHTML = usuario.primerApellido;
+            fila.insertCell().innerHTML = usuario.segundoApellido;
+            fila.insertCell().innerHTML = usuario.correo;
+            fila.insertCell().innerHTML = usuario.telefono;
+            fila.insertCell().innerHTML = usuario.tipoID;
+            fila.insertCell().innerHTML = usuario.id;
+            fila.insertCell().innerHTML = usuario.provincia;
+            fila.insertCell().innerHTML = usuario.canton;
+            fila.insertCell().innerHTML = usuario.distrito;
 
         }
-
     });
 };
 
