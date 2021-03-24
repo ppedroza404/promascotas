@@ -232,22 +232,6 @@ let mascotasCliente = [{
     }
 ]
 
-// Para que sección vamos a utilizar esta lista??
-let mascotasClientePerfil = [{
-    'nombre': 'Cloe',
-    'tipo': 'Perro',
-    'raza': 'Chihuahua',
-    'edad': 3,
-    'padecimientos': 'estreñimiento, zarna',
-    'vacunas': [
-        { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
-        { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
-        { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
-    ],
-    'servicios': '15'
-}]
-
-let lista_clientes = [];
 
 let listaUsuarios = [
     { "Estado": "Activo", "correo": "admin@promascotas.com", "tipo": "Administrador", "nombre": "Admin", "primerApellido": "Admin", "segundoApellido": "Admin", "nacimiento": "10-12-1987'", "cantidadmascotas": "0", "contrasenna": "123Abc!", "sexo": "Otro", "telefono": "5555-5555", "tipoID": "JURIDICA", "id": "999999999", "provincia": "San Jose", "canton": "Escazu", "distrito": "Escazu", "sennas": "casa 1", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },
