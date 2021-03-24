@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Listar usuarios admin </title>
+    <title>Solicitudes Pendientes</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
@@ -154,39 +154,23 @@
     </header>
 
     <main>
-        <div class="contenedor">
-            <section>
 
-                <div class='contenedor'>
-
-                    <label for="slt-tipoUsuario">Tipo de usuario :</label>
-                    <select name="slt-tipoUsuario" id="slt-tipoUsuario">
-                        <option value="">-- Seleccione un tipo de usuario --</option>
-                        <option value="Cliente">Usuarios</option>
-                        <option value="Proveedor">Proveedores</option>
-                    </select>
-
-                </div>
-
-
-            </section>
-        </div>
 
         <div class="contenedor">
-            <table id="tbl-usuarios" class="tabla">
+            <table id="tbl-solicitudespendientes" class="tabla">
                 <thead>
                     <tr>
                         <th>Estado</th>
+                        <th>Nombre del negocio</th>
+                        <th>Tipo de identificación</th>
+                        <th>Cédula Jurídica</th>
                         <th>Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Tipo ID</th>
-                        <th>Numero de ID</th>
-                        <th>Provincia</th>
-                        <th>Canton</th>
-                        <th>Distrito</th>
+                        <th>Primer apellido</th>
+                        <th>Tipo de identificación</th>
+                        <th>Número ID</th>
+                        <th>Teléfono</th>
+                        <th>Direccion</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -202,7 +186,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/listarClientesAdmin.js"></script>
+    <script src="js/solicitudespendientes.js"></script>
 
 </body>
 
