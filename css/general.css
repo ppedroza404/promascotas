@@ -47,6 +47,11 @@ footer p {
     margin: 25px auto;
 }
 
+.contenedorClasesFlotantes {
+    width: 50%;
+    float: left;
+}
+
 section.contenedor {
     margin: 25px auto;
 }

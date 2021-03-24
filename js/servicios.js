@@ -232,6 +232,30 @@ let mascotasCliente = [{
     }
 ]
 
+lista_proveedoresCalificados = [
+    { "n_negocio": "Mascotas y mas", "califiación": "4.59" },
+    { "n_negocio": "La marina animales", "califiación": "3.09" },
+    { "n_negocio": "Small pets", "califiación": "2.69" },
+    { "n_negocio": "Mascotas los mordelones", "califiación": "4.61" },
+    { "n_negocio": "Paseos perrunos", "califiación": "2.56" },
+    { "n_negocio": "Mercado mascotas", "califiación": "4.54" },
+    { "n_negocio": "La pulga felíz", "califiación": "1.43" },
+    { "n_negocio": "Los misingos", "califiación": "2.92" },
+    { "n_negocio": "Los estilos animalísticos", "califiación": "4.14" },
+    { "n_negocio": "Juguete animal", "califiación": "4.63" },
+    { "n_negocio": "Alimentos El Perrillo", "califiación": "1.77" },
+    { "n_negocio": "Animal Gym", "califiación": "3.33" },
+    { "n_negocio": "Paseos peludos", "califiación": "1.45" },
+    { "n_negocio": "Accesorios Don gato", "califiación": "4.57" },
+    { "n_negocio": "Perros y Gatos", "califiación": "2.58" },
+    { "n_negocio": "Ejercicios Patitas de amor", "califiación": "1.36" },
+    { "n_negocio": "Grooming la peludita", "califiación": "4.84" },
+    { "n_negocio": "Caminantes caninos", "califiación": "4.13" },
+    { "n_negocio": "Alimentos la correa", "califiación": "2.55" },
+    { "n_negocio": "Servicios nutritivos de mascotas", "califiación": "4.36" },
+    { "n_negocio": "La gatita collares", "califiación": "3.77" }
+]
+
 
 let listaUsuarios = [
     { "Estado": "Activo", "correo": "admin@promascotas.com", "tipo": "Administrador", "nombre": "Admin", "primerApellido": "Admin", "segundoApellido": "Admin", "nacimiento": "10-12-1987'", "cantidadmascotas": "0", "contrasenna": "123Abc!", "sexo": "Otro", "telefono": "5555-5555", "tipoID": "JURIDICA", "id": "999999999", "provincia": "San Jose", "canton": "Escazu", "distrito": "Escazu", "sennas": "casa 1", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },

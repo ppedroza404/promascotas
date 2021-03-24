@@ -3,7 +3,9 @@
 
 const btnEditarDatosCliente = document.querySelector('#btn-editarDatosCliente');
 const cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-const fotoMascota = document.querySelector('#imagen-prev');
+//const fotoMascota = document.querySelector('#imagen-prev');
+//const fotoMascota = document.getElementById('imagen-prev');
+
 const vacunasMascota = document.querySelector('#tbl-vacunasMascota tbody');
 
 // Variables para datos del cliente
@@ -42,7 +44,8 @@ function mostrarInfoMascota() {
     mostrarTablaVacunas();
 };
 
-fotoMascota.addEventListener('onclick', mostrarInfoMascota);
+// No está haciendo nada!
+//fotoMascota.addEventListener('click', mostrarInfoMascota);
 
 /* Fin: Función para desplegar la información de las mascotas en un click a la foto */
 
