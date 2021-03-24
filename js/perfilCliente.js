@@ -79,23 +79,29 @@ const obtenerMascotaCliente = () => {
 const mostrarTablaVacunas = () => {
 
     mascotasCliente.forEach(mascota => {
-        if (cliente.correo == mascota.correo) {
-
-            let fila = vacunasMascota.insertRow();
-
-            for (let i = 0; i < 1; i++) {
-                fila.insertCell().innerHTML = mascotasCliente[i].vacunas[i].nombre;
-
-            }
+        if ('adeblas@gmail.com' == mascota.correo) {
 
 
+            mascota.vacunas.forEach(vacuna => {
 
+                let fila = vacunasMascota.insertRow();
+                fila.insertCell().innerHTML = vacuna.nombre;
+                fila.insertCell().innerHTML = vacuna.fecha;
+                fila.insertCell().innerHTML = vacuna.fabricante;
+
+            })
 
         }
 
     });
+    limpiarTabla();
 
+}
 
+const limpiarTabla = () => {
+    for (var i = vacunasMascota.rows.length - 4; i >= 0; i--) {
+        vacunasMascota.deleteRow(i);
+    }
 }
 
 mostrarTablaVacunas();
