@@ -15,6 +15,25 @@ const inputCodigoSeguridad = document.querySelector('#txt-codigoSeguridad');
 
 let tipoTarjeta;
 
+/* Inicio: Función para mostrar los datos del método de pago en una tabla */
+
+const tabla = document.querySelector('#tbl-metodosPago');
+
+const mostrarTabla = (tipoTarjeta) => {
+    mostrarTabla.innerHTML;
+    let fila = tabla.insertRow();
+
+    fila.insertCell().innerHTML = tipoTarjeta;
+    fila.insertCell().innerHTML = numTarjeta;
+    fila.insertCell().innerHTML = inputNombreTarjeta;
+    fila.insertCell().innerHTML = `${inputExpiracionMes}/${inputExpiracionAnnio}`;
+    fila.insertCell().innerHTML = inputCodigoSeguridad;
+}
+
+
+/* Inicio: Función para mostrar los datos del método de pago en una tabla */
+
+
 /* Inicio: Validación de tipo de tarjeta */
 const validarTipoTarjeta = () => {
     let amex = new RegExp('^3[47][0-9]{13}$');
@@ -78,8 +97,11 @@ const validarExpiracion = () => {
     let mesActual = fechaActual.getMonth();
     let annioActual = fechaActual.getFullYear();
 
-    if (annioTarjeta <= annioActual) {
-        if (mesTarjeta < mesActual) {
+    if (annioActual >= annioTarjeta) {
+        if (mesTarjeta >= mesActual) {
+            imprimirDatos();
+
+        } else {
             inputExpiracionMes.classList.add('error');
             inputExpiracionAnnio.classList.add('error');
             Swal.fire({
@@ -89,8 +111,6 @@ const validarExpiracion = () => {
                 'confirmButtonText': 'Entendido'
             });
         }
-    } else {
-        imprimirDatos();
     }
 }
 
@@ -156,15 +176,6 @@ const validar = () => {
 
 /* Fin: Función para validar que se encuentren los datos requeridos */
 
-/* Inicio: Función para limpiar el formulario una vez que se registra el método de pago */
-
-const limpiarFormulario = () => {
-    let nuim = 1 + 1;
-}
-
-
-/* Fin: Función para limpiar el formulario una vez que se registra el método de pago */
-
 
 /* Inicio: Función para imprimir los datos del método de pago registrado */
 
@@ -192,7 +203,14 @@ const imprimirDatos = () => {
     console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
     console.log(`Fecha de expiración: 0${mes}/${annio}`);
 
-    limpiarFormulario();
+    Swal.fire({
+        'icon': 'success',
+        'title': 'Su solicitud se proceso con éxito',
+        'text': 'La tarjeta ha sido registrada satisfactoriamente',
+        'confirmButtonText': 'Entendido'
+    }).then(() => {
+        window.location.href = 'perfilCliente.html';
+    });
 
 }
 

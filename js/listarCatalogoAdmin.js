@@ -1,5 +1,5 @@
 'use strict';
-
+const btnCatalogo = document.querySelector('#btn-irRegistrarCatalogo');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 
@@ -65,3 +65,12 @@ const mostrarTablaVacunas = () => {
 }
 
 selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
+
+
+const registrarCatalogo = () => {
+    window.location.href = 'registrarCatalogoAdmin.html';
+};
+
+btnCatalogo.addEventListener('click', () => {
+    registrarCatalogo();
+});

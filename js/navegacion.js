@@ -1,5 +1,4 @@
 'use strict';
-const btnCatalogo = document.querySelector('#btn-registrarCatalogo');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -55,22 +54,3 @@ if (sessionStorage.getItem('usuarioConectado')) {
 bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
-
-
-
-/* Inicio para redirect a registrar nuevo catálogo*/
-/*const registrarCatalogo = () => {
-    const var1 = 2;
-    let var2 = 4;
-
-    console.log(var1 + var2);
-
-    // Esto es una prueba para determinar que causa el addEventListener error
-    //cannot read property 'addeventlistener' of null
-    // no pude determinar que era. Pendiente para revisión.
-};
-
-btnCatalogo.addEventListener('click', () => {
-    registrarCatalogo();
-});*/
-/*FIN de redirect a registrar nuevo catálogo*/
