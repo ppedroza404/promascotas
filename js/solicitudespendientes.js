@@ -7,8 +7,10 @@ const limpiarTabla = () => {
         tablaTipoUsuario.deleteRow(i);
     }
 }
-const mostrarTablaRepresentanteLegal = () => {
+
+const generarTablaRepLegal = () => {
     let fila = tablaRepresentanteLegal.insertRow();
+    fila.className = 'autogen oculto';
     fila.insertCell().innerHTML = 'Nombre';
     fila.insertCell().innerHTML = 'Primer Apellido';
     fila.insertCell().innerHTML = 'Segundo Apellido';
@@ -35,6 +37,9 @@ const mostrarTablaSolicitudesPendientes = () => {
             fila.insertCell().innerHTML = usuario.id;
             fila.insertCell().innerHTML = usuario.telefono;
             fila.insertCell().innerHTML = `${usuario.provincia}, ${usuario.canton},${usuario.distrito}`;
+            if (usuario.n_negocio = 'Juridica') {
+                generarTablaRepLegal();
+            }
         }
 
     })
