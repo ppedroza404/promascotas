@@ -198,7 +198,7 @@
                 </div>
 
                 <div class="contenedor">
-                    <div class="seccion-izq">
+                    <div class="flotar-izq">
                         <h3>Información de contato</h3>
                         <p>info@abaanimal.org</p>
                         <p>
@@ -212,14 +212,14 @@
 
                     </div>
                     <div class="seccion-der">
-                        <form>
+                        <form id="frm-contacto">
                             <h3>Formulario de contacto</h3>
-                            <label for="txt-nombre"><strong>Nombre</strong></label>
-                            <input type="text" id="txt-nombre">
-                            <label for="txt-correo"><strong>Correo</strong></label>
-                            <input type="email" id="txt-correo">
-                            <label for="txt-mensaje"><strong>Mensaje</strong> </label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <label for="txt-contactenosnombre"><strong>Nombre</strong></label>
+                            <input type="text" id="txt-nombre" required>
+                            <label for="txt-contactenoscorreo"><strong>Correo</strong></label>
+                            <input type="email" id="txt-contactenoscorreo" required>
+                            <label for="txt-contactenosMensaje"><strong>Mensaje</strong> </label>
+                            <textarea name="" id="txt-contactenosMensaje" cols="30" rows="10" required></textarea>
                             <button type="button" class="btn flotar-der" id="btn-contactenos">Enviar</button>
                         </form>
 
