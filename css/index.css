@@ -434,6 +434,9 @@ h2 {
     text-align: justify;
 }
 
+
+/* Inicio: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
 #seccionContactanos {
     min-height: 600px;
     color: #ffffff;
@@ -463,7 +466,48 @@ h2 {
     font-size: 21px;
 }
 
+#seccionPublicidad {
+    background-color: #cccde2;
+    min-height: 130px;
+    max-height: 154px;
+}
 
+#seccionPublicidad {
+    margin-top: -25px;
+}
+
+.img-publicidad {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#img-publicidad {
+    margin-top: 2px;
+}
+
+
+/* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "¿Te unis?" de Pro Mascotas LP */
+
+.imgBtn.eventosSaludAnimalD1 {
+    background-image: url("../img/index/unirmeDuennoBtn.jpg");
+}
+
+.imgBtn.eventosSaludAnimalD2 {
+    background-image: url("../img/index/unirmeProveedorBtn.jpg");
+}
+
+#seccionUnirme h3 {
+    color: #3d3d46;
+}
+
+<<<<<<< HEAD
+#seccionUnirme p {
+    margin-bottom: 25px;
+}
+=======
 /* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
 
 
@@ -569,3 +613,4 @@ p {
 
 
 /* Final: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
+>>>>>>> 4a0c1f033affc7cb6625b94dc28757fe49731a48
