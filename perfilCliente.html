@@ -156,7 +156,7 @@
         <h1>Mi perfil</h1>
         <div class="btn-editar">
             <a href="">
-                <i class="fa fa-edit fa-2x"></i>
+                <i class="fa fa-edit fa-2x" id="btn-editarDatosCliente"></i>
             </a>
         </div>
         <section class="contenedorColumna simpleColumna">
@@ -211,6 +211,7 @@
         <hr>
         <section class="seccion-mascota">
             <h2>Mascotas</h2>
+
             <section class="contenedorColumna dobleColumna">
 
                 <div class="columna">
@@ -225,6 +226,11 @@
                 </div>
                 <section class="columna">
                     <div id="seccion-infoMascota" class="seccion-infoMascota fade ocultar">
+                        <div class="btn-editar">
+                            <a href="perfilMascota.html">
+                                <i class="fa fa-edit fa-2x" id="btn-editarDatosCliente"></i>
+                            </a>
+                        </div>
                         <section class="columnaDoble-50">
                             <div class="columna columna-noMargenBottom">
                                 <div>
@@ -272,7 +278,7 @@
                     <table id="tbl-vacunasMascota" class="tabla">
                         <thead>
                             <tr>
-                                <th>Catálogo</th>
+                                <th>Nombre</th>
                                 <th>Fecha de aplicación</th>
                                 <th>Fabricante</th>
                             </tr>
@@ -330,10 +336,15 @@
             <!--Falta JS para obtener lista de proveedores mejor calificados-->
         </section>
     </main>
+    <footer>
+        <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
+        <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
+    </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/perfilCliente.js"></script>
+
 </body>
 
 </html>

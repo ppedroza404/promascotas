@@ -84,66 +84,155 @@ let mascotas = [{
 
 let mascotasCliente = [{
         'nombre': 'Cloe',
+        'tipo': 'Perro',
         'raza': 'Chihuahua',
-        'vacunas': 'hepatitis, estemper',
-        'servicios': '15'
+        'edad': '3 meses',
+        'servicios': '15',
+        'correo': 'adeblas@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Papi',
+        'tipo': 'Perro',
         'raza': 'Chihuahua',
-        'vacunas': 'hepatitis, rabia',
-        'servicios': '13'
+        'edad': '3 meses',
+        'servicios': '13',
+        'correo': 'cboher@gmail.com',
+        'genero': 'Macho',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Oreo',
+        'tipo': 'Gato',
         'raza': 'Persa',
-        'vacunas': 'rabia, leucemia felina',
-        'servicios': '5'
+        'edad': '3 meses',
+        'servicios': '5',
+        'correo': 'cboher@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Corchito',
+        'tipo': 'Gato',
         'raza': 'Esfinge',
-        'vacunas': 'herpesvirus, calicivirus, rabia',
-        'servicios': '35'
+        'edad': '3 meses',
+        'servicios': '35',
+        'correo': 'epurti@gmail.com',
+        'genero': 'Macho',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Figaro',
+        'tipo': 'Gato',
         'raza': 'Bengala',
-        'vacunas': 'leucemia felina, calicivirus',
-        'servicios': '15'
+        'edad': '3 meses',
+        'servicios': '15',
+        'correo': 'epurti@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Cosmo',
+        'tipo': 'Perro',
         'raza': 'Siberiano',
-        'vacunas': 'rabia, leucemia felina',
-        'servicios': '27'
+        'edad': '3 meses',
+        'servicios': '27',
+        'correo': 'epurti@gmail.com',
+        'genero': 'Macho',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' }
+        ],
     },
     {
         'nombre': 'Kitty',
+        'tipo': 'Gato',
         'raza': 'Angola',
-        'vacunas': 'herpesvirus, rabia',
-        'servicios': '23'
+        'edad': '3 meses',
+        'servicios': '23',
+        'correo': 'epurti@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Orus',
+        'tipo': 'Perro',
         'raza': 'Standford',
-        'vacunas': 'rabia, estemper',
-        'servicios': '3'
+        'edad': '3 meses',
+        'servicios': '3',
+        'correo': 'epurti@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Max',
+        'tipo': 'Perro',
         'raza': 'Standford',
-        'vacunas': 'estemper, hepatitis',
-        'servicios': '7'
+        'edad': '3 meses',
+        'servicios': '7',
+        'correo': 'jortiz@gmail.com',
+        'genero': 'Macho',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     },
     {
         'nombre': 'Terry',
+        'tipo': 'Perro',
         'raza': 'Golden',
-        'vacunas': 'hepatitis, rabia',
-        'servicios': '8'
+        'edad': '3 meses',
+        'servicios': '8',
+        'correo': 'jortiz@gmail.com',
+        'genero': 'Hembra',
+        'padecimientos': 'estreñimiento, zarna',
+        'vacunas': [
+            { 'nombre': 'Estemper', 'fecha': '2019-02-15', 'fabricante': 'Moderna' },
+            { 'nombre': 'Rabia', 'fecha': '2019-03-23', 'fabricante': 'AstraZeneca' },
+            { 'nombre': 'Hepatitis', 'fecha': '2019-05-15', 'fabricante': 'BioNTech' }
+        ],
     }
 ]
 
+// Para que sección vamos a utilizar esta lista??
 let mascotasClientePerfil = [{
     'nombre': 'Cloe',
     'tipo': 'Perro',
