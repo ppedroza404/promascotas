@@ -83,7 +83,6 @@ let validar = () => {
 let limpiar = () => {
     txt_nombre.value = "";
     txt_correo.value = "";
-    txt_telefono.value = "";
     txt_mesaje.value = "";
 };
 
