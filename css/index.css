@@ -400,7 +400,7 @@ h2 {
 .seccion-izq,
 .seccion-der {
     width: calc(50% - 50px);
-    padding: 25px;
+    padding-top: 25px;
     min-height: 145px;
 }
 
@@ -454,7 +454,6 @@ h2 {
 }
 
 #seccionContactanos textarea {
-    width: 92%;
     height: 50px;
     background-color: #ffffff;
 }
@@ -504,6 +503,114 @@ h2 {
     color: #3d3d46;
 }
 
+<<<<<<< HEAD
 #seccionUnirme p {
     margin-bottom: 25px;
 }
+=======
+/* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
+#seccionContactanos {
+    background: rgb(30, 73, 79);
+    background: linear-gradient(45deg, rgba(30, 73, 79, 1) 0%, rgba(0, 0, 0, 1) 54%, rgba(41, 0, 65, 1) 100%);
+    min-height: 600px;
+}
+
+#seccionContactanos .contenedor {
+    margin-top: 0px;
+}
+
+.contactenos-fila {
+    margin-top: 30px;
+}
+
+#seccionContactanos textarea,
+select,
+input {
+    width: 94%;
+    margin-top: 10px;
+}
+
+#seccionContactanos .flotar-der,
+.flotar-izq {
+    width: 50%;
+    margin-top: 25px;
+}
+
+#seccionContactanos .columna label,
+p {
+    color: #ddd;
+    margin-left: 10px;
+}
+
+.contactenos-fila p {
+    margin: 0px;
+}
+
+#seccionContactanos .flotar-der button {
+    float: right;
+}
+
+#seccionContactanos .columna h3 {
+    color: #ddd;
+    margin-left: 10px;
+}
+
+
+/* Final: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
+
+#seccionPatrocinadores {
+    background: #56cfe1;
+}
+
+#seccionPatrocinadores .contenedor {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.patrocinadores {
+    display: inline-block;
+    margin: 20px;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.patrocinador1 {
+    background-image: url("../img/index/patrocinadoresBtn1.png");
+    height: 86px;
+    width: 87px;
+}
+
+.patrocinador2 {
+    background-image: url("../img/index/patrocinadoresBtn2.png");
+    height: 86px;
+    width: 142px;
+}
+
+.patrocinador3 {
+    background-image: url("../img/index/patrocinadoresBtn3.png");
+    height: 85px;
+    width: 156px;
+}
+
+.patrocinador4 {
+    background-image: url("../img/index/patrocinadoresBtn4.png");
+    height: 88px;
+    width: 108px;
+}
+
+.patrocinador5 {
+    background-image: url("../img/index/patrocinadoresBtn5.png");
+    height: 86px;
+    width: 95px;
+}
+
+
+/* Final: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
+>>>>>>> 4a0c1f033affc7cb6625b94dc28757fe49731a48
