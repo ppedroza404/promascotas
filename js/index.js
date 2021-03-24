@@ -49,7 +49,6 @@ funcionSlider();
 const btn_enviar = document.querySelector('#btn-contactenos');
 const txt_nombre = document.querySelector('#txt-contactenosnombre');
 const txt_correo = document.querySelector('#txt-contactenoscorreo');
-//const txt_telefono = document.querySelector('#txt-contactenostel');
 const txt_mesaje = document.querySelector('#txt-contactenosMensaje');
 
 let validar = () => {
@@ -78,14 +77,6 @@ let validar = () => {
     }
     //fin Validacion campo Correo
 
-    //Ini Validacion campo telefono formato correcto 0000-0000
-    //if (regextelefono.test(txt_telefono.value) == false) {
-    //    error = true;
-    //    txt_telefono.classList.add('error');
-    //} else {
-    //    txt_telefono.classList.remove('error');
-    //}
-    //fin Validacion campo Correo
     return error;
 };
 
