@@ -434,5 +434,35 @@ h2 {
     text-align: justify;
 }
 
+#seccionContactanos {
+    min-height: 600px;
+    color: #ffffff;
+    background: rgb(30, 73, 79);
+    background: linear-gradient(90deg, rgba(30, 73, 79, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(41, 0, 65, 1) 100%);
+}
+
+#seccionContactanos h3 {
+    color: #ffffff;
+}
+
+#seccionContactanos input {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#seccionContactanos textarea {
+    width: 92%;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+#btn-contactenos {
+    margin-top: 20px;
+}
+
+.span-contac {
+    font-size: 21px;
+}
+
 
 /* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
