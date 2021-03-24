@@ -4,7 +4,7 @@
 const btnEditarDatosCliente = document.querySelector('#btn-editarDatosCliente');
 const cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 const fotoMascota = document.querySelector('#imagen-prev');
-const tabla = document.querySelector('#tbl-vacunasMascota tbody');
+const vacunasMascota = document.querySelector('#tbl-vacunasMascota tbody');
 
 // Variables para datos del cliente
 const pNombreCliente = document.querySelector('#txt-nombreCliente');
@@ -76,18 +76,29 @@ const obtenerMascotaCliente = () => {
 
 /* Inicio: Función para mostrar datos de vacunas en la tabla */
 
-const obtenerDatosVacuna = () => {
+const mostrarTablaVacunas = () => {
 
     mascotasCliente.forEach(mascota => {
-        mascota.vacunas.forEach(vacuna => {
-            fila.insertCell().innerHTML = vacuna.nombre;
-            fila.insertCell().innerHTML = vacuna.fecha;
-            fila.insertCell().innerHTML = vacuna.fabricante;
-        });
+        if (cliente.correo == mascota.correo) {
+
+            let fila = vacunasMascota.insertRow();
+
+            for (let i = 0; i < 1; i++) {
+                fila.insertCell().innerHTML = mascotasCliente[i].vacunas[i].nombre;
+
+            }
+
+
+
+
+        }
+
     });
-    return
+
+
 }
 
+mostrarTablaVacunas();
 
 /* Fin: Función para mostrar datos de vacunas en la tabla */
 
