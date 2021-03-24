@@ -400,7 +400,7 @@ h2 {
 .seccion-izq,
 .seccion-der {
     width: calc(50% - 50px);
-    padding: 25px;
+    padding-top: 25px;
     min-height: 145px;
 }
 
@@ -451,7 +451,6 @@ h2 {
 }
 
 #seccionContactanos textarea {
-    width: 92%;
     height: 50px;
     background-color: #ffffff;
 }
@@ -487,7 +486,8 @@ h2 {
 #seccionContactanos textarea,
 select,
 input {
-    margin: 10px;
+    width: 94%;
+    margin-top: 10px;
 }
 
 #seccionContactanos .flotar-der,
@@ -532,32 +532,39 @@ p {
 
 .patrocinadores {
     display: inline-block;
-    height: 130px;
-    width: 130px;
     margin: 20px;
     background-size: auto;
     background-repeat: no-repeat;
-    border: solid red 2px;
 }
 
 .patrocinador1 {
     background-image: url("../img/index/patrocinadoresBtn1.png");
+    height: 86px;
+    width: 87px;
 }
 
 .patrocinador2 {
     background-image: url("../img/index/patrocinadoresBtn2.png");
+    height: 86px;
+    width: 142px;
 }
 
 .patrocinador3 {
     background-image: url("../img/index/patrocinadoresBtn3.png");
+    height: 85px;
+    width: 156px;
 }
 
 .patrocinador4 {
     background-image: url("../img/index/patrocinadoresBtn4.png");
+    height: 88px;
+    width: 108px;
 }
 
 .patrocinador5 {
     background-image: url("../img/index/patrocinadoresBtn5.png");
+    height: 86px;
+    width: 95px;
 }
 
 
