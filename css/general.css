@@ -46,6 +46,10 @@ footer p {
     text-align: left;
 }
 
+.centrarBloque {
+    margin: 0 auto;
+}
+
 strong {
     font-weight: 600;
 }

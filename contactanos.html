@@ -145,13 +145,53 @@
     </header>
     <main>
         <h1>Contactános</h1>
+        <section class="contenedor">
+            <div>
+                Estimado visitante, recordá que si tenes una consulta o sugerencia nos podes contactar.
+            </div>
+
+
+            <div class="seccion-izq">
+                <h3>Información de contato</h3>
+
+                <p><a href="mailto:info@abaanimal.org">info@abaanimal.org</a></p>
+                <p>
+                    <span class="span-contac">Teléfono</span></br>
+                    (506) 8849-0592</p>
+                <p><span class="span-contac">Fax</span></br>
+                    (506) 8383-7037</p>
+                <p><span class="span-contac">Dirección</span></br>
+                    Apdo: 4623-1000</br>
+                    San José, Costa Rica</p>
+
+            </div>
+            <div class="seccion-der">
+                <form id="frm-contacto">
+                    <h3>Formulario de contacto</h3>
+                    <label for="txt-contactenosnombre"><strong>Nombre</strong></label>
+                    <input type="text" id="txt-contactenosnombre" required>
+                    <label for="txt-contactenoscorreo"><strong>Correo</strong></label>
+                    <input type="email" id="txt-contactenoscorreo" required>
+                    <label for="txt-contactenosMensaje"><strong>Mensaje</strong> </label>
+                    <textarea name="" id="txt-contactenosMensaje" cols="30" rows="10" required></textarea>
+                    <div class="contenedorClasesFlotantes">
+                        <button type="button" class="btn flotar-der" id="btn-contactenos">Enviar</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
+    <script src="js/contactanos.js"></script>
 </body>
 
 </html>
