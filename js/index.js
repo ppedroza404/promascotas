@@ -113,3 +113,87 @@ let obtener_datos = () => {
 btn_enviar.addEventListener('click', obtener_datos);
 
 //Validacion de Contactenos
+
+
+// Modal
+let modal1 = document.querySelector('#modal1');
+let botonModal1 = document.querySelector('#patrocinador1')
+let cerrar1 = document.querySelector("#modal1 .close");
+let modal2 = document.querySelector('#modal2');
+let botonModal2 = document.querySelector('#patrocinador2')
+let cerrar2 = document.querySelector("#modal2 .close");
+let modal3 = document.querySelector('#modal3');
+let botonModal3 = document.querySelector('#patrocinador3')
+let cerrar3 = document.querySelector("#modal3 .close");
+let modal4 = document.querySelector('#modal4');
+let botonModal4 = document.querySelector('#patrocinador4')
+let cerrar4 = document.querySelector("#modal4 .close");
+let modal5 = document.querySelector('#modal5');
+let botonModal5 = document.querySelector('#patrocinador5')
+let cerrar5 = document.querySelector("#modal5 .close");
+
+botonModal1.addEventListener('click', () => {
+    modal1.style.display = 'block';
+});
+
+cerrar1.addEventListener('click', () => {
+    modal1.style.display = 'none';
+});
+
+botonModal2.addEventListener('click', () => {
+    modal2.style.display = 'block';
+});
+
+cerrar2.addEventListener('click', () => {
+    modal2.style.display = 'none';
+});
+
+botonModal3.addEventListener('click', () => {
+    modal3.style.display = 'block';
+});
+
+cerrar3.addEventListener('click', () => {
+    modal3.style.display = 'none';
+});
+
+botonModal4.addEventListener('click', () => {
+    modal4.style.display = 'block';
+});
+
+cerrar4.addEventListener('click', () => {
+    modal4.style.display = 'none';
+});
+
+botonModal5.addEventListener('click', () => {
+    modal5.style.display = 'block';
+});
+
+cerrar5.addEventListener('click', () => {
+    modal5.style.display = 'none';
+});
+
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == modal3) {
+        modal3.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == modal4) {
+        modal4.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == modal5) {
+        modal5.style.display = "none";
+    }
+}
