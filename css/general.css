@@ -22,6 +22,10 @@ footer p {
 
 /******** clases globales ********/
 
+.contenedorClasesFlotantes {
+    display: flow-root;
+}
+
 .flotar-izq {
     float: left;
 }
@@ -32,6 +36,18 @@ footer p {
 
 .centrarTexto {
     text-align: center;
+}
+
+.alinearDerechaTexto {
+    text-align: right;
+}
+
+.alinearIzquierdaTexto {
+    text-align: left;
+}
+
+strong {
+    font-weight: 600;
 }
 
 .error {
@@ -47,8 +63,18 @@ footer p {
     margin: 25px auto;
 }
 
+.contenedorClasesFlotantes li {
+    width: 50%;
+    float: left;
+}
+
 section.contenedor {
     margin: 25px auto;
+}
+
+li {
+    display: block;
+    padding: 5px 10px;
 }
 
 h1,
@@ -92,6 +118,31 @@ a:hover {
 
 .contenedor p {
     letter-spacing: 1px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.tipoMoneda {
+    color: #6700a3;
+}
+
+
+/************widths**************/
+
+.w25 {
+    max-width: 25%;
+}
+
+.w50 {
+    max-width: 50%;
+}
+
+.w75 {
+    max-width: 75%;
+}
+
+.w100 {
+    max-width: 100%;
 }
 
 
@@ -142,6 +193,10 @@ a:hover {
 
 /**** inptus y columnas para formularios ****/
 
+label {
+    font-weight: 600;
+}
+
 textarea,
 select,
 input {
@@ -160,13 +215,16 @@ input[type=file] {
     background: none;
 }
 
-input[type=button] {
+input[type=button],
+button {
     background: none;
+    cursor: pointer;
 }
 
 input[type=date] {
     padding-top: 7.5px;
     padding-bottom: 7.5px;
+    min-height: 23px;
 }
 
 input {
@@ -224,13 +282,21 @@ input {
     text-align: center;
 }
 
-.btn-general button {
+.btn-general button,
+.btnPrincipal {
     background: #6700a3;
     color: #fff;
     padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
     border: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.tabla .btnPrincipal {
+    margin-bottom: 0;
 }
 
 
@@ -462,6 +528,13 @@ body.sinAutenticarBody header nav ul li ul li a:hover {
     color: #56cfe1;
 }
 
+body.duennoBody header,
+body.proveedorBody header,
+body.administradorBody header,
+body.sinAutenticarBody header {
+    margin-bottom: 50px;
+}
+
 footer {
     background: #000000;
     padding: 25px;
@@ -507,11 +580,11 @@ footer p {
 /* Inicio: estilos de la seccion top 20 proveedores*/
 
 .seccion-mejoresProv {
-    min-height: 250px;
+    width: 50%;
+    min-height: 550px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 auto;
 }
 
 .seccion-mejoresProv h2 {
@@ -519,5 +592,52 @@ footer p {
     margin-top: 15px;
 }
 
+.seccion-Top20 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion-Top20 ol li {
+    margin: 10px 25px;
+    display: list-item;
+    list-style-position: inside;
+}
+
+.seccion-Top20 h3 {
+    margin-left: 25px;
+}
+
 
 /* Final: estilos de la seccion top 20 proveedores*/
+
+
+/************Acordeon****************/
+
+.acordeonContenedor .accordion {
+    background-color: #eee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    color: #56cfe1;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.4s;
+    border-bottom: 1px solid #cccccc;
+}
+
+.acordeonContenedor .accordion.active,
+.acordeonContenedor .accordion:hover {
+    background-color: #b6b8d6;
+    color: #6700a3;
+}
+
+.acordeonContenedor .panel {
+    padding: 15px 20px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}

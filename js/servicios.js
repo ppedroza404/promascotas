@@ -309,6 +309,31 @@ let mascotasCliente = [{
 ]
 
 
+let lista_proveedoresCalificados = [
+    { "n_negocio": "Mascotas y mas", "calificacion": "4.59" },
+    { "n_negocio": "La marina animales", "calificacion": "3.09" },
+    { "n_negocio": "Small pets", "calificacion": "2.69" },
+    { "n_negocio": "Mascotas los mordelones", "calificacion": "4.61" },
+    { "n_negocio": "Paseos perrunos", "calificacion": "2.56" },
+    { "n_negocio": "Mercado mascotas", "calificacion": "4.54" },
+    { "n_negocio": "La pulga felíz", "calificacion": "1.43" },
+    { "n_negocio": "Los misingos", "calificacion": "2.92" },
+    { "n_negocio": "Los estilos animalísticos", "calificacion": "4.14" },
+    { "n_negocio": "Juguete animal", "calificacion": "4.63" },
+    { "n_negocio": "Alimentos El Perrillo", "calificacion": "1.77" },
+    { "n_negocio": "Animal Gym", "calificacion": "3.33" },
+    { "n_negocio": "Paseos peludos", "calificacion": "1.45" },
+    { "n_negocio": "Accesorios Don gato", "calificacion": "4.57" },
+    { "n_negocio": "Perros y Gatos", "calificacion": "2.58" },
+    { "n_negocio": "Ejercicios Patitas de amor", "calificacion": "1.36" },
+    { "n_negocio": "Grooming la peludita", "calificacion": "4.84" },
+    { "n_negocio": "Caminantes caninos", "calificacion": "4.13" },
+    { "n_negocio": "Alimentos la correa", "calificacion": "2.55" },
+    { "n_negocio": "Servicios nutritivos de mascotas", "calificacion": "4.36" },
+    { "n_negocio": "La gatita collares", "calificacion": "3.77" }
+]
+
+
 let listaUsuarios = [
     { "Estado": "Activo", "correo": "admin@promascotas.com", "tipo": "Administrador", "nombre": "Admin", "primerApellido": "Admin", "segundoApellido": "Admin", "nacimiento": "10-12-1987'", "cantidadmascotas": "0", "contrasenna": "123Abc!", "sexo": "Otro", "telefono": "5555-5555", "tipoID": "JURIDICA", "id": "999999999", "provincia": "San Jose", "canton": "Escazu", "distrito": "Escazu", "sennas": "casa 1", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },
     { "Estado": "Activo", "correo": "mmatamoro@gmail.com", "tipo": "Proveedor", "nombre": "Maria", "primerApellido": "Trivez", "segundoApellido": "Matamoro", "nacimiento": "09-20-1973'", "cantidadmascotas": "0", "contrasenna": "123Abc!", "sexo": "Femenino", "telefono": "1234-5678", "tipoID": "CEDULA", "id": "925069023", "provincia": "San Jose", "canton": "Escazu", "distrito": "San atonio", "sennas": "casa 12", "n_negocio": "macotas y mas", "negocio_tipo": "Juridica", "id_negocio": "555555", "r_legal_Nombre": "karen", "r_legalaPapellido": "Kiros", "r_legalaSapellido": "Kalamaro", "r_legalatipoid": "Cedula", "r_legalanid": "1501764518", "r_legalanacimiento": "11/03/1980", "r_legacorreo_email": "mascotas@gmail.com", "n_descr": "Negocio enfocado en el servico a las mascotas" },
@@ -576,9 +601,6 @@ const tipoUsuario = () => {
             break;
     }
 };
-
-
-
 
 const iniciarSesion = (correo, contrasenna) => {
     let credencialesCorrectas = false;
