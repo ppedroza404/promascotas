@@ -3,7 +3,7 @@
 const tabla = document.querySelector('#tbl-usuarios tbody');
 
 const mostrarTabla = () => {
-    mascotasCliente.forEach(mascota => {
+    mascotasCliente2.forEach(mascota => {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = mascota.nombre;
         fila.insertCell().innerHTML = mascota.raza;
