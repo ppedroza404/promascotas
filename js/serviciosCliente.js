@@ -27,8 +27,21 @@ const mostrarTabla = () => {
         fila.insertCell().innerHTML = proveedor.telefonoProveedor;
         fila.insertCell().innerHTML = proveedor.correoElectronicoProveedor;
         fila.insertCell().innerHTML = proveedor.provincia;
+
+
+        let agregarVerServicioBtn = fila.insertCell();
+
+        let botonVerServicio = document.createElement('button');
+        botonVerServicio.innerText = 'Ver servicio';
+        botonVerServicio.classList.add('btnPrincipal');
+        botonVerServicio.addEventListener('click', () => {
+            window.location.href = 'serviciosProveedor.html';
+        });
+
+        agregarVerServicioBtn.appendChild(botonVerServicio);
     });
 }
+
 const mostrarTablaFiltros = () => {
     let ubicacionServicioSeleccionado = ubicacionServicio.value;
     let tipoServicioSeleccionado = tipoServicio.value;
@@ -45,6 +58,18 @@ const mostrarTablaFiltros = () => {
             fila.insertCell().innerHTML = proveedor.telefonoProveedor;
             fila.insertCell().innerHTML = proveedor.correoElectronicoProveedor;
             fila.insertCell().innerHTML = proveedor.provincia;
+
+
+            let agregarVerServicioBtn = fila.insertCell();
+
+            let botonVerServicio = document.createElement('button');
+            botonVerServicio.innerText = 'Ver servicio';
+            botonVerServicio.classList.add('btnPrincipal');
+            botonVerServicio.addEventListener('click', () => {
+                window.location.href = 'serviciosProveedor.html';
+            });
+
+            agregarVerServicioBtn.appendChild(botonVerServicio);
         } else if (proveedor.provincia == ubicacionServicioSeleccionado) {
 
             let fila = tablaUsuarios.insertRow();
@@ -53,6 +78,18 @@ const mostrarTablaFiltros = () => {
             fila.insertCell().innerHTML = proveedor.telefonoProveedor;
             fila.insertCell().innerHTML = proveedor.correoElectronicoProveedor;
             fila.insertCell().innerHTML = proveedor.provincia;
+
+
+            let agregarVerServicioBtn = fila.insertCell();
+
+            let botonVerServicio = document.createElement('button');
+            botonVerServicio.innerText = 'Ver servicio';
+            botonVerServicio.classList.add('btnPrincipal');
+            botonVerServicio.addEventListener('click', () => {
+                window.location.href = 'serviciosProveedor.html';
+            });
+
+            agregarVerServicioBtn.appendChild(botonVerServicio);
         } else if ((proveedor.provincia == ubicacionServicioSeleccionado) && (proveedor.tipoServicio == tipoServicioSeleccionado)) {
 
             let fila = tablaUsuarios.insertRow();
@@ -61,7 +98,21 @@ const mostrarTablaFiltros = () => {
             fila.insertCell().innerHTML = proveedor.telefonoProveedor;
             fila.insertCell().innerHTML = proveedor.correoElectronicoProveedor;
             fila.insertCell().innerHTML = proveedor.provincia;
+
+
+            let agregarVerServicioBtn = fila.insertCell();
+
+            let botonVerServicio = document.createElement('button');
+            botonVerServicio.innerText = 'Ver servicio';
+            botonVerServicio.classList.add('btnPrincipal');
+            botonVerServicio.addEventListener('click', () => {
+                window.location.href = 'serviciosProveedor.html';
+            });
+
+            agregarVerServicioBtn.appendChild(botonVerServicio);
         }
+
+
 
     });
 }

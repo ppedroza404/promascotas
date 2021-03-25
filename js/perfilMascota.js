@@ -39,13 +39,14 @@ const inputPadecimientos1 = document.querySelector('#txt-padecimientos');
 
 
 const mostrarTabla = () => {
-    mascotasClientePerfil.forEach(mascota => {
+    mascotasCliente3.forEach(mascota => {
 
         inputNombreMascota1.innerHTML = mascota.nombre;
         inputTipoMascota1.value = mascota.tipo;
         inputRaza1.value = mascota.raza;
         inputEdad1.value = mascota.edad;
         inputPadecimientos1.value = mascota.padecimientos;
+
 
         mascota.vacunas.forEach(vacuna => {
 
@@ -56,6 +57,8 @@ const mostrarTabla = () => {
             fila.insertCell().innerHTML = vacuna.fabricante;
 
         });
+
+
     });
 };
 mostrarTabla();

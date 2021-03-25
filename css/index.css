@@ -266,6 +266,15 @@ header.fixed .menuPrincipal li a {
     }
 }
 
+main>section {
+    padding-bottom: 75px;
+}
+
+section.contenedor {
+    margin: 25px auto;
+    max-width: 1024px;
+}
+
 
 /*********/
 
@@ -401,7 +410,7 @@ h2 {
 .seccion-der {
     width: calc(50% - 50px);
     padding-top: 25px;
-    min-height: 145px;
+    min-height: 160px;
 }
 
 .seccion-izq {
@@ -532,20 +541,19 @@ h2 {
 }
 
 #seccionContactanos textarea,
-select,
-input {
+#seccionContactanos select,
+#seccionContactanos input {
     width: 94%;
     margin-top: 10px;
 }
 
 #seccionContactanos .flotar-der,
-.flotar-izq {
+#seccionContactanos .flotar-izq {
     width: 50%;
     margin-top: 25px;
 }
 
-#seccionContactanos .columna label,
-p {
+#seccionContactanos .columna label p {
     color: #ddd;
     margin-left: 10px;
 }

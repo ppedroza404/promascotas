@@ -1,0 +1,766 @@
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Header*/
+
+header {
+    background: linear-gradient(to bottom, #00A2AD 0%, #005a62 100%);
+    overflow: hidden;
+}
+
+header nav {
+    display: flow-root;
+}
+
+.logo {
+    float: left;
+    margin: 0;
+    padding: 20px 0px;
+}
+
+.navigation .menuContenedor {
+    float: right;
+}
+
+.navigation .menuContenedor a {
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 18px;
+    margin-top: 18px;
+    padding: 25px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation .menuContenedor a::after {
+    background: transparent;
+    bottom: 10px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0px;
+    transition: all 0.5s ease 0s;
+    width: 0%;
+}
+
+.navigation .menuContenedor a:hover {
+    color: #6ff4fe;
+}
+
+.navigation .menuContenedor a:hover::after {
+    background: #22a9b3;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+}
+
+.navigation .menuContenedor .icono {
+    display: none;
+}
+
+
+/* Fin: Estilos de la sección: Header*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: carrousel*/
+
+#slider {
+    overflow: hidden;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 15s slider infinite;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+
+/* Fin: Estilos de la sección: carrousel*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Acerca de nosotros - Misión & Visión*/
+
+.divMision,
+.divVision {
+    min-height: 207px;
+    display: flow-root;
+}
+
+.divMision div,
+.divVision div {
+    max-width: 50%;
+    padding: 45px 20px 65px;
+}
+
+.divMision {
+    background: url("../imagesColossus/misionBgr.png") no-repeat top left;
+}
+
+.divMision div {
+    text-align: right;
+    float: right;
+}
+
+.divVision {
+    background: url("../imagesColossus/visionBgr.png") no-repeat top right;
+}
+
+.divVision div {
+    text-align: left;
+    float: left;
+}
+
+
+/* Fin: Estilos de la sección: Acerca de nosotros - Misión & Visión*/
+
+
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Nuestro equipo*/
+
+.nuestroEquipo h3 {
+    margin: 25px 0px 5px;
+    color: #666666
+}
+
+
+/*Inicio: Estilos de imágenes dentro de cada div*/
+
+.seccionEquipo div img {
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    transition: all 0.5s ease 0s;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    /* Firefox 10+, Firefox on Android */
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    /* IE 6-9 */
+}
+
+.seccionEquipo div img:hover {
+    transition: all 0.5s ease 0s;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    filter: none;
+}
+
+
+/*Fin: Estilos de imágenes dentro de cada div*/
+
+
+/*Inicio: Estilos de seccion de nuestro equipo - Top*/
+
+.seccionEquipo-top,
+.seccionEquipo-bottom {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    text-align: center;
+    vertical-align: top;
+    flex-wrap: wrap;
+}
+
+.seccionEquipo-bottom {
+    padding: 30px;
+}
+
+.seccionEquipo div {
+    background: url("../imagesColossus/seccionNuestroEquipo-div-bg.jpg") repeat-x 0 -160px;
+    border: #e5e5e5 2px solid;
+    margin: 0 50px;
+    text-align: center;
+    width: 220px;
+    position: relative;
+    padding-top: 40px;
+    min-width: 220px;
+    margin-bottom: 25px;
+}
+
+.seccionEquipo div::after {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    content: "-.-. --- .-.. --- ... ... ..- ... .-.-.";
+    font-weight: 600;
+}
+
+.seccionEquipo p {
+    font-size: 14px;
+    max-width: 200px;
+    padding: 20px;
+    text-align: justify;
+    margin: 0px auto;
+    letter-spacing: 5px;
+    line-height: 20px;
+}
+
+
+/*Fin: Estilos de seccion de nuestro equipo - Top*/
+
+
+/*Inicio: Estilos de seccion de nuestro equipo - Bottom*/
+
+
+/*Fin: Estilos de seccion de nuestro equipo - Top*/
+
+
+/* Fin: Estilos de la sección: Nuestro equipo*/
+
+
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Testimonios */
+
+.seccionTestimonios {
+    background-color: #fff;
+    margin-left: 100px;
+    margin-right: 100px;
+    min-height: 1100px;
+}
+
+.contenidoTestimonios {
+    text-align: center;
+    align-items: block;
+    background-color: back;
+    width: 100%;
+}
+
+.contenidoTestimonios p {
+    text-align: justify;
+    min-height: 80px;
+    max-height: 300px;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.comillas {
+    display: inline;
+    position: relative;
+    color: #00a2ad;
+    font-size: 40px;
+}
+
+.comillasArriba {
+    margin-right: 500px;
+}
+
+.comillasAbajo {
+    margin-left: 500px;
+}
+
+.estrellas {
+    padding-top: 60px;
+    color: #00a2ad;
+    font-size: 25px;
+}
+
+.estrellas span {
+    background: radial-gradient(circle, rgba(230, 197, 5, 0.29175420168067223) 0%, rgba(238, 238, 238, 1) 54%, rgba(238, 238, 238, 1) 100%);
+}
+
+.contenidoTestimonios h3 {
+    padding: 30px 0px 0px 0px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.imagen {
+    margin: auto;
+}
+
+.cliente1 {
+    width: 150px;
+    height: 100px;
+    background-image: url("../imagesColossus/cliente1.jpg");
+    background-size: cover;
+}
+
+.cliente2 {
+    width: 150px;
+    height: 100px;
+    background-image: url("../imagesColossus/cliente2.jpg");
+    background-size: cover;
+}
+
+.cliente3 {
+    width: 150px;
+    height: 100px;
+    background-image: url("../imagesColossus/cliente3.jpg");
+    background-size: cover;
+}
+
+.contenedorPuntos {
+    padding: 25px 0px 20px 0px;
+    text-align: center;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    background-color: #eeeeee;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 73%;
+    width: auto;
+    padding: 50px;
+    color: #666666;
+    font-weight: bold;
+    font-size: 50px;
+    opacity: 4;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.prev {
+    left: 25%;
+}
+
+.next {
+    right: 25%;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    color: #191919;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #666666;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #191919;
+}
+
+
+/* Fading animation */
+
+.block {
+    display: block;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.show {
+    border: 20px solid red;
+}
+
+
+/* Fin: Estilos de la sección: Testimonios*/
+
+
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Contáctenos */
+
+.contactenosColossus .contenedor {
+    background: #ffffff url("../imagesColossus/seccionContactenos-bg.jpg")
+}
+
+.contactenosColossus .contenedor {
+    background-color: #ffffff;
+    background-image: url("../imagesColossus/seccionContactenos-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.contactenosColossus p {
+    max-width: 80%;
+}
+
+.divContenedorCampos {
+    display: flow-root;
+    padding: 15px 25px;
+}
+
+.divContenedorCampos .divCampo {
+    float: left;
+    width: calc(33% - 20px);
+    padding: 10px;
+}
+
+.contactenosColossus label,
+.contactenosColossus input,
+.contactenosColossus select {
+    Display: block;
+    margin: 5px;
+}
+
+.contactenosColossus label {
+    font-weight: 600;
+}
+
+.contactenosColossus input,
+.contactenosColossus select,
+.contactenosColossus textarea {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+    color: #333333
+}
+
+.divContenedorCampos .divCampoCom {
+    display: block;
+    float: left;
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.divCampoCom #coment {
+    display: block;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 25px
+}
+
+.divContenedorCampos .divCampoBot {
+    float: right;
+    padding: 10px;
+}
+
+.divCampoBot #btn-enviar {
+    background: #56cfe1;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px 25px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+
+/* Fin: Estilos de la sección: Contáctenos*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Clientes*/
+
+.nuestrosClientesColossus {
+    background-color: #eeeeee;
+    display: flow-root;
+}
+
+.nuestroCliente {
+    float: left;
+    display: block;
+    width: 33%;
+    padding: 40px 0px;
+}
+
+.nuestroCliente span {
+    margin: 0px auto;
+    display: block;
+    width: 217px;
+    height: 95px;
+    background: url('../imagesColossus/logoMorado.png') no-repeat top left;
+}
+
+
+/* Inicio: Estilos de la sección: Clientes*/
+
+
+/*-----------------------------------------------------*/
+
+
+/* Inicio: Estilos de la sección: Footer*/
+
+.seccionFooterColossus {
+    background-color: #191919;
+}
+
+.seccionFooter {
+    min-height: 100px;
+    padding: 30px 0px;
+    display: flow-root;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    padding: 15px 25px 25px;
+}
+
+.seccionFooter h2 {
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    margin-left: 0px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.seccionFooter div {
+    border-right: #666666 2px solid;
+    box-sizing: border-box;
+    min-height: 205px;
+}
+
+.seccionFooter-centrar:last-child div {
+    border-right: none;
+}
+
+.seccionFooter div a {
+    color: #666666;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.seccionFooter div a:hover {
+    color: #56cfe1;
+}
+
+.seccionFooter div a img {
+    max-width: 30px;
+    max-height: 30px;
+    padding-right: 15px;
+    ;
+}
+
+.seccionFooter p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 4px 4px 4px 0px;
+    margin-bottom: 0;
+}
+
+.seccionFooter-espacioTexto {
+    margin-top: 15px;
+}
+
+.icono {
+    font-size: 35px;
+    padding-right: 10px;
+}
+
+
+/* Estilo iconos Font awesome*/
+
+.seccionFooter-espacioTexto a {
+    padding: 5px;
+    font-size: 30px;
+}
+
+.telefono {
+    text-decoration: none;
+}
+
+
+/* Fin: Estilos de la sección: Footer*/
+
+
+/*-----------------------------------------------------*/
+
+
+/******************** Responsive ***********************/
+
+@media screen and (max-width: 1100px) {
+    .contenedor {
+        width: 90%;
+    }
+    .navigation .menuContenedor a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navigation .menuContenedor a {
+        display: none;
+        transition: all 0.5s ease 0s;
+        height: 0;
+    }
+    .navigation .menuContenedor a.icono {
+        float: right;
+        display: block;
+        transition: all 0.5s ease 0s;
+    }
+    .navigation.responsive {
+        position: relative;
+    }
+    .navigation.responsive .icono {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navigation.responsive a {
+        display: block;
+        text-align: center;
+        width: calc(20% - 32px);
+        height: auto;
+        margin-top: 0;
+        transition: all 0.5s ease 0s;
+    }
+    .divMision div,
+    .divVision div {
+        max-width: 100%;
+        padding: 55px 20px 65px;
+        background: rgba(255, 255, 255, 0.8);
+    }
+    .seccionEquipo-top,
+    .seccionEquipo-bottom {
+        margin: 25px 0px;
+    }
+    .divContenedorCampos .divCampo {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .seccionFooter div.column {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #666;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .contenidoTestimonios p {
+        width: ;
+    }
+    .prev {
+        left: 5%;
+    }
+    .next {
+        right: 5%;
+    }
+    .nuestroCliente {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contenidoTestimonios p {
+        width: 90%;
+        padding: 0 50px;
+    }
+    .comillasArriba {
+        margin-right: calc(100% - 40px);
+    }
+    .comillasAbajo {
+        margin-left: calc(100% - 40px);
+    }
+}
