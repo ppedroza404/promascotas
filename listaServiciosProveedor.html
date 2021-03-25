@@ -6,24 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Perfil de Proveedor</title>
+    <title>Lista total de proveedores</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/perfilProveedor.css">
-
-
+    <link rel="stylesheet" href="css/tabla.css">
 </head>
 
 <body class="proveedorBody">
     <header>
         <section class="contenedor">
             <div>
-                <a href="paginaInicioProveedor.html" class="logo"><span></span></a>
+                <a href="index.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -71,10 +68,7 @@
                             <a href="perfilProveedor.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="###">Listas</a>
-                            <ul>
-                                <li><a href="serviciosProveedorYCliente.html">Servicios</a></li>
-                            </ul>
+                            <a href="###">Reportes</a>
                         </li>
                         <li>
                             <a href="###">Mantenimiento de servicios</a>
@@ -154,88 +148,25 @@
         </section>
     </header>
 
-
-
-    <main>
-        <div class="contenedor">
-            <h1>Perfil de proveedor</h1>
-
-            <h2>Proveedor</h2>
-            <section class="contenedorColumna dobleColumna">
-
-                <div class="columna">
-                    <label for="div-imgUpload">Fotografía o avatar</label>
-                    <div class="div-imgUpload">
-                        <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                        </div>
-                        <span><input type="file" name="input-img" id="input-imagen"></span>
-                    </div>
-                </div>
-                <div class="columna dobleColumnaInvertida">
-                    <div class="columna">
-
-                        <p><span id="txt-nombreProveedor">xxxx</span> <span id="txt-apellido1Proveedor">xxxx</span> <span id="txt-apellido2Proveedor">xxxx</span></p>
-                        <p id="txt-email">proveedor@domain.com</p>
-                        <p>Genero : <span id="txt-genero"></span></p>
-                        <p>Telefono : <span id="txt-telefono"></span></p>
-                        <p><span id="txt-tipoId">xxxx</span> : <span id="txt-numId">12345-6789</span></p>
-                        <p id="txt-tipoUsuario">xxx</p>
-                    </div>
-
-                    <div class="columna">
-                        <p id="txt-provincia">provincia</p>
-                        <p id="txt-canton">canton</p>
-                        <p id="txt-distrito">distrito</p>
-                        <p id="txt-direccion">direccion</p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <div id="perfilProveedorRepLegal">
-                <section class="contenedorColumna dobleColumna ">
-                    <h2>Representante Legal</h2>
-                    <div class="columna">
-                        <label for="div-imgUpload">Fotografía o avatar</label>
-                        <div class="div-imgUpload">
-                            <div class="previstaImagen" id="prevImagen">
-                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                            </div>
-                            <span><input type="file" name="input-img" id="input-imagen"></span>
-                        </div>
-                    </div>
-                    <div class="columna dobleColumnaInvertida">
-
-
-                        <div class="columna">
-                            <h3 id="txt-empresa">Representante Legal</h3>
-                            <p><span id="txt-nombreRlegal">xxxxx</span> <span id="txt-apellido1Rlegal">xxxxx</span> <span id="txt-apellido2Rlegal">xxxxx</span></p>
-                            <p id="txt-emailRlegal">Rlegal@xxxxx.com</p>
-                            <p>Genero : <span id="txt-generoRlegal"></span></p>
-                            <p>Telefono : <span id="txt-telefonoRlegal"></span></p>
-                            <p><span id="txt-tipoIdRlegal">xxxx</span> : <span id="txt-numIdRlegal">12345-6789</span></p>
-                            <p id="txt-tipoUsuario">Representante Legal</p>
-
-                        </div>
-
-                        <div class="columna">
-                            <p id="txt-provinciaRlegal">xxxxx</p>
-                            <p id="txt-cantonRlegal">xxxxx</p>
-                            <p id="txt-distritoRlegal">xxxxx</p>
-                            <p id="txt-direccionRlegal">xxxxx</p>
-
-                        </div>
-
-
-
-                    </div>
-                </section>
+    <main class="contenedor">
+        <div class="simpleColumna">
+            <div class="columna">
+                <label for="txt-filtro">Filtrar</label>
+                <input type="text" id="txt-filtro">
             </div>
         </div>
+        <table id="tbl-usuarios" class="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre del servicio</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
@@ -244,7 +175,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/perfilProveedor.js"></script>
+
+    <script src="js/listaServiciosProveedor.js"></script>
 </body>
 
 </html>

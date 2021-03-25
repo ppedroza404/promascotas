@@ -6,24 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Perfil de Proveedor</title>
+    <title>Eventos</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/perfilProveedor.css">
-
-
 </head>
 
-<body class="proveedorBody">
+<body class="sinAutenticarBody">
     <header>
         <section class="contenedor">
             <div>
-                <a href="paginaInicioProveedor.html" class="logo"><span></span></a>
+                <a href="index.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -71,10 +67,7 @@
                             <a href="perfilProveedor.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="###">Listas</a>
-                            <ul>
-                                <li><a href="serviciosProveedorYCliente.html">Servicios</a></li>
-                            </ul>
+                            <a href="###">Reportes</a>
                         </li>
                         <li>
                             <a href="###">Mantenimiento de servicios</a>
@@ -138,9 +131,6 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
-                            <a href="inicioSesion.html">Iniciá sesión</a>
-                        </li>
-                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -153,98 +143,21 @@
             </div>
         </section>
     </header>
-
-
-
     <main>
-        <div class="contenedor">
-            <h1>Perfil de proveedor</h1>
+        <h1>Eventos</h1>
+        <section class="contenedor">
+            <iframe class="centrarBloque" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FCosta_Rica&amp;src=amJlbmF2aWRlc3IxQHVjZW5mb3RlYy5hYy5jcg&amp;src=Y185MHJwcWdtbGdtdHNicmFsb2F1Zjg2amtoMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY3IjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y19mNzdqNGVudGZ0aG9zcms2bWNzcGdqZnVoMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%23F6BF26&amp;color=%2333B679&amp;color=%230B8043&amp;color=%23EF6C00&amp;showTitle=1&amp;hl=es_419&amp;title=Eventos%20Pro%20Mascotas"
+                style="border:solid 1px #cccccc; padding: 20px; font-family: 'Roboto', sans-serif;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
-            <h2>Proveedor</h2>
-            <section class="contenedorColumna dobleColumna">
-
-                <div class="columna">
-                    <label for="div-imgUpload">Fotografía o avatar</label>
-                    <div class="div-imgUpload">
-                        <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                        </div>
-                        <span><input type="file" name="input-img" id="input-imagen"></span>
-                    </div>
-                </div>
-                <div class="columna dobleColumnaInvertida">
-                    <div class="columna">
-
-                        <p><span id="txt-nombreProveedor">xxxx</span> <span id="txt-apellido1Proveedor">xxxx</span> <span id="txt-apellido2Proveedor">xxxx</span></p>
-                        <p id="txt-email">proveedor@domain.com</p>
-                        <p>Genero : <span id="txt-genero"></span></p>
-                        <p>Telefono : <span id="txt-telefono"></span></p>
-                        <p><span id="txt-tipoId">xxxx</span> : <span id="txt-numId">12345-6789</span></p>
-                        <p id="txt-tipoUsuario">xxx</p>
-                    </div>
-
-                    <div class="columna">
-                        <p id="txt-provincia">provincia</p>
-                        <p id="txt-canton">canton</p>
-                        <p id="txt-distrito">distrito</p>
-                        <p id="txt-direccion">direccion</p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <div id="perfilProveedorRepLegal">
-                <section class="contenedorColumna dobleColumna ">
-                    <h2>Representante Legal</h2>
-                    <div class="columna">
-                        <label for="div-imgUpload">Fotografía o avatar</label>
-                        <div class="div-imgUpload">
-                            <div class="previstaImagen" id="prevImagen">
-                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                            </div>
-                            <span><input type="file" name="input-img" id="input-imagen"></span>
-                        </div>
-                    </div>
-                    <div class="columna dobleColumnaInvertida">
-
-
-                        <div class="columna">
-                            <h3 id="txt-empresa">Representante Legal</h3>
-                            <p><span id="txt-nombreRlegal">xxxxx</span> <span id="txt-apellido1Rlegal">xxxxx</span> <span id="txt-apellido2Rlegal">xxxxx</span></p>
-                            <p id="txt-emailRlegal">Rlegal@xxxxx.com</p>
-                            <p>Genero : <span id="txt-generoRlegal"></span></p>
-                            <p>Telefono : <span id="txt-telefonoRlegal"></span></p>
-                            <p><span id="txt-tipoIdRlegal">xxxx</span> : <span id="txt-numIdRlegal">12345-6789</span></p>
-                            <p id="txt-tipoUsuario">Representante Legal</p>
-
-                        </div>
-
-                        <div class="columna">
-                            <p id="txt-provinciaRlegal">xxxxx</p>
-                            <p id="txt-cantonRlegal">xxxxx</p>
-                            <p id="txt-distritoRlegal">xxxxx</p>
-                            <p id="txt-direccionRlegal">xxxxx</p>
-
-                        </div>
-
-
-
-                    </div>
-                </section>
-            </div>
-        </div>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/perfilProveedor.js"></script>
 </body>
 
 </html>
