@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Base de HTML</title>
+    <title>Listar mascotas cliente</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
@@ -14,9 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
     <link rel="stylesheet" href="css/tabla.css">
+
 </head>
 
-<body class="proveedorBody">
+<body class="administradorBody">
     <header>
         <section class="contenedor">
             <div>
@@ -34,13 +35,10 @@
                             <a href="###">Reportes</a>
                         </li>
                         <li>
-                            <a href="###">Cuenta</a>
+                            <a href="###">Carrito de compras</a>
                             <ul>
                                 <li>
-                                    <a href="registrarMetodoPago.html">Métodos de pago</a>
-                                </li>
-                                <li>
-                                    <a href="">Métodos de pago</a>
+                                    <a href="###">Pagos</a>
                                 </li>
                             </ul>
                         </li>
@@ -48,7 +46,7 @@
                             <a href="###">Mis mascotas</a>
                             <ul>
                                 <li>
-                                    <a href="listarMascotasCliente.html">Mantenimiento</a>
+                                    <a href="###">Mantenimiento</a>
                                 </li>
                             </ul>
                         </li>
@@ -118,12 +116,8 @@
                             <a href="###">Usuarios</a>
                             <ul>
                                 <li>
-                                    <a href="listarUsuariosAdmin.html">Usuarios</a>
-                                </li>
-                                <li>
                                     <a href="###">Usuarios denunciados</a>
                                 </li>
-
                             </ul>
                         </li>
                         <li>
@@ -139,6 +133,9 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
+                            <a href="inicioSesion.html">Iniciá sesión</a>
+                        </li>
+                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -151,92 +148,39 @@
             </div>
         </section>
     </header>
-    <main>
-        <section class="contenedor">
-            <h1>H1</h1>
-            <h2>H2</h2>
-            <h3>H3</h3>
-            <h4>H4</h4>
-            <p>Aquí va la información que queremos.</p>
-            <p><strong>Recuerden estos pasos</strong></p>
-            <ul>
-                <li>Cambiar en la etiqueta de html el lang, pasarlo a "es"</li>
-                <li>Recordar incluir los llamados del font family (línea 9 y 10 de este documento)</li>
-                <li>Completar el head con la información correcta: <br> hojas de estilos <br> title </li>
-                <li>Agregar el llamado del favicon</li>
-                <li>Poner la clase del tipo de usuario de la página que van a crear: <br> class="administradorBody" <br> class="duennoBody" <br> class="proveedorBody" <br> class="sinAutenticarBody"</li>
-                <li>Usar la clase contenedor cuando sea necesaria</li>
-                <li>Usar el nav correspondiente a cada usuario</li>
-                <li>En caso de duda, consultar con los compañeros</li>
-                <li>De momento no le hagan caso a los estilos de esta página, ya que no tiene, pero lo voy a hacer unos que tengan la mayoría de las clases</li>
-                <li>Mucho éxito maes, vamos a patear sentaderas con esta app!!!</li>
-            </ul>
-        </section>
-        <section class="contenedor">
-            <h1>Ejemplos de columnas</h1>
-            <form>
-                <div class="dobleColumna contenedorColumna">
-                    <div class="columna">
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                    <div class="columna">
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="simpleColumna contenedorColumna">
-                    <div class="columna">
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                    <div class="columna">
-                        <input type="text">
-                    </div>
-                    <div class="columna">
-                        <input type="text">
-                    </div>
-                </div>
-            </form>
-            <hr>
-            <div class="contenedor">
-                <div class="slct-provincia">
-                    <label for="provincias">Provincia</label>
-                    <select class="form-control" id="provincias" name="provincias">
-                            <option value="" slected>Seleccione una provincia</option>
-                        </select>
-                </div>
-                <div class="form-group canton" style="display: block;">
-                    <label for="cantones">Cantón</label>
-                    <select class="form-control" id="cantones" name="cantones">
-                            <option value="" slected>Seleccione un canton</option>
-    
-                        </select>
-                </div>
-                <div class="form-group distrito" style="display: block;">
-                    <label for="distritos" id="labelslct">Distrito</label>
-                    <select value="" class="form-control" id="distritos" name="distritos">
-                            <option value="" slected>Seleccione un distrito</option>
-                        </select>
-                </div>
 
+    <main class="contenedor">
+        <div class="simpleColumna">
+            <div class="columna">
+                <label for="txt-filtro">Filtrar</label>
+                <input type="text" id="txt-filtro">
             </div>
+        </div>
+        <table id="tbl-mascotas" class="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Tipo de mascota</th>
+                    <th>Dueño</th>
+                    <th>Fecha de ingreso</th>
+                    <th>Cantidad de servicios</th>
 
+                </tr>
+            </thead>
+            <tbody>
 
-            <hr>
-        </section>
+            </tbody>
+        </table>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
-    <script src="js/provincias.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/mascotasAdmin.js"></script>
 </body>
 
 </html>
