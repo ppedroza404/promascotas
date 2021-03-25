@@ -171,29 +171,3 @@ botonModal5.addEventListener('click', () => {
 cerrar5.addEventListener('click', () => {
     modal5.style.display = 'none';
 });
-
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-    }
-}
-window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
-}
-window.onclick = function(event) {
-    if (event.target == modal3) {
-        modal3.style.display = "none";
-    }
-}
-window.onclick = function(event) {
-    if (event.target == modal4) {
-        modal4.style.display = "none";
-    }
-}
-window.onclick = function(event) {
-    if (event.target == modal5) {
-        modal5.style.display = "none";
-    }
-}
