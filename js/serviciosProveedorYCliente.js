@@ -199,7 +199,13 @@ const cerrarNuevoServicio3 = () => {
 
 const cargarNuevoServicio4 = () => {
     if (contenedorNuevoServicio4.classList.contains('ocultar')) {
-        contenedorNuevoServicio4.classList.remove('ocultar')
+        contenedorNuevoServicio4.classList.remove('ocultar');
+        Swal.fire({
+            'icon': 'warning',
+            'title': 'Máximo de servicios',
+            'text': 'Puede agregar un máximo de cinco servicios por vez',
+            'confirmButtonText': 'Entendido'
+        });
     }
 };
 const cerrarNuevoServicio4 = () => {
@@ -210,6 +216,10 @@ const cerrarNuevoServicio4 = () => {
 const cargarNuevoServicio5 = () => {
     if (contenedorNuevoServicio5.classList.contains('ocultar')) {
         contenedorNuevoServicio5.classList.remove('ocultar')
+
+
+
+
     }
 };
 const cerrarNuevoServicio5 = () => {
