@@ -400,7 +400,7 @@ h2 {
 .seccion-izq,
 .seccion-der {
     width: calc(50% - 50px);
-    padding: 25px;
+    padding-top: 25px;
     min-height: 145px;
 }
 
@@ -435,4 +435,185 @@ h2 {
 }
 
 
+/* Inicio: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
+#seccionContactanos {
+    min-height: 600px;
+    color: #ffffff;
+    background: rgb(30, 73, 79);
+    background: linear-gradient(90deg, rgba(30, 73, 79, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(41, 0, 65, 1) 100%);
+}
+
+#seccionContactanos h3 {
+    color: #ffffff;
+}
+
+#seccionContactanos input {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#seccionContactanos textarea {
+    height: 50px;
+    background-color: #ffffff;
+}
+
+#btn-contactenos {
+    margin-top: 20px;
+}
+
+.span-contac {
+    font-size: 21px;
+}
+
+#seccionPublicidad {
+    background-color: #cccde2;
+    min-height: 130px;
+    max-height: 154px;
+}
+
+#seccionPublicidad {
+    margin-top: -25px;
+}
+
+.img-publicidad {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#img-publicidad {
+    margin-top: 2px;
+}
+
+
 /* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "¿Te unis?" de Pro Mascotas LP */
+
+.imgBtn.eventosSaludAnimalD1 {
+    background-image: url("../img/index/unirmeDuennoBtn.jpg");
+}
+
+.imgBtn.eventosSaludAnimalD2 {
+    background-image: url("../img/index/unirmeProveedorBtn.jpg");
+}
+
+#seccionUnirme {
+    min-height: 500px;
+}
+
+#seccionUnirme h3 {
+    color: #3d3d46;
+}
+
+#seccionUnirme p {
+    margin-bottom: 25px;
+}
+
+
+/* Inicio: Estilos de la sección "¿Interactuamos?" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
+#seccionContactanos {
+    background: rgb(30, 73, 79);
+    background: linear-gradient(45deg, rgba(30, 73, 79, 1) 0%, rgba(0, 0, 0, 1) 54%, rgba(41, 0, 65, 1) 100%);
+    min-height: 600px;
+}
+
+#seccionContactanos .contenedor {
+    margin-top: 0px;
+}
+
+.contactenos-fila {
+    margin-top: 30px;
+}
+
+#seccionContactanos textarea,
+select,
+input {
+    width: 94%;
+    margin-top: 10px;
+}
+
+#seccionContactanos .flotar-der,
+.flotar-izq {
+    width: 50%;
+    margin-top: 25px;
+}
+
+#seccionContactanos .columna label,
+p {
+    color: #ddd;
+    margin-left: 10px;
+}
+
+.contactenos-fila p {
+    margin: 0px;
+}
+
+#seccionContactanos .flotar-der button {
+    float: right;
+}
+
+#seccionContactanos .columna h3 {
+    color: #ddd;
+    margin-left: 10px;
+}
+
+
+/* Final: Estilos de la sección "Contactenos" de Pro Mascotas LP */
+
+
+/* Inicio: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
+
+#seccionPatrocinadores {
+    background: #56cfe1;
+}
+
+#seccionPatrocinadores .contenedor {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.patrocinadores {
+    display: inline-block;
+    margin: 20px;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.patrocinador1 {
+    background-image: url("../img/index/patrocinadoresBtn1.png");
+    height: 86px;
+    width: 87px;
+}
+
+.patrocinador2 {
+    background-image: url("../img/index/patrocinadoresBtn2.png");
+    height: 86px;
+    width: 142px;
+}
+
+.patrocinador3 {
+    background-image: url("../img/index/patrocinadoresBtn3.png");
+    height: 85px;
+    width: 156px;
+}
+
+.patrocinador4 {
+    background-image: url("../img/index/patrocinadoresBtn4.png");
+    height: 88px;
+    width: 108px;
+}
+
+.patrocinador5 {
+    background-image: url("../img/index/patrocinadoresBtn5.png");
+    height: 86px;
+    width: 95px;
+}
+
+
+/* Final: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
