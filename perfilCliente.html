@@ -62,6 +62,9 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="paginaInicioCliente.html">Inicio</a>
+                        </li>
                         <!--Finaliza menu cliente-->
                     </ul>
                     <ul id="menuUlProveedor">
@@ -165,9 +168,7 @@
                     <div class="previstaImagen" id="prevImagen">
                         <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
                     </div>
-                    <div class="btn-general">
-                        <button type="button" id="btn-editarFoto">Cambiar foto</button>
-                    </div>
+                    <input type="file" name="input-img" id="input-imagen">
                 </div>
             </div>
             <div class="columna columna-noMargenBottom">
@@ -207,6 +208,9 @@
                     <input type="text" id="txt-genero" class="input-dobleColumna" disabled>
                 </div>
             </div>
+            <div class="btn-registar btn-general " type="button" id="btn-guardarMascota">
+                <button type="button" id="btn-guardar-infoCliente" class="ocultar">Guardar</button>
+            </div>
         </section>
         <hr>
         <section class="seccion-mascota">
@@ -219,9 +223,7 @@
                         <div class="previstaImagen" id="prevImagen">
                             <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev" onclick="mostrarInfoMascota()">
                         </div>
-                        <div class="btn-general">
-                            <button type="button" id="btn-editarFoto">Cambiar foto</button>
-                        </div>
+                        <input type="file" name="input-img" id="input-imagen">
                     </div>
                 </div>
                 <section class="columna">
@@ -333,7 +335,20 @@
         <hr>
         <section class="seccion-mejoresProv">
             <h2>Top 20 Proveedores</h2>
-            <!--Falta JS para obtener lista de proveedores mejor calificados-->
+            <section class="seccion-Top20">
+                <section class="flotar-izq">
+                    <h3>Proveedor</h3>
+                    <ol id="lista-proveedoresCalificados">
+
+                    </ol>
+                </section>
+                <section class="flotar-der">
+                    <h3>Calificación</h3>
+                    <ol id="lista-proveedoresCalificadosDer">
+
+                    </ol>
+                </section>
+            </section>
         </section>
     </main>
     <footer>
