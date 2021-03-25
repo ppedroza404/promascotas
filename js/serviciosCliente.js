@@ -35,7 +35,7 @@ const mostrarTabla = () => {
         botonVerServicio.innerText = 'Ver servicio';
         botonVerServicio.classList.add('btnPrincipal');
         botonVerServicio.addEventListener('click', () => {
-            document.location.href = '/serviciosProveedor.html';
+            window.location.href = 'serviciosProveedor.html';
         });
 
         agregarVerServicioBtn.appendChild(botonVerServicio);
@@ -66,7 +66,7 @@ const mostrarTablaFiltros = () => {
             botonVerServicio.innerText = 'Ver servicio';
             botonVerServicio.classList.add('btnPrincipal');
             botonVerServicio.addEventListener('click', () => {
-                document.location.href = '/serviciosProveedor.html';
+                window.location.href = 'serviciosProveedor.html';
             });
 
             agregarVerServicioBtn.appendChild(botonVerServicio);
@@ -86,7 +86,7 @@ const mostrarTablaFiltros = () => {
             botonVerServicio.innerText = 'Ver servicio';
             botonVerServicio.classList.add('btnPrincipal');
             botonVerServicio.addEventListener('click', () => {
-                document.location.href = '/serviciosProveedor.html';
+                window.location.href = 'serviciosProveedor.html';
             });
 
             agregarVerServicioBtn.appendChild(botonVerServicio);
@@ -106,7 +106,7 @@ const mostrarTablaFiltros = () => {
             botonVerServicio.innerText = 'Ver servicio';
             botonVerServicio.classList.add('btnPrincipal');
             botonVerServicio.addEventListener('click', () => {
-                document.location.href = '/serviciosProveedor.html';
+                window.location.href = 'serviciosProveedor.html';
             });
 
             agregarVerServicioBtn.appendChild(botonVerServicio);
