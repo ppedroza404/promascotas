@@ -210,8 +210,10 @@ input[type=file] {
     background: none;
 }
 
-input[type=button] {
+input[type=button],
+button {
     background: none;
+    cursor: pointer;
 }
 
 input[type=date] {
