@@ -1,0 +1,49 @@
+.proveedorBody .nuestrosServicios,
+.proveedorBody .solicitarServicios {
+    display: none;
+}
+
+.duennoBody .agregarServicio {
+    display: none;
+}
+
+.acordeonContenedor .accordion {
+    display: flow-root;
+}
+
+.acordeonContenedor .accordion label,
+.acordeonContenedor .accordion input {
+    display: block;
+    float: left;
+    max-width: 40%;
+    padding: 0px 15px 0px 0px;
+}
+
+.acordeonContenedor .accordion input {
+    min-height: 25px;
+    border: 1px solid #6700a3;
+    background: #ffffff;
+}
+
+.mostrar {
+    display: block;
+}
+
+.morada {
+    font-size: 20px;
+    color: #6700a3;
+    float: right;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+.agregarServicio {
+    border-bottom: 1px solid #666666;
+    margin-bottom: 45px;
+}
+
+.agregarServicio.centrarTexto {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
