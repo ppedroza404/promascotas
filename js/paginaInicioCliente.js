@@ -1,5 +1,7 @@
 'use strict';
 
+const btnListaServicios = document.querySelector('#btn-servicios');
+const btnListaProveedores = document.querySelector('#btn-proveedores');
 /* Inicio: Función para acomodar los proveedores mejor calificados según calificación */
 
 let lista_calificadosOrdenada = [];
@@ -33,3 +35,15 @@ lista_calificadosOrdenada.forEach(proveedor => {
 })
 
 /* Fin: Función para ingresar cada valor de la lista acomodada en un OL LI*/
+
+const dirigirListaServicios = () => { 
+    window.location.href  = 'serviciosCliente.html';
+};
+
+btnListaServicios.addEventListener('click', dirigirListaServicios);
+
+const dirigirListaProveedores = () => { 
+    window.location.href  = 'serviciosProveedorYCliente.html';
+};
+
+btnListaServicios.addEventListener('click', dirigirListaProveedores);
