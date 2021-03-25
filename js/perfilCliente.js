@@ -2,8 +2,11 @@
 
 
 const btnEditarDatosCliente = document.querySelector('#btn-editarDatosCliente');
+const btnGuardarInfoCliente = document.querySelector('#btn-guardar-infoCliente');
 const cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-const fotoMascota = document.querySelector('#imagen-prev');
+//const fotoMascota = document.querySelector('#imagen-prev');
+//const fotoMascota = document.getElementById('imagen-prev');
+
 const vacunasMascota = document.querySelector('#tbl-vacunasMascota tbody');
 
 // Variables para datos del cliente
@@ -42,7 +45,8 @@ function mostrarInfoMascota() {
     mostrarTablaVacunas();
 };
 
-fotoMascota.addEventListener('onclick', mostrarInfoMascota);
+// No está haciendo nada!
+//fotoMascota.addEventListener('click', mostrarInfoMascota);
 
 /* Fin: Función para desplegar la información de las mascotas en un click a la foto */
 
@@ -56,6 +60,42 @@ pOtrasSenias.value = cliente.sennas;
 pGeneroCliente.value = cliente.sexo;
 
 /* Fin: Variables que muestran la información del usuario conectado en el perfil */
+
+
+/* Inicio: Función para acomodar los proveedores mejor calificados según calificación */
+
+let lista_calificadosOrdenada = [];
+
+const acomodarLista = (lista_proveedoresCalificados) => {
+    return lista_proveedoresCalificados.sort(function(a, b) {
+        return ((a.calificacion < b.calificacion) ? 1 : ((a.calificacion > b.calificacion) ? -1 : 0));
+    });
+}
+lista_calificadosOrdenada = acomodarLista(lista_proveedoresCalificados, 'calificacion').slice(0, 20);
+
+/* Inicio: Función para acomodar los proveedores mejor calificados según calificación */
+
+/* Inicio: Función para ingresar cada valor de la lista acomodada en un OL LI*/
+
+lista_calificadosOrdenada.forEach(proveedor => {
+    let listaOrdenada = document.getElementById('lista-proveedoresCalificados');
+    let informacion = `${proveedor.n_negocio}`;
+    let entrada = document.createElement('li');
+    entrada.appendChild(document.createTextNode(informacion));
+    listaOrdenada.appendChild(entrada);
+})
+
+// Sección derecha
+lista_calificadosOrdenada.forEach(proveedor => {
+    let listaOrdenadaCalificaciones = document.getElementById('lista-proveedoresCalificadosDer');
+    let calificaciones = `${proveedor.calificacion}`;
+    let entrada2 = document.createElement('li');
+    entrada2.appendChild(document.createTextNode(calificaciones));
+    listaOrdenadaCalificaciones.appendChild(entrada2);
+})
+
+/* Fin: Función para ingresar cada valor de la lista acomodada en un OL LI*/
+
 
 /* Inicio: Función que obtiene la información de la mascota que pertenece al usuario conectado */
 
@@ -79,7 +119,7 @@ const obtenerMascotaCliente = () => {
 const mostrarTablaVacunas = () => {
 
     mascotasCliente.forEach(mascota => {
-        if ('adeblas@gmail.com' == mascota.correo) {
+        if (cliente.correo == mascota.correo) {
 
 
             mascota.vacunas.forEach(vacuna => {
@@ -108,5 +148,13 @@ mostrarTablaVacunas();
 
 /* Fin: Función para mostrar datos de vacunas en la tabla */
 
+/* Inicio: Función para habilitar campos a editar del cliente */
 
-//btnEditarDatosCliente.addEventListener('click', );
+const habilitarCamposCliente = () => {
+    btnGuardarInfoCliente.classList.remove('ocultar');
+    pNombreCliente.disabled = false;
+}
+
+/* fin: Función para habilitar campos a editar del cliente */
+
+btnEditarDatosCliente.addEventListener('onclick', habilitarCamposCliente);

@@ -1,4 +1,5 @@
 'use strict';
+const btnProveedoresPendientes = document.querySelector('#btn-proveedoresPendientes');
 const bntCerrarSesion = document.querySelector('#btn-cerrar-sesion');
 const itemsCliente = document.querySelector('#menuUlCliente');
 const itemsProveedor = document.querySelector('#menuUlProveedor');
@@ -54,3 +55,16 @@ if (sessionStorage.getItem('usuarioConectado')) {
 bntCerrarSesion.addEventListener('click', () => {
     cerrarSesion();
 });
+
+/*-------------------------------------------------------------*/
+
+console.log('hello worlddddd');
+
+const irProveedoresPendientes = () => { 
+    window.location.href  = 'solicitudesPendientesAdmin.html';
+};
+btnProveedoresPendientes.addEventListener('click', () => {  
+    irProveedoresPendientes();
+});
+
+console.log('hello worlddddd');

@@ -36,10 +36,13 @@
                             <a href="###">Reportes</a>
                         </li>
                         <li>
-                            <a href="###">Carrito de compras</a>
+                            <a href="###">Cuenta</a>
                             <ul>
                                 <li>
-                                    <a href="###">Pagos</a>
+                                    <a href="registrarMetodoPago.html">Métodos de pago</a>
+                                </li>
+                                <li>
+                                    <a href="">Carrito de compras</a>
                                 </li>
                             </ul>
                         </li>
@@ -151,44 +154,57 @@
     </header>
 
     <main class="contenedor inicio-generalCliente">
+        <section class="contenedor">
+            <h1>Dueño de mascota</h1>
+            <h2>Bienvenido</h2>
 
-        <h1>Dueño de mascota</h1>
-        <h2>Bienvenido</h2>
+            <section class="parrafo-inicioCliente">
+                <p>Nos agrada que estés de vuelta. Encuentra tu proveedor de servicio que mas te guste. En esta sección encontrarás a tus proveedores favoritos y todas las nuevas ofertas que hay para vos y tu mascota.</p>
+            </section>
 
-        <section class="parrafo-inicioCliente">
-            <p>Nos agrada que estés de vuelta. Encuentra tu proveedor de servicio que mas te guste. En esta sección encontrarás a tus proveedores favoritos y todas las nuevas ofertas que hay para vos y tu mascota.</p>
-        </section>
-
-        <section class="contenedorColumna"><br/>
-            <div class="input-contenedor">
-                <div class="contenedor-buscar">
-                    <label><b>Buscar</b></label>
-                    <input type="text" name="buscar">
-                    <i class="fa fa-search" id="btn-iconoBuscar"></i>
+            <section class="contenedorColumna"><br/>
+                <div class="input-contenedor">
+                    <div class="contenedor-buscar">
+                        <label><b>Buscar</b></label>
+                        <input type="text" name="buscar">
+                        <i class="fa fa-search" id="btn-iconoBuscar"></i>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="seccion-contenedorCajas">
-            <div class="flotar-izq seccion-contenedor">
-                <h2>Proveedores</h2>
-                <p>Si querés conocer todos los proveedores que se encuentran en nuestra gran comunidad, podés encontrarlos acá</p>
-                <div class="btn-general">
-                    <button type="button" id="btn-proveedores">Proveedores</button>
+            <section class="seccion-contenedorCajas">
+                <div class="flotar-izq seccion-contenedor">
+                    <h2>Proveedores</h2>
+                    <p>Si querés conocer todos los proveedores que se encuentran en nuestra gran comunidad, podés encontrarlos acá</p>
+                    <div class="btn-general">
+                        <button type="button" id="btn-proveedores">Proveedores</button>
+                    </div>
                 </div>
-            </div>
-            <div class="flotar-der seccion-contenedor">
-                <h2>Servicios</h2>
-                <p>Si querés conocer todos los servicios que se encuentran en nuestra gran comunidad, podés encontrarlos acá</p>
-                <div class="btn-general">
-                    <button type="button" id="btn-servicios">Servicios</button>
+                <div class="flotar-der seccion-contenedor">
+                    <h2>Servicios</h2>
+                    <p>Si querés conocer todos los servicios que se encuentran en nuestra gran comunidad, podés encontrarlos acá</p>
+                    <div class="btn-general">
+                        <button type="button" id="btn-servicios">Servicios</button>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
-
-        <section class="contenedor seccion-mejoresProv">
+        <section class="seccion-mejoresProv">
             <h2>Top 20 Proveedores</h2>
-            <!--Falta JS para obtener lista de proveedores mejor calificados-->
+            <section class="seccion-Top20">
+                <section class="flotar-izq">
+                    <h3>Proveedor</h3>
+                    <ol id="lista-provCalificadosPagInicio">
+
+                    </ol>
+                </section>
+                <section class="flotar-der">
+                    <h3>Calificación</h3>
+                    <ol id="lista-provCalificadosPagInicioDer">
+
+                    </ol>
+                </section>
+            </section>
         </section>
 
         <section class="contenedor seccion-slideshow">
@@ -211,6 +227,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
+    <script src="js/paginaInicioCliente.js"></script>
 </body>
 
 </html>
