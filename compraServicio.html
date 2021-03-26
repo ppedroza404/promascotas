@@ -5,24 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tienen que ir en todas las internas-->
-    <title>Página de inicio cliente</title>
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
+    <title>Servicios</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfilCliente.css">
+    <link rel="stylesheet" href="css/serviciosProveedorYCliente.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="css/paginaInicio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!--Tienen que ir en todas las internas-->
 </head>
 
 <body class="duennoBody">
     <header>
         <section class="contenedor">
             <div>
-                <a href="paginaInicioCliente.html" class="logo"><span></span></a>
+                <a href="paginaInicioProveedor.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -33,24 +32,13 @@
                             <a href="perfilCliente.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="###">Servicios</a>
-                            <ul>
-                                <li>
-                                    <a href="serviciosProveedorYCliente.html">Proveedores</a>
-                                </li>
-                                <li>
-                                    <a href="serviciosCliente.html">Lista de Servicios</a>
-                                </li>
-                            </ul>
+                            <a href="###">Reportes</a>
                         </li>
                         <li>
-                            <a href="###">Cuenta</a>
+                            <a href="###">Carrito de compras</a>
                             <ul>
                                 <li>
-                                    <a href="registrarMetodoPago.html">Métodos de pago</a>
-                                </li>
-                                <li>
-                                    <a href="###">Carrito de compras</a>
+                                    <a href="###">Pagos</a>
                                 </li>
                             </ul>
                         </li>
@@ -58,7 +46,15 @@
                             <a href="###">Mis mascotas</a>
                             <ul>
                                 <li>
-                                    <a href="listarMascotasCliente.html">Ver mascotas</a>
+                                    <a href="###">Mantenimiento</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Servicios</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Detalle</a>
                                 </li>
                             </ul>
                         </li>
@@ -73,7 +69,10 @@
                             <a href="perfilProveedor.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="###">Reportes</a>
+                            <a href="###">Listas</a>
+                            <ul>
+                                <li><a href="serviciosProveedorYCliente.html">Servicios</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="###">Mantenimiento de servicios</a>
@@ -137,9 +136,6 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
-                            <a href="inicioSesion.html">Iniciá sesión</a>
-                        </li>
-                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -152,66 +148,34 @@
             </div>
         </section>
     </header>
-
-    <main class="contenedor inicio-generalCliente">
-        <section class="contenedor">
-            <section class="padding-bottom">
-                <h1>Dueño de mascota</h1>
-                <h2>Bienvenido</h2>
-
-                <section class="parrafo-inicioCliente">
-                    <p>Nos agrada que estés de vuelta. Encuentra tu proveedor de servicio que mas te guste. En esta sección encontrarás a tus proveedores favoritos y todas las nuevas ofertas que hay para vos y tu mascota.</p>
-                </section>
-
-                <section class="seccion-contenedorCajas padding-top">
-                    <div class="flotar-izq seccion-contenedor ocultar">
-                        <h2>Proveedores</h2>
-                        <p>Si querés conocer todos los proveedores que se encuentran en nuestra gran comunidad, podés encontrarlos acá.</p>
-                        <div class="btn-general">
-                            <button type="button" id="btn-proveedores">Proveedores</button>
-                        </div>
-                    </div>
-                    <div class="unica seccion-contenedor">
-                        <h2>Servicios y proveedores</h2>
-                        <p>Si querés conocer todos los servicios y proveedores que se encuentran en nuestra gran comunidad, podés encontrarlos acá.</p>
-                        <div class="btn-general">
-                            <button type="button" id="btn-servicios">Servicios</button>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <section class="seccion-mejoresProv">
-                <h2>Top 20 Proveedores</h2>
-                <section class="seccion-Top20">
-                    <section class="flotar-izq">
-                        <h3>Proveedor</h3>
-                        <ol id="lista-provCalificadosPagInicio">
-
-                        </ol>
-                    </section>
-                    <section class="flotar-der">
-                        <h3>Calificación</h3>
-                        <ol id="lista-provCalificadosPagInicioDer">
-
-                        </ol>
-                    </section>
-                </section>
-            </section>
-        </section>
-
-
-        <section class="contenedor seccion-slideshow">
-            <div class="imagenes-slide">
-                <figure>
-                    <img src="img/publicidadCliente3.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente1.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente2.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente1.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente3.jpg" alt="publicidad">
-                </figure>
+    <main>
+        <h1>Compra del servicio</h1>
+        <div class="contenedor">
+            <div class=" w75 centrarBloque">
+                <p>A continuación, podrás ver con detalle la solicitud del servicio que realizaste.</p>
+                <p>Te recomendamos que revisés todos los datos tuyos y del proveedor con mucho cuidado, una vez que lo hayás hecho, podés agregar el servicio a tu carrito.</p>
             </div>
-        </section>
+            <div class="dobleColumna contenedorColumna w75 centrarBloque">
+                <div class="columna">
+                    <div class="fichaContenedor">
+                        <h2>Datos del proveedor</h2>
+                        <div class="centrarTexto">
+                            <a href="serviciosProveedorYCliente.html"><img src="img/logoPetSalon.jpg"></a>
+                        </div>
+                        <div class="informacion">
+                            <p>Pet salón es una de las mejores opciones que puede encontrar para el cuidado de tu mascota. Hacemos grooming, corte de uñas, baños, limpieza de oídos, masajes, aromaterapia, peinados, tintes y más cosas.</p>
+                            <div class="centrarTexto padding-top">
+                                <a href="serviciosProveedorYCliente.html" class="btn">Ver proveedor</a>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+                <div class="columna">
+                    hola
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
@@ -220,7 +184,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/paginaInicioCliente.js"></script>
+    <script src="js/provincias.js"></script>
+    <script src="js/serviciosProveedorYCliente.js"></script>
 </body>
 
 </html>
