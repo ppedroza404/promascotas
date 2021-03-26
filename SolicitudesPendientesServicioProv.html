@@ -10,6 +10,8 @@
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/SolicitudesPendientesServicioProv.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
@@ -153,89 +155,37 @@
             </div>
         </section>
     </header>
-
-
-
-    <main>
+    <main class="seccion-detalleServicios">
         <div class="contenedor">
-            <h1>Perfil de proveedor</h1>
-
-            <h2>Proveedor</h2>
-            <section class="contenedorColumna dobleColumna">
-
-                <div class="columna">
-                    <label for="div-imgUpload">Fotografía o avatar</label>
-                    <div class="div-imgUpload">
-                        <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                        </div>
-                        <span><input type="file" name="input-img" id="input-imagen"></span>
-                    </div>
+            <section>
+                <div class='contenedor'>
+                    <label for="slt-detalle">Información:</label>
+                    <select name="slt-detalle" id="slt-detalle">
+                        <option value="">-- Seleccione alguna opción --</option>
+                        <option value="Cliente">Solicitudes pendientes</option>
+                        <option value="Cliente">Servicios brindados</option>
+                        <option value="Proveedor">Servicios rechazados</option>
+                    </select>
                 </div>
-                <div class="columna dobleColumnaInvertida">
-                    <div class="columna">
-
-                        <p><span id="txt-nombreProveedor">xxxx</span> <span id="txt-apellido1Proveedor">xxxx</span> <span id="txt-apellido2Proveedor">xxxx</span></p>
-                        <p id="txt-email">proveedor@domain.com</p>
-                        <p>Genero : <span id="txt-genero"></span></p>
-                        <p>Telefono : <span id="txt-telefono"></span></p>
-                        <p><span id="txt-tipoId">xxxx</span> : <span id="txt-numId">12345-6789</span></p>
-                        <p id="txt-tipoUsuario">xxx</p>
-                    </div>
-
-                    <div class="columna">
-                        <p id="txt-provincia">provincia</p>
-                        <p id="txt-canton">canton</p>
-                        <p id="txt-distrito">distrito</p>
-                        <p id="txt-direccion">direccion</p>
-
-                    </div>
-
-
-                </div>
-
             </section>
-
-            <div id="perfilProveedorRepLegal">
-                <section class="contenedorColumna dobleColumna ">
-                    <h2>Representante Legal</h2>
-                    <div class="columna">
-                        <label for="div-imgUpload">Fotografía o avatar</label>
-                        <div class="div-imgUpload">
-                            <div class="previstaImagen" id="prevImagen">
-                                <img src="img/imgPrevLogo.jpg" alt="Prevista">
-                            </div>
-                            <span><input type="file" name="input-img" id="input-imagen"></span>
-                        </div>
-                    </div>
-                    <div class="columna dobleColumnaInvertida">
-
-
-                        <div class="columna">
-                            <h3 id="txt-empresa">Representante Legal</h3>
-                            <p><span id="txt-nombreRlegal">xxxxx</span> <span id="txt-apellido1Rlegal">xxxxx</span> <span id="txt-apellido2Rlegal">xxxxx</span></p>
-                            <p id="txt-emailRlegal">Rlegal@xxxxx.com</p>
-                            <p>Genero : <span id="txt-generoRlegal"></span></p>
-                            <p>Telefono : <span id="txt-telefonoRlegal"></span></p>
-                            <p><span id="txt-tipoIdRlegal">xxxx</span> : <span id="txt-numIdRlegal">12345-6789</span></p>
-                            <p id="txt-tipoUsuario">Representante Legal</p>
-
-                        </div>
-
-                        <div class="columna">
-                            <p id="txt-provinciaRlegal">xxxxx</p>
-                            <p id="txt-cantonRlegal">xxxxx</p>
-                            <p id="txt-distritoRlegal">xxxxx</p>
-                            <p id="txt-direccionRlegal">xxxxx</p>
-
-                        </div>
-
-
-
-                    </div>
-                </section>
-            </div>
         </div>
+        <section class="contenedor">
+            <section class="contenedor">
+                <table id="tbl-infoServicios" class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Nombre de la Mascota</th>
+                            <th>Fecha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </section>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
