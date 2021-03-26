@@ -46,4 +46,4 @@ const dirigirListaProveedores = () => { 
     window.location.href  = 'serviciosProveedorYCliente.html';
 };
 
-btnListaServicios.addEventListener('click', dirigirListaProveedores);
+btnListaProveedores.addEventListener('click', dirigirListaProveedores);
