@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/perfilCliente.css">
-    <link rel="stylesheet" href="css/serviciosProveedor.css">
+    <link rel="stylesheet" href="css/serviciosProveedorYCliente.css">
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
                         <li>
                             <a href="###">Listas</a>
                             <ul>
-                                <li><a href="serviciosProveedor.html">Servicios</a></li>
+                                <li><a href="serviciosProveedorYCliente.html">Servicios</a></li>
                             </ul>
                         </li>
                         <li>
@@ -185,9 +185,9 @@
                             </p>
                             <div>
                                 <p><strong>Costos del servicio:</strong></p>
-                                <p><span class="tipoMoneda">₡</span> 12.00 - perros pequeños</p>
-                                <p><span class="tipoMoneda">₡</span> 16.00 - perros medianos</p>
-                                <p><span class="tipoMoneda">₡</span> 20.00 - perros grandes</p>
+                                <p><span class="tipoMoneda">₡</span> 12000.00 - perros pequeños</p>
+                                <p><span class="tipoMoneda">₡</span> 16000.00 - perros medianos</p>
+                                <p><span class="tipoMoneda">₡</span> 20000.00 - perros grandes</p>
                             </div>
                         </div>
                         <button class="accordion">Baño completo</button>
@@ -208,9 +208,9 @@
                             </p>
                             <div>
                                 <p><strong>Costos del servicio:</strong></p>
-                                <p><span class="tipoMoneda">₡</span> 5.00 - perros pequeños</p>
-                                <p><span class="tipoMoneda">₡</span> 8.00 - perros medianos</p>
-                                <p><span class="tipoMoneda">₡</span> 12.00 - perros grandes</p>
+                                <p><span class="tipoMoneda">₡</span> 5000.00 - perros pequeños</p>
+                                <p><span class="tipoMoneda">₡</span> 8000.00 - perros medianos</p>
+                                <p><span class="tipoMoneda">₡</span> 12000.00 - perros grandes</p>
                             </div>
                         </div>
                         <button class="accordion">Extras</button>
@@ -303,7 +303,7 @@
                     </div>
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
-                            <label for="agregarServicioADomicilio0">Cuenta con servicio a domicilio</label>
+                            <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio0">
                                 <option value="">-- Seleccioná una opción --</option>
                                 <option value="siDomicilio">Sí</option>
@@ -320,7 +320,7 @@
                         </div>
                         <div class="columna">
                             <label for="agregarServicioMonto0">Monto por servicio(s)</label>
-                            <input type="text" id="agregarServicioMonto0">
+                            <input type="number" id="agregarServicioMonto0">
                         </div>
                     </div>
                     <div class="contenedorClasesFlotantes">
@@ -342,7 +342,7 @@
                     </div>
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
-                            <label for="agregarServicioADomicilio1">Cuenta con servicio a domicilio</label>
+                            <label for="agregarServicioADomicilio1">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio1">
                                 <option value="">-- Seleccioná una opción --</option>
                                 <option value="siDomicilio">Sí</option>
@@ -359,7 +359,7 @@
                         </div>
                         <div class="columna">
                             <label for="agregarServicioMonto1">Monto por servicio(s)</label>
-                            <input type="text" id="agregarServicioMonto1">
+                            <input type="number" id="agregarServicioMonto1">
                         </div>
                     </div>
                     <div class="contenedorClasesFlotantes">
@@ -382,7 +382,7 @@
                     </div>
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
-                            <label for="agregarServicioADomicilio2">Cuenta con servicio a domicilio</label>
+                            <label for="agregarServicioADomicilio2">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio2">
                                 <option value="">-- Seleccioná una opción --</option>
                                 <option value="siDomicilio">Sí</option>
@@ -399,7 +399,7 @@
                         </div>
                         <div class="columna">
                             <label for="agregarServicioMonto2">Monto por servicio(s)</label>
-                            <input type="text" id="agregarServicioMonto2">
+                            <input type="number" id="agregarServicioMonto2">
                         </div>
                     </div>
                     <div class="contenedorClasesFlotantes">
@@ -422,7 +422,7 @@
                     </div>
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
-                            <label for="agregarServicioADomicilio3">Cuenta con servicio a domicilio</label>
+                            <label for="agregarServicioADomicilio3">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio3">
                                 <option value="">-- Seleccioná una opción --</option>
                                 <option value="siDomicilio">Sí</option>
@@ -439,7 +439,7 @@
                         </div>
                         <div class="columna">
                             <label for="agregarServicioMonto3">Monto por servicio(s)</label>
-                            <input type="text" id="agregarServicioMonto3">
+                            <input type="number" id="agregarServicioMonto3">
                         </div>
                     </div>
                     <div class="contenedorClasesFlotantes">
@@ -462,7 +462,7 @@
                     </div>
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
-                            <label for="agregarServicioADomicilio4">Cuenta con servicio a domicilio</label>
+                            <label for="agregarServicioADomicilio4">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio4">
                                 <option value="">-- Seleccioná una opción --</option>
                                 <option value="siDomicilio">Sí</option>
@@ -479,7 +479,7 @@
                         </div>
                         <div class="columna">
                             <label for="agregarServicioMonto4">Monto por servicio(s)</label>
-                            <input type="text" id="agregarServicioMonto4">
+                            <input type="number" id="agregarServicioMonto4">
                         </div>
                     </div>
                     <div class="contenedorClasesFlotantes">
@@ -510,7 +510,7 @@
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/provincias.js"></script>
-    <script src="js/serviciosProveedor.js"></script>
+    <script src="js/serviciosProveedorYCliente.js"></script>
 </body>
 
 </html>

@@ -6,6 +6,16 @@ const itemsAdministrador = document.querySelector('#menuUlAdministrador');
 const itemsSinAutenticar = document.querySelector('#menuUlSinAutenticar');
 const nombreUsuario = document.querySelector('#nombreClienteMenu');
 
+
+// Nombre de usuario
+const nombreUsuarioConectadoHeader = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    let nombreUsuarioConectado = usuario.nombre;
+    //alert(nombreUsuarioConectado)
+
+};
+
+
 const mostrarOpcionesMenu = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     switch (usuario.tipo) {
@@ -13,17 +23,19 @@ const mostrarOpcionesMenu = () => {
             itemsCliente.classList.add('ocultar');
             itemsProveedor.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
+            nombreUsuarioConectadoHeader();
             break;
         case 'Proveedor':
             itemsCliente.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
+            nombreUsuarioConectadoHeader();
             break;
         case 'Cliente':
             itemsProveedor.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
-
+            nombreUsuarioConectadoHeader();
             break;
     }
 };

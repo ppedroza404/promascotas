@@ -26,3 +26,14 @@
 .tabla tbody tr td:first-child {
     text-align: left;
 }
+
+.titulo {
+    border-top: 2px solid #6700a3;
+    color: #6700a3;
+    text-align: center;
+}
+
+.contenido {
+    border-bottom: 2px solid #6700a3;
+    text-align: center;
+}
