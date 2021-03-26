@@ -141,12 +141,28 @@ const corroborarTipoUsuario = () => {
                 document.querySelector('body').classList.remove('duennoBody');
                 document.querySelector('body').classList.add('proveedorBody');
             }
+            if (document.querySelector('#logoProveedor').classList.contains('ocultar')) {
+                document.querySelector('#logoProveedor').classList.remove('ocultar');
+                document.querySelector('#logoProveedor').classList.add('activo');
+            }
+            if (document.querySelector('#logoCliente').classList.contains('activo')) {
+                document.querySelector('#logoCliente').classList.remove('activo');
+                document.querySelector('#logoCliente').classList.add('ocultar');
+            }
             break;
         case 'Cliente':
 
             if (document.querySelector('body').classList.contains('proveedorBody')) {
                 document.querySelector('body').classList.remove('proveedorBody');
                 document.querySelector('body').classList.add('duennoBody');
+            }
+            if (document.querySelector('#logoCliente').classList.contains('ocultar')) {
+                document.querySelector('#logoCliente').classList.remove('ocultar');
+                document.querySelector('#logoCliente').classList.add('activo');
+            }
+            if (document.querySelector('#logoProveedor').classList.contains('activo')) {
+                document.querySelector('#logoProveedor').classList.remove('activo');
+                document.querySelector('#logoProveedor').classList.add('ocultar');
             }
 
             break;
