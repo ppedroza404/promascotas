@@ -59,11 +59,11 @@ strong {
 }
 
 .mostrar {
-    display: block;
+    display: block !important;
 }
 
 .ocultar {
-    display: none;
+    display: none !important;
 }
 
 .contenedor {
