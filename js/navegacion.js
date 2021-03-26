@@ -61,7 +61,7 @@ if (sessionStorage.getItem('usuarioConectado')) {
     mostrarOpcionesMenu();
 } else {
     menuSinAutenticar();
-    //window.location.href = 'index.html';
+    window.location.href = 'index.html';
 }
 
 bntCerrarSesion.addEventListener('click', () => {
