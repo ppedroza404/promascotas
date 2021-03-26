@@ -1,53 +1,64 @@
 'use strict';
 
-const tablaUsuarios = document.querySelector('#tbl-usuarios tbody');
+const tabla = document.querySelector('#tbl-mascotas tbody');
 const inputFiltro = document.querySelector('#txt-filtro');
-
-
-
-
-/////////////////////
-const verServicioBtn = () => {
-    window.location.href = 'serviciosProveedorYCliente.html';
-}
-
-
 
 const mostrarTabla = () => {
     let filtro = inputFiltro.value.toLowerCase();
-    tablaUsuarios.innerHTML = '';
-    informacionProveedor.forEach(proveedor => {
-        if (proveedor.provincia.toLowerCase().includes(filtro) || proveedor.tipoServicio.toLowerCase().includes(filtro)) {
-            //if (proveedor.provincia || (proveedor.provincia & proveedor.tipoServicio) || proveedor.tipoServicio) {
-            let fila = tablaUsuarios.insertRow();
-            fila.insertCell().innerHTML = proveedor.proveedor;
-            fila.insertCell().innerHTML = proveedor.tipoServicio;
-            fila.insertCell().innerHTML = proveedor.telefonoProveedor;
-            fila.insertCell().innerHTML = proveedor.correoElectronicoProveedor;
-            fila.insertCell().innerHTML = proveedor.provincia;
+    tabla.innerHTML = '';
+
+    informacionProveedor.forEach(mascota => {
+        if (mascota.proveedor.toLowerCase().includes(filtro) || mascota.provincia.toLowerCase().includes(filtro)) {
+            let fila = tabla.insertRow();
+            fila.insertCell().innerHTML = mascota.proveedor;
+            fila.insertCell().innerHTML = mascota.tipoServicio;
+            fila.insertCell().innerHTML = mascota.telefonoProveedor;
+            fila.insertCell().innerHTML = mascota.correoElectronicoProveedor;
+            fila.insertCell().innerHTML = mascota.canton;
+            fila.insertCell().innerHTML = mascota.provincia;
 
 
-            let agregarVerServicioBtn = fila.insertCell();
+            let celdaAcciones = fila.insertCell();
 
-            let botonVerServicio = document.createElement('button');
-            botonVerServicio.innerText = 'Ver servicio';
-            botonVerServicio.classList.add('btnPrincipal');
-            botonVerServicio.addEventListener('click', () => {
+            let botonModificar = document.createElement('button');
+            botonModificar.classList.add('btn');
+            botonModificar.innerText = 'Ver servicio';
+            botonModificar.addEventListener('click', () => {
+                /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
                 window.location.href = 'serviciosProveedorYCliente.html';
             });
 
+            celdaAcciones.appendChild(botonModificar);
 
+            /* let botonEliminar = document.createElement('button');
+             botonEliminar.innerText = 'Eliminar';
 
-            agregarVerServicioBtn.appendChild(botonVerServicio);
+             botonEliminar.addEventListener('click', () => {
+                 Swal.fire({
+                     'icon': 'warning',
+                     'text': '¿Está seguro que desea borrar el usuario?',
+                     'showCancelButton': true,
+                     'confirmButtonText': '¡Sí!, estoy seguro',
+                     'cancelButtonColor': '#d33',
+                     'cancelButtonText': 'Cancelar',
+                     'reverseButtons': true
+                 }).then((result) => {
+                     if (result.isConfirmed) {
+                         Swal.fire(
+                             '',
+                             'El usuario ha sido eliminado',
+                             'success'
+                         )
+                     }
+                 })
+             });
+             // Agregarle los botones a la celda
 
+             celdaAcciones.appendChild(botonModificar);
+             celdaAcciones.appendChild(botonEliminar);*/
         }
-
     });
-    let verServicioSeleccionadoBtn = document.querySelector('.btnPrincipal');
-    verServicioSeleccionadoBtn.addEventListener('click', () => {
-        window.location.href = 'serviciosProveedorYCliente.html';
-    });
-}
+};
 
 
 mostrarTabla();
