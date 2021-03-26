@@ -105,5 +105,5 @@ p {
 }
 
 .input-error {
-    border: 2px solid #f30101;
+    border: 2px solid #f30101 !important;
 }

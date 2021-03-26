@@ -1,101 +1,50 @@
 'use strict';
 
-// Inicio Variables para Informacion del Proveedor Conectado//
-const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-const txtNombreProveedor = document.querySelector('#txt-nombreProveedor');
-const pApellidoUsuario = document.querySelector('#txt-apellido1Proveedor');
-const sApellidoUsuario = document.querySelector('#txt-apellido2Proveedor');
-const correoUsuario = document.querySelector('#txt-email');
-const generoUsuario = document.querySelector('#txt-genero');
-const telefonoUsuario = document.querySelector('#txt-telefono');
-const tipoIdUsuario = document.querySelector('#txt-tipoId');
-const numIdUsuario = document.querySelector('#txt-numId');
-const provinciaUsuario = document.querySelector('#txt-provincia');
-const cantonUsuario = document.querySelector('#txt-canton');
-const distritoUsuario = document.querySelector('#txt-distrito');
-const direccionUsuario = document.querySelector('#txt-direccion');
-const tipoUsuarioPerfil = document.querySelector('#txt-tipoUsuario');
-// Fin Variables para Informacion del Proveedor Conectado//
-
-//Inicio Variables para Informacion del Representante Legal del Proveedor Conectado //
-const rLegalNombre = document.querySelector('#txt-nombreRlegal');
-const rLegalApellido1 = document.querySelector('#txt-apellido1Rlegal');
-const rLegalApellido2 = document.querySelector('#txt-apellido2Rlegal');
-const rLegalCorreo = document.querySelector('#txt-emailRlegal');
-const rLegalGenero = document.querySelector('#txt-generoRlegal');
-const rLegalTelefono = document.querySelector('#txt-telefonoRlegal');
-const rLegalTipoId = document.querySelector('#txt-tipoIdRlegal');
-const rLegalId = document.querySelector('#txt-numIdRlegal');
-const rLegalProvincia = document.querySelector('#txt-provinciaRlegal');
-const rLegalCanton = document.querySelector('#txt-cantonRlegal');
-const rLegalDistrito = document.querySelector('#txt-distritoRlegal');
-const rLegalSennas = document.querySelector('#txt-direccionRlegal');
-const rLegalEmpresa = document.querySelector('#txt-empresa');
-//fin Variables para Informacion del Representante Legal del Proveedor Conectado //
+const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+const seccionRep = document.querySelector('.seccion-representante');
+// Variables para datos del Proveedor
+const pnombreProv = document.querySelector('#txt-nombreProveedor');
+const pnegocioProv = document.querySelector('#txt-nombreNegocio');
+const pcorreoProv = document.querySelector('#txt-correoProveedor');
+const ptelProv = document.querySelector('#txt-telProveedor');
+const pidProv = document.querySelector('#txt-idProveedor');
+const pgeneroProv = document.querySelector('#txt-generoProveedor');
+const pdireccionProv = document.querySelector('#txt-direccionProv');
+const potrasSeniasProv = document.querySelector('#txt-otrasSeniasProv');
 
 
-// Inicio LLena el perfil del proveedor Dinamicamente//
 
-txtNombreProveedor.innerText = usuario.nombre;
-pApellidoUsuario.innerText = usuario.primerApellido;
-sApellidoUsuario.innerText = usuario.segundoApellido;
-correoUsuario.innerText = usuario.correo;
-generoUsuario.innerText = usuario.sexo;
-telefonoUsuario.innerText = usuario.telefono;
-tipoUsuarioPerfil.innerText = usuario.tipo;
-tipoIdUsuario.innerText = usuario.tipoID;
-numIdUsuario.innerText = usuario.id;
-provinciaUsuario.innerText = usuario.provincia;
-cantonUsuario.innerText = usuario.canton;
-distritoUsuario.innerText = usuario.distrito;
-direccionUsuario.innerText = usuario.sennas;
-// Fin LLena el perfil del proveedor Dinamicamente //
-const perfilProveedorRepLegal = document.querySelector('#perfilProveedorRepLegal');
+// Variables para datos del Representante
+const pnombreRep = document.querySelector('#txt-nombreRep');
+const ptipoIdRep = document.querySelector('#txt-tipoIdRep');
+const pidRep = document.querySelector('#txt-idRep');
+const pcorreoRep = document.querySelector('#txt-correoRep');
+const ptelRep = document.querySelector('#txt-telRep');
 
+/* Inicio: Variables que muestran la información del usuario conectado en el perfil */
 
-const mostarRepLegal = () => {
+pnombreProv.value = `${proveedor.nombre} ${proveedor.primerApellido} ${proveedor.segundoApellido}`;
+pnegocioProv.value = proveedor.n_negocio;
+pcorreoProv.value = proveedor.provincia;
+ptelProv.value = proveedor.telefono;
+pidProv.value = proveedor.id;
+pgeneroProv.value = proveedor.sexo;
+pdireccionProv.value = `${proveedor.provincia}, ${proveedor.canton}, ${proveedor.distrito}`;
+potrasSeniasProv.value = proveedor.sennas;
 
-    if (usuario.r_legal_Nombre != "") {
-        perfilProveedorRepLegal.classList.remove('ocultar');
-        rLegalNombre.innerText = usuario.r_legal_Nombre;
-        rLegalApellido1.innerText = usuario.r_legalaPapellido;
-        rLegalApellido2.innerText = usuario.r_legalaSapellido;
-        rLegalCorreo.innerText = usuario.r_legacorreo_email;
-        rLegalGenero.innerText = usuario.sexo;
-        rLegalTelefono.innerText = usuario.telefono;
-        rLegalTipoId.innerText = usuario.r_legalatipoid;
-        rLegalId.innerText = usuario.r_legalanid;
-        rLegalProvincia.innerText = usuario.provincia;
-        rLegalCanton.innerText = usuario.canton;
-        rLegalDistrito.innerText = usuario.distrito;
-        rLegalSennas.innerText = usuario.sennas;
-        rLegalEmpresa.innerText = usuario.n_negocio;
-    } else {
-        perfilProveedorRepLegal.classList.add('ocultar');
-    }
+/* Fin: Variables que muestran la información del usuario conectado en el perfil */
 
 
+/* Inicio: Variables que muestran la información del representante de proveedor */
+
+if (proveedor.tipoID != "JURIDICA") {
+    seccionRep.classList.add('ocultar');
+} else {
+    pnombreRep.value = `${proveedor.r_legal_Nombre} ${proveedor.r_legalaPapellido} ${proveedor.r_legalaSapellido}`;
+    ptipoIdRep.value = proveedor.r_legalatipoid;
+    pidRep.value = proveedor.r_legalanid;
+    pcorreoRep.value = proveedor.r_legacorreo_email;
+    ptelRep.value = proveedor.telefono;
 }
 
-//
-// Inicio LLena el perfil con la info del rep legal si existe Dinamicamente//
-
-
-mostarRepLegal();
-
-// Fin LLena el perfil con la info del rep legal si existe Dinamicamente//
-console.log(usuario);
-
-console.log(usuario.r_legal_Nombre);
-console.log(usuario.r_legalaPapellido);
-console.log(usuario.r_legalaSapellido);
-console.log(usuario.r_legacorreo_email);
-console.log(usuario.sexo);
-console.log(usuario.telefono);
-console.log(usuario.r_legalatipoid);
-console.log(usuario.r_legalanid);
-console.log(usuario.provincia);
-console.log(usuario.canton);
-console.log(usuario.distrito);
-console.log(usuario.sennas);
-// Inicio
+/* Fin: Variables que muestran la información del representante de proveedor */

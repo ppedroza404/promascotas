@@ -1,0 +1,11 @@
+.columna-noMargenBottom div input,
+h3,
+h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.proveedorBody .contenedor .btn-editar {
+    float: right;
+    margin-right: 25px;
+}
