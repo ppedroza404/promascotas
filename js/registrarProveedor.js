@@ -116,6 +116,14 @@ const validar = () => {
         inputNombreNegocio.classList.remove('error');
     }
 
+    if (inputTipoServicio.value == '') {
+        error = true;
+        inputTipoServicio.classList.add('error');
+    } else {
+        inputTipoServicio.classList.remove('error');
+    }
+
+
     if ((inputCedulaJuridica.value == '') && (juridica.disabled == false)) {
         error = true;
         inputCedulaJuridica.classList.add('error');
