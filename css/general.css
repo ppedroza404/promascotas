@@ -66,6 +66,10 @@ strong {
     display: none !important;
 }
 
+.ocultarInfoMascota {
+    display: none !important;
+}
+
 .contenedor {
     width: 80%;
     margin: 25px auto;
