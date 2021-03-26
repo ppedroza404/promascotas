@@ -11,7 +11,7 @@ const pidProv = document.querySelector('#txt-idProveedor');
 const pgeneroProv = document.querySelector('#txt-generoProveedor');
 const pdireccionProv = document.querySelector('#txt-direccionProv');
 const potrasSeniasProv = document.querySelector('#txt-otrasSeniasProv');
-
+const spanNombreNegocio = document.querySelector('#spanNombreNegocio');
 
 
 // Variables para datos del Representante
@@ -31,6 +31,7 @@ pidProv.value = proveedor.id;
 pgeneroProv.value = proveedor.sexo;
 pdireccionProv.value = `${proveedor.provincia}, ${proveedor.canton}, ${proveedor.distrito}`;
 potrasSeniasProv.value = proveedor.sennas;
+spanNombreNegocio.innerHTML = proveedor.n_negocio;
 
 /* Fin: Variables que muestran la información del usuario conectado en el perfil */
 

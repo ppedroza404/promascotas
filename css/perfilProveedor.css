@@ -9,3 +9,12 @@ h4 {
     float: right;
     margin-right: 25px;
 }
+
+.puntosProveedor {
+    color: #56cfe1;
+    font-size: 30px;
+}
+
+.puntosActivos {
+    color: #6700a3;
+}
