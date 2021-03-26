@@ -827,3 +827,36 @@ footer p {
 .fichaContenedor .btn {
     margin: 10px auto;
 }
+
+
+/****Recibo*****/
+
+.recibo {
+    padding: 10px 25px 25px;
+}
+
+.recibo .saludoNombre {
+    font-size: 24px;
+    color: #6700a3;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #6700a3;
+}
+
+.recibo .detalleRecibo {
+    letter-spacing: 3px;
+    line-height: 25px;
+}
+
+.recibo .finalRecibo {
+    width: 100%;
+    border-top: 1px solid rgba(103, 0, 163, 0.4);
+    margin-top: 20px;
+    padding-top: 5px;
+    letter-spacing: 3px;
+    line-height: 25px;
+}
+
+.recibo .inputInfo {
+    font-weight: 600;
+}

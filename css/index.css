@@ -425,6 +425,10 @@ h2 {
     float: right;
 }
 
+#seccionInteraccion .seccion-der {
+    margin-right: 15px;
+}
+
 .seccion-izq div {
     border-right: #ddd solid 1px;
     padding: 10px 0;
