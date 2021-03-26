@@ -14,8 +14,8 @@ const mostrarTabla = () => {
             fila.insertCell().innerHTML = mascota.tipoServicio;
             fila.insertCell().innerHTML = mascota.telefonoProveedor;
             fila.insertCell().innerHTML = mascota.correoElectronicoProveedor;
-            fila.insertCell().innerHTML = mascota.canton;
             fila.insertCell().innerHTML = mascota.provincia;
+            fila.insertCell().innerHTML = mascota.canton;
 
 
             let celdaAcciones = fila.insertCell();
