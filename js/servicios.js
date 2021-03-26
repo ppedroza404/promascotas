@@ -479,6 +479,8 @@ let informacionProveedor = [{
         "canton": "Montes de oca",
         "distrito": "Sabanilla",
         "otras señas": "De la choza del indio 600 metros al norte",
+        "descripcion": "Servicios de grooming de mascotas",
+        "estado": "Pendiente"
     },
     {
         "proveedor": "Petluquería",
@@ -503,6 +505,8 @@ let informacionProveedor = [{
         "canton": "Alajuela",
         "distrito": "Alajuela",
         "otras señas": "En la calle ancha, barrio La Agonía",
+        "descripcion": "Servicios de grooming de mascotas",
+        "estado": "Denegado"
     },
     {
         "proveedor": "Pet friends",
@@ -527,6 +531,8 @@ let informacionProveedor = [{
         "canton": "Santo Domingo",
         "distrito": "Santa Rosa",
         "otras señas": "500 metros al oeste del INBio",
+        "descripcion": "Brindamos servicios de alimentos de mascotas",
+        "estado": "Aprobado"
     },
     {
         "proveedor": "Caminantes",
@@ -551,6 +557,8 @@ let informacionProveedor = [{
         "canton": "Cartago",
         "distrito": "Carmen",
         "otras señas": "De la iglesia, 25 metros al oeste, calle sin salida",
+        "descripcion": "Paseamos perritos por la ciudad",
+        "estado": "Aprobado"
     },
     {
         "proveedor": "Ropa peluditos",
@@ -575,6 +583,8 @@ let informacionProveedor = [{
         "canton": "Vasquez de Coronado",
         "distrito": "Patalillo",
         "otras señas": "Del bar el pará, 25 metros al oeste, 50 metros al sur calle con rotonda al final",
+        "descripcion": "Fabricamos ropa para todo tipo de mascota",
+        "estado": "Denegado"
     }
 ];
 

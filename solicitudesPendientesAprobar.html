@@ -24,7 +24,7 @@
     <header>
         <section class="contenedor">
             <div>
-                <a href="index.html" class="logo"><span></span></a>
+                <a href="paginaInicioAdmin.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -91,10 +91,10 @@
                             <a href="###">Proveedores</a>
                             <ul>
                                 <li>
-                                    <a href="###">Pendientes de aprobar</a>
+                                    <a href="solicitudesPendientesAprobar.html">Pendientes de aprobar</a>
                                 </li>
                                 <li>
-                                    <a href="###">Reportes de proveedores</a>
+                                    <a href="solicitudesDeProveedorListar.html">Reportes de proveedores</a>
                                 </li>
                             </ul>
                         </li>
@@ -159,19 +159,27 @@
 
 
         <div class="contenedor">
+            <div class="simpleColumna">
+                <div class="columna">
+                    <label for="txt-filtro">Filtrar</label>
+                    <input type="text" id="txt-filtro">
+                </div>
+            </div>
             <table id="tbl-solicitudespendientes" class="tabla">
                 <thead>
                     <tr>
-                        <th>Estado</th>
+                        <!--<th>Estado</th>-->
                         <th>Nombre del negocio</th>
                         <th>Tipo de identificación</th>
-                        <th>Cédula Jurídica</th>
+                        <th>Identificación</th>
                         <th>Nombre</th>
                         <th>Primer apellido</th>
-                        <th>Tipo de identificación</th>
-                        <th>Número ID</th>
                         <th>Teléfono</th>
-                        <th>Direccion</th>
+                        <th>Tipo de servicio</th>
+                        <th>Provincia</th>
+                        <th>Descripción</th>
+                        <th></th>
+                        <th></th>
 
                     </tr>
                 </thead>
@@ -188,7 +196,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/solicitudespendientes2.js"></script>
+    <script src="js/estadoDeSolicitudesProveedoresAdmin.js"></script>
 
 </body>
 
