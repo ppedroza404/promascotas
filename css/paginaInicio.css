@@ -59,6 +59,11 @@
         margin-right: 15px;
     }
     
+    .seccion-contenedor.unica {
+        margin: 0 auto;
+        width: 50%;
+    }
+    
     .seccion-contenedorCajas {
         display: flow-root;
     }

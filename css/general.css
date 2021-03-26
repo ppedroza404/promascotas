@@ -196,6 +196,11 @@ a:hover {
     transition: all 0.5s ease 0s;
 }
 
+.btn:hover {
+    background: rgba(86, 207, 225, 0.4);
+    text-decoration: none;
+}
+
 .swal2-container .swal2-icon.swal2-warning {
     border-color: rgba(103, 0, 163, 0.4);
     color: rgba(103, 0, 163, 0.7);
@@ -777,4 +782,48 @@ footer p {
 
 .modal-footer h3 {
     margin-bottom: 0;
+}
+
+.btn-aprobar {
+    background: #3f8f11;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
+
+.btn-denegar {
+    background: #b90b0b;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
+
+
+/****Ficha*****/
+
+.fichaContenedor {
+    background: rgba(200, 200, 200, 0.2);
+    padding: 20px 20px 30px;
+    margin: 10px;
+}
+
+.fichaContenedor .informacion {
+    font-size: 13px;
+    padding: 20px;
+}
+
+.fichaContenedor .btn {
+    margin: 10px auto;
 }
