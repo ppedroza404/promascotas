@@ -5,22 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de servicios</title>
+    <!--Tienen que ir en todas las internas-->
+    <title>Perfil de Proveedor</title>
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfilCliente.css">
     <link rel="stylesheet" href="css/tabla.css">
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/SolicitudesPendientesServicioProv.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/perfilProveedor.css">
+
+
 </head>
 
-<body class="duennoBody">
+<body class="proveedorBody">
     <header>
         <section class="contenedor">
             <div>
-                <a href="index.html" class="logo"><span></span></a>
+                <a href="paginaInicioProveedor.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -68,7 +73,10 @@
                             <a href="perfilProveedor.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="###">Reportes</a>
+                            <a href="###">Listas</a>
+                            <ul>
+                                <li><a href="serviciosProveedor.html">Servicios</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="###">Mantenimiento de servicios</a>
@@ -132,6 +140,9 @@
                             <a href="registrarCliente.html">Registráte</a>
                         </li>
                         <li>
+                            <a href="inicioSesion.html">Iniciá sesión</a>
+                        </li>
+                        <li>
                             <a href="contactanos.html">Contactános</a>
                         </li>
                     </ul>
@@ -144,50 +155,46 @@
             </div>
         </section>
     </header>
-    <main>
-        <h1>Listado de servicios</h1>
-        <form>
-            <section class="contenedor">
-                <div class="simpleColumna contenedorColumna">
-                    <div class="columna">
-                        <label for="txt-filtro">Podés buscar por tipo de servicio o ubicación</label>
-                        <input type="text" id="txt-filtro">
-                    </div>
-
-
-                    <div class="columna">
-
-                    </div>
-                </div>
-                <div>
-                    <h3>Lista de servicios</h3>
-                    <table id="tbl-usuarios" class="tabla">
-                        <thead>
-                            <tr>
-                                <th>Proveedor</th>
-                                <th>Servicio</th>
-                                <th>Teléfono</th>
-                                <th>Correo</th>
-                                <th>Ubicación</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
+    <main class="seccion-detalleServicios">
+        <div class="contenedor">
+            <section>
+                <div class='contenedor'>
+                    <label for="slt-detalle">Información:</label>
+                    <select name="slt-detalle" id="slt-detalle">
+                        <option value="">-- Seleccione alguna opción --</option>
+                        <option value="Cliente">Solicitudes pendientes</option>
+                        <option value="Cliente">Servicios brindados</option>
+                        <option value="Proveedor">Servicios rechazados</option>
+                    </select>
                 </div>
             </section>
+        </div>
+        <section class="contenedor">
+            <section class="contenedor">
+                <table id="tbl-infoServicios" class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Nombre de la Mascota</th>
+                            <th>Fecha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        </form>
+                    </tbody>
+                </table>
+            </section>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/serviciosCliente.js"></script>
+    <script src="js/perfilProveedor.js"></script>
 </body>
 
 </html>

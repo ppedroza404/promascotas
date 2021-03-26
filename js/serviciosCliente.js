@@ -7,6 +7,9 @@ const inputFiltro = document.querySelector('#txt-filtro');
 
 
 /////////////////////
+const verServicioBtn = () => {
+    window.location.href = 'serviciosProveedorYCliente.html';
+}
 
 
 
@@ -30,14 +33,19 @@ const mostrarTabla = () => {
             botonVerServicio.innerText = 'Ver servicio';
             botonVerServicio.classList.add('btnPrincipal');
             botonVerServicio.addEventListener('click', () => {
-                sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
                 window.location.href = 'serviciosProveedorYCliente.html';
             });
+
+
 
             agregarVerServicioBtn.appendChild(botonVerServicio);
 
         }
 
+    });
+    let verServicioSeleccionadoBtn = document.querySelector('.btnPrincipal');
+    verServicioSeleccionadoBtn.addEventListener('click', () => {
+        window.location.href = 'serviciosProveedorYCliente.html';
     });
 }
 

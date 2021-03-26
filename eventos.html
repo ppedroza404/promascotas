@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de servicios</title>
+    <!--Tienen que ir en todas las internas-->
+    <title>Eventos</title>
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfilCliente.css">
-    <link rel="stylesheet" href="css/tabla.css">
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
 </head>
 
-<body class="duennoBody">
+<body class="sinAutenticarBody">
     <header>
         <section class="contenedor">
             <div>
@@ -145,49 +144,20 @@
         </section>
     </header>
     <main>
-        <h1>Listado de servicios</h1>
-        <form>
-            <section class="contenedor">
-                <div class="simpleColumna contenedorColumna">
-                    <div class="columna">
-                        <label for="txt-filtro">Podés buscar por tipo de servicio o ubicación</label>
-                        <input type="text" id="txt-filtro">
-                    </div>
+        <h1>Eventos</h1>
+        <section class="contenedor">
+            <iframe class="centrarBloque" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FCosta_Rica&amp;src=amJlbmF2aWRlc3IxQHVjZW5mb3RlYy5hYy5jcg&amp;src=Y185MHJwcWdtbGdtdHNicmFsb2F1Zjg2amtoMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY3IjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y19mNzdqNGVudGZ0aG9zcms2bWNzcGdqZnVoMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%23F6BF26&amp;color=%2333B679&amp;color=%230B8043&amp;color=%23EF6C00&amp;showTitle=1&amp;hl=es_419&amp;title=Eventos%20Pro%20Mascotas"
+                style="border:solid 1px #cccccc; padding: 20px; font-family: 'Roboto', sans-serif;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
-
-                    <div class="columna">
-
-                    </div>
-                </div>
-                <div>
-                    <h3>Lista de servicios</h3>
-                    <table id="tbl-usuarios" class="tabla">
-                        <thead>
-                            <tr>
-                                <th>Proveedor</th>
-                                <th>Servicio</th>
-                                <th>Teléfono</th>
-                                <th>Correo</th>
-                                <th>Ubicación</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-        </form>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/serviciosCliente.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ const limpiarTabla = () => {
 
 const generarTablaRepLegal = () => {
     let fila = tablaRepresentanteLegal.insertRow();
-    fila.className = 'autogen oculto';
+    fila.className = 'autogen titulo ocultar';
     fila.insertCell().innerHTML = 'Nombre';
     fila.insertCell().innerHTML = 'Primer Apellido';
     fila.insertCell().innerHTML = 'Segundo Apellido';
@@ -19,7 +19,6 @@ const generarTablaRepLegal = () => {
     fila.insertCell().innerHTML = 'Fecha';
     fila.insertCell().innerHTML = 'Teléfono';
     fila.insertCell().innerHTML = 'Correo';
-
 }
 
 const mostrarTablaSolicitudesPendientes = () => {
@@ -39,6 +38,16 @@ const mostrarTablaSolicitudesPendientes = () => {
             fila.insertCell().innerHTML = `${usuario.provincia}, ${usuario.canton},${usuario.distrito}`;
             if (usuario.n_negocio = 'Juridica') {
                 generarTablaRepLegal();
+                let fila = tablaRepresentanteLegal.insertRow();
+                fila.className = 'autogen contenido ocultar';
+                fila.insertCell().innerHTML = usuario.r_legal_Nombre;
+                fila.insertCell().innerHTML = usuario.r_legalaPapellido;
+                fila.insertCell().innerHTML = usuario.r_legalaSapellido;
+                fila.insertCell().innerHTML = usuario.r_legalatipoid;
+                fila.insertCell().innerHTML = usuario.r_legalanid;
+                fila.insertCell().innerHTML = usuario.r_legalanacimiento;
+                fila.insertCell().innerHTML = usuario.telefono;
+                fila.insertCell().innerHTML = usuario.r_legacorreo_email;
             }
         }
 

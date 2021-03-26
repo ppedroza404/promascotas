@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de servicios</title>
+    <!--Tienen que ir en todas las internas-->
+    <title>Eventos</title>
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfilCliente.css">
-    <link rel="stylesheet" href="css/tabla.css">
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
 </head>
 
-<body class="duennoBody">
+<body class="sinAutenticarBody">
     <header>
         <section class="contenedor">
             <div>
@@ -145,49 +144,35 @@
         </section>
     </header>
     <main>
-        <h1>Listado de servicios</h1>
-        <form>
-            <section class="contenedor">
-                <div class="simpleColumna contenedorColumna">
-                    <div class="columna">
-                        <label for="txt-filtro">Podés buscar por tipo de servicio o ubicación</label>
-                        <input type="text" id="txt-filtro">
-                    </div>
-
-
-                    <div class="columna">
-
-                    </div>
-                </div>
-                <div>
-                    <h3>Lista de servicios</h3>
-                    <table id="tbl-usuarios" class="tabla">
-                        <thead>
-                            <tr>
-                                <th>Proveedor</th>
-                                <th>Servicio</th>
-                                <th>Teléfono</th>
-                                <th>Correo</th>
-                                <th>Ubicación</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-        </form>
+        <h1>Ayuda para la Asociación para el Bienestar y Amparo Animal</h1>
+        <section class="contenedor">
+            <h2>Una pequeña ayuda, puede significar mucho</h2>
+            <p>ABAA se financia por medio del cobro de módicas tarifas que cubren sus costos por la prestación de sus servicios de castración, vacunación y limpieza dental, y así generamos ingresos que nos permiten subsidiar y financiar los servicios de
+                consulta y desparasitación que damos gratuitamente a todo animal que llegue a nuestros eventos y cubrir el costo de recuperación de los animales que rescatamos y luego damos en adopción. Las donaciones de organismos internacionales, de
+                personas físicas y el patrocinio de empresas comerciales nos permiten cubrir costos y mantener nuestras tarifas de bien social. Por ello, haciéndote socio o realizando una donación económica estarás apoyando nuestro trabajo. Gracias a
+                las aportaciones económicas de personas preocupadas por los animales como vos, podemos seguir luchando para acabar con la injusticia de la que son víctimas.</p>
+            <p>
+                Si preferís realizar un ingreso o una transferencia, podés hacerlo en el siguiente número de cuenta bancaria:
+                <ul class="padding-bottom">
+                    <li>Número de cuenta para donaciones: 200-01-149-004158-0</li>
+                    <li>Cuenta IBAN: CR40015114920010041585</li>
+                    <li>Cédula Jurídica: 3-002-248601</li>
+                    <li>Entidad Bancaria: Banco nacional de Costa Rica</li>
+                    <li>Swift/bic bncrcrsj</li>
+                    <li>Dirección del Banco: Avenida 1 y 3 Calle 4 San José Costa Rica</li>
+                    <li>Portador de la Cuenta: Asociación para el Bienestar y Amparo de los Animales</li>
+                </ul>
+                <strong>Gracias por tu apoyo para ayudarles!</strong>
+            </p>
+        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/serviciosCliente.js"></script>
 </body>
 
 </html>
