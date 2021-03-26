@@ -778,3 +778,29 @@ footer p {
 .modal-footer h3 {
     margin-bottom: 0;
 }
+
+.btn-aprobar {
+    background: #3f8f11;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
+
+.btn-denegar {
+    background: #b90b0b;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
