@@ -229,7 +229,10 @@ const validarDatos = () => {
             'icon': 'warning',
             'title': 'No se ha registrado',
             'text': 'Por favor revise los campos resaltados'
+        }).then(() => {
+            window.location.href = 'index.html';
         });
+
     }
 }
 
