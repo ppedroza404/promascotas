@@ -67,7 +67,7 @@ strong {
 }
 
 .ocultarInfoMascota {
-    display: none !important;
+    display: none;
 }
 
 .contenedor {
