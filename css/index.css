@@ -237,6 +237,7 @@ header.fixed .menuPrincipal li a {
     font-size: 18px;
     line-height: 20px;
     width: 350px;
+    max-width: 100%;
 }
 
 .animacionTitulo {
@@ -406,8 +407,61 @@ h2 {
     min-height: 600px;
 }
 
-.interactuamos {
+.interactuamos .interacciones {
     display: flow-root;
+}
+
+.interactuamosItemContenedor {
+    width: calc(50% - 1px);
+    margin: 20px 0;
+    float: left;
+}
+
+.interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:first-child {
+    float: right;
+    border-right: none;
+}
+
+.interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:last-child {
+    float: left;
+    border-right: 1px solid #ffffff;
+}
+
+.interactuamosItemContenedor:first-child {
+    border-right: 1px solid #ffffff;
+}
+
+.interactuamosItemContenedor div {
+    margin: 25px auto;
+    width: 431px;
+}
+
+.interactuamosItemContenedor h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.interactuamosItemContenedor:first-child h3 {
+    text-align: right;
+}
+
+.interactuamosItemContenedor p {
+    margin-bottom: 30px;
+    text-align: left;
+    letter-spacing: 0;
+}
+
+.interactuamosItemContenedor:first-child p {
+    text-align: right;
+}
+
+.interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:first-child h3,
+.interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:first-child p {
+    text-align: left;
+}
+
+.interactuamosItemContenedor .imgBtn {
+    margin-top: 40px;
 }
 
 .seccion-izq,
@@ -423,32 +477,6 @@ h2 {
 
 .seccion-der {
     float: right;
-}
-
-#seccionInteraccion .seccion-der {
-    margin-right: 15px;
-}
-
-.seccion-izq div {
-    border-right: #ddd solid 1px;
-    padding: 10px 0;
-}
-
-.seccion-der div {
-    padding: 10px 0;
-}
-
-.seccion-izq h3,
-.seccion-der h3 {
-    color: black;
-    font-size: 20px;
-}
-
-.seccion-izq p,
-.seccion-der p {
-    width: 409px;
-    margin-bottom: 30px;
-    text-align: justify;
 }
 
 
@@ -480,13 +508,13 @@ h2 {
 }
 
 .span-contac {
-    font-size: 21px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 #seccionPublicidad {
     background-color: #cccde2;
-    min-height: 130px;
-    max-height: 154px;
+    height: 152px;
 }
 
 #seccionPublicidad {
@@ -495,11 +523,11 @@ h2 {
 
 .img-publicidad {
     margin: 0 auto;
-    width: 50%;
+    text-align: center;
 }
 
-#img-publicidad {
-    margin-top: 2px;
+.img-publicidad img {
+    border: 1px solid #6700a3;
 }
 
 
@@ -594,6 +622,7 @@ h2 {
     margin-bottom: 0px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .patrocinadores {
@@ -653,3 +682,252 @@ h2 {
 
 
 /* Final: Estilos de la sección "Patrocinadores" de Pro Mascotas LP */
+
+
+/*******Responsive********/
+
+@media screen and (max-width: 1700px) {
+    header.Activado .menuPrincipal {
+        top: 34px;
+    }
+    header .menuPrincipal li a,
+    header.fixed .menuPrincipal li a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    header .menuPrincipal li {
+        padding: 0 10px;
+    }
+    header .menuPrincipal li a,
+    header.fixed .menuPrincipal li a {
+        font-size: 18px;
+    }
+    .slide span {
+        background-position: bottom center;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    header .logo {
+        width: 150px;
+        height: 70px;
+    }
+    header .menuPrincipal li a,
+    header.fixed .menuPrincipal li a {
+        font-size: 16px;
+    }
+    header.Activado .menuPrincipal-Activador span,
+    header.Activado .menuPrincipal-Activador span::before {
+        width: 23px;
+    }
+    header.Activado .menuPrincipal {
+        top: 20px;
+    }
+    header .menuPrincipal-Activador {
+        margin: 29px 0px;
+    }
+    .sliderContenedor,
+    .slide span {
+        height: 420px;
+    }
+    .sliderInformacion {
+        transform: none;
+    }
+    .sliderInformacion p.titulo {
+        font-size: 25px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+    .sliderInformacion p {
+        font-size: 15px;
+    }
+    .contenedor,
+    section.contenedor {
+        max-width: 90%;
+        width: 90%;
+    }
+    .sliderInformacion {
+        left: 5%;
+    }
+    @-webkit-keyframes animacionTitulo {
+        0% {
+            opacity: .4;
+            left: 30%;
+        }
+        100% {
+            left: 5%;
+        }
+    }
+    @keyframes animacionTitulo {
+        0% {
+            opacity: .4;
+            left: 30%;
+        }
+        100% {
+            left: 5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header.Activado {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    header .menuPrincipal {
+        right: 35px;
+    }
+    header .menuPrincipal li {
+        padding: 0 5px;
+    }
+    header .menuPrincipal li a,
+    header.fixed .menuPrincipal li a {
+        font-size: 15px;
+    }
+    .interactuamosItemContenedor {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+    .interactuamosItemContenedor:first-child {
+        border: none;
+    }
+    .interactuamosItemContenedor:last-child,
+    .interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:last-child {
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        margin-bottom: 25px;
+    }
+    .interactuamosItemContenedor:first-child h3,
+    .interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:first-child h3 {
+        text-align: center;
+    }
+    .interactuamosItemContenedor:first-child p,
+    .interactuamos .interacciones.interaccionInvertida .interactuamosItemContenedor:first-child p {
+        text-align: justify;
+    }
+    #seccionUnirme .seccion-izq,
+    #seccionUnirme .seccion-der {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header.fixed .logo {
+        width: 140px;
+    }
+    header.Activado {
+        height: 110px;
+        transition: all 0.5s ease 0s;
+    }
+    header.Activado.fixed .menuPrincipal {
+        top: -65px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        right: 0;
+    }
+    header.Activado.fixed .menuPrincipal {
+        top: 65px;
+    }
+    #seccionContactanos .seccion-izq,
+    #seccionContactanos .seccion-der {
+        float: none;
+        width: 100%;
+    }
+    .contactanosInfoResponsive {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .contactanosInfoResponsive p {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #seccionPublicidad {
+        height: auto;
+    }
+    .img-publicidad img {
+        width: 100%;
+    }
+    .patrocinadores:last-child {
+        display: none;
+    }
+    .modal-body .contenedorClasesFlotantes .flotar-izq {
+        display: none;
+    }
+    .modal-body .contenedorClasesFlotantes .w50 {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    header.Activado {
+        height: 250px;
+        transition: all 0.5s ease 0s;
+    }
+    header .menuPrincipal {
+        top: -200px;
+    }
+    header.Activado.fixed .menuPrincipal {
+        top: 30px;
+        display: block;
+        right: 35px;
+        width: calc(100% - 35px);
+    }
+    header .menuPrincipal li,
+    header.Activado.fixed .menuPrincipal li {
+        float: none !important;
+    }
+    header .menuPrincipal li a {
+        text-align: right;
+    }
+    .sliderContenedor,
+    .slide span {
+        height: 290px;
+    }
+    .slide span {
+        opacity: 0.5;
+    }
+    .sliderInformacion {
+        top: 32%;
+    }
+    .sliderInformacion p.titulo {
+        font-size: 20px;
+    }
+    .sliderInformacion p {
+        width: 290px;
+    }
+    .interactuamosItemContenedor div {
+        max-width: 100%;
+    }
+    .imgBtn {
+        background-size: 100%;
+        width: 261px;
+        height: 42px;
+        padding: 10px;
+        margin: 0px auto;
+    }
+    .imgBtn span.accionesContenedor {
+        width: 259px;
+        height: 41px;
+    }
+    .imgBtn span.masInfo,
+    .imgBtn:hover span.llamarAccion {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /*.imgBtnContenedor {
+        transform: translateX(-24%);
+    }
+    .imgBtn {
+        transform: scale(60%);
+    }*/
+}
