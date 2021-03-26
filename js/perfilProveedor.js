@@ -3,14 +3,14 @@
 const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 const seccionRep = document.querySelector('.seccion-representante');
 // Variables para datos del Proveedor
-const pnombreProv = document.querySelector('#txt-nombreProveedor');
-const pnegocioProv = document.querySelector('#txt-nombreNegocio');
-const pcorreoProv = document.querySelector('#txt-correoProveedor');
-const ptelProv = document.querySelector('#txt-telProveedor');
-const pidProv = document.querySelector('#txt-idProveedor');
-const pgeneroProv = document.querySelector('#txt-generoProveedor');
-const pdireccionProv = document.querySelector('#txt-direccionProv');
-const potrasSeniasProv = document.querySelector('#txt-otrasSeniasProv');
+const pnombreProv = document.querySelector('#txt-nombreProveedor'); // nombre
+const pnegocioProv = document.querySelector('#txt-nombreNegocio'); // nombre negocio
+const pcorreoProv = document.querySelector('#txt-correoProveedor'); // correo
+const ptelProv = document.querySelector('#txt-telProveedor'); // telefono
+const ptipoId = document.querySelector('#txt-tipoIdProveedor'); // TipoID
+const pidProv = document.querySelector('#txt-idProveedor'); // Numero ID
+const pdireccionProv = document.querySelector('#txt-direccionProv'); // Direccion
+const potrasSeniasProv = document.querySelector('#txt-otrasSeniasProv'); // Otras sennas
 const spanNombreNegocio = document.querySelector('#spanNombreNegocio');
 
 
@@ -25,10 +25,10 @@ const ptelRep = document.querySelector('#txt-telRep');
 
 pnombreProv.value = `${proveedor.nombre} ${proveedor.primerApellido} ${proveedor.segundoApellido}`;
 pnegocioProv.value = proveedor.n_negocio;
-pcorreoProv.value = proveedor.provincia;
+pcorreoProv.value = proveedor.correo;
 ptelProv.value = proveedor.telefono;
 pidProv.value = proveedor.id;
-pgeneroProv.value = proveedor.sexo;
+ptipoId.value = proveedor.r_legalatipoid;
 pdireccionProv.value = `${proveedor.provincia}, ${proveedor.canton}, ${proveedor.distrito}`;
 potrasSeniasProv.value = proveedor.sennas;
 spanNombreNegocio.innerHTML = proveedor.n_negocio;
