@@ -1,12 +1,35 @@
 'use strict';
+
+let Estados = ["Activo", "Suspendido", "Pendiente", "Rechazado"];
+
 const tablaSolicitudesPendientes = document.querySelector('#tbl-solicitudespendientes tbody');
 const tablaRepresentanteLegal = document.querySelector('#tbl-solicitudespendientes');
+const inputfiltrarSolicitudes = document.querySelector('#txt-filtrarSolicitudes');
 
-const limpiarTabla = () => {
-    for (var i = tablaSolicitudesPendientes.rows.length - 1; i > 0; i--) {
-        tablaTipoUsuario.deleteRow(i);
+//Create and append select list
+const crearSelect = () => {
+    const selectList = document.createElement("select");
+    selectList.classList.add('test');
+
+
+    //Create and append the options
+    for (let i = 0; i < Estados.length; i++) {
+        let option = document.createElement("option");
+        option.value = Estados[i];
+        option.text = Estados[i];
+        selectList.appendChild(option);
     }
+    return selectList
 }
+
+const obtenerDireccionCompleta = () => {
+    let provinciaCliente = usuario.provincia;
+    let cantonCliente = usuario.canton;
+    let distritoCliente = usuario.distrito;
+    let direccionCompleta = `${provinciaCliente}, ${cantonCliente}, ${distritoCliente}`;
+
+    return direccionCompleta;
+};
 
 const generarTablaRepLegal = () => {
     let fila = tablaRepresentanteLegal.insertRow();
@@ -22,34 +45,44 @@ const generarTablaRepLegal = () => {
 }
 
 const mostrarTablaSolicitudesPendientes = () => {
-    limpiarTabla();
+    let filtro = inputfiltrarSolicitudes.value.toLowerCase();
+    tablaSolicitudesPendientes.innerHTML = '';
     listaUsuarios.forEach(usuario => {
-        if (usuario.tipo == 'Proveedor') {
-            let fila = tablaSolicitudesPendientes.insertRow();
-            fila.insertCell().innerHTML = usuario.Estado;
-            fila.insertCell().innerHTML = usuario.n_negocio;
-            fila.insertCell().innerHTML = usuario.negocio_tipo;
-            fila.insertCell().innerHTML = usuario.id_negocio;
-            fila.insertCell().innerHTML = usuario.nombre;
-            fila.insertCell().innerHTML = usuario.primerApellido;
-            fila.insertCell().innerHTML = usuario.tipoID;
-            fila.insertCell().innerHTML = usuario.id;
-            fila.insertCell().innerHTML = usuario.telefono;
-            fila.insertCell().innerHTML = `${usuario.provincia}, ${usuario.canton},${usuario.distrito}`;
-            if (usuario.n_negocio = 'Juridica') {
-                generarTablaRepLegal();
-                let fila = tablaRepresentanteLegal.insertRow();
-                fila.className = 'autogen contenido ocultar';
-                fila.insertCell().innerHTML = usuario.r_legal_Nombre;
-                fila.insertCell().innerHTML = usuario.r_legalaPapellido;
-                fila.insertCell().innerHTML = usuario.r_legalaSapellido;
-                fila.insertCell().innerHTML = usuario.r_legalatipoid;
-                fila.insertCell().innerHTML = usuario.r_legalanid;
-                fila.insertCell().innerHTML = usuario.r_legalanacimiento;
+
+        if (usuario.Estado.toLowerCase().includes(filtro) || usuario.n_negocio.toLowerCase().includes(filtro)) {
+
+            if (usuario.tipo == 'Proveedor') {
+                let fila = tablaSolicitudesPendientes.insertRow();
+
+
+                fila.insertCell().appendChild(crearSelect()).value = usuario.Estado;
+
+                fila.insertCell().innerHTML = usuario.n_negocio;
+                fila.insertCell().innerHTML = usuario.negocio_tipo;
+                fila.insertCell().innerHTML = usuario.id_negocio;
+                fila.insertCell().innerHTML = usuario.nombre;
+                fila.insertCell().innerHTML = usuario.primerApellido;
+                fila.insertCell().innerHTML = usuario.tipoID;
+                fila.insertCell().innerHTML = usuario.id;
                 fila.insertCell().innerHTML = usuario.telefono;
-                fila.insertCell().innerHTML = usuario.r_legacorreo_email;
+                fila.insertCell().innerHTML = `${usuario.provincia}, ${usuario.canton},${usuario.distrito}`;
+                if (usuario.n_negocio == 'Juridica') {
+                    generarTablaRepLegal();
+                    let fila = tablaRepresentanteLegal.insertRow();
+                    fila.className = 'autogen contenido ocultar';
+                    fila.insertCell().innerHTML = usuario.r_legal_Nombre;
+                    fila.insertCell().innerHTML = usuario.r_legalaPapellido;
+                    fila.insertCell().innerHTML = usuario.r_legalaSapellido;
+                    fila.insertCell().innerHTML = usuario.r_legalatipoid;
+                    fila.insertCell().innerHTML = usuario.r_legalanid;
+                    fila.insertCell().innerHTML = usuario.r_legalanacimiento;
+                    fila.insertCell().innerHTML = usuario.telefono;
+                    fila.insertCell().innerHTML = usuario.r_legacorreo_email;
+                }
             }
+
         }
+
 
     })
 
@@ -58,12 +91,4 @@ const mostrarTablaSolicitudesPendientes = () => {
 
 mostrarTablaSolicitudesPendientes();
 
-
-const obtenerDireccionCompleta = () => {
-    let provinciaCliente = usuario.provincia;
-    let cantonCliente = usuario.canton;
-    let distritoCliente = usuario.distrito;
-    let direccionCompleta = `${provinciaCliente}, ${cantonCliente}, ${distritoCliente}`;
-
-    return direccionCompleta;
-};
+inputfiltrarSolicitudes.addEventListener('keyup', mostrarTablaSolicitudesPendientes);
