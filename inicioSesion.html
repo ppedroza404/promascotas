@@ -30,7 +30,7 @@
                     <input type="password" id="txt-contrasenna">
                 </div>
                 <div class="centrarTexto">
-                    <a href="#">¿Olvidaste la contraseña?</a>
+                    <a href="#" id="recuperarContraseña">¿Olvidaste la contraseña?</a>
                 </div>
                 <div class="centrarTexto">
                     <button type="button" class="btn" id="btn-iniciar">Iniciar sesión</button>
@@ -41,6 +41,33 @@
             </form>
         </section>
     </main>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 class="padding-bottom">Recuperar contraseña</h2>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div class="centrarBloque w50">
+                        <h2>¿Olvidaste tu contraseña?</h2>
+                        <p>No te preocupés, solo tenés que poner tu correo y te enviaremos las instrucciones que debés seguir para recuperla.</p>
+                    </div>
+                    <div>
+                        <label for="txt-correoRecuperar">Correo electrónico</label>
+                        <input type="email" id="txt-correoRecuperar" placeholder="tucorreo@website.com">
+                    </div>
+
+                    <div class="centrarTexto">
+                        <button type="button" class="btn" id="btn-iniciar">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h3>Gracias por formar parte de nuestro proyecto</h3>
+            </div>
+        </div>
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/inicio-sesion.js"></script>
