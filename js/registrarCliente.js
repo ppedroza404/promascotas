@@ -98,7 +98,7 @@ if (sltTipoId.value == 'nacional') {
     } else {
         inputNumId.classList.remove('error');
     }
-} else if (sltTipoId.value == 'dimex') {
+} else if (sltTipoId.value == 'Dimex') {
     if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
         error = true;
         inputNumId.classList.add('error');

@@ -2,7 +2,7 @@
 
 //Función para habilitar o deshabilitar el input de la cédula jurídica
 const tipoId = document.querySelector('#slt-tipoId');
-const juridica = document.querySelector('#txt-cedulaJuridica');
+const Jurídica = document.querySelector('#txt-CédulaJurídica');
 const nombreRepresentante = document.querySelector('#txt-nombreRepresentante');
 const primerApellidoRepresentante = document.querySelector('#txt-primerApellidoRepresentante');
 const segundoApellidoRepresentante = document.querySelector('#txt-segundoApellidoRepresentante');
@@ -16,7 +16,7 @@ const tipoServicio = document.querySelector('#slt-tipoServicio');
 
 const enableSelect = () => {
     if (tipoId.value == 'Jurídica') {
-        juridica.disabled = false;
+        Jurídica.disabled = false;
         nombreRepresentante.disabled = false;
         primerApellidoRepresentante.disabled = false;
         segundoApellidoRepresentante.disabled = false;
@@ -26,7 +26,7 @@ const enableSelect = () => {
         correoRepresentante.disabled = false;
         telefonoRep.disabled = false;
     } else {
-        juridica.disabled = true;
+        Jurídica.disabled = true;
         nombreRepresentante.disabled = true;
         primerApellidoRepresentante.disabled = true;
         segundoApellidoRepresentante.disabled = true;
@@ -48,7 +48,7 @@ const btnRegistrarProveedor = document.querySelector('#btn-registrarProveedor');
 const inputImagen = document.querySelector('#input-imagen');
 const inputNombreNegocio = document.querySelector('#txt-nombreNegocio');
 const inputTipoId = document.querySelector('#slt-tipoId');
-const inputCedulaJuridica = document.querySelector('#txt-cedulaJuridica');
+const inputCédulaJurídica = document.querySelector('#txt-CédulaJurídica');
 const inputNombreSolicitante = document.querySelector('#txt-nombreSolicitante');
 const inputPrimeApellidoSolicitante = document.querySelector('#txt-primeApellidoSolicitante');
 const inputSegundoApellidoSolicitante = document.querySelector('#txt-segundoApellidoSolicitante');
@@ -124,11 +124,11 @@ const validar = () => {
     }
 
 
-    if ((inputCedulaJuridica.value == '') && (juridica.disabled == false)) {
+    if ((inputCédulaJurídica.value == '') && (Jurídica.disabled == false)) {
         error = true;
-        inputCedulaJuridica.classList.add('error');
+        inputCédulaJurídica.classList.add('error');
     } else {
-        inputCedulaJuridica.classList.remove('error');
+        inputCédulaJurídica.classList.remove('error');
     }
     if (inputImagen.value == '') {
         error = true;
@@ -307,7 +307,7 @@ const imprimir = () => {
     let imagen = inputImagen.value;
     let nombreNegocio = inputNombreNegocio.value;
     let tipoId = inputTipoId.value;
-    let cedulaJuridica = inputCedulaJuridica.value;
+    let CédulaJurídica = inputCédulaJurídica.value;
     let nombreSolicitante = inputNombreSolicitante.value;
     let primeApellidoSolicitante = inputPrimeApellidoSolicitante.value;
     let segundoApellidoSolicitante = inputSegundoApellidoSolicitante.value;
@@ -364,7 +364,7 @@ const imprimir = () => {
         console.log('');
         console.log('Información Jurídica');
         console.log('=====================');
-        console.log('Cédula Juridica: ' + cedulaJuridica);
+        console.log('Cédula Jurídica: ' + CédulaJurídica);
         console.log('Nombre: ' + nombreRepresentante);
         console.log('Apellido: ' + primerApellidoRepresentante);
         console.log('Apellido 2: ' + segundoApellidoRepresentante);

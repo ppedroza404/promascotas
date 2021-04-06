@@ -38,7 +38,7 @@ spanNombreNegocio.innerHTML = proveedor.n_negocio;
 
 /* Inicio: Variables que muestran la información del representante de proveedor */
 
-if (proveedor.tipoID != "JURIDICA") {
+if (proveedor.tipoID != "Jurídica") {
     seccionRep.classList.add('ocultar');
 } else {
     pnombreRep.value = `${proveedor.r_legal_Nombre} ${proveedor.r_legalaPapellido} ${proveedor.r_legalaSapellido}`;

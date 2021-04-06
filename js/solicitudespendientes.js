@@ -94,7 +94,7 @@ const mostrarTablaSolicitudesPendientes = () => {
                 fila.insertCell().innerHTML = usuario.id;
                 fila.insertCell().innerHTML = usuario.telefono;
                 fila.insertCell().innerHTML = `${usuario.provincia}, ${usuario.canton},${usuario.distrito}`;
-                if (usuario.n_negocio == 'Juridica') {
+                if (usuario.n_negocio == 'Jurídica') {
                     generarTablaRepLegal();
                     let fila = tablaRepresentanteLegal.insertRow();
 
