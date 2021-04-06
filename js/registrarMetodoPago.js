@@ -43,30 +43,27 @@ const validarTipoTarjeta = () => {
 
     if (visa.test(numTarjeta.value) == true) {
         tipoTarjeta = "Visa";
+
         tarjetaVisa.src = "../img/visa_logo_color.jpg";
-
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
-
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
-
         numTarjeta.classList.remove('error');
 
     } else if ((mastercard.test(numTarjeta.value) == true) || (mastercard2.test(numTarjeta.value) == true)) {
         tipoTarjeta = "Mastercard";
+
         tarjetaMasterC.src = "../img/mastercard_logo_color.jpg";
-
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
-
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
 
         numTarjeta.classList.remove('error');
 
+
     } else if (amex.test(numTarjeta.value) == true) {
         tipoTarjeta = "Amex";
+
         tarjetaAmex.src = "../img/amex_logo_color.jpg";
-
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
-
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
 
         numTarjeta.classList.remove('error');
@@ -77,6 +74,17 @@ const validarTipoTarjeta = () => {
     //Mastercard: 5555555555554444
     //Mastercard: 5105105105105100
 
+    //Validación para placeholder
+
+    if (tipoTarjeta == "Visa" || tipoTarjeta == "Mastercard") {
+        document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "123")
+    } else if (tipoTarjeta == "Amex") {
+        document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "1234")
+    } else if (tipoTarjeta == null) {
+        document.getElementById('txt-codigoSeguridad').removeAttribute("placeholder") // No está funcionando!!
+    }
+
+
     return tipoTarjeta;
 
 }
@@ -85,7 +93,7 @@ tipoTarjeta = validarTipoTarjeta();
 
 // Función para cambiar length del input del CVC - Amex
 
-// --------- TBD ---------- //
+
 
 /* Inicio: Función para validar la fecha de expiración */
 
@@ -127,8 +135,11 @@ const obtenerSubStr = (pnumeroTarjeta) => {
 
 /* Fin: Función para obtener solamente los últimos 4 dígitos de la tarjeta */
 
-const validar = () => {
+const validar = (ptipoTarjeta) => {
+    let tipoDeTarjeta = ptipoTarjeta;
     let error = false;
+    let regexCodigoAmex = new RegExp('[0-9]{4}');
+    let regexCodigoVisaMC = new RegExp('[0-9]{3}');
 
     if (numTarjeta.value == "") {
         error = true;
@@ -160,7 +171,22 @@ const validar = () => {
     } else {
         inputCodigoSeguridad.classList.remove('error');
     }
-
+    if (tipoDeTarjeta == "Amex") {
+        if (regexCodigoAmex.test(inputCodigoSeguridad.value) == false) {
+            error = true;
+            inputCodigoSeguridad.classList.add('error');
+        } else {
+            inputCodigoSeguridad.classList.remove('error');
+        }
+    }
+    if (tipoDeTarjeta == "Visa" || tipoDeTarjeta == "Mastercard") {
+        if (regexCodigoVisaMC.test(inputCodigoSeguridad.value) == false) {
+            error = true;
+            inputCodigoSeguridad.classList.add('error');
+        } else {
+            inputCodigoSeguridad.classList.remove('error');
+        }
+    }
     if (error == false) {
         validarExpiracion();
     } else {

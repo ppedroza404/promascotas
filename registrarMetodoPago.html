@@ -148,8 +148,8 @@
         </section>
     </header>
     <main class="contenedor">
+        <h1>Métodos de pago</h1>
         <section class="contenedor">
-            <h2>Método de pago</h2>
             <h3>Tarjetas de crédito o débito</h3>
         </section>
         <form>
@@ -209,12 +209,12 @@
                     </div>
                     <div class="columna">
                         <div><label for="txt-codigoSeguridad">CVC</label></div>
-                        <input type="number" id="txt-codigoSeguridad" pattern="\4*" max="3">
+                        <input type="number" id="txt-codigoSeguridad" min="0">
                         <img src="img/cvc_logo1.jpg" class="img-codigoSeguridad" alt="">
                     </div>
             </section>
             <div class="btn-general">
-                <button type="button" id="btn-registrarCC">Registrar tarjeta</button>
+                <button type="button" id="btn-registrarCC">Guardar</button>
             </div>
         </form>
         <section>
