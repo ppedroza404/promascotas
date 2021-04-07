@@ -11,3 +11,16 @@
 .contenedor-listar {
     padding-top: 25px;
 }
+
+.conetnedor-tabla {
+    display: flow-root;
+}
+
+.bnt-guardar {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.bnt-editar {
+    margin-top: 5px;
+}

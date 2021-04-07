@@ -1,4 +1,5 @@
 'use strict';
+const tablaCompleta = document.querySelector('table');
 const btnCatalogo = document.querySelector('#btn-irRegistrarCatalogo');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
@@ -9,8 +10,12 @@ const limpiarTabla = () => {
     }
 }
 
-const mostrarCatalogoSeleccionado = () => {
+const oculatTabla = () => {
+    tablaCompleta.classList.add('ocultar');
+}
 
+const mostrarCatalogoSeleccionado = () => {
+    tablaCompleta.classList.remove('ocultar');
     limpiarTabla();
 
     if (selectCatalogo.value == 'enfermedades') {
@@ -21,6 +26,8 @@ const mostrarCatalogoSeleccionado = () => {
         mostrarTablaRazas()
     } else if (selectCatalogo.value == 'vacunas') {
         mostrarTablaVacunas()
+    } else if (selectCatalogo.value == 'Nulo') {
+        oculatTabla()
     }
 };
 
@@ -74,3 +81,5 @@ const registrarCatalogo = () => {
 btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });
+
+oculatTabla();

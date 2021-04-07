@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--test hugo-->
+<!--test pablo-->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Catálogo Admin</title>
+    <title>Solicitudes Pendientes</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="css/listarInformacion.css">
     <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/listarInformacion.css">
 
-    <!--listar y registrar-->
 </head>
 
 <body class="administradorBody">
@@ -152,51 +153,46 @@
         </section>
     </header>
 
-    <main class="contenedor">
+    <main>
 
-        <h1>Lista de catálogos</h1>
-        <section class="contenedor-listar">
-            <section>
-                <div>
-                    <label for="slt-catalogo">Categoría</label>
-                    <select name="slt-catalogo" id="slt-catalogo">
-                         <option value="Nulo">Por favor seleccione una opción del catálogo</option>
-                        <option value="enfermedades">Enfermedades</option>
-                        <option value="tiposMascota">Tipos de mascota</option>
-                        <option value="razas">Razas</option>
-                        <option value="vacunas">Vacunas</option>
-                    </select>
-                </div>
-            </section>
+        <h1>Lista de proveedores</h1>
+        <div class="contenedor conetnedor-tabla">
+            <label for="txt-filtrarSolicitudes" class="simpleColumna">Filtrar información</label>
+            <input type="text" id="txt-filtrarSolicitudes">
 
 
-            <table id="tbl-catalogos" class="tabla">
+            <table id="tbl-solicitudespendientes" class="tabla">
                 <thead>
                     <tr>
-                        <th>Catálogo</th>
+                        <th>Estado</th>
+                        <th>Tipo</th>
+                        <th>Denuncias</th>
+                        <th>Correo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Numero ID</th>
+                        <th>Teléfono</th>
+
                     </tr>
                 </thead>
+
                 <tbody>
 
+
                 </tbody>
+                <button type="button" class="btn bnt-editar flotar-izq" id="btn-editarSolic">Editar</button>
             </table>
-
-            <div class="btn-general">
-                <button type="button" id="btn-irRegistrarCatalogo">Ir a registrar nuevo catálogo</button>
-            </div>
-        </section>
-
+            <button type="button" class="btn bnt-guardar" id="btn-actualizarSolic">Guardar</button>
+        </div>
     </main>
-
-
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
-    <script src="js/listarCatalogoAdmin.js"></script>
     <script src="js/navegacion.js"></script>
+    <script src="js/usuariosDenunciados.js"></script>
 
 </body>
 

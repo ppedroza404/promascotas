@@ -333,6 +333,15 @@ let lista_proveedoresCalificados = [
     { "n_negocio": "La gatita collares", "calificacion": "3.77" }
 ]
 
+let usuariosDenuncadios = [
+    { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "1", "Correo": "mmatamoro@gmail.com", "Nombre": "Maria", "Primer_apellido": "Trivez", "Idenficacion": "925069023", "Teléfono": "1234-5678" },
+    { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "2", "Correo": "rcargua@gmail.com", "Nombre": "Rosa", "Primer_apellido": "Ripado", "Idenficacion": "934480785", "Teléfono": "5784-4433" },
+    { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "3", "Correo": "jsarsa@gamil.com", "Nombre": "Jose", "Primer_apellido": "Baldor", "Idenficacion": "459378283", "Teléfono": "1234-5679" },
+    { "Estado": "Denunciado", "Tipo": "Usuario", "Denuncias": "2", "Correo": "adeblas@gmail.com", "Nombre": "Ana", "Primer_apellido": "Deblas", "Idenficacion": "501764518", "Teléfono": "5784-4434" },
+    { "Estado": "Denunciado", "Tipo": "Usuario", "Denuncias": "3", "Correo": "jortiz@gmail.com", "Nombre": "Santaolaya", "Primer_apellido": "Purti", "Idenficacion": "857356263", "Teléfono": "1234-5680" },
+    { "Estado": "Denunciado", "Tipo": "Usuario", "Denuncias": "4", "Correo": "ediaz@gmail.com", "Nombre": "Ortiz", "Primer_apellido": "Muset", "Idenficacion": "936317414", "Teléfono": "5784-4435" },
+    { "Estado": "Denunciado", "Tipo": "Usuario", "Denuncias": "5", "Correo": "agoitiz@gmail.com", "Nombre": "Esther", "Primer_apellido": "Diaz", "Idenficacion": "456586961", "Teléfono": "1234-5681" }
+]
 
 let listaUsuarios = [
     { "Estado": "Activo", "correo": "admin@promascotas.com", "tipo": "Administrador", "nombre": "Admin", "primerApellido": "Admin", "segundoApellido": "Admin", "nacimiento": "10-12-1987'", "cantidadmascotas": "0", "contrasenna": "123Abc!", "sexo": "Otro", "telefono": "5555-5555", "tipoID": "Jurídica", "id": "999999999", "provincia": "San Jose", "canton": "Escazu", "distrito": "Escazu", "sennas": "casa 1", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },
@@ -346,7 +355,6 @@ let listaUsuarios = [
     { "Estado": "Suspendido", "correo": "jortiz@gmail.com", "tipo": "Cliente", "nombre": "Juana", "primerApellido": "Ortiz", "segundoApellido": "Muset", "nacimiento": "10-12-1987'", "cantidadmascotas": "1", "contrasenna": "123Abc!", "sexo": "Masculino", "telefono": "5784-9835", "tipoID": "Dimex", "id": "936317414", "provincia": "Heredia", "canton": "Sarapiqui", "distrito": "Las Horquetas", "sennas": "casa 9", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },
     { "Estado": "Suspendido", "correo": "ediaz@gmail.com", "tipo": "Cliente", "nombre": "Esther", "primerApellido": "Diaz", "segundoApellido": "Fernadez", "nacimiento": "10-12-1987'", "cantidadmascotas": "2", "contrasenna": "123Abc!", "sexo": "Femenino", "telefono": "1234-5682", "tipoID": "Cédula", "id": "456586961", "provincia": "Heredia", "canton": "Central", "distrito": "Mercedes", "sennas": "casa 10", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" },
     { "Estado": "Activo", "correo": "agoitiz@gmail.com", "tipo": "Cliente", "nombre": "Antonio", "primerApellido": "Goitiz", "segundoApellido": "Abejaro", "nacimiento": "7-2-1985'", "cantidadmascotas": "4", "contrasenna": "123Abc!", "sexo": "Masculino", "telefono": "5784-9854", "tipoID": "Dimex", "id": "341870214", "provincia": "San Jose", "canton": "Alajuelita", "distrito": "San felipe", "sennas": "casa 11", "n_negocio": "", "negocio_tipo": "", "id_negocio": "", "r_legal_Nombre": "", "r_legalaPapellido": "", "r_legalaSapellido": "", "r_legalatipoid": "", "r_legalanid": "", "r_legalanacimiento": "", "r_legacorreo_email": "", "n_descr": "" }
-
 ]
 
 let enfermedadesAdmin = [{

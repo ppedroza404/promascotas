@@ -1,5 +1,6 @@
 'use strict';
 
+const tablaCompleta = document.querySelector('table');
 const tablaTipoUsuario = document.querySelector('#tbl-usuarios tbody');
 const selectTipoUsuario = document.querySelector('#slt-tipoUsuario');
 const thCantidadMacotas = document.querySelector('.th-cantidadmascotas');
@@ -11,13 +12,20 @@ const limpiarTabla = () => {
     }
 }
 
-const mostrarTablaUsuario = () => {
+const oculatTabla = () => {
+    tablaCompleta.classList.add('ocultar');
+}
 
+const mostrarTablaUsuario = () => {
+    tablaCompleta.classList.remove('ocultar');
     limpiarTabla();
 
     listaUsuarios.forEach(usuario => {
         let fila = tablaTipoUsuario.insertRow();
-        if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Cliente') {
+
+        if (selectTipoUsuario.value == 'Nulo') {
+            tablaCompleta.classList.add('ocultar');
+        } else if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Cliente') {
             thCantidadMacotas.classList.remove('ocultar');
             fila.insertCell().innerHTML = usuario.nombre;
             fila.insertCell().innerHTML = usuario.primerApellido;
@@ -31,8 +39,7 @@ const mostrarTablaUsuario = () => {
             fila.insertCell().innerHTML = usuario.canton;
             fila.insertCell().innerHTML = usuario.distrito;
 
-        }
-        if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Proveedor') {
+        } else if (usuario.tipo == selectTipoUsuario.value && usuario.tipo == 'Proveedor') {
             thCantidadMacotas.classList.add('ocultar');
             fila.insertCell().innerHTML = usuario.nombre;
             fila.insertCell().innerHTML = usuario.primerApellido;
@@ -49,5 +56,5 @@ const mostrarTablaUsuario = () => {
     });
 };
 
-mostrarTablaUsuario();
+oculatTabla();
 selectTipoUsuario.addEventListener('change', mostrarTablaUsuario);
