@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--test hugo-->
+<!--test pablo-->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+    <!--Tienen que ir en todas las internas-->
+    <title>Solicitudes Pendientes</title>
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfilCliente.css">
-    <link rel="stylesheet" href="css/serviciosProveedorYCliente.css">
-    <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Tienen que ir en todas las internas-->
+    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/listarInformacion.css">
+
 </head>
 
-<body class="duennoBody">
+<body class="administradorBody">
     <header>
         <section class="contenedor">
             <div>
-                <a href="paginaInicioCliente.html" class="logo"><span></span></a>
+                <a href="paginaInicioAdmin.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -32,25 +35,29 @@
                             <a href="perfilCliente.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="serviciosCliente.html">Servicios</a>
-
+                            <a href="###">Reportes</a>
                         </li>
                         <li>
-                            <a href="registrarMetodoPago.html">Cuenta</a>
+                            <a href="###">Carrito de compras</a>
                             <ul>
                                 <li>
-                                    <a href="registrarMetodoPago.html">Métodos de pago</a>
+                                    <a href="###">Pagos</a>
                                 </li>
-                                <!--<li>
-                                    <a href="###">Carrito de compras</a>
-                                </li>-->
                             </ul>
                         </li>
                         <li>
                             <a href="###">Mis mascotas</a>
                             <ul>
                                 <li>
-                                    <a href="listarMascotasCliente.html">Ver mascotas</a>
+                                    <a href="###">Mantenimiento</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="###">Servicios</a>
+                            <ul>
+                                <li>
+                                    <a href="###">Detalle</a>
                                 </li>
                             </ul>
                         </li>
@@ -77,51 +84,52 @@
                         <li>
                             <a href="paginaInicioProveedor.html"><span id="nombreAdministradorMenu"></span></a>
                         </li>
-                        <li>
-                            <a href="perfilAdministrador.html">Perfil</a>
-                        </li>
+
                         <li>
                             <a href="###">Proveedores</a>
                             <ul>
                                 <li>
-                                    <a href="###">Pendientes de aprobar</a>
+                                    <a href="solicitudesPendientesAprobar.html">Pendientes de aprobar</a>
                                 </li>
                                 <li>
-                                    <a href="###">Reportes de proveedores</a>
+                                    <a href="solicitudesPendientesAdmin.html">Reportes de proveedores</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="###">Mascotas</a>
+                            <a href="###">Listar Mascotas</a>
                             <ul>
                                 <li>
-                                    <a href="###">Enfermedades</a>
+                                    <a href="listarCatalogoAdmin.html">Enfermedades</a>
                                 </li>
                                 <li>
-                                    <a href="###">Mascotas por raza</a>
+                                    <a href="listarCatalogoAdmin.html">Mascotas por raza</a>
                                 </li>
                                 <li>
-                                    <a href="###">Vacunas por mascota</a>
+                                    <a href="listarCatalogoAdmin.html">Vacunas por mascota</a>
                                 </li>
                                 <li>
-                                    <a href="###">Razas</a>
+                                    <a href="listarCatalogoAdmin.html">Razas</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="###">Usuarios</a>
+                            <a href="###">Listar Usuarios</a>
                             <ul>
                                 <li>
-                                    <a href="###">Usuarios denunciados</a>
+                                    <a href="listarUsuariosAdmin.html">Usuarios</a>
+                                </li>
+                                <li>
+                                    <a href="solicitudesPendientesAdmin.html">Usuarios denunciados</a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="###">Bitácora transaccional</a>
                         </li>
                         <li>
                             <a href="###">Mantenimiento</a>
-                        </li>
+                        </li>-->
                         <!--Finaliza menu administrador-->
                     </ul>
                     <ul id="menuUlSinAutenticar">
@@ -144,41 +152,37 @@
             </div>
         </section>
     </header>
+
     <main>
-        <h1>Compra del servicio</h1>
-        <div class="contenedor">
-            <div class=" w75 centrarBloque">
-                <p>A continuación, podrás ver con detalle la solicitud del servicio que realizaste.</p>
-                <p>Te recomendamos que revisés todos tus datos y los del proveedor con mucho cuidado, una vez que lo hayás hecho, podés agregar el servicio a tu carrito.</p>
-            </div>
-            <div class="dobleColumna contenedorColumna w75 centrarBloque">
-                <div class="columna">
-                    <div class="fichaContenedor">
-                        <h2>Datos del proveedor</h2>
-                        <div class="centrarTexto">
-                            <a href="serviciosProveedorYCliente.html"><img src="img/logoPetSalon.jpg"></a>
-                        </div>
-                        <div class="informacion">
-                            <p>Pet salón es una de las mejores opciones que puedes encontrar para el cuidado de tu mascota. Hacemos grooming, corte de uñas, baños, limpieza de oídos, masajes, aromaterapia, peinados, tintes y otras cosas más.</p>
-                            <div class="centrarTexto padding-top">
-                                <a href="serviciosProveedorYCliente.html" class="btn">Ver proveedor</a>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="columna">
-                    <div class="recibo">
-                        <div class="saludoNombre">Hola <span id="usuarioSpan"></span></div>
-                        <p class="detalleRecibo">Has hecho una solicitud de <span class="inputInfo">Gromming</span> para una mascota de tamaño <span class="inputInfo">Mediano</span>. Este tipo de servicio no cuenta con <span class="inputInfo">Servicio a domicilio</span>, por
-                            lo tanto, tendrás que llegar al local, que se encuentra ubicado <span class="inputInfo">De la choza del indio 600 metros al norte</span>, <span class="inputInfo">Sabanilla</span>, <span class="inputInfo">Montes de Oca</span>,
-                            <span class="inputInfo">San José</span> en <a href="serviciosProveedorYCliente.html">Pet Salón</a>. Este servicio tiene un costo de <span class="inputInfo">16000</span> <span class="inputInfo">Colones</span>.</p>
-                        <p class="finalRecibo">La solicitud que enviaste, se encuentra en estado <span class="inputInfo">pendiente</span> por parte de <a href="serviciosProveedorYCliente.html">Pet Salón</a>. Pronto recibirás la notificación de su parte con respecto a tu solicitud.
-                            <br> Te invitamos a seguir navegando en <a href="paginaInicioCliente.html">Pro Mascotas</a>.</p>
+        <h1>Lista de proveedores</h1>
+        <div class="contenedor conetnedor-tabla">
+            <label for="txt-filtrarSolicitudes" class="simpleColumna">Filtrar información</label>
+            <input type="text" id="txt-filtrarSolicitudes">
 
-                    </div>
-                </div>
-            </div>
+
+            <table id="tbl-solicitudespendientes" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Tipo</th>
+                        <th>Denuncias</th>
+                        <th>Correo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Numero ID</th>
+                        <th>Teléfono</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+                </tbody>
+                <button type="button" class="btn bnt-editar flotar-izq" id="btn-editarSolic">Editar</button>
+            </table>
+            <button type="button" class="btn bnt-guardar" id="btn-actualizarSolic">Guardar</button>
         </div>
     </main>
     <footer>
@@ -188,7 +192,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/compraServicio.js"></script>
+    <script src="js/usuariosDenunciados.js"></script>
+
 </body>
 
 </html>
