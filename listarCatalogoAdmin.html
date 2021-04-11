@@ -157,6 +157,12 @@
         <h1>Lista de catálogos</h1>
         <section class="contenedor-listar">
             <section>
+                <div class="simpleColumna">
+                    <div class="columna">
+                        <label for="txt-filtro" id="filtroTipoServ">Filtrar</label>
+                        <input type="text" id="txt-filtroTipoServicio">
+                    </div>
+                </div>
                 <div>
                     <label for="slt-catalogo">Categoría</label>
                     <select name="slt-catalogo" id="slt-catalogo">
@@ -180,9 +186,11 @@
 
                 </tbody>
             </table>
-
-            <div class="btn-general">
-                <button type="button" id="btn-irRegistrarCatalogo">Ir a registrar nuevo catálogo</button>
+            <div class="bnt-editar">
+                <p>Para registrar un nuevo catálogo da click al botón</p>
+                <div class="btn-general">
+                    <button type="button" id="btn-irRegistrarCatalogo">Visitar</button>
+                </div>
             </div>
         </section>
 
