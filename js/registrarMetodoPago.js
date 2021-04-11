@@ -49,6 +49,8 @@ const validarTipoTarjeta = () => {
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
         numTarjeta.classList.remove('error');
 
+        inputCodigoSeguridad.setAttribute('maxlength', 3);
+
     } else if ((mastercard.test(numTarjeta.value) == true) || (mastercard2.test(numTarjeta.value) == true)) {
         tipoTarjeta = "Mastercard";
 
@@ -57,6 +59,7 @@ const validarTipoTarjeta = () => {
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
 
         numTarjeta.classList.remove('error');
+        inputCodigoSeguridad.setAttribute('maxlength', 3);
 
 
     } else if (amex.test(numTarjeta.value) == true) {
@@ -65,7 +68,7 @@ const validarTipoTarjeta = () => {
         tarjetaAmex.src = "../img/amex_logo_color.jpg";
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
-
+        inputCodigoSeguridad.setAttribute('maxlength', 4);
         numTarjeta.classList.remove('error');
     }
     //Amex: 378282246310005
@@ -76,7 +79,7 @@ const validarTipoTarjeta = () => {
 
     //Validación para placeholder
 
-    if (tipoTarjeta == "Visa" || tipoTarjeta == "Mastercard") {
+    /*if (tipoTarjeta == "Visa" || tipoTarjeta == "Mastercard") {
         document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "123")
     } else if (tipoTarjeta == "Amex") {
         document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "1234")
@@ -85,11 +88,11 @@ const validarTipoTarjeta = () => {
     }
 
 
-    return tipoTarjeta;
+    return tipoTarjeta;*/
 
 }
 
-tipoTarjeta = validarTipoTarjeta();
+numTarjeta.addEventListener('change', validarTipoTarjeta);
 
 // Función para cambiar length del input del CVC - Amex
 
@@ -238,9 +241,11 @@ const imprimirDatos = () => {
         window.location.href = 'perfilCliente.html';
     });
 
-}
+};
 
 /* Fin: Función para imprimir los datos del método de pago registrado */
 
 btnRegistrarCC.addEventListener('click', validar);
-numTarjeta.addEventListener('input', validarTipoTarjeta);
+
+
+/*numTarjeta.addEventListener('input', validarTipoTarjeta);*/

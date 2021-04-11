@@ -175,7 +175,7 @@
                                 <option value="Jurídica">Jurídica</option>
                             </select>
                         </div>
-                        <div>
+                        <div id="div-cedJuridica">
                             <label for="txt-CédulaJurídica">Cédula Jurídica</label>
                             <input type="text" id="txt-CédulaJurídica" disabled class="input-dobleColumna">
                         </div>
@@ -231,54 +231,56 @@
                     </div>
                 </div>
                 <hr>
-                <p class="titulo">
-                    <h3>Datos del representante legal</h3>
-                </p>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-nombreRepresentante">Nombre</label>
-                        <input type="text" id="txt-nombreRepresentante" disabled>
+                <div id="div-repreLegal">
+                    <p class="titulo">
+                        <h3>Datos del representante legal</h3>
+                    </p>
+                    <div class="contenedorColumna simpleColumna">
+                        <div class="columna">
+                            <label for="txt-nombreRepresentante">Nombre</label>
+                            <input type="text" id="txt-nombreRepresentante" disabled>
+                        </div>
+                        <div class="columna">
+                            <label for="txt-primerApellidoRepresentante">Primer apellido</label>
+                            <input type="text" id="txt-primerApellidoRepresentante" disabled>
+                        </div>
+                        <div class="columna">
+                            <label for="txt-segundoApellidoRepresentante">Segundo apellido</label>
+                            <input type="text" id="txt-segundoApellidoRepresentante" disabled>
+                        </div>
                     </div>
-                    <div class="columna">
-                        <label for="txt-primerApellidoRepresentante">Primer apellido</label>
-                        <input type="text" id="txt-primerApellidoRepresentante" disabled>
+                    <div class="contenedorColumna simpleColumna">
+                        <div class="columna">
+                            <label for="slt-tipoIdRepresentante">Tipo de identificación</label>
+                            <select id="slt-tipoIdRepresentante" disabled>
+                                <option value="">--Seleccione una opción--</option>
+                                <option value="Cédula">Cédula</option>
+                                <option value="Dimex">Dimex</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                            </select>
+                        </div>
+                        <div class="columna">
+                            <label for="txt-numeroIdRepresentante">Número ID</label>
+                            <input type="text" id="txt-numeroIdRepresentante" disabled>
+                        </div>
+                        <div class="columna">
+                            <label for="txt-fechaNacimientoRepresentante">Fecha de nacimiento</label>
+                            <input type="date" id="txt-fechaNacimientoRepresentante" disabled>
+                        </div>
                     </div>
-                    <div class="columna">
-                        <label for="txt-segundoApellidoRepresentante">Segundo apellido</label>
-                        <input type="text" id="txt-segundoApellidoRepresentante" disabled>
+                    <div class="contenedorColumna simpleColumna">
+                        <div class="columna">
+                            <label for="txt-telefonoRepresentante">Teléfono</label>
+                            <input type="tel" id="txt-telefonoRepresentante" disabled>
+                        </div>
+                        <div class="columna">
+                            <label for="txt-correoRepresentante">Correo</label>
+                            <input type="email" id="txt-correoRepresentante" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="slt-tipoIdRepresentante">Tipo de identificación</label>
-                        <select id="slt-tipoIdRepresentante" disabled>
-                            <option value="">--Seleccione una opción--</option>
-                            <option value="Cédula">Cédula</option>
-                            <option value="Dimex">Dimex</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
-                    </div>
-                    <div class="columna">
-                        <label for="txt-numeroIdRepresentante">Número ID</label>
-                        <input type="text" id="txt-numeroIdRepresentante" disabled>
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fechaNacimientoRepresentante">Fecha de nacimiento</label>
-                        <input type="date" id="txt-fechaNacimientoRepresentante" disabled>
-                    </div>
-                </div>
-                <div class="contenedorColumna simpleColumna">
-                    <div class="columna">
-                        <label for="txt-telefonoRepresentante">Teléfono</label>
-                        <input type="tel" id="txt-telefonoRepresentante" disabled>
-                    </div>
-                    <div class="columna">
-                        <label for="txt-correoRepresentante">Correo</label>
-                        <input type="email" id="txt-correoRepresentante" disabled>
-                    </div>
-                </div>
 
-                <hr>
+                    <hr>
+                </div>
                 <p class="titulo">
                     <h3>Dirección</h3>
                 </p>

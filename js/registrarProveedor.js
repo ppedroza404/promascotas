@@ -13,6 +13,8 @@ const correoRepresentante = document.querySelector('#txt-correoRepresentante');
 const telefonoRep = document.querySelector('#txt-telefonoRepresentante');
 const telefonoCliente = document.querySelector('#txt-telefono');
 const tipoServicio = document.querySelector('#slt-tipoServicio');
+const divRepreLega = document.querySelector('#div-repreLegal');
+const divCedJuridica = document.querySelector('#div-cedJuridica');
 
 const enableSelect = () => {
     if (tipoId.value == 'Jurídica') {
@@ -25,7 +27,18 @@ const enableSelect = () => {
         fechaNacimientoRepresentante.disabled = false;
         correoRepresentante.disabled = false;
         telefonoRep.disabled = false;
+        divRepreLega.classList.add('mostrar');
+        divRepreLega.classList.remove('ocultar');
+        divCedJuridica.classList.add('mostrar');
+        divCedJuridica.classList.remove('ocultar');
+
+
     } else {
+        divRepreLega.classList.remove('mostrar');
+        divRepreLega.classList.add('ocultar');
+        divCedJuridica.classList.remove('mostrar');
+        divCedJuridica.classList.add('ocultar');
+
         Jurídica.disabled = true;
         nombreRepresentante.disabled = true;
         primerApellidoRepresentante.disabled = true;
@@ -39,6 +52,10 @@ const enableSelect = () => {
     }
 
 };
+
+
+
+enableSelect();
 
 tipoId.addEventListener('change', enableSelect);
 
