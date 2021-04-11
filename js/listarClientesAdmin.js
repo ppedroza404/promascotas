@@ -12,7 +12,7 @@ const limpiarTabla = () => {
     }
 }
 
-const oculatTabla = () => {
+const ocultaTabla = () => {
     tablaCompleta.classList.add('ocultar');
 }
 
@@ -56,5 +56,5 @@ const mostrarTablaUsuario = () => {
     });
 };
 
-oculatTabla();
+ocultaTabla();
 selectTipoUsuario.addEventListener('change', mostrarTablaUsuario);

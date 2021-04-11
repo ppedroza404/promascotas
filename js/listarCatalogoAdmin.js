@@ -1,6 +1,7 @@
 'use strict';
 const tablaCompleta = document.querySelector('table');
 const btnCatalogo = document.querySelector('#btn-irRegistrarCatalogo');
+const btnModificarCatalogo = document.querySelector('#btn-irModificarCatalogo');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 
@@ -10,7 +11,7 @@ const limpiarTabla = () => {
     }
 }
 
-const oculatTabla = () => {
+const ocultaTabla = () => {
     tablaCompleta.classList.add('ocultar');
 }
 
@@ -27,7 +28,7 @@ const mostrarCatalogoSeleccionado = () => {
     } else if (selectCatalogo.value == 'vacunas') {
         mostrarTablaVacunas()
     } else if (selectCatalogo.value == 'Nulo') {
-        oculatTabla()
+        ocultaTabla()
     }
 };
 
@@ -82,4 +83,12 @@ btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });
 
-oculatTabla();
+const modificarCatalogo = () => {
+    window.location.href = 'modificarCatalogoAdmin.html';
+};
+
+btnModificarCatalogo.addEventListener('click', () => {
+    modificarCatalogo();
+});
+
+ocultaTabla();

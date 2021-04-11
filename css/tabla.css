@@ -11,6 +11,8 @@
 .tabla td {
     padding: 5px;
     border-bottom: 1px solid rgba(106, 0, 163, 0.5);
+    height: 30px;
+    vertical-align: middle;
 }
 
 .tabla thead tr th {
