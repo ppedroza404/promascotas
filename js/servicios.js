@@ -595,7 +595,22 @@ let informacionProveedor = [{
         "estado": "Denegado"
     }
 ];
-
+let tiposDeServicio = [{
+        "tiposServicio": "Gromming",
+    },
+    {
+        "tiposServicio": "Alimentación",
+    },
+    {
+        "tiposServicio": "Juguetes",
+    },
+    {
+        "tiposServicio": "Ropa",
+    },
+    {
+        "tiposServicio": "Paseadores",
+    },
+];
 
 const registrarCliente = (pnombreCliente, pprimerApellidoCliente, psegApellidoCliente, pgeneroCliente, ptipoId, pnumId, pformatoFecha, pcorreo, pcantMascotas, pprovincia, pcanton, pdistrito, potrasSenias) => {
     let nuevoCliente = [];

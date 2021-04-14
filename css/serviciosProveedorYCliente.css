@@ -1,10 +1,15 @@
-.proveedorBody .nuestrosServicios,
 .proveedorBody .solicitarServicios {
     display: none;
 }
 
-.duennoBody .agregarServicio {
+.duennoBody .agregarServicio,
+.duennoBody .abrirModalContenedor,
+.duennoBody .buscadorServicios {
     display: none;
+}
+
+.acordeonContenedor>ul>li {
+    padding: 0;
 }
 
 .acordeonContenedor .accordion {
@@ -17,6 +22,11 @@
     float: left;
     max-width: 40%;
     padding: 0px 15px 0px 0px;
+}
+
+.acordeonContenedor .accordion:hover a,
+.acordeonContenedor .accordion.active a {
+    color: #6700a3;
 }
 
 .acordeonContenedor .accordion input {
@@ -36,6 +46,11 @@
     margin-bottom: 25px;
     background-color: transparent;
     border: none;
+}
+
+.abrirModal.morada {
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .agregarServicio {

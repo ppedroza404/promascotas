@@ -1,5 +1,4 @@
 'use strict';
-
 let servicioSeleccionado = document.querySelector('#slt-seleccionarServicio');
 let tamanoSeleccionado = document.querySelector('#slt-seleccionarTamanno');
 let fechaSeleccionada = document.querySelector('#txt-fechaServicio');
@@ -957,3 +956,65 @@ const validarServiciosAgregados = () => {
 
 //validar todo el form de proveedor
 botonAgregarServicio.addEventListener('click', validarServiciosAgregados);
+
+
+//Modal
+let modal1 = document.querySelector('#modal1');
+let botonModal1 = document.querySelector('#abrirModal1')
+let cerrar1 = document.querySelector("#modal1 .close");
+let modal2 = document.querySelector('#modal2');
+let botonModal2 = document.querySelector('#abrirModal2')
+let cerrar2 = document.querySelector("#modal2 .close");
+let modal3 = document.querySelector('#modal3');
+let botonModal3 = document.querySelector('#abrirModal3')
+let cerrar3 = document.querySelector("#modal3 .close");
+
+botonModal1.addEventListener('click', () => {
+    modal1.style.display = 'block';
+});
+
+cerrar1.addEventListener('click', () => {
+    modal1.style.display = 'none';
+});
+
+botonModal2.addEventListener('click', () => {
+    modal2.style.display = 'block';
+});
+
+cerrar2.addEventListener('click', () => {
+    modal2.style.display = 'none';
+});
+
+botonModal3.addEventListener('click', () => {
+    modal3.style.display = 'block';
+});
+
+cerrar3.addEventListener('click', () => {
+    modal3.style.display = 'none';
+});
+
+
+//Buscador de servicios
+let buscadorServiciosFiltro = document.querySelector('#txt-buscadorServicios');
+let buscadorServiciosUl = document.querySelector('#serviciosUl');
+
+const buscarServicios = () => {
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("txt-buscadorServicios");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("serviciosUl");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+};
+
+buscadorServiciosFiltro.addEventListener('keyup', buscarServicios);
