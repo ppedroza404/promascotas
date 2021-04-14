@@ -50,6 +50,30 @@ footer p {
     margin: 0 auto;
 }
 
+.flexContenedor {
+    display: flex;
+}
+
+.centrarFlex {
+    justify-content: center;
+}
+
+.margen-top {
+    margin-top: 5px;
+}
+
+.margen-bottom {
+    margin-bottom: 5px;
+}
+
+.margen-left {
+    margin-left: 5px;
+}
+
+.margen-right {
+    margin-right: 5px;
+}
+
 strong {
     font-weight: 600;
 }
