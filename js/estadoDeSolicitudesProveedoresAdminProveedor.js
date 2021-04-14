@@ -71,7 +71,7 @@ const mostrarTabla = () => {
 
             let botonAprobar = document.createElement('button');
             botonAprobar.classList.add('btn');
-            botonAprobar.innerText = 'Aprobar';
+            botonAprobar.innerHTML = '<i class="fa fa-check"></i>';
             botonAprobar.addEventListener('click', () => {
                 /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
                 botonAprobar.classList.add('btn-aprobar');
@@ -82,10 +82,9 @@ const mostrarTabla = () => {
             celdaAcciones.appendChild(botonAprobar);
 
             let celdaAcciones2 = fila.insertCell();
-
             let botonModificar = document.createElement('button');
             botonModificar.classList.add('btn');
-            botonModificar.innerText = 'Denegar';
+            botonModificar.innerHTML = '<i class="fa fa-ban"></i>';
             botonModificar.addEventListener('click', () => {
                 botonModificar.classList.add('btn-denegar');
                 botonAprobar.classList.add('ocultar');

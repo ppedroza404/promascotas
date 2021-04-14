@@ -10,7 +10,7 @@ const limpiarTabla = () => {
     }
 }
 
-const oculatTabla = () => {
+const ocultarTabla = () => {
     tablaCompleta.classList.add('ocultar');
 }
 
@@ -27,7 +27,7 @@ const mostrarCatalogoSeleccionado = () => {
     } else if (selectCatalogo.value == 'vacunas') {
         mostrarTablaVacunas()
     } else if (selectCatalogo.value == 'Nulo') {
-        oculatTabla()
+        ocultarTabla()
     }
 };
 
@@ -38,6 +38,8 @@ const mostrarTablaEnfermedades = () => {
     enfermedadesAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.enfermedades;
+
+
     })
 }
 
@@ -82,4 +84,4 @@ btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });
 
-oculatTabla();
+ocultarTabla();

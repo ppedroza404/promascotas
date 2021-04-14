@@ -13,6 +13,7 @@ const inputExpiracionMes = document.querySelector('#slt-mesExpiracion');
 const inputExpiracionAnnio = document.querySelector('#slt-annioExpiracion');
 const inputCodigoSeguridad = document.querySelector('#txt-codigoSeguridad');
 
+
 let tipoTarjeta;
 
 /* Inicio: Función para mostrar los datos del método de pago en una tabla */
@@ -29,6 +30,7 @@ const mostrarTabla = (tipoTarjeta) => {
     fila.insertCell().innerHTML = `${inputExpiracionMes}/${inputExpiracionAnnio}`;
     fila.insertCell().innerHTML = inputCodigoSeguridad;
 }
+
 
 
 /* Inicio: Función para mostrar los datos del método de pago en una tabla */
@@ -65,6 +67,7 @@ const validarTipoTarjeta = () => {
     } else if (amex.test(numTarjeta.value) == true) {
         tipoTarjeta = "Amex";
 
+
         tarjetaAmex.src = "../img/amex_logo_color.jpg";
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
@@ -79,22 +82,49 @@ const validarTipoTarjeta = () => {
 
     //Validación para placeholder
 
-    /*if (tipoTarjeta == "Visa" || tipoTarjeta == "Mastercard") {
-        document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "123")
-    } else if (tipoTarjeta == "Amex") {
-        document.getElementById('txt-codigoSeguridad').setAttribute("placeholder", "1234")
-    } else if (tipoTarjeta == null) {
-        document.getElementById('txt-codigoSeguridad').removeAttribute("placeholder") // No está funcionando!!
-    }
-
-
-    return tipoTarjeta;*/
 
 }
 
 numTarjeta.addEventListener('change', validarTipoTarjeta);
 
-// Función para cambiar length del input del CVC - Amex
+/* Inicio: Función para imprimir los datos del método de pago registrado */
+
+const imprimirDatos = () => {
+
+    const numTarjeta = document.querySelector('#txt-numeroTarjeta');
+    const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
+    const inputExpiracionMes = document.querySelector('#slt-mesExpiracion');
+    const inputExpiracionAnnio = document.querySelector('#slt-annioExpiracion');
+
+    let subStrTarjeta = obtenerSubStr(numTarjeta.value);
+    let nombreTarjeta = inputNombreTarjeta.value;
+    let mes = inputExpiracionMes.value;
+    let annio = inputExpiracionAnnio.value;
+
+    console.log('Método de pago');
+    console.log('=====================');
+    console.log(`Tipo de tarjeta ${tipoTarjeta}`);
+    console.log(`Tarjeta termina en ${subStrTarjeta}`);
+    console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
+    console.log(`Fecha de expiración: 0${mes}/${annio}`);
+
+    Swal.fire({
+        'icon': 'success',
+        'title': 'Su solicitud se proceso con éxito',
+        'text': 'La tarjeta ha sido registrada satisfactoriamente',
+        'confirmButtonText': 'Entendido'
+    }).then(() => {
+        window.location.href = 'perfilCliente.html';
+    });
+    mostrarTabla();
+
+};
+
+const probarInfo = () => {
+    console.log('Hola Mundo');
+}
+
+/* Fin: Función para imprimir los datos del método de pago registrado */
 
 
 
@@ -108,7 +138,7 @@ const validarExpiracion = () => {
     let mesActual = fechaActual.getMonth();
     let annioActual = fechaActual.getFullYear();
 
-    if (annioActual >= annioTarjeta) {
+    if (annioTarjeta >= annioActual) {
         if (mesTarjeta >= mesActual) {
             imprimirDatos();
 
@@ -141,8 +171,9 @@ const obtenerSubStr = (pnumeroTarjeta) => {
 const validar = (ptipoTarjeta) => {
     let tipoDeTarjeta = ptipoTarjeta;
     let error = false;
-    let regexCodigoAmex = new RegExp('[0-9]{4}');
-    let regexCodigoVisaMC = new RegExp('[0-9]{3}');
+    let regexCodigoAmex = new RegExp('^[0-9]{4}');
+    let regexCodigoVisaMC = new RegExp('^[0-9]{3}');
+
 
     if (numTarjeta.value == "") {
         error = true;
@@ -182,6 +213,7 @@ const validar = (ptipoTarjeta) => {
             inputCodigoSeguridad.classList.remove('error');
         }
     }
+
     if (tipoDeTarjeta == "Visa" || tipoDeTarjeta == "Mastercard") {
         if (regexCodigoVisaMC.test(inputCodigoSeguridad.value) == false) {
             error = true;
@@ -203,47 +235,9 @@ const validar = (ptipoTarjeta) => {
     }
 };
 
+
+
 /* Fin: Función para validar que se encuentren los datos requeridos */
-
-
-/* Inicio: Función para imprimir los datos del método de pago registrado */
-
-const imprimirDatos = () => {
-
-    const btnRegistrarCC = document.querySelector('#btn-registrarCC');
-    const tarjetaVisa = document.querySelector('#img-tarjetaVisa');
-    const tarjetaMasterC = document.querySelector('#img-tarjetaMasterC');
-    const tarjetaAmex = document.querySelector('#img-tarjetaAmex');
-    const numTarjeta = document.querySelector('#txt-numeroTarjeta');
-    const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
-    const inputExpiracionMes = document.querySelector('#slt-mesExpiracion');
-    const inputExpiracionAnnio = document.querySelector('#slt-annioExpiracion');
-    const inputCodigoSeguridad = document.querySelector('#txt-codigoSeguridad');
-
-    let subStrTarjeta = obtenerSubStr(numTarjeta.value);
-    let nombreTarjeta = inputNombreTarjeta.value;
-    let mes = inputExpiracionMes.value;
-    let annio = inputExpiracionAnnio.value;
-
-    console.log('Método de pago');
-    console.log('=====================');
-    console.log(`Tipo de tarjeta ${tipoTarjeta}`);
-    console.log(`Tarjeta termina en ${subStrTarjeta}`);
-    console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
-    console.log(`Fecha de expiración: 0${mes}/${annio}`);
-
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Su solicitud se proceso con éxito',
-        'text': 'La tarjeta ha sido registrada satisfactoriamente',
-        'confirmButtonText': 'Entendido'
-    }).then(() => {
-        window.location.href = 'perfilCliente.html';
-    });
-
-};
-
-/* Fin: Función para imprimir los datos del método de pago registrado */
 
 btnRegistrarCC.addEventListener('click', validar);
 
