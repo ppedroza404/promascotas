@@ -76,7 +76,6 @@ const mostrarTabla = () => {
                 /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
                 botonAprobar.classList.add('btn-aprobar');
                 botonModificar.classList.add('ocultar');
-                botonAprobar.innerText = 'Aprobado';
             });
 
             celdaAcciones.appendChild(botonAprobar);
@@ -88,38 +87,9 @@ const mostrarTabla = () => {
             botonModificar.addEventListener('click', () => {
                 botonModificar.classList.add('btn-denegar');
                 botonAprobar.classList.add('ocultar');
-                botonModificar.innerText = 'Denegado';
             });
 
             celdaAcciones2.appendChild(botonModificar);
-
-
-            /* let botonEliminar = document.createElement('button');
-             botonEliminar.innerText = 'Eliminar';
-
-             botonEliminar.addEventListener('click', () => {
-                 Swal.fire({
-                     'icon': 'warning',
-                     'text': '¿Está seguro que desea borrar el usuario?',
-                     'showCancelButton': true,
-                     'confirmButtonText': '¡Sí!, estoy seguro',
-                     'cancelButtonColor': '#d33',
-                     'cancelButtonText': 'Cancelar',
-                     'reverseButtons': true
-                 }).then((result) => {
-                     if (result.isConfirmed) {
-                         Swal.fire(
-                             '',
-                             'El usuario ha sido eliminado',
-                             'success'
-                         )
-                     }
-                 })
-             });
-             // Agregarle los botones a la celda
-
-             celdaAcciones.appendChild(botonModificar);
-             celdaAcciones.appendChild(botonEliminar);*/
         }
 
     });
