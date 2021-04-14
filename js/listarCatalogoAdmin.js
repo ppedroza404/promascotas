@@ -1,8 +1,18 @@
 'use strict';
 const tablaCompleta = document.querySelector('table');
 const btnCatalogo = document.querySelector('#btn-irRegistrarCatalogo');
+const btnModificarCatalogo = document.querySelector('#btn-irModificarCatalogo');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
+const filtroEnfermedadesContenedor = document.querySelector('#filtroEnfermedadesContenedor');
+const filtroTipoContenedor = document.querySelector('#filtroTipoContenedor');
+const filtroRazasContenedor = document.querySelector('#filtroRazasContenedor');
+const filtroVacunasContenedor = document.querySelector('#filtroVacunasContenedor');
+
+const inputFiltroEnfermedades = document.querySelector('#txt-filtroEnfermedades');
+const inputFiltroTipos = document.querySelector('#txt-filtroTipo');
+const inputFiltroRazas = document.querySelector('#txt-filtroRazas');
+const inputFiltroVacunas = document.querySelector('#txt-filtroVacunas');
 
 const limpiarTabla = () => {
     for (var i = tablaCatalogo.rows.length - 1; i >= 0; i--) {
@@ -10,8 +20,16 @@ const limpiarTabla = () => {
     }
 }
 
+<<<<<<< HEAD
 const ocultarTabla = () => {
+=======
+const ocultaTabla = () => {
+>>>>>>> d85efe1c79d343338fe8472a3c5e4090d2104bf0
     tablaCompleta.classList.add('ocultar');
+    filtroEnfermedadesContenedor.classList.add('ocultar');
+    filtroTipoContenedor.classList.add('ocultar');
+    filtroRazasContenedor.classList.add('ocultar');
+    filtroVacunasContenedor.classList.add('ocultar');
 }
 
 const mostrarCatalogoSeleccionado = () => {
@@ -19,58 +37,101 @@ const mostrarCatalogoSeleccionado = () => {
     limpiarTabla();
 
     if (selectCatalogo.value == 'enfermedades') {
+        filtroEnfermedadesContenedor.classList.remove('ocultar');
+        filtroTipoContenedor.classList.add('ocultar');
+        filtroRazasContenedor.classList.add('ocultar');
+        filtroVacunasContenedor.classList.add('ocultar');
         mostrarTablaEnfermedades()
     } else if (selectCatalogo.value == 'tiposMascota') {
+        filtroTipoContenedor.classList.remove('ocultar');
+        filtroEnfermedadesContenedor.classList.add('ocultar');
+        filtroRazasContenedor.classList.add('ocultar');
+        filtroVacunasContenedor.classList.add('ocultar');
         mostrarTablaTiposMascota()
     } else if (selectCatalogo.value == 'razas') {
+        filtroRazasContenedor.classList.remove('ocultar');
+        filtroEnfermedadesContenedor.classList.add('ocultar');
+        filtroTipoContenedor.classList.add('ocultar');
+        filtroVacunasContenedor.classList.add('ocultar');
         mostrarTablaRazas()
     } else if (selectCatalogo.value == 'vacunas') {
+        filtroVacunasContenedor.classList.remove('ocultar');
+        filtroEnfermedadesContenedor.classList.add('ocultar');
+        filtroTipoContenedor.classList.add('ocultar');
+        filtroRazasContenedor.classList.add('ocultar');
         mostrarTablaVacunas()
     } else if (selectCatalogo.value == 'Nulo') {
+<<<<<<< HEAD
         ocultarTabla()
+=======
+        ocultaTabla()
+>>>>>>> d85efe1c79d343338fe8472a3c5e4090d2104bf0
     }
 };
 
 const mostrarTablaEnfermedades = () => {
+    let filtro = inputFiltroEnfermedades.value.toLowerCase();
 
     limpiarTabla();
 
     enfermedadesAdmin.forEach(item => {
+<<<<<<< HEAD
         let fila = tablaCatalogo.insertRow();
         fila.insertCell().innerHTML = item.enfermedades;
 
 
+=======
+        if (item.enfermedades.toLowerCase().includes(filtro)) {
+            let fila = tablaCatalogo.insertRow();
+            fila.insertCell().innerHTML = item.enfermedades;
+
+        }
+>>>>>>> d85efe1c79d343338fe8472a3c5e4090d2104bf0
     })
+
+    inputFiltroEnfermedades.addEventListener('keyup', mostrarTablaEnfermedades);
 }
 
 const mostrarTablaRazas = () => {
+    let filtro = inputFiltroRazas.value.toLowerCase();
 
     limpiarTabla();
 
     razasAdmin.forEach(item => {
-        let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.razas;
+        if (item.razas.toLowerCase().includes(filtro)) {
+            let fila = tablaCatalogo.insertRow();
+            fila.insertCell().innerHTML = item.razas;
+        }
     })
+    inputFiltroRazas.addEventListener('keyup', mostrarTablaRazas);
 }
 
 const mostrarTablaTiposMascota = () => {
+    let filtro = inputFiltroTipos.value.toLowerCase();
 
     limpiarTabla();
 
     tiposMascotaAdmin.forEach(item => {
-        let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.tiposMascota;
+        if (item.tiposMascota.toLowerCase().includes(filtro)) {
+            let fila = tablaCatalogo.insertRow();
+            fila.insertCell().innerHTML = item.tiposMascota;
+        }
     })
+    inputFiltroTipos.addEventListener('keyup', mostrarTablaTiposMascota);
 }
 
 const mostrarTablaVacunas = () => {
+    let filtro = inputFiltroVacunas.value.toLowerCase();
 
     limpiarTabla();
 
     vacunasAdmin.forEach(item => {
-        let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.vacunas;
+        if (item.vacunas.toLowerCase().includes(filtro)) {
+            let fila = tablaCatalogo.insertRow();
+            fila.insertCell().innerHTML = item.vacunas;
+        }
     })
+    inputFiltroVacunas.addEventListener('keyup', mostrarTablaVacunas);
 }
 
 selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
@@ -84,4 +145,16 @@ btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });
 
+<<<<<<< HEAD
 ocultarTabla();
+=======
+const modificarCatalogo = () => {
+    window.location.href = 'modificarCatalogoAdmin.html';
+};
+
+btnModificarCatalogo.addEventListener('click', () => {
+    modificarCatalogo();
+});
+
+ocultaTabla();
+>>>>>>> d85efe1c79d343338fe8472a3c5e4090d2104bf0
