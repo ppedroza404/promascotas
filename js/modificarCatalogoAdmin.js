@@ -30,6 +30,8 @@ const mostrarCatalogoSeleccionado = () => {
     }
 };
 
+
+
 const mostrarTablaEnfermedades = () => {
 
     limpiarTabla();
@@ -39,12 +41,14 @@ const mostrarTablaEnfermedades = () => {
         fila.insertCell().innerHTML = item.enfermedades;
         let celdaAcciones1 = fila.insertCell();
 
-        let botonActivar = document.createElement('button');
-        botonActivar.classList.add('btn');
-        botonActivar.innerText = 'Activar';
+
+        let botonActivar = document.createElement('i');
+        botonActivar.classList.add('fa');
+        botonActivar.classList.add('fa-toggle-on');
         botonActivar.addEventListener('click', () => {
             console.log('activado')
         });
+
 
         celdaAcciones1.appendChild(botonActivar);
 

@@ -1,0 +1,34 @@
+'use strict';
+
+const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicilio, ptipoMoneda, pmonto) => {
+
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-servicio',
+            responseType: 'json',
+            data: {
+                nombreServicioAgregado: pnombre,
+                descripcionServicioAgregado: pdescripcion,
+                servicioDomicilioAgregado: pservicioDomicilio,
+                tipoMonedaServicioAgregado: ptipoMoneda,
+                montoServicioAgregado: pmonto,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su servicio se registró con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'serviciosProveedorYCliente.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
