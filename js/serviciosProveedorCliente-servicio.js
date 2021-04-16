@@ -32,3 +32,21 @@ const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicil
             })
         });
 };
+
+const obtenerServiciosProveedor = async() => {
+    let listaServiciosProveedor;
+
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-serviciosProveedor',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaServiciosProveedor = response.data.serviciosProveedor;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaServiciosProveedor;
+};
