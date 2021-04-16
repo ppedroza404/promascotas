@@ -22,9 +22,9 @@ let crearformulario = () => {
     } else if (txtSlt.value == 'tipoMascota') {
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
         txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
-    } else if (txtSlt.value == '') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+    } else {
+        txtDivFormAutomatico.innerHTML = "";
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
     }
 
 };
@@ -146,6 +146,6 @@ let obtener_datos = () => {
         });
     }
 };
-
+crearformulario();
 btnRegistrarCatalogo.addEventListener('click', obtener_datos);
 txtSlt.addEventListener('change', crearformulario);
