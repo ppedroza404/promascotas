@@ -104,6 +104,7 @@ let validar = () => {
             error = true;
         } else {
             inputs_requeridos[i].classList.remove('error');
+
         }
     }
 
@@ -132,18 +133,23 @@ let obtener_datos = () => {
             'icon': 'warning'
         });
     } else {
+
+
         console.log('Informacion del catálogo registrado');
         console.log('=========================================================');
         //console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
 
 
-        Swal.fire({
+        /*Swal.fire({
             'title': 'Proceso realizado con éxito',
             'text': 'Sus datos se enviaron adecuadamente',
             'icon': 'success'
         }).then(() => {
             limpiar();
-        });
+           
+        });*/
+
+        registrarPadecimiento();
     }
 };
 crearformulario();
