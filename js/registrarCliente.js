@@ -3,6 +3,7 @@
 
 const btnRegistrarCliente = document.querySelector('#btn-registrarCliente');
 const inputImagen = document.querySelector('#input-imagen');
+
 const inputNombreCliente = document.querySelector('#txt-nombreCliente');
 const inputPrimApellidoCliente = document.querySelector('#txt-primerApellidoCliente');
 const inputSegApellidoCliente = document.querySelector('#txt-segApellidoCliente');
@@ -12,9 +13,9 @@ const inputNumId = document.querySelector('#txt-numID');
 const inputNacimiento = document.querySelector('#txt-nacimiento');
 const inputCorreo = document.querySelector('#txt-correo');
 const inputCantMascotas = document.querySelector('#txt-cantMascotas');
-const sltProvincia = document.querySelector('#slt-provincia');
-const sltCanton = document.querySelector('#slt-canton');
-const sltDistrito = document.querySelector('#slt-distrito');
+//const sltProvincia = document.querySelector('#slt-provincia');
+//const sltCanton = document.querySelector('#slt-canton');
+//const sltDistritos = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
 /* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
@@ -23,11 +24,11 @@ const habilitarCanton = () => {
     if (sltProvincia.value != '') {
         sltCanton.disabled = false;
         if (sltCanton.value != '') {
-            sltDistrito.disabled = false;
+            sltDistritos.disabled = false;
         }
     } else {
         sltCanton.disabled = true;
-        sltDistrito.disabled = true;
+        sltDistritos.disabled = true;
     }
 
 };
@@ -36,9 +37,9 @@ sltProvincia.addEventListener('change', habilitarCanton);
 
 const habilitarDistrito = () => {
     if (sltCanton.value != '') {
-        sltDistrito.disabled = false;
+        sltDistritos.disabled = false;
     } else {
-        sltDistrito.disabled = true;
+        sltDistritos.disabled = true;
     }
 
 };
@@ -209,11 +210,11 @@ const validarDatos = () => {
     } else {
         sltCanton.classList.remove('error');
     }
-    if (sltDistrito.value == '') {
+    if (sltDistritos.value == '') {
         error = true;
-        sltDistrito.classList.add('error');
+        sltDistritos.classList.add('error');
     } else {
-        sltDistrito.classList.remove('error');
+        sltDistritos.classList.remove('error');
     }
     if (inputOtrasSenias.value == '') {
         error = true;
@@ -253,7 +254,7 @@ const imprimirDatos = () => {
     let sCantMasc = inputCantMascotas.value;
     let sProvincia = sltProvincia.value;
     let sCanton = sltCanton.value;
-    let sDistrito = sltDistrito.value;
+    let sDistrito = sltDistritos.value;
     let sOtrasSennias = inputOtrasSenias.value;
     let sContrasenna = "123Abc!";
     let sEstado = "Pendiente de verificar";
