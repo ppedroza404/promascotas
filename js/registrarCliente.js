@@ -137,12 +137,12 @@ const validarDatos = () => {
 
     //Validación por núm de ID(regex) por tipo de ID
 
-    if (inputImagen.value == '') {
-        error = true;
-        inputImagen.classList.add('error');
-    } else {
-        inputImagen.classList.remove('error');
-    }
+    // if (inputImagen.value == '') {
+    //     error = true;
+    //     inputImagen.classList.add('error');
+    // } else {
+    //     inputImagen.classList.remove('error');
+    // }
     if (inputNombreCliente.value == '') {
         error = true;
         inputNombreCliente.classList.add('error');
@@ -242,7 +242,6 @@ const validarDatos = () => {
 
 const imprimirDatos = () => {
 
-    let sImagen = inputImagen.value;
     let sNombre = inputNombreCliente.value;
     let sPrimApellido = inputPrimApellidoCliente.value;
     let sSegApellido = inputSegApellidoCliente.value;
@@ -256,24 +255,8 @@ const imprimirDatos = () => {
     let sCanton = sltCanton.value;
     let sDistrito = sltDistrito.value;
     let sOtrasSennias = inputOtrasSenias.value;
-
-    console.log('Datos personales');
-    console.log('=====================');
-    console.log(sImagen);
-    console.log(`${sNombre} ${sPrimApellido} ${sSegApellido}`);
-    console.log(sGenero);
-    console.log(sTipoId);
-    console.log(sNumId);
-    console.log(sFechaNac);
-    console.log(sCorreo);
-    console.log(sCantMasc);
-    console.log('');
-    console.log('Dirección');
-    console.log('-------------------');
-    console.log(sProvincia);
-    console.log(sCanton);
-    console.log(sDistrito);
-    console.log(sOtrasSennias);
+    let sContrasenna = "123Abc!";
+    let sEstado = "Pendiente de verificar";
 
     Swal.fire({
             'icon': 'success',
@@ -284,6 +267,9 @@ const imprimirDatos = () => {
         /*.then(() => {
             window.location.href = 'inicio-sesion.html';
         });*/
+
+    registrarCliente(sCorreo, sNombre, sPrimApellido, sSegApellido, sGenero, sTipoId, sNumId, sFechaNac, sCantMasc, sContrasenna, sProvincia, sCanton, sDistrito, sOtrasSennias, sEstado);
+
 
 }
 
