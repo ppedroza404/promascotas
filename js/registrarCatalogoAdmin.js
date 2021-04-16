@@ -1,12 +1,101 @@
 'use strict';
 
-
-
 const btnRegistrarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
-const txtNombreCatalogo = document.querySelector('#txt-nombreCatalogo');
+const txtSlt = document.querySelector('#slt-catalogo');
+const txtDivFormAutomatico = document.querySelector('#div-formAutomatico');
+
+
+let crearformulario = () => {
+    txtDivFormAutomatico.innerHTML = "";
+    if (txtSlt.value == 'vacunas') {
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
+        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+        txtDivFormAutomatico.appendChild(crearLable("slt-catalogo", "Esencial"));
+        txtDivFormAutomatico.appendChild(crearSelect("slt-esencial", ["1"], "si"));
+        txtDivFormAutomatico.appendChild(crearOpciones("slt-esencial", ["Seleccione una opción del catálogo", "Si", "No"], ["", "Si", "No"]));
+    } else if (txtSlt.value == 'enfermedades') {
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
+        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+    } else if (txtSlt.value == 'razas') {
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
+        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+    } else if (txtSlt.value == 'tipoMascota') {
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
+        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+    } else {
+        txtDivFormAutomatico.innerHTML = "";
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
+    }
+
+};
+
+// Crea label (for="elfor" innherHTML="elinnertxt" 
+let crearLable = (elfor, elinnertxt) => {
+
+    let nuevoLable = document.createElement('label');
+    nuevoLable.setAttribute('for', elfor);
+    nuevoLable.innerHTML = elinnertxt;
+    return nuevoLable;
+};
+
+// Crea imput (type="tipo" id"elid" class=["clase1","clase2","clase3"] required "si"/"no"
+let crearInput = (tipo, elid, clases, requerido) => {
+
+    let nuevoInput = document.createElement('Input');
+    nuevoInput.setAttribute("type", tipo);
+    nuevoInput.setAttribute("name", elid);
+    nuevoInput.setAttribute("id", elid);
+
+    for (let index = 0; index < clases.length; index++) {
+        const clase = clases[index];
+        nuevoInput.classList.add(clase);
+    }
+
+    if (requerido == "si") {
+        nuevoInput.setAttribute("required", "");
+    }
+
+    return nuevoInput;
+};
+
+// Crea select (Id="" lass=["clase1","clase2","clase3"] required "si"/"no"
+let crearSelect = (elid, clases, requerido) => {
+    let nuevoSelect = document.createElement('select');
+    nuevoSelect.setAttribute("name", elid);
+    nuevoSelect.setAttribute("id", elid);
+
+    for (let index = 0; index < clases.length; index++) {
+        const clase = clases[index];
+        nuevoSelect.classList.add(clase);
+    }
+
+    if (requerido == "si") {
+        nuevoSelect.setAttribute("required", "");
+    }
+    return nuevoSelect;
+}
+
+// Crea Option (Id="igual que ID del select" values=["valu1","value2","value3"] test=["HTMLtext1","HTMLtext2","HTMLtext3"]"
+let crearOpciones = (select, valores, innertext) => {
+    let nuevoOption = document.createElement("option");
+    let selector = document.querySelector("#" + select);
+
+    for (let index = 0; index < valores.length; index++) {
+        const option = document.createElement("option");
+        option.text = valores[index];
+        option.value = innertext[index];
+        selector.add(option);
+
+    }
+
+
+
+    return nuevoOption;
+}
+
 
 let validar = () => {
-    let inputs_requeridos = document.querySelectorAll('#frm-contacto [required]');
+    let inputs_requeridos = document.querySelectorAll('#frm-Catalogo [required]');
     let error = false;
 
     for (let i = 0; i < inputs_requeridos.length; i++) {
@@ -21,8 +110,16 @@ let validar = () => {
     return error;
 
 };
+
 let limpiar = () => {
-    txtNombreCatalogo.value = "";
+    let inputs_requeridos = document.querySelectorAll('#frm-Catalogo [required]');
+    let error = false;
+
+    for (let i = 0; i < inputs_requeridos.length; i++) {
+        inputs_requeridos[i].value = '';
+    }
+
+
 };
 
 let obtener_datos = () => {
@@ -37,7 +134,7 @@ let obtener_datos = () => {
     } else {
         console.log('Informacion del catálogo registrado');
         console.log('=========================================================');
-        console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
+        //console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
 
 
         Swal.fire({
@@ -49,5 +146,6 @@ let obtener_datos = () => {
         });
     }
 };
-
+crearformulario();
 btnRegistrarCatalogo.addEventListener('click', obtener_datos);
+txtSlt.addEventListener('change', crearformulario);

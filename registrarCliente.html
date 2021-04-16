@@ -220,37 +220,33 @@
             <hr>
             <h3>Dirección</h3>
             <section class="contenedorColumna simpleColumna">
-                <div class="columna">
-                    <label for="slt-provincia">Provincia</label>
-                    <select id="slt-provincia">
-                        <option value="">--Seleccione una provincia--</option>
-                        <option value="San José">San José</option>
-                        <option value="Alajuela">Alajuela</option>
-                        <option value="Cartago">Cartago</option>
-                        <option value="Heredia">Heredia</option>
-                        <option value="Guanacaste">Gunacaste</option>
-                        <option value="Puntarenas">Puntarenas</option>
-                        <option value="Limón">Limón</option>
-                    </select>
+                <div class="simpleColumna contenedorColumna">
+                    <div class="columna">
+                        <div class="slct-provincia">
+                            <label for="provincias">Seleccioná la provincia</label>
+                            <select class="form-control" id="provincias" name="provincias">
+                                    <option value="" slected>Seleccione una provincia</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div class="form-group canton" style="display: block;">
+                            <label for="cantones">Seleccioná el cantón</label>
+                            <select class="form-control" id="cantones" name="cantones">
+                                    <option value="" slected>Seleccione un canton</option>
+            
+                                </select>
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div class="form-group distrito" style="display: block;">
+                            <label for="distritos" id="labelslct">Seleccioná el distrito</label>
+                            <select value="" class="form-control" id="distritos" name="distritos">
+                                    <option value="" slected>Seleccione un distrito</option>
+                                </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="columna">
-                    <label for="slt-canton">Cantón</label>
-                    <select id="slt-canton">
-                        <option value="">--Seleccione un cantón--</option>
-                        <option value="Desamparados">Desamparados</option>
-                        <option value="San José">San José</option>
-                        <option value="León Cortes">León Cortes</option>
-                        <option value="Curriabat">Curriabat</option>
-                    </select>
-                </div>
-                <div class="columna">
-                    <label for="slt-distrito">Distrito</label>
-                    <select id="slt-distrito">
-                        <option value="">--Seleccione un distrito--</option>
-                        <option value="Tirrases">Tirrases</option>
-                        <option value="Sanchez">Sanchez</option>
-                        <option value="Granadilla">Granadilla</option>
-                    </select>
                 </div>
             </section>
             <section class="contenedorColumna">
@@ -276,6 +272,7 @@
 
     <!-- <script src="js/servicios.js"></script> -->
     <script src="js/navegacion2.js"></script>
+    <script src="js/provincias.js"></script>
     <script src="js/registrarCliente.js"></script>
     <script src="js/registrarCliente-servicio.js"></script>
 </body>
