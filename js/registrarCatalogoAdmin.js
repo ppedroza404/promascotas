@@ -162,8 +162,8 @@ let obtener_datos = () => {
             limpiar();
            
         });*/
-
-        registrarPadecimiento();
+        let pinputcatalogo = inputCatalogoNuevo.value;
+        registrarPadecimiento(pinputcatalogo);
     }
 };
 crearformulario();

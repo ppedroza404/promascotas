@@ -40,7 +40,6 @@ const registrarPadecimiento = async(pinputcatalogo) => {
 
 const registrarRaza = async(pinputcatalogo) => {
 
-    pinputcatalogo = inputCatalogoNuevo.value;
     await axios({
 
             method: 'post',
