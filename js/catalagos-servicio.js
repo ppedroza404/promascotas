@@ -1,6 +1,5 @@
 'use strict';
 
-const inputCatalogoNuevo = document.querySelector('#txt-nombreCatalogo');
 const inputSelectCatalogo = document.querySelector('#slt-catalogo');
 const btnGuardarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 
