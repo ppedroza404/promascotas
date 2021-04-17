@@ -200,13 +200,45 @@
             </div>
             <div class="columna columna-noMargenBottom">
                 <div id="cliente-modificarContrasenna" class="ocultar">
-                    <a href="">
-                        <h3 for="txt-genero" id="enlace-modificarContrasenna">¿Desea cambiar su contraseña?</h3>
-                    </a>
+                    <div id="abrirModalContrasenna">
+                        <a>
+                            <h3 for="txt-genero">¿Desea cambiar su contraseña?</h3>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
                 <button type="button" id="btn-guardar-infoCliente" class="ocultarInfoMascota">Guardar</button>
+            </div>
+
+            <!----------------Modal---------------->
+            <div id="modalModificarContrasenna" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h3 class="padding-top padding-bottom">Modificar contraseña</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label for="contraseñaActual">Contraseña actual</label>
+                            <input type="password" id="contraseñaActual" class="input-dobleColumna">
+                        </div>
+                        <div>
+                            <label for="contraseñaNueva">Contraseña nueva</label>
+                            <input type="password" id="contraseñaNueva" class="input-dobleColumna">
+                        </div>
+                        <div>
+                            <label for="contraseñaNuevaConfirmacion">Confirmar contraseña nueva</label>
+                            <input type="password" id="contraseñaNuevaConfirmacion" class="input-dobleColumna">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
+                            <button type="button" id="btn-guardar-nuevaCont">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
         <hr>
@@ -333,6 +365,9 @@
                 </section>
             </section>
         </section>
+        <section>
+
+        </section>
         <hr>
         <section class="seccion-mejoresProv">
             <h2>Top 20 Proveedores</h2>
@@ -357,6 +392,7 @@
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/contrasenna-modificar.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/perfilCliente.js"></script>

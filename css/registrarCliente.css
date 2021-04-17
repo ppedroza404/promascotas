@@ -1,3 +1,5 @@
-#btn-guardarInfoCliente {
-    float: right;
+.contenedor-restriccionesContrasenna {
+    width: 70%;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
 }
