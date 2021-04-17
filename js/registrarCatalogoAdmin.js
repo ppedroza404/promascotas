@@ -3,25 +3,39 @@
 const btnRegistrarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 const txtSlt = document.querySelector('#slt-catalogo');
 const txtDivFormAutomatico = document.querySelector('#div-formAutomatico');
+let inputCatalogoNuevo;
 
+
+let mistica = () => {
+    let autoInput = document.querySelector('#txt-nombreCatalogo').value;
+    return autoInput;
+}
 
 let crearformulario = () => {
     txtDivFormAutomatico.innerHTML = "";
     if (txtSlt.value == 'vacunas') {
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
         txtDivFormAutomatico.appendChild(crearLable("slt-catalogo", "Esencial"));
         txtDivFormAutomatico.appendChild(crearSelect("slt-esencial", ["1"], "si"));
         txtDivFormAutomatico.appendChild(crearOpciones("slt-esencial", ["Seleccione una opción del catálogo", "Si", "No"], ["", "Si", "No"]));
     } else if (txtSlt.value == 'enfermedades') {
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
     } else if (txtSlt.value == 'razas') {
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
     } else if (txtSlt.value == 'tipoMascota') {
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        txtDivFormAutomatico.appendChild(crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si"));
+        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
+    } else if (txtSlt.value == 'padecimientos') {
+        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
+        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
     } else {
         txtDivFormAutomatico.innerHTML = "";
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
@@ -155,3 +169,4 @@ let obtener_datos = () => {
 crearformulario();
 btnRegistrarCatalogo.addEventListener('click', obtener_datos);
 txtSlt.addEventListener('change', crearformulario);
+txtSlt.addEventListener('change', mistica);
