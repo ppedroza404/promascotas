@@ -148,9 +148,9 @@
     <main class="contenedor">
         <h1>Mi perfil</h1>
         <div class="btn-editar">
-            <a href="">
+            <button>
                 <i class="fa fa-edit fa-2x" id="btn-editarDatosCliente"></i>
-            </a>
+            </button>
         </div>
         <section class="contenedorColumna simpleColumna">
             <div class="columna">
@@ -198,7 +198,14 @@
                     <input type="text" id="txt-genero" class="input-dobleColumna" disabled>
                 </div>
             </div>
-            <div class="btn-registar btn-general " type="button" id="btn-guardarMascota">
+            <div class="columna columna-noMargenBottom">
+                <div id="cliente-modificarContrasenna" class="ocultar">
+                    <a href="">
+                        <h3 for="txt-genero" id="enlace-modificarContrasenna">¿Desea cambiar su contraseña?</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
                 <button type="button" id="btn-guardar-infoCliente" class="ocultarInfoMascota">Guardar</button>
             </div>
         </section>
@@ -220,7 +227,9 @@
                     <div id="seccion-infoMascota" class="seccion-infoMascota fade ocultarInfoMascota">
                         <div class="btn-editar">
                             <a href="perfilMascota.html">
-                                <i class="fa fa-edit fa-2x" id="btn-editarDatosMascota"></i>
+                                <button>
+                                    <i class="fa fa-edit fa-2x" id="btn-editarDatosMascota"></i>
+                                </button>
                             </a>
                         </div>
                         <section class="columnaDoble-50">
@@ -286,7 +295,9 @@
         <h2>Denuncias</h2>
         <div class="btn-editar">
             <a href="">
-                <i class="fa fa-edit fa-2x"></i>
+                <button>
+                    <i class="fa fa-edit fa-2x"></i>
+                </button>
             </a>
         </div>
         <section class="seccion-denuncias">

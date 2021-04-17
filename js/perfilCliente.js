@@ -4,6 +4,7 @@
 const btnEditarDatosCliente = document.querySelector('#btn-editarDatosCliente');
 const btnGuardarInfoCliente = document.querySelector('#btn-guardar-infoCliente');
 const cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+const elementoContrasenna = document.getElementById('cliente-modificarContrasenna');
 //const fotoMascota = document.querySelector('#imagen-prev');
 //const fotoMascota = document.getElementById('imagen-prev');
 
@@ -151,10 +152,11 @@ mostrarTablaVacunas();
 /* Inicio: Función para habilitar campos a editar del cliente */
 
 const habilitarCamposCliente = () => {
-    btnGuardarInfoCliente.classList.remove('ocultar');
+    btnGuardarInfoCliente.classList.remove('ocultarInfoMascota');
+    elementoContrasenna.classList.remove('ocultar');
     pNombreCliente.disabled = false;
 }
 
 /* fin: Función para habilitar campos a editar del cliente */
 
-btnEditarDatosCliente.addEventListener('onclick', habilitarCamposCliente);
+btnEditarDatosCliente.addEventListener('click', habilitarCamposCliente);
