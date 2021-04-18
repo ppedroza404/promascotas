@@ -286,6 +286,8 @@ const imprimirServicioAgregado0 = () => {
     console.log("------------------");
     console.log("------------------");
 
+    registrarServicioProveedor(nombreServicioAgregado, descripcionServicioAgregado, servicioDomicilioAgregado, tipoMonedaServicioAgregado, montoServicioAgregado);
+
     Swal.fire({
         'icon': 'success',
         'title': 'Se ha agregado con éxito el o los servicios',
@@ -293,6 +295,8 @@ const imprimirServicioAgregado0 = () => {
     }).then(() => {
         window.location.href = 'perfilProveedor.html';
     });
+
+
 };
 
 
