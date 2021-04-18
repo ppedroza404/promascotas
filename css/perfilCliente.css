@@ -50,3 +50,7 @@ table {
 .duennoBody .seccion-denuncias input {
     margin-top: 5px;
 }
+
+#abrirModalContrasenna:hover {
+    cursor: pointer;
+}
