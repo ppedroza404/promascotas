@@ -3,39 +3,34 @@
 const btnRegistrarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 const txtSlt = document.querySelector('#slt-catalogo');
 const txtDivFormAutomatico = document.querySelector('#div-formAutomatico');
-let inputCatalogoNuevo;
+let labelInputCatalogo;
+let txtInputCatalogo;
+let sltCatalogo;
 
-
-let mistica = () => {
-    let autoInput = document.querySelector('#txt-nombreCatalogo').value;
-    return autoInput;
-}
 
 let crearformulario = () => {
     txtDivFormAutomatico.innerHTML = "";
+    txtInputCatalogo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+    labelInputCatalogo = crearLable("txt-nombreCatalogo", "Nombre");
+    sltCatalogo = crearSelect("slt-esencial", ["1"], "si")
     if (txtSlt.value == 'vacunas') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
-        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
-        txtDivFormAutomatico.appendChild(crearLable("slt-catalogo", "Esencial"));
-        txtDivFormAutomatico.appendChild(crearSelect("slt-esencial", ["1"], "si"));
-        txtDivFormAutomatico.appendChild(crearOpciones("slt-esencial", ["Seleccione una opción del catálogo", "Si", "No"], ["", "Si", "No"]));
+        txtDivFormAutomatico.appendChild(labelInputCatalogo);
+        txtDivFormAutomatico.appendChild(txtInputCatalogo);
+        txtDivFormAutomatico.appendChild(crearLable("sslt-esencial", "Esencial"));
+        txtDivFormAutomatico.appendChild(sltCatalogo);
+        txtDivFormAutomatico.appendChild(crearOpciones("slt-esencial", ["Seleccione una opción del catálogo", "Si", "No"], ["", "true", "false"]));
     } else if (txtSlt.value == 'enfermedades') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
-        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
+        txtDivFormAutomatico.appendChild(labelInputCatalogo);
+        txtDivFormAutomatico.appendChild(txtInputCatalogo);
     } else if (txtSlt.value == 'razas') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
-        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
+        txtDivFormAutomatico.appendChild(labelInputCatalogo);
+        txtDivFormAutomatico.appendChild(txtInputCatalogo);
     } else if (txtSlt.value == 'tipoMascota') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
-        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
+        txtDivFormAutomatico.appendChild(labelInputCatalogo);
+        txtDivFormAutomatico.appendChild(txtInputCatalogo);
     } else if (txtSlt.value == 'padecimientos') {
-        txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Nombre"));
-        inputCatalogoNuevo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
-        txtDivFormAutomatico.appendChild(inputCatalogoNuevo);
+        txtDivFormAutomatico.appendChild(labelInputCatalogo);
+        txtDivFormAutomatico.appendChild(txtInputCatalogo);
     } else {
         txtDivFormAutomatico.innerHTML = "";
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
@@ -89,7 +84,7 @@ let crearSelect = (elid, clases, requerido) => {
     return nuevoSelect;
 }
 
-// Crea Option (Id="igual que ID del select" values=["valu1","value2","value3"] test=["HTMLtext1","HTMLtext2","HTMLtext3"]"
+// Crea Option (Id="igual que ID del select" values=["valu1","value2","value3"] text=["HTMLtext1","HTMLtext2","HTMLtext3"]"
 let crearOpciones = (select, valores, innertext) => {
     let nuevoOption = document.createElement("option");
     let selector = document.querySelector("#" + select);
@@ -162,11 +157,30 @@ let obtener_datos = () => {
             limpiar();
            
         });*/
+        let ptxtInputCatalogo = txtInputCatalogo.value;
+        let psltCatalogo = sltCatalogo.value;
 
-        registrarPadecimiento();
+        switch (inputSelectCatalogo.value) {
+            case 'padecimientos':
+                console.log("padecimientos");
+                registrarPadecimiento(ptxtInputCatalogo);
+                break;
+            case 'razas':
+                registrarRaza(ptxtInputCatalogo);
+                break;
+            case 'vacunas':
+                console.log("vacunas");
+                registrarVacuna(ptxtInputCatalogo, psltCatalogo);
+                break;
+            default:
+                console.log('Error default');
+
+        }
+
+
+
     }
 };
 crearformulario();
 btnRegistrarCatalogo.addEventListener('click', obtener_datos);
 txtSlt.addEventListener('change', crearformulario);
-txtSlt.addEventListener('change', mistica);

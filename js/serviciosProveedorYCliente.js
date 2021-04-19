@@ -113,21 +113,7 @@ botonEnviar.addEventListener('click', validarCamposUsuario);
 
 
 
-//Acordeon
-var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
 
 
 
@@ -173,18 +159,7 @@ corroborarTipoUsuario();
 const botonAgregarServicio = document.querySelector('#btn-agregarServicio');
 //variables de contenedores y botones de mas y menos de sercivios
 const btnMasNuevoServicio0 = document.querySelector('#btn-masAgregarServicio0');
-const contenedorNuevoServicio1 = document.querySelector('#agregarServicioContenedor1');
-const btnMenosNuevoServicio1 = document.querySelector('#btn-menosAgregarServicio1');
-const btnMasNuevoServicio1 = document.querySelector('#btn-masAgregarServicio1');
-const contenedorNuevoServicio2 = document.querySelector('#agregarServicioContenedor2');
-const btnMenosNuevoServicio2 = document.querySelector('#btn-menosAgregarServicio2');
-const btnMasNuevoServicio2 = document.querySelector('#btn-masAgregarServicio2');
-const contenedorNuevoServicio3 = document.querySelector('#agregarServicioContenedor3');
-const btnMenosNuevoServicio3 = document.querySelector('#btn-menosAgregarServicio3');
-const btnMasNuevoServicio3 = document.querySelector('#btn-masAgregarServicio3');
-const contenedorNuevoServicio4 = document.querySelector('#agregarServicioContenedor4');
-const btnMenosNuevoServicio4 = document.querySelector('#btn-menosAgregarServicio4');
-const btnMasNuevoServicio4 = document.querySelector('#btn-masAgregarServicio4');
+
 
 //variables de inputs de servicios
 const inputNombreServicio0 = document.querySelector('#agregarServicioNombreServicio0');
@@ -192,173 +167,48 @@ const textareaDescripcionServicio0 = document.querySelector('#agregarServicioDes
 const selectDomicilioServicio0 = document.querySelector('#agregarServicioADomicilio0');
 const selectMonedaServicio0 = document.querySelector('#agregarServicioTipoMoneda0');
 const inputMontoServicio0 = document.querySelector('#agregarServicioMonto0');
-//
-const inputNombreServicio1 = document.querySelector('#agregarServicioNombreServicio1');
-const textareaDescripcionServicio1 = document.querySelector('#agregarServicioDescripcionServicio1');
-const selectDomicilioServicio1 = document.querySelector('#agregarServicioADomicilio1');
-const selectMonedaServicio1 = document.querySelector('#agregarServicioTipoMoneda1');
-const inputMontoServicio1 = document.querySelector('#agregarServicioMonto1');
-//
-const inputNombreServicio2 = document.querySelector('#agregarServicioNombreServicio2');
-const textareaDescripcionServicio2 = document.querySelector('#agregarServicioDescripcionServicio2');
-const selectDomicilioServicio2 = document.querySelector('#agregarServicioADomicilio2');
-const selectMonedaServicio2 = document.querySelector('#agregarServicioTipoMoneda2');
-const inputMontoServicio2 = document.querySelector('#agregarServicioMonto2');
-//
-const inputNombreServicio3 = document.querySelector('#agregarServicioNombreServicio3');
-const textareaDescripcionServicio3 = document.querySelector('#agregarServicioDescripcionServicio3');
-const selectDomicilioServicio3 = document.querySelector('#agregarServicioADomicilio3');
-const selectMonedaServicio3 = document.querySelector('#agregarServicioTipoMoneda3');
-const inputMontoServicio3 = document.querySelector('#agregarServicioMonto3');
-//
-const inputNombreServicio4 = document.querySelector('#agregarServicioNombreServicio4');
-const textareaDescripcionServicio4 = document.querySelector('#agregarServicioDescripcionServicio4');
-const selectDomicilioServicio4 = document.querySelector('#agregarServicioADomicilio4');
-const selectMonedaServicio4 = document.querySelector('#agregarServicioTipoMoneda4');
-const inputMontoServicio4 = document.querySelector('#agregarServicioMonto4');
+
 //
 const validarServicio0 = () => {
-        let error = false;
-
-        if (inputNombreServicio0.value == '') {
-            error = true;
-            inputNombreServicio0.classList.add('error');
-        } else {
-            inputNombreServicio0.classList.remove('error');
-        }
-
-        if (textareaDescripcionServicio0.value == '') {
-            error = true;
-            textareaDescripcionServicio0.classList.add('error');
-        } else {
-            textareaDescripcionServicio0.classList.remove('error');
-        }
-
-        if (selectDomicilioServicio0.value == '') {
-            error = true;
-            selectDomicilioServicio0.classList.add('error');
-        } else {
-            selectDomicilioServicio0.classList.remove('error');
-        }
-
-        if (selectMonedaServicio0.value == '') {
-            error = true;
-            selectMonedaServicio0.classList.add('error');
-        } else {
-            selectMonedaServicio0.classList.remove('error');
-        }
-
-        if (inputMontoServicio0.value == '') {
-            error = true;
-            inputMontoServicio0.classList.add('error');
-        } else {
-            inputMontoServicio0.classList.remove('error');
-        }
-
-        if (error == false) {
-            cargarNuevoServicio1()
-        } else {
-            Swal.fire({
-                'icon': 'warning',
-                'title': 'No se puede agregar un servicio nuevo',
-                'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-                'confirmButtonText': 'Entendido'
-            });
-        }
-    }
-    //
-const validarServicio1 = () => {
-        let error = false;
-
-        if (inputNombreServicio1.value == '') {
-            error = true;
-            inputNombreServicio1.classList.add('error');
-        } else {
-            inputNombreServicio1.classList.remove('error');
-        }
-
-        if (textareaDescripcionServicio1.value == '') {
-            error = true;
-            textareaDescripcionServicio1.classList.add('error');
-        } else {
-            textareaDescripcionServicio1.classList.remove('error');
-        }
-
-        if (selectDomicilioServicio1.value == '') {
-            error = true;
-            selectDomicilioServicio1.classList.add('error');
-        } else {
-            selectDomicilioServicio1.classList.remove('error');
-        }
-
-        if (selectMonedaServicio1.value == '') {
-            error = true;
-            selectMonedaServicio1.classList.add('error');
-        } else {
-            selectMonedaServicio1.classList.remove('error');
-        }
-
-        if (inputMontoServicio1.value == '') {
-            error = true;
-            inputMontoServicio1.classList.add('error');
-        } else {
-            inputMontoServicio1.classList.remove('error');
-        }
-
-        if (error == false) {
-            //imprimirCamposUsuario();
-            cargarNuevoServicio2()
-        } else {
-            Swal.fire({
-                'icon': 'warning',
-                'title': 'No se puede agregar un servicio nuevo',
-                'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-                'confirmButtonText': 'Entendido'
-            });
-        }
-    }
-    //
-const validarServicio2 = () => {
     let error = false;
 
-    if (inputNombreServicio2.value == '') {
+    if (inputNombreServicio0.value == '') {
         error = true;
-        inputNombreServicio2.classList.add('error');
+        inputNombreServicio0.classList.add('error');
     } else {
-        inputNombreServicio2.classList.remove('error');
+        inputNombreServicio0.classList.remove('error');
     }
 
-    if (textareaDescripcionServicio2.value == '') {
+    if (textareaDescripcionServicio0.value == '') {
         error = true;
-        textareaDescripcionServicio2.classList.add('error');
+        textareaDescripcionServicio0.classList.add('error');
     } else {
-        textareaDescripcionServicio2.classList.remove('error');
+        textareaDescripcionServicio0.classList.remove('error');
     }
 
-    if (selectDomicilioServicio2.value == '') {
+    if (selectDomicilioServicio0.value == '') {
         error = true;
-        selectDomicilioServicio2.classList.add('error');
+        selectDomicilioServicio0.classList.add('error');
     } else {
-        selectDomicilioServicio2.classList.remove('error');
+        selectDomicilioServicio0.classList.remove('error');
     }
 
-    if (selectMonedaServicio2.value == '') {
+    if (selectMonedaServicio0.value == '') {
         error = true;
-        selectMonedaServicio2.classList.add('error');
+        selectMonedaServicio0.classList.add('error');
     } else {
-        selectMonedaServicio2.classList.remove('error');
+        selectMonedaServicio0.classList.remove('error');
     }
 
-    if (inputMontoServicio2.value == '') {
+    if (inputMontoServicio0.value == '') {
         error = true;
-        inputMontoServicio2.classList.add('error');
+        inputMontoServicio0.classList.add('error');
     } else {
-        inputMontoServicio2.classList.remove('error');
+        inputMontoServicio0.classList.remove('error');
     }
 
     if (error == false) {
-        //imprimirCamposUsuario();
-        cargarNuevoServicio3()
+        cargarNuevoServicio1()
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -369,204 +219,6 @@ const validarServicio2 = () => {
     }
 }
 
-const validarServicio3 = () => {
-    let error = false;
-
-    if (inputNombreServicio3.value == '') {
-        error = true;
-        inputNombreServicio3.classList.add('error');
-    } else {
-        inputNombreServicio3.classList.remove('error');
-    }
-
-    if (textareaDescripcionServicio3.value == '') {
-        error = true;
-        textareaDescripcionServicio3.classList.add('error');
-    } else {
-        textareaDescripcionServicio3.classList.remove('error');
-    }
-
-    if (selectDomicilioServicio3.value == '') {
-        error = true;
-        selectDomicilioServicio3.classList.add('error');
-    } else {
-        selectDomicilioServicio3.classList.remove('error');
-    }
-
-    if (selectMonedaServicio3.value == '') {
-        error = true;
-        selectMonedaServicio3.classList.add('error');
-    } else {
-        selectMonedaServicio3.classList.remove('error');
-    }
-
-    if (inputMontoServicio3.value == '') {
-        error = true;
-        inputMontoServicio3.classList.add('error');
-    } else {
-        inputMontoServicio3.classList.remove('error');
-    }
-
-    if (error == false) {
-        //imprimirCamposUsuario();
-        cargarNuevoServicio4()
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-}
-
-const validarServicio4 = () => {
-    let error = false;
-
-    if (inputNombreServicio4.value == '') {
-        error = true;
-        inputNombreServicio4.classList.add('error');
-    } else {
-        inputNombreServicio4.classList.remove('error');
-    }
-
-    if (textareaDescripcionServicio4.value == '') {
-        error = true;
-        textareaDescripcionServicio4.classList.add('error');
-    } else {
-        textareaDescripcionServicio4.classList.remove('error');
-    }
-
-    if (selectDomicilioServicio4.value == '') {
-        error = true;
-        selectDomicilioServicio4.classList.add('error');
-    } else {
-        selectDomicilioServicio4.classList.remove('error');
-    }
-
-    if (selectMonedaServicio4.value == '') {
-        error = true;
-        selectMonedaServicio4.classList.add('error');
-    } else {
-        selectMonedaServicio4.classList.remove('error');
-    }
-
-    if (inputMontoServicio4.value == '') {
-        error = true;
-        inputMontoServicio4.classList.add('error');
-    } else {
-        inputMontoServicio4.classList.remove('error');
-    }
-
-    if (error == false) {
-        //imprimirCamposUsuario();
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-}
-
-const cargarNuevoServicio1 = () => {
-    if (contenedorNuevoServicio1.classList.contains('ocultar')) {
-        contenedorNuevoServicio1.classList.remove('ocultar');
-        contenedorNuevoServicio1.classList.add('activo');
-    }
-};
-const cerrarNuevoServicio1 = () => {
-    contenedorNuevoServicio1.classList.add('ocultar');
-    contenedorNuevoServicio1.classList.remove('activo');
-    inputNombreServicio1.value = '';
-    textareaDescripcionServicio1.value = '';
-    selectDomicilioServicio1.value = '';
-    selectMonedaServicio1.value = '';
-    inputMontoServicio1.value = '';
-};
-
-const cargarNuevoServicio2 = () => {
-    if (contenedorNuevoServicio2.classList.contains('ocultar')) {
-        contenedorNuevoServicio2.classList.remove('ocultar');
-        contenedorNuevoServicio2.classList.add('activo');
-    }
-};
-const cerrarNuevoServicio2 = () => {
-    contenedorNuevoServicio2.classList.add('ocultar');
-    contenedorNuevoServicio2.classList.remove('activo');
-    inputNombreServicio2.value = '';
-    textareaDescripcionServicio2.value = '';
-    selectDomicilioServicio2.value = '';
-    selectMonedaServicio2.value = '';
-    inputMontoServicio2.value = '';
-};
-
-const cargarNuevoServicio3 = () => {
-    if (contenedorNuevoServicio3.classList.contains('ocultar')) {
-        contenedorNuevoServicio3.classList.remove('ocultar');
-        contenedorNuevoServicio3.classList.add('activo');
-    }
-};
-const cerrarNuevoServicio3 = () => {
-    contenedorNuevoServicio3.classList.add('ocultar');
-    contenedorNuevoServicio3.classList.remove('activo');
-    inputNombreServicio3.value = '';
-    textareaDescripcionServicio3.value = '';
-    selectDomicilioServicio3.value = '';
-    selectMonedaServicio3.value = '';
-    inputMontoServicio3.value = '';
-};
-
-
-const cargarNuevoServicio4 = () => {
-    if (contenedorNuevoServicio4.classList.contains('ocultar')) {
-        contenedorNuevoServicio4.classList.remove('ocultar');
-        contenedorNuevoServicio4.classList.add('activo');
-    }
-};
-const cerrarNuevoServicio4 = () => {
-    contenedorNuevoServicio4.classList.add('ocultar')
-    contenedorNuevoServicio4.classList.remove('activo');
-    inputNombreServicio4.value = '';
-    textareaDescripcionServicio4.value = '';
-    selectDomicilioServicio4.value = '';
-    selectMonedaServicio4.value = '';
-    inputMontoServicio4.value = '';
-};
-
-
-const cargarNuevoServicio5 = () => {
-    if (contenedorNuevoServicio5.classList.contains('ocultar')) {
-        contenedorNuevoServicio5.classList.remove('ocultar');
-        contenedorNuevoServicio5.classList.add('activo');
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'Máximo de servicios',
-            'text': 'Puede agregar un máximo de cinco servicios por vez',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-};
-const cerrarNuevoServicio5 = () => {
-    contenedorNuevoServicio5.classList.add('ocultar');
-    contenedorNuevoServicio5.classList.remove('activo');
-    inputNombreServicio5.value = '';
-    textareaDescripcionServicio5.value = '';
-    selectDomicilioServicio5.value = '';
-    selectMonedaServicio5.value = '';
-    inputMontoServicio5.value = '';
-};
-
-
-btnMasNuevoServicio0.addEventListener('click', validarServicio0);
-btnMenosNuevoServicio1.addEventListener('click', cerrarNuevoServicio1);
-btnMasNuevoServicio1.addEventListener('click', validarServicio1);
-btnMenosNuevoServicio2.addEventListener('click', cerrarNuevoServicio2);
-btnMasNuevoServicio2.addEventListener('click', validarServicio2);
-btnMenosNuevoServicio3.addEventListener('click', cerrarNuevoServicio3);
-btnMasNuevoServicio3.addEventListener('click', validarServicio3);
-btnMenosNuevoServicio4.addEventListener('click', cerrarNuevoServicio4);
 
 
 //Validación final e impresión de datos
@@ -634,79 +286,7 @@ const imprimirServicioAgregado0 = () => {
     console.log("------------------");
     console.log("------------------");
 
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Se ha agregado con éxito el o los servicios',
-        'confirmButtonText': 'Excelente'
-    }).then(() => {
-        window.location.href = 'perfilProveedor.html';
-    });
-};
-
-///
-const validarServicioAgregado1 = () => {
-    let error = false;
-
-    if (inputNombreServicio1.value == '') {
-        error = true;
-        inputNombreServicio1.classList.add('error');
-    } else {
-        inputNombreServicio1.classList.remove('error');
-    }
-    if (textareaDescripcionServicio1.value == '') {
-        error = true;
-        textareaDescripcionServicio1.classList.add('error');
-    } else {
-        textareaDescripcionServicio1.classList.remove('error');
-    }
-    if (selectDomicilioServicio1.value == '') {
-        error = true;
-        selectDomicilioServicio1.classList.add('error');
-    } else {
-        selectDomicilioServicio1.classList.remove('error');
-    }
-    if (selectMonedaServicio1.value == '') {
-        error = true;
-        selectMonedaServicio1.classList.add('error');
-    } else {
-        selectMonedaServicio1.classList.remove('error');
-    }
-    if (inputMontoServicio1.value == '') {
-        error = true;
-        inputMontoServicio1.classList.add('error');
-    } else {
-        inputMontoServicio1.classList.remove('error');
-    }
-    if (error == false) {
-        imprimirServicioAgregado1();
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-};
-
-
-const imprimirServicioAgregado1 = () => {
-    let nombreServicioAgregado = inputNombreServicio1.value;
-    let descripcionServicioAgregado = textareaDescripcionServicio1.value;
-    let servicioDomicilioAgregado = selectDomicilioServicio1.value;
-    let tipoMonedaServicioAgregado = selectMonedaServicio1.value;
-    let montoServicioAgregado = inputMontoServicio1.value;
-
-
-    console.log("Servicio agregado número 2");
-    console.log("------------------");
-    console.log("Nombre del servicio:", nombreServicioAgregado);
-    console.log("Tamaño:", descripcionServicioAgregado);
-    console.log("¿Cuenta con servicio a domicilio?:", servicioDomicilioAgregado);
-    console.log("Tipo de moneda:", tipoMonedaServicioAgregado);
-    console.log("Monto por servicio:", montoServicioAgregado);
-    console.log("------------------");
-    console.log("------------------");
+    registrarServicioProveedor(nombreServicioAgregado, descripcionServicioAgregado, servicioDomicilioAgregado, tipoMonedaServicioAgregado, montoServicioAgregado);
 
     Swal.fire({
         'icon': 'success',
@@ -719,279 +299,15 @@ const imprimirServicioAgregado1 = () => {
 
 };
 
-///
-const validarServicioAgregado2 = () => {
-    let error = false;
-
-    if (inputNombreServicio2.value == '') {
-        error = true;
-        inputNombreServicio2.classList.add('error');
-    } else {
-        inputNombreServicio2.classList.remove('error');
-    }
-    if (textareaDescripcionServicio2.value == '') {
-        error = true;
-        textareaDescripcionServicio2.classList.add('error');
-    } else {
-        textareaDescripcionServicio2.classList.remove('error');
-    }
-    if (selectDomicilioServicio2.value == '') {
-        error = true;
-        selectDomicilioServicio2.classList.add('error');
-    } else {
-        selectDomicilioServicio2.classList.remove('error');
-    }
-    if (selectMonedaServicio2.value == '') {
-        error = true;
-        selectMonedaServicio2.classList.add('error');
-    } else {
-        selectMonedaServicio2.classList.remove('error');
-    }
-    if (inputMontoServicio2.value == '') {
-        error = true;
-        inputMontoServicio2.classList.add('error');
-    } else {
-        inputMontoServicio2.classList.remove('error');
-    }
-    if (error == false) {
-        imprimirServicioAgregado2();
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-};
-
-const imprimirServicioAgregado2 = () => {
-    let nombreServicioAgregado = inputNombreServicio2.value;
-    let descripcionServicioAgregado = textareaDescripcionServicio2.value;
-    let servicioDomicilioAgregado = selectDomicilioServicio2.value;
-    let tipoMonedaServicioAgregado = selectMonedaServicio2.value;
-    let montoServicioAgregado = inputMontoServicio2.value;
-
-
-    console.log("Servicio agregado número 3");
-    console.log("------------------");
-    console.log("Nombre del servicio:", nombreServicioAgregado);
-    console.log("Tamaño:", descripcionServicioAgregado);
-    console.log("¿Cuenta con servicio a domicilio?:", servicioDomicilioAgregado);
-    console.log("Tipo de moneda:", tipoMonedaServicioAgregado);
-    console.log("Monto por servicio:", montoServicioAgregado);
-    console.log("------------------");
-    console.log("------------------");
-
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Se ha agregado con éxito el o los servicios',
-        'confirmButtonText': 'Excelente'
-    }).then(() => {
-        window.location.href = 'perfilProveedor.html';
-    });
-};
-
-///
-const validarServicioAgregado3 = () => {
-    let error = false;
-
-    if (inputNombreServicio3.value == '') {
-        error = true;
-        inputNombreServicio3.classList.add('error');
-    } else {
-        inputNombreServicio3.classList.remove('error');
-    }
-    if (textareaDescripcionServicio3.value == '') {
-        error = true;
-        textareaDescripcionServicio3.classList.add('error');
-    } else {
-        textareaDescripcionServicio3.classList.remove('error');
-    }
-    if (selectDomicilioServicio3.value == '') {
-        error = true;
-        selectDomicilioServicio3.classList.add('error');
-    } else {
-        selectDomicilioServicio3.classList.remove('error');
-    }
-    if (selectMonedaServicio3.value == '') {
-        error = true;
-        selectMonedaServicio3.classList.add('error');
-    } else {
-        selectMonedaServicio3.classList.remove('error');
-    }
-    if (inputMontoServicio3.value == '') {
-        error = true;
-        inputMontoServicio3.classList.add('error');
-    } else {
-        inputMontoServicio3.classList.remove('error');
-    }
-    if (error == false) {
-        imprimirServicioAgregado3();
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-};
-
-const imprimirServicioAgregado3 = () => {
-    let nombreServicioAgregado = inputNombreServicio3.value;
-    let descripcionServicioAgregado = textareaDescripcionServicio3.value;
-    let servicioDomicilioAgregado = selectDomicilioServicio3.value;
-    let tipoMonedaServicioAgregado = selectMonedaServicio3.value;
-    let montoServicioAgregado = inputMontoServicio3.value;
-
-
-    console.log("Servicio agregado número 4");
-    console.log("------------------");
-    console.log("Nombre del servicio:", nombreServicioAgregado);
-    console.log("Tamaño:", descripcionServicioAgregado);
-    console.log("¿Cuenta con servicio a domicilio?:", servicioDomicilioAgregado);
-    console.log("Tipo de moneda:", tipoMonedaServicioAgregado);
-    console.log("Monto por servicio:", montoServicioAgregado);
-    console.log("------------------");
-    console.log("------------------");
-
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Se ha agregado con éxito el o los servicios',
-        'confirmButtonText': 'Excelente'
-    }).then(() => {
-        window.location.href = 'perfilProveedor.html';
-    });
-};
-
-///
-const validarServicioAgregado4 = () => {
-    let error = false;
-
-    if (inputNombreServicio4.value == '') {
-        error = true;
-        inputNombreServicio4.classList.add('error');
-    } else {
-        inputNombreServicio4.classList.remove('error');
-    }
-    if (textareaDescripcionServicio4.value == '') {
-        error = true;
-        textareaDescripcionServicio4.classList.add('error');
-    } else {
-        textareaDescripcionServicio4.classList.remove('error');
-    }
-    if (selectDomicilioServicio4.value == '') {
-        error = true;
-        selectDomicilioServicio4.classList.add('error');
-    } else {
-        selectDomicilioServicio4.classList.remove('error');
-    }
-    if (selectMonedaServicio4.value == '') {
-        error = true;
-        selectMonedaServicio4.classList.add('error');
-    } else {
-        selectMonedaServicio4.classList.remove('error');
-    }
-    if (inputMontoServicio4.value == '') {
-        error = true;
-        inputMontoServicio4.classList.add('error');
-    } else {
-        inputMontoServicio4.classList.remove('error');
-    }
-    if (error == false) {
-        imprimirServicioAgregado4();
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se puede agregar un servicio nuevo',
-            'text': 'Faltan campos por rellenar. Por favor revise los campos resaltados',
-            'confirmButtonText': 'Entendido'
-        });
-    }
-};
-
-const imprimirServicioAgregado4 = () => {
-    let nombreServicioAgregado = inputNombreServicio4.value;
-    let descripcionServicioAgregado = textareaDescripcionServicio4.value;
-    let servicioDomicilioAgregado = selectDomicilioServicio4.value;
-    let tipoMonedaServicioAgregado = selectMonedaServicio4.value;
-    let montoServicioAgregado = inputMontoServicio4.value;
-
-
-    console.log("Servicio agregado número 5");
-    console.log("------------------");
-    console.log("Nombre del servicio:", nombreServicioAgregado);
-    console.log("Tamaño:", descripcionServicioAgregado);
-    console.log("¿Cuenta con servicio a domicilio?:", servicioDomicilioAgregado);
-    console.log("Tipo de moneda:", tipoMonedaServicioAgregado);
-    console.log("Monto por servicio:", montoServicioAgregado);
-    console.log("------------------");
-    console.log("------------------");
-
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Se ha agregado con éxito el o los servicios',
-        'confirmButtonText': 'Excelente'
-    }).then(() => {
-        window.location.href = 'perfilProveedor.html';
-    });
-};
 
 const validarServiciosAgregados = () => {
     validarServicioAgregado0()
-    if (contenedorNuevoServicio1.classList.contains('activo')) {
-        validarServicioAgregado1()
-    }
-    if (contenedorNuevoServicio2.classList.contains('activo')) {
-        validarServicioAgregado2()
-    }
-    if (contenedorNuevoServicio3.classList.contains('activo')) {
-        validarServicioAgregado3()
-    }
-    if (contenedorNuevoServicio4.classList.contains('activo')) {
-        validarServicioAgregado3()
-    }
 };
 
 //validar todo el form de proveedor
 botonAgregarServicio.addEventListener('click', validarServiciosAgregados);
 
 
-//Modal
-let modal1 = document.querySelector('#modal1');
-let botonModal1 = document.querySelector('#abrirModal1')
-let cerrar1 = document.querySelector("#modal1 .close");
-let modal2 = document.querySelector('#modal2');
-let botonModal2 = document.querySelector('#abrirModal2')
-let cerrar2 = document.querySelector("#modal2 .close");
-let modal3 = document.querySelector('#modal3');
-let botonModal3 = document.querySelector('#abrirModal3')
-let cerrar3 = document.querySelector("#modal3 .close");
-
-botonModal1.addEventListener('click', () => {
-    modal1.style.display = 'block';
-});
-
-cerrar1.addEventListener('click', () => {
-    modal1.style.display = 'none';
-});
-
-botonModal2.addEventListener('click', () => {
-    modal2.style.display = 'block';
-});
-
-cerrar2.addEventListener('click', () => {
-    modal2.style.display = 'none';
-});
-
-botonModal3.addEventListener('click', () => {
-    modal3.style.display = 'block';
-});
-
-cerrar3.addEventListener('click', () => {
-    modal3.style.display = 'none';
-});
 
 
 //Buscador de servicios
@@ -1018,3 +334,382 @@ const buscarServicios = () => {
 };
 
 buscadorServiciosFiltro.addEventListener('keyup', buscarServicios);
+
+
+
+// Listar servicios
+let listaServiciosProveedor = [];
+
+const llenarListaServiciosProveedor = async() => {
+    listaServiciosProveedor = await obtenerServiciosProveedor();
+    mostrarLista();
+};
+
+const mostrarLista = async() => {
+    let listaContenedor = document.createElement('div');
+    let listaUlElemento = document.createElement('ul');
+    listaUlElemento.setAttribute('id', 'serviciosUl');
+    let listaItem;
+    let listaItemButton;
+    let listaItemButtonA;
+    let listaDivItem;
+    let listaContenedorEditarItem;
+    let listaFlotadorEditarItem;
+    let listaBtnEditarItem;
+    let listaPItem;
+    let listaDomicilioItem;
+    let listaCostoItem;
+    let listaModalContenedor;
+    let listaModalContent;
+    let listaModalHeader;
+    let listaModalCerrar;
+    let listaModalTitulo;
+    let listaModalBody;
+    let listaModalContenido;
+    let listaModalContenido1;
+    let listaModalContenidoColumnaNombre;
+    let listaModalContenidoColumnaNombreLabel;
+    let listaModalContenidoColumnaNombreInput;
+    let listaModalContenidoColumnaDescripcionLabel;
+    let listaModalContenidoColumnaDescripcionInput;
+    let listaModalContenidoColumnaDescripcion;
+    let listaModalContenido2;
+    let listaModalContenidoColumnaDomicilio;
+    let listaModalContenidoColumnaDomicilioLabel;
+    let listaModalContenidoColumnaDomicilioInput;
+    let listaModalContenidoColumnaDomicilioInputOptionSi;
+    let listaModalContenidoColumnaDomicilioInputOptionNo;
+    let listaModalContenidoColumnaMoneda;
+    let listaModalContenidoColumnaMonedaLabel;
+    let listaModalContenidoColumnaMonedaInput;
+    let listaModalContenidoColumnaMonedaInputOptionColones;
+    let listaModalContenidoColumnaMonedaInputOptionDolares;
+    let listaModalContenidoColumnaMonto;
+    let listaModalContenidoColumnaMontoLabel;
+    let listaModalContenidoColumnaMontoInput;
+    let listaModalFooter;
+    let listaModalFooterFlex;
+    let listaModalFooterModificarBtn;
+    let listaBtnModificarItem;
+    let listaModalFooterActivarBtn;
+    let listaBtnActivarItem;
+    let listaModalFooterDesactivarBtn;
+    let listaBtnDesactivarItem;
+    let listaModalFooterEliminarBtn;
+    let listaBtnEliminarItem;
+    //let i;
+
+    document.querySelector('#contenedorListaServicios').appendChild(listaContenedor);
+    listaContenedor.appendChild(listaUlElemento);
+
+    listaServiciosProveedor.forEach(servicio => {
+        //button
+        listaItem = document.createElement('li');
+        listaItem.classList.add(`${servicio.estado}`)
+        listaUlElemento.appendChild(listaItem);
+        listaItemButton = document.createElement('button');
+        listaItemButton.classList.add('accordion');
+        listaItem.appendChild(listaItemButton);
+        listaItemButtonA = document.createElement('a');
+        //listaItemButtonA.setAttribute('href', '#');
+        listaItemButtonA.innerHTML = servicio.nombre;
+        listaItemButton.appendChild(listaItemButtonA);
+        //panel
+        listaDivItem = document.createElement('div');
+        listaItem.appendChild(listaDivItem);
+        listaDivItem.classList.add('panel');
+        //botón para editar
+        listaContenedorEditarItem = document.createElement('div');
+        listaDivItem.appendChild(listaContenedorEditarItem);
+        listaContenedorEditarItem.classList.add('contenedorClasesFlotantes');
+        listaContenedorEditarItem.classList.add('abrirModalContenedor');
+        listaFlotadorEditarItem = document.createElement('div');
+        listaContenedorEditarItem.appendChild(listaFlotadorEditarItem);
+        listaFlotadorEditarItem.classList.add('flotar-der');
+        listaFlotadorEditarItem.classList.add('abrirModal');
+        listaFlotadorEditarItem.classList.add('morada');
+        listaFlotadorEditarItem.setAttribute('id', `abrirModal${servicio._id}`);
+        listaBtnEditarItem = document.createElement('i');
+        listaBtnEditarItem.classList.add('fa');
+        listaBtnEditarItem.classList.add('fa-edit');
+        listaFlotadorEditarItem.appendChild(listaBtnEditarItem);
+        //p con la descripción
+        listaPItem = document.createElement('p');
+        listaPItem.innerHTML = servicio.descripcion;
+        listaDivItem.appendChild(listaPItem);
+        //p con servicio a domicilio
+        listaDomicilioItem = document.createElement('p');
+        listaDomicilioItem.innerHTML = `Este servicio ${servicio.servicioDomicilio} cuenta con servicio a domicilio.`;
+        listaDivItem.appendChild(listaDomicilioItem);
+        //p con servicio a tipo de moneda y monto
+        listaCostoItem = document.createElement('p');
+        listaCostoItem.innerHTML = `Este servicio tiene un valor de ${servicio.monto} ${servicio.tipoMoneda}.`;
+        listaDivItem.appendChild(listaCostoItem);
+        //modal
+        listaModalContenedor = document.createElement('div');
+        listaModalContenedor.setAttribute('id', `modal${servicio._id}`);
+        listaModalContenedor.classList.add('modal');
+        listaDivItem.appendChild(listaModalContenedor);
+        listaModalContent = document.createElement('div');
+        listaModalContent.classList.add('modal-content');
+        listaModalContenedor.appendChild(listaModalContent);
+        //modal header
+        listaModalHeader = document.createElement('div');
+        listaModalHeader.classList.add('modal-header');
+        listaModalContent.appendChild(listaModalHeader);
+        listaModalCerrar = document.createElement('span');
+        listaModalCerrar.setAttribute('id', `cerrar${servicio._id}`);
+        listaModalCerrar.classList.add('close');
+        listaModalHeader.appendChild(listaModalCerrar);
+        listaModalCerrar.innerText = 'x';
+        listaModalTitulo = document.createElement('h3');
+        listaModalTitulo.innerText = `${servicio.nombre} (${servicio.estado})`;
+        listaModalHeader.appendChild(listaModalTitulo);
+        //modal body
+        listaModalBody = document.createElement('div');
+        listaModalBody.classList.add('modal-body');
+        listaModalContent.appendChild(listaModalBody);
+        listaModalContenido = document.createElement('div');
+        listaModalContenido.classList.add('centrarBloque');
+        listaModalContenido.classList.add('w75');
+        listaModalBody.appendChild(listaModalContenido);
+        //modal 1 columna
+        listaModalContenido1 = document.createElement('div');
+        listaModalContenido1.classList.add('unicaColumna');
+        listaModalContenido1.classList.add('contenedorColumna');
+        listaModalContenido.appendChild(listaModalContenido1);
+        //modal nombre del servicio
+        listaModalContenidoColumnaNombre = document.createElement('div');
+        listaModalContenidoColumnaNombre.classList.add('columna');
+        listaModalContenido1.appendChild(listaModalContenidoColumnaNombre);
+        listaModalContenidoColumnaNombreLabel = document.createElement('label');
+        listaModalContenidoColumnaNombreLabel.setAttribute('for', `modificarServicioNombreServicio${servicio._id}`);
+        listaModalContenidoColumnaNombreLabel.innerText = 'Nombre del servicio';
+        listaModalContenidoColumnaNombre.appendChild(listaModalContenidoColumnaNombreLabel);
+        listaModalContenidoColumnaNombreInput = document.createElement('input');
+        listaModalContenidoColumnaNombreInput.setAttribute('id', `modificarServicioNombreServicio${servicio._id}`);
+        listaModalContenidoColumnaNombre.appendChild(listaModalContenidoColumnaNombreInput);
+        //modal descripción del servicio
+        listaModalContenidoColumnaDescripcion = document.createElement('div');
+        listaModalContenidoColumnaDescripcion.classList.add('columna');
+        listaModalContenido1.appendChild(listaModalContenidoColumnaDescripcion);
+        listaModalContenidoColumnaDescripcionLabel = document.createElement('label');
+        listaModalContenidoColumnaDescripcionLabel.setAttribute('for', `modificarServicioDescripcionServicio${servicio._id}`);
+        listaModalContenidoColumnaDescripcionLabel.innerText = 'Descripción del servicio';
+        listaModalContenidoColumnaDescripcion.appendChild(listaModalContenidoColumnaDescripcionLabel);
+        listaModalContenidoColumnaDescripcionInput = document.createElement('textarea');
+        listaModalContenidoColumnaDescripcionInput.setAttribute('id', `modificarServicioDescripcionServicio${servicio._id}`);
+        listaModalContenidoColumnaDescripcion.appendChild(listaModalContenidoColumnaDescripcionInput);
+        //modal 3 columnas
+        listaModalContenido2 = document.createElement('div');
+        listaModalContenido2.classList.add('simpleColumna');
+        listaModalContenido2.classList.add('contenedorColumna');
+        listaModalContenido.appendChild(listaModalContenido2);
+        //modal domicilio del servicio
+        listaModalContenidoColumnaDomicilio = document.createElement('div');
+        listaModalContenidoColumnaDomicilio.classList.add('columna');
+        listaModalContenido2.appendChild(listaModalContenidoColumnaDomicilio);
+        listaModalContenidoColumnaDomicilioLabel = document.createElement('label');
+        listaModalContenidoColumnaDomicilioLabel.setAttribute('for', `modificarServicioDomicilioServicio${servicio._id}`);
+        listaModalContenidoColumnaDomicilioLabel.innerText = '¿Cuenta con servicio a domicilio?';
+        listaModalContenidoColumnaDomicilio.appendChild(listaModalContenidoColumnaDomicilioLabel);
+        listaModalContenidoColumnaDomicilioInput = document.createElement('select');
+        listaModalContenidoColumnaDomicilioInput.setAttribute('id', `modificarServicioDomicilioServicio${servicio._id}`);
+        listaModalContenidoColumnaDomicilioInputOptionSi = document.createElement('option');
+        listaModalContenidoColumnaDomicilioInputOptionSi.setAttribute('value', 'sí');
+        listaModalContenidoColumnaDomicilioInputOptionSi.innerText = 'Sí';
+        listaModalContenidoColumnaDomicilioInput.appendChild(listaModalContenidoColumnaDomicilioInputOptionSi);
+        listaModalContenidoColumnaDomicilioInputOptionNo = document.createElement('option');
+        listaModalContenidoColumnaDomicilioInputOptionNo.setAttribute('value', 'no');
+        listaModalContenidoColumnaDomicilioInputOptionNo.innerText = 'No';
+        listaModalContenidoColumnaDomicilioInput.appendChild(listaModalContenidoColumnaDomicilioInputOptionNo);
+        listaModalContenidoColumnaDomicilio.appendChild(listaModalContenidoColumnaDomicilioInput);
+        //modal moneda del servicio
+        listaModalContenidoColumnaMoneda = document.createElement('div');
+        listaModalContenidoColumnaMoneda.classList.add('columna');
+        listaModalContenido2.appendChild(listaModalContenidoColumnaMoneda);
+        listaModalContenidoColumnaMonedaLabel = document.createElement('label');
+        listaModalContenidoColumnaMonedaLabel.setAttribute('for', `modificarServicioMonedaServicio${servicio._id}`);
+        listaModalContenidoColumnaMonedaLabel.innerText = 'Tipo de moneda';
+        listaModalContenidoColumnaMoneda.appendChild(listaModalContenidoColumnaMonedaLabel);
+        listaModalContenidoColumnaMonedaInput = document.createElement('select');
+        listaModalContenidoColumnaMonedaInput.setAttribute('id', `modificarServicioMonedaServicio${servicio._id}`);
+        listaModalContenidoColumnaMonedaInputOptionColones = document.createElement('option');
+        listaModalContenidoColumnaMonedaInputOptionColones.setAttribute('value', 'colones');
+        listaModalContenidoColumnaMonedaInputOptionColones.innerText = 'Colones';
+        listaModalContenidoColumnaMonedaInput.appendChild(listaModalContenidoColumnaMonedaInputOptionColones);
+        listaModalContenidoColumnaMonedaInputOptionDolares = document.createElement('option');
+        listaModalContenidoColumnaMonedaInputOptionDolares.setAttribute('value', 'dólares');
+        listaModalContenidoColumnaMonedaInputOptionDolares.innerText = 'Dólares';
+        listaModalContenidoColumnaMonedaInput.appendChild(listaModalContenidoColumnaMonedaInputOptionDolares);
+        listaModalContenidoColumnaMoneda.appendChild(listaModalContenidoColumnaMonedaInput);
+        //modal monto del servicio
+        listaModalContenidoColumnaMonto = document.createElement('div');
+        listaModalContenidoColumnaMonto.classList.add('columna');
+        listaModalContenido2.appendChild(listaModalContenidoColumnaMonto);
+        listaModalContenidoColumnaMontoLabel = document.createElement('label');
+        listaModalContenidoColumnaMontoLabel.setAttribute('for', `modificarServicioMontoServicio${servicio._id}`);
+        listaModalContenidoColumnaMontoLabel.innerText = 'Monto por servicio';
+        listaModalContenidoColumnaMonto.appendChild(listaModalContenidoColumnaMontoLabel);
+        listaModalContenidoColumnaMontoInput = document.createElement('input');
+        listaModalContenidoColumnaMontoInput.setAttribute('id', `modificarServicioMontoServicio${servicio._id}`);
+        listaModalContenidoColumnaMontoInput.setAttribute('type', 'number');
+        listaModalContenidoColumnaMonto.appendChild(listaModalContenidoColumnaMontoInput);
+        //modal footer
+        listaModalFooter = document.createElement('div');
+        listaModalFooter.classList.add('modal-footer');
+        listaModalContent.appendChild(listaModalFooter);
+        listaModalFooterFlex = document.createElement('div');
+        listaModalFooterFlex.classList.add('flexContenedor');
+        listaModalFooterFlex.classList.add('centrarFlex');
+        listaModalFooter.appendChild(listaModalFooterFlex);
+        //modal footer btn modificar
+        listaModalFooterModificarBtn = document.createElement('a');
+        listaModalFooterModificarBtn.classList.add('margen-right');
+        listaModalFooterModificarBtn.setAttribute('id', `modificarServicio${servicio._id}`);
+        listaModalFooterFlex.appendChild(listaModalFooterModificarBtn);
+        listaBtnModificarItem = document.createElement('i');
+        listaBtnModificarItem.classList.add('fa');
+        listaBtnModificarItem.classList.add('fa-edit');
+        listaModalFooterModificarBtn.appendChild(listaBtnModificarItem);
+        //modal footer btn activar
+        listaModalFooterActivarBtn = document.createElement('a');
+        listaModalFooterActivarBtn.classList.add('margen-right');
+        listaModalFooterActivarBtn.setAttribute('id', `activarServicio${servicio._id}`);
+        listaModalFooterFlex.appendChild(listaModalFooterActivarBtn);
+        listaBtnActivarItem = document.createElement('i');
+        listaBtnActivarItem.classList.add('fa');
+        listaBtnActivarItem.classList.add('fa-toggle-on');
+        listaModalFooterActivarBtn.appendChild(listaBtnActivarItem);
+        //modal footer btn desactivar
+        listaModalFooterDesactivarBtn = document.createElement('a');
+        listaModalFooterDesactivarBtn.classList.add('margen-right');
+        listaModalFooterDesactivarBtn.setAttribute('id', `desactivarServicio${servicio._id}`);
+        listaModalFooterFlex.appendChild(listaModalFooterDesactivarBtn);
+        listaBtnDesactivarItem = document.createElement('i');
+        listaBtnDesactivarItem.classList.add('fa');
+        listaBtnDesactivarItem.classList.add('fa-toggle-off');
+        listaModalFooterDesactivarBtn.appendChild(listaBtnDesactivarItem);
+        //modal footer btn eliminar
+        listaModalFooterEliminarBtn = document.createElement('a');
+        listaModalFooterEliminarBtn.setAttribute('id', `eliminarServicio${servicio._id}`);
+        listaModalFooterFlex.appendChild(listaModalFooterEliminarBtn);
+        listaBtnEliminarItem = document.createElement('i');
+        listaBtnEliminarItem.classList.add('fa');
+        listaBtnEliminarItem.classList.add('fa-trash');
+        listaModalFooterEliminarBtn.appendChild(listaBtnEliminarItem);
+        //Levanta y cierra el modal
+        let modal = document.querySelector(`#modal${servicio._id}`);
+        let botonModal = document.querySelector(`#abrirModal${servicio._id}`);
+        let cerrarModal = document.querySelector(`#cerrar${servicio._id}`);
+        botonModal.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+        cerrarModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        //Modificar servicio
+        const datosModificacionServicio = () => {
+            let NombreModificado = document.querySelector(`#modificarServicioNombreServicio${servicio._id}`).value;
+            let DescripcionModificada = document.querySelector(`#modificarServicioDescripcionServicio${servicio._id}`).value;
+            let ServicioDomiciolioModificado = document.querySelector(`#modificarServicioDomicilioServicio${servicio._id}`).value;
+            let ServicioMonedaModificado = document.querySelector(`#modificarServicioMonedaServicio${servicio._id}`).value;
+            let ServicioMontoModificado = document.querySelector(`#modificarServicioMontoServicio${servicio._id}`).value;
+            let _id = servicio._id;
+
+            modificarServicioProveedor(NombreModificado, DescripcionModificada, ServicioDomiciolioModificado, ServicioMonedaModificado, ServicioMontoModificado, _id);
+
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El servicio se ha modificado con éxito',
+                'confirmButtonText': 'Excelente'
+            }).then(() => {
+                window.location.href = '/serviciosProveedorYCliente.html';
+            });
+        }
+        let btnModificarServicio = document.querySelector(`#modificarServicio${servicio._id}`);
+
+        //Activar servicio
+        const activarServicio = () => {
+            let _id = servicio._id;
+
+            activarServicioProveedor(_id);
+
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El servicio se ha activado con éxito',
+                'confirmButtonText': 'Excelente'
+            }).then(() => {
+                window.location.href = '/serviciosProveedorYCliente.html';
+            });
+
+        }
+        let btnActivarServicio = document.querySelector(`#activarServicio${servicio._id}`);
+
+        //Desactivar servicio
+        const desactivarServicio = () => {
+            let _id = servicio._id;
+
+            desactivarServicioProveedor(_id);
+
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El servicio se ha desactivado con éxito',
+                'confirmButtonText': 'Excelente'
+            }).then(() => {
+                window.location.href = '/serviciosProveedorYCliente.html';
+            });
+
+        }
+        let btnDesactivarServicio = document.querySelector(`#desactivarServicio${servicio._id}`);
+
+        //Eliminar servicio
+        const eliminarServicio = () => {
+            let _id = servicio._id;
+
+            eliminarServicioProveedor(_id);
+
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El servicio se ha eliminado con éxito',
+                'confirmButtonText': 'Excelente'
+            }).then(() => {
+                window.location.href = '/serviciosProveedorYCliente.html';
+            });
+
+        }
+        let btnEliminarServicio = document.querySelector(`#eliminarServicio${servicio._id}`);
+
+        btnModificarServicio.addEventListener('click', datosModificacionServicio);
+        btnActivarServicio.addEventListener('click', activarServicio);
+        btnDesactivarServicio.addEventListener('click', desactivarServicio);
+        btnEliminarServicio.addEventListener('click', eliminarServicio);
+    });
+
+
+    //Acordeon
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+
+
+
+};
+
+
+
+
+llenarListaServiciosProveedor();

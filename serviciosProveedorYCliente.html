@@ -146,7 +146,7 @@
         </section>
     </header>
     <main>
-        <h1>Servicios de Pet salón</h1>
+        <h1>Servicios de Pet Salón</h1>
         <div class="contenedor">
 
             <div class="dobleColumna contenedorColumna">
@@ -154,7 +154,7 @@
                     <img src="img/logoPetSalon.jpg">
                 </div>
                 <div class="columna">
-                    <p class="w50">Pet salón es una de las mejores opciones que podés encontrar para el cuidado de tu mascota. Hacemos grooming, corte de uñas, baños, limpieza de oídos, masajes, aromaterapia, peinados, tintes y muchas más cosas.</p>
+                    <p class="w50">Pet Salón es una de las mejores opciones que podés encontrar para el cuidado de tu mascota. Hacemos grooming, corte de uñas, baños, limpieza de oídos, masajes, aromaterapia, peinados, tintes y muchas más cosas.</p>
                     <p class="w50">Contamos con personal completamente capacitado para atender las necesidades de tus mascotas. Atendemos perros y gatos de todas las razas y tamaños.</p>
                 </div>
             </div>
@@ -168,236 +168,9 @@
                         </div>
                     </div>
                     <div class="acordeonContenedor nuestrosServicios">
-                        <ul id="serviciosUl">
-                            <li>
-                                <button class="accordion">
-                                    <a href="#">Grooming completo</a>
-                                </button>
-                                <div class="panel">
-                                    <div class="contenedorClasesFlotantes abrirModalContenedor">
-                                        <div class="flotar-der abrirModal morada" id="abrirModal1">
-                                            <i class="fa fa-edit"></i>
-                                        </div>
-                                    </div>
-                                    <p>El grooming completo es una experiencia donde nuestros especialistas se dedican al 100% a tus mascotas durante más de 3 horas. Cada sesión cuenta con aromaterapia, musicoterapia y cristales energéticos para que tu mascota
-                                        se relaje.
-                                    </p>
-                                    <p>Incluye: Aromaterapia, musicoterapia y cristales energéticos; Corte higiénico o corte de pelo (en caso de ser necesario); Corte de uñas; Limpieza y depilación de oídos; Limpieza y exfoliación de plantares; Humectación
-                                        de nariz y codos; Limpieza de lagrimales; Cepillado con reducción de pelo muerto y para deshacer nudos; Baño con el shampú que mejor se adapte a sus necesidades.
+                        <div id="contenedorListaServicios">
 
-                                    </p>
-                                    <div>
-                                        <p><strong>Costos del servicio:</strong></p>
-                                        <p><span class="tipoMoneda">₡</span> 12000.00 - perros pequeños</p>
-                                        <p><span class="tipoMoneda">₡</span> 16000.00 - perros medianos</p>
-                                        <p><span class="tipoMoneda">₡</span> 20000.00 - perros grandes</p>
-                                    </div>
-
-                                    <!--Modal-->
-                                    <div id="modal1" class="modal">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <span class="close">&times;</span>
-                                                <h3 class="padding-top padding-bottom">Edición de servicio</h3>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="">
-                                                    <div class="centrarBloque w50">
-                                                        <div class="unicaColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioNombreServicio0">Nombre del servicio</label>
-                                                                <input type="text" id="agregarServicioNombreServicio0">
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioDescripcionServicio0">Descripción del servicio</label>
-                                                                <textarea id="agregarServicioDescripcionServicio0"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="simpleColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
-                                                                <select id="agregarServicioADomicilio0">
-                                                                    <option value="">-- Seleccioná una opción --</option>
-                                                                    <option value="siDomicilio">Sí</option>
-                                                                    <option value="noDomicilio">No</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioTipoMoneda0">Tipo de moneda</label>
-                                                                <select id="agregarServicioTipoMoneda0">
-                                                                    <option value="">-- Seleccioná el tipo de moneda --</option>
-                                                                    <option value="Colones">Colones</option>
-                                                                    <option value="Dolares">Dólares</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioMonto0">Monto por servicio(s)</label>
-                                                                <input type="number" id="agregarServicioMonto0">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <div class="flexContenedor centrarFlex">
-                                                    <a href="#" class="btn margen-right" id="modificarServicio1">Modificar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarActivar1">Activar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarDesactivar1">Desactivar</a>
-                                                    <a href="#" class="btn" id="modificarEliminar1">Eliminar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <button class="accordion"><a href="#">Baño completo</a></button>
-                                <div class="panel">
-                                    <div class="contenedorClasesFlotantes abrirModalContenedor">
-                                        <div class="flotar-der abrirModal morada" id="abrirModal2">
-                                            <i class="fa fa-edit"></i>
-                                        </div>
-                                    </div>
-                                    <p>Nuestros especialistas se encuentran completamente capacitados para detectar cuál es el tratamiento que mejor se adapta a las necesidades de tu mascota. Cada sesión cuenta con aromaterapia, musicoterapia y cristales
-                                        energéticos para que tu mascota se relaje.
-                                    </p>
-                                    <p>Incluye: Aromaterapia, musicoterapia y cristales energéticos; Corte de uñas; Limpieza de oídos; Limpieza de plantares; Limpieza de lagrimales; Cepillado con reducción de pelo muerto y para deshacer nudos; Baño con el
-                                        shampú que mejor se adapte a sus necesidades.
-
-                                    </p>
-                                    <div>
-                                        <p><strong>Costos del servicio:</strong></p>
-                                        <p><span class="tipoMoneda">₡</span> 5000.00 - perros pequeños</p>
-                                        <p><span class="tipoMoneda">₡</span> 8000.00 - perros medianos</p>
-                                        <p><span class="tipoMoneda">₡</span> 12000.00 - perros grandes</p>
-                                    </div>
-                                    <!--Modal-->
-                                    <div id="modal2" class="modal">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <span class="close">&times;</span>
-                                                <h3 class="padding-top padding-bottom">Edición de servicio</h3>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="">
-                                                    <div class="centrarBloque w50">
-                                                        <div class="unicaColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioNombreServicio0">Nombre del servicio</label>
-                                                                <input type="text" id="agregarServicioNombreServicio0">
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioDescripcionServicio0">Descripción del servicio</label>
-                                                                <textarea id="agregarServicioDescripcionServicio0"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="simpleColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
-                                                                <select id="agregarServicioADomicilio0">
-                                                                    <option value="">-- Seleccioná una opción --</option>
-                                                                    <option value="siDomicilio">Sí</option>
-                                                                    <option value="noDomicilio">No</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioTipoMoneda0">Tipo de moneda</label>
-                                                                <select id="agregarServicioTipoMoneda0">
-                                                                    <option value="">-- Seleccioná el tipo de moneda --</option>
-                                                                    <option value="Colones">Colones</option>
-                                                                    <option value="Dolares">Dólares</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioMonto0">Monto por servicio(s)</label>
-                                                                <input type="number" id="agregarServicioMonto0">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <div class="flexContenedor centrarFlex">
-                                                    <a href="#" class="btn margen-right" id="modificarServicio2">Modificar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarActivar2">Activar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarDesactivar2">Desactivar</a>
-                                                    <a href="#" class="btn" id="modificarEliminar2">Eliminar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <button class="accordion"><a href="#">Extras</a></button>
-                                <div class="panel">
-                                    <div class="contenedorClasesFlotantes abrirModalContenedor">
-                                        <div class="flotar-der abrirModal morada" id="abrirModal3">
-                                            <i class="fa fa-edit"></i>
-                                        </div>
-                                    </div>
-                                    <p>También podés preguntar por nuestras extras.</p>
-                                    <p>Limpieza de dientes, tintes, quitar nudos.</p>
-                                    <!--Modal-->
-                                    <div id="modal3" class="modal">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <span class="close">&times;</span>
-                                                <h3 class="padding-top padding-bottom">Edición de servicio</h3>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="">
-                                                    <div class="centrarBloque w50">
-                                                        <div class="unicaColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioNombreServicio0">Nombre del servicio</label>
-                                                                <input type="text" id="agregarServicioNombreServicio0">
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioDescripcionServicio0">Descripción del servicio</label>
-                                                                <textarea id="agregarServicioDescripcionServicio0"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="simpleColumna contenedorColumna">
-                                                            <div class="columna">
-                                                                <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
-                                                                <select id="agregarServicioADomicilio0">
-                                                                    <option value="">-- Seleccioná una opción --</option>
-                                                                    <option value="siDomicilio">Sí</option>
-                                                                    <option value="noDomicilio">No</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioTipoMoneda0">Tipo de moneda</label>
-                                                                <select id="agregarServicioTipoMoneda0">
-                                                                    <option value="">-- Seleccioná el tipo de moneda --</option>
-                                                                    <option value="Colones">Colones</option>
-                                                                    <option value="Dolares">Dólares</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="columna">
-                                                                <label for="agregarServicioMonto0">Monto por servicio(s)</label>
-                                                                <input type="number" id="agregarServicioMonto0">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <div class="flexContenedor centrarFlex">
-                                                    <a href="#" class="btn margen-right" id="modificarServicio3">Modificar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarActivar3">Activar</a>
-                                                    <a href="#" class="btn margen-right" id="modificarDesactivar3">Desactivar</a>
-                                                    <a href="#" class="btn" id="modificarEliminar3">Eliminar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-
-
+                        </div>
 
                     </div>
                 </div>
@@ -492,16 +265,16 @@
                             <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
                             <select id="agregarServicioADomicilio0">
                                 <option value="">-- Seleccioná una opción --</option>
-                                <option value="siDomicilio">Sí</option>
-                                <option value="noDomicilio">No</option>
+                                <option value="sí">Sí</option>
+                                <option value="no">No</option>
                             </select>
                         </div>
                         <div class="columna">
                             <label for="agregarServicioTipoMoneda0">Tipo de moneda</label>
                             <select id="agregarServicioTipoMoneda0">
                                 <option value="">-- Seleccioná el tipo de moneda --</option>
-                                <option value="Colones">Colones</option>
-                                <option value="Dolares">Dólares</option>
+                                <option value="colones">Colones</option>
+                                <option value="dólares">Dólares</option>
                             </select>
                         </div>
                         <div class="columna">
@@ -509,202 +282,11 @@
                             <input type="number" id="agregarServicioMonto0">
                         </div>
                     </div>
-                    <div class="contenedorClasesFlotantes">
-                        <button class="morada" type="button" id="btn-masAgregarServicio0"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-
-                <!--Segunda línea para agregar servicio-->
-                <div class="agregarServicio ocultar" id="agregarServicioContenedor1">
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <h3>Agregar otro servicio</h3>
-                        </div>
-                    </div>
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioNombreServicio1">Nombre del servicio</label>
-                            <input type="text" id="agregarServicioNombreServicio1">
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioDescripcionServicio1">Descripción del servicio</label>
-                            <textarea id="agregarServicioDescripcionServicio1"></textarea>
-                        </div>
-                    </div>
-                    <div class="simpleColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioADomicilio1">¿Cuenta con servicio a domicilio?</label>
-                            <select id="agregarServicioADomicilio1">
-                                <option value="">-- Seleccioná una opción --</option>
-                                <option value="siDomicilio">Sí</option>
-                                <option value="noDomicilio">No</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioTipoMoneda1">Tipo de moneda</label>
-                            <select id="agregarServicioTipoMoneda1">
-                                <option value="">-- Seleccioná el tipo de moneda --</option>
-                                <option value="Colones">Colones</option>
-                                <option value="Dolares">Dólares</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioMonto1">Monto por servicio(s)</label>
-                            <input type="number" id="agregarServicioMonto1">
-                        </div>
-                    </div>
-                    <div class="contenedorClasesFlotantes">
-                        <button class="morada" type="button" id="btn-masAgregarServicio1"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        <button class="morada" type="button" id="btn-menosAgregarServicio1"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-
-                <!--Tercera línea para agregar servicio-->
-                <div class="agregarServicio ocultar" id="agregarServicioContenedor2">
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <h3>Agregar otro servicio</h3>
-                        </div>
-                    </div>
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioNombreServicio2">Nombre del servicio</label>
-                            <input type="text" id="agregarServicioNombreServicio2">
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioDescripcionServicio2">Descripción del servicio</label>
-                            <textarea id="agregarServicioDescripcionServicio2"></textarea>
-                        </div>
-                    </div>
-                    <div class="simpleColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioADomicilio2">¿Cuenta con servicio a domicilio?</label>
-                            <select id="agregarServicioADomicilio2">
-                                <option value="">-- Seleccioná una opción --</option>
-                                <option value="siDomicilio">Sí</option>
-                                <option value="noDomicilio">No</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioTipoMoneda2">Tipo de moneda</label>
-                            <select id="agregarServicioTipoMoneda2">
-                                <option value="">-- Seleccioná el tipo de moneda --</option>
-                                <option value="Colones">Colones</option>
-                                <option value="Dolares">Dólares</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioMonto2">Monto por servicio(s)</label>
-                            <input type="number" id="agregarServicioMonto2">
-                        </div>
-                    </div>
-                    <div class="contenedorClasesFlotantes">
-                        <button class="morada" type="button" id="btn-masAgregarServicio2"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        <button class="morada" type="button" id="btn-menosAgregarServicio2"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-
-                <!--Cuarta línea para agregar servicio-->
-                <div class="agregarServicio ocultar" id="agregarServicioContenedor3">
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <h3>Agregar otro servicio</h3>
-                        </div>
-                    </div>
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioNombreServicio3">Nombre del servicio</label>
-                            <input type="text" id="agregarServicioNombreServicio3">
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioDescripcionServicio3">Descripción del servicio</label>
-                            <textarea id="agregarServicioDescripcionServicio3"></textarea>
-                        </div>
-                    </div>
-                    <div class="simpleColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioADomicilio3">¿Cuenta con servicio a domicilio?</label>
-                            <select id="agregarServicioADomicilio3">
-                                <option value="">-- Seleccioná una opción --</option>
-                                <option value="siDomicilio">Sí</option>
-                                <option value="noDomicilio">No</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioTipoMoneda3">Tipo de moneda</label>
-                            <select id="agregarServicioTipoMoneda3">
-                                <option value="">-- Seleccioná el tipo de moneda --</option>
-                                <option value="Colones">Colones</option>
-                                <option value="Dolares">Dólares</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioMonto3">Monto por servicio(s)</label>
-                            <input type="number" id="agregarServicioMonto3">
-                        </div>
-                    </div>
-                    <div class="contenedorClasesFlotantes">
-                        <button class="morada" type="button" id="btn-masAgregarServicio3"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        <button class="morada" type="button" id="btn-menosAgregarServicio3"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-
-                <!--Quinta línea para agregar servicio-->
-                <div class="agregarServicio ocultar" id="agregarServicioContenedor4">
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <h3>Agregar otro servicio</h3>
-                        </div>
-                    </div>
-                    <div class="unicaColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioNombreServicio4">Nombre del servicio</label>
-                            <input type="text" id="agregarServicioNombreServicio4">
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioDescripcionServicio4">Descripción del servicio</label>
-                            <textarea id="agregarServicioDescripcionServicio4"></textarea>
-                        </div>
-                    </div>
-                    <div class="simpleColumna contenedorColumna">
-                        <div class="columna">
-                            <label for="agregarServicioADomicilio4">¿Cuenta con servicio a domicilio?</label>
-                            <select id="agregarServicioADomicilio4">
-                                <option value="">-- Seleccioná una opción --</option>
-                                <option value="siDomicilio">Sí</option>
-                                <option value="noDomicilio">No</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioTipoMoneda4">Tipo de moneda</label>
-                            <select id="agregarServicioTipoMoneda4">
-                                <option value="">-- Seleccioná el tipo de moneda --</option>
-                                <option value="Colones">Colones</option>
-                                <option value="Dolares">Dólares</option>
-                            </select>
-                        </div>
-                        <div class="columna">
-                            <label for="agregarServicioMonto4">Monto por servicio(s)</label>
-                            <input type="number" id="agregarServicioMonto4">
-                        </div>
-                    </div>
-                    <div class="contenedorClasesFlotantes">
-                        <button class="morada" type="button" id="btn-menosAgregarServicio4"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                    </div>
                 </div>
                 <div class="centrarTexto agregarServicio">
                     <button type="button" class="btn" id="btn-agregarServicio">Agregar servicio(s)</button>
                 </div>
-
-
-
-
-
-
-
-
             </form>
-
         </div>
     </main>
 
@@ -712,8 +294,10 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/servicios.js"></script>
+    <!-- <script src="js/servicios.js"></script> -->
+    <script src="js/serviciosProveedorCliente-servicio.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/provincias.js"></script>
     <script src="js/serviciosProveedorYCliente.js"></script>

@@ -3,9 +3,9 @@
 const inputSelectCatalogo = document.querySelector('#slt-catalogo');
 const btnGuardarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 
-const registrarPadecimiento = async(pinputcatalogo) => {
+const registrarPadecimiento = async(ptxtInputCatalogo) => {
 
-    pinputcatalogo = inputCatalogoNuevo.value;
+
     await axios({
 
             method: 'post',
@@ -13,7 +13,7 @@ const registrarPadecimiento = async(pinputcatalogo) => {
             responseType: 'json',
             data: {
 
-                padecimiento: pinputcatalogo
+                padecimiento: ptxtInputCatalogo
 
 
             }
@@ -37,10 +37,43 @@ const registrarPadecimiento = async(pinputcatalogo) => {
         });
 };
 
+const registrarVacuna = async(ptxtInputCatalogo, psltCatalogo) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-vacunas',
+            responseType: 'json',
+            data: {
+
+                nombre: ptxtInputCatalogo,
+                esencial: psltCatalogo
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su vacuna se registro con exito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar la vacuna',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
 
 const registrarRaza = async(pinputcatalogo) => {
 
-    pinputcatalogo = inputCatalogoNuevo.value;
     await axios({
 
             method: 'post',
@@ -191,10 +224,13 @@ const iniciarSesion = async(pcorreo, pcontrasenna) => {
 const selectCatalogos = () => {
     switch (inputSelectCatalogo.value) {
         case 'padecimientos':
-            registrarPadecimiento;
+            registrarPadecimiento();
             break;
         case 'razas':
-            registrarRaza;
+            registrarRaza();
+            break;
+        case 'vacunas':
+            registrarVacuna;
             break;
         default:
             console.log('Error default');
@@ -202,4 +238,4 @@ const selectCatalogos = () => {
     }
 }
 
-btnGuardarCatalogo.addEventListener('click', selectCatalogos);
+//btnGuardarCatalogo.addEventListener('click', selectCatalogos);
