@@ -34,7 +34,6 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
     let regexNuevaContrasenna = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,12}$/;
 
     if (claveActual === cliente.contrasenna) {
-        console.log('si entró');
         if (claveActual !== claveNueva) {
             if (regexNuevaContrasenna.test(claveNueva) == false) {
                 error = true;
@@ -48,9 +47,7 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
             } else {
                 claveNueva.classList.remove('error');
                 if (claveNueva === claveConfirmada) {
-                    Swal.fire({
-                        modificarContrasenna(correo, claveNueva);
-                    });
+                    modificarContrasenna(correo, claveNueva);
                 } else {
                     error = true;
                     Swal.fire({
@@ -79,6 +76,7 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
             'confirmButtonText': 'Entendido'
         });
     }
+
 };
 
 /* Fin: Validaciones de contraseñas */

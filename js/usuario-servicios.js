@@ -1,21 +1,24 @@
 'use strict';
 
-const iniciar_sesion = async(correo, contrasenna) => {
+const iniciar_sesion = async(pcorreo, pcontrasenna) => {
     try {
         const response = await axios({
             method: 'get',
-            params: { correo: correo, contrasenna: contrasenna },
+            params: { correo: pcorreo, contrasenna: pcontrasenna },
             url: `http://localhost:3000/api/iniciar-sesion`,
             responseType: 'json'
         });
-        if (response.data.estado == true) {
+        if (response.data.acceso == true) {
             Swal.fire({
-                'icon': 'succes',
+                'icon': 'success',
                 'title': 'Bienvenido',
                 'text': 'Ha iniciado sesión correctamente'
             }).then(() => {
                 sessionStorage.setItem('tipo_usuario', response.data.tipoUsuario);
                 sessionStorage.setItem('nombre_usuario', response.data.nombre);
+
+                sessionStorage.setItem('usuarioConectado', JSON.stringify(response.data));
+
 
                 //redirige al perfil respectivo segun el tipo de id
                 if (sessionStorage.getItem('tipo_usuario') == 'cliente') {
