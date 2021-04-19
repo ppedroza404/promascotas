@@ -20,6 +20,8 @@ const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
 /* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
 
+
+
 const habilitarCanton = () => {
     if (sltProvincia.value != '') {
         sltCanton.disabled = false;
@@ -239,6 +241,25 @@ const validarDatos = () => {
 };
 /* fin: Función para validar los datos del cliente */
 
+
+let pass = '';
+
+let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+    'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+
+function generarPassw() {
+
+
+    for (let i = 1; i <= 8; i++) {
+        var char = Math.floor(Math.random() * str.length + 1);
+
+        pass = pass + str.charAt(char)
+    }
+
+
+    return pass;
+}
+
 /* Inicio: Función para imprimir los datos del cliente */
 
 const imprimirDatos = () => {
@@ -276,15 +297,12 @@ const imprimirDatos = () => {
     console.log(sDistrito);
     console.log(sOtrasSennias);
 
-    Swal.fire({
-            'icon': 'success',
-            'title': 'Su solicitud se proceso con éxito',
-            'text': 'Pronto recibirá un correo electrónico',
-            'confirmButtonText': 'Entendido'
-        })
-        /*.then(() => {
-            window.location.href = 'inicio-sesion.html';
-        });*/
+    let contrasennaRandom = generarPassw();
+
+    registrar_cliente(inputCorreo.value, inputNombreCliente.value, inputPrimApellidoCliente.value, inputSegApellidoCliente.value, sltGenero.value, sltTipoId.value, inputNumId.value, inputNacimiento.value, inputCantMascotas.value, contrasennaRandom, sltProvincia.value, sltCanton.value, sltDistritos.value, inputOtrasSenias.value);
+
+
+
 
 }
 
