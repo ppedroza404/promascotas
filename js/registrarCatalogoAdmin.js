@@ -6,20 +6,23 @@ const txtDivFormAutomatico = document.querySelector('#div-formAutomatico');
 let labelInputCatalogo;
 let txtInputCatalogo;
 let sltCatalogo;
+let txtLabelfabricante;
+let txtInputfabricante;
 
 
 let crearformulario = () => {
     txtDivFormAutomatico.innerHTML = "";
     txtInputCatalogo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
     labelInputCatalogo = crearLable("txt-nombreCatalogo", "Nombre");
-    sltCatalogo = crearSelect("slt-esencial", ["1"], "si")
+    sltCatalogo = crearSelect("slt-esencial", ["1"], "si");
+    txtLabelfabricante = crearLable("txt-fabricante", "Fabricante");
+    txtInputfabricante = crearInput("text", "txt-fabricante", ["input-dobleColumna"], "si");
     if (txtSlt.value == 'vacunas') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
-        txtDivFormAutomatico.appendChild(crearLable("sslt-esencial", "Esencial"));
-        txtDivFormAutomatico.appendChild(sltCatalogo);
-        txtDivFormAutomatico.appendChild(crearOpciones("slt-esencial", ["Seleccione una opción del catálogo", "Si", "No"], ["", "true", "false"]));
-    } else if (txtSlt.value == 'enfermedades') {
+        txtDivFormAutomatico.appendChild(txtLabelfabricante);
+        txtDivFormAutomatico.appendChild(txtInputfabricante);
+    } else if (txtSlt.value == 'tipodeservicio') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
     } else if (txtSlt.value == 'razas') {
@@ -158,11 +161,11 @@ let obtener_datos = () => {
            
         });*/
         let ptxtInputCatalogo = txtInputCatalogo.value;
-        let psltCatalogo = sltCatalogo.value;
+        let ptxtInputfabricante = txtInputfabricante.value;
 
         switch (inputSelectCatalogo.value) {
-            case 'padecimientos':
-                console.log("padecimientos");
+            case 'tipodeservicio':
+                console.log("tipodeservicio");
                 registrarPadecimiento(ptxtInputCatalogo);
                 break;
             case 'razas':
@@ -170,14 +173,20 @@ let obtener_datos = () => {
                 break;
             case 'vacunas':
                 console.log("vacunas");
-                registrarVacuna(ptxtInputCatalogo, psltCatalogo);
+                registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante);
+                break;
+            case 'padecimientos':
+                console.log("tipoMascota");
+                registrarPadecimiento(ptxtInputCatalogo);
+                break;
+            case 'padecimientos':
+                console.log("padecimientos");
+                registrarPadecimiento(ptxtInputCatalogo);
                 break;
             default:
                 console.log('Error default');
 
         }
-
-
 
     }
 };

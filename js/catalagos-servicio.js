@@ -37,7 +37,7 @@ const registrarPadecimiento = async(ptxtInputCatalogo) => {
         });
 };
 
-const registrarVacuna = async(ptxtInputCatalogo, psltCatalogo) => {
+const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
 
 
     await axios({
@@ -48,7 +48,7 @@ const registrarVacuna = async(ptxtInputCatalogo, psltCatalogo) => {
             data: {
 
                 nombre: ptxtInputCatalogo,
-                esencial: psltCatalogo
+                fabricante: ptxtInputfabricante,
 
             }
 
