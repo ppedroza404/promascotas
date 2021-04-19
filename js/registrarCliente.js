@@ -93,28 +93,28 @@ const calcularEdad = (nacimiento) => {
 
 /*
 if (sltTipoId.value == 'nacional') {
-    if (regexCedNacional.test(inputNumId.value) == false) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
-} else if (sltTipoId.value == 'Dimex') {
-    if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
-} else if (sltTipoId.value == 'pasaporte') {
-    if (regexPasaporte.test(inputNumId.value) == false) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
+if (regexCedNacional.test(inputNumId.value) == false) {
+    error = true;
+    inputNumId.classList.add('error');
 } else {
-    sltTipoId.classList.remove('error');
+    inputNumId.classList.remove('error');
+}
+} else if (sltTipoId.value == 'Dimex') {
+if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
+    error = true;
+    inputNumId.classList.add('error');
+} else {
+    inputNumId.classList.remove('error');
+}
+} else if (sltTipoId.value == 'pasaporte') {
+if (regexPasaporte.test(inputNumId.value) == false) {
+    error = true;
+    inputNumId.classList.add('error');
+} else {
+    inputNumId.classList.remove('error');
+}
+} else {
+sltTipoId.classList.remove('error');
 }
 */
 
@@ -225,6 +225,8 @@ const validarDatos = () => {
 
     if (error == false) {
         imprimirDatos();
+        /* SE NECESITA AGREGAR LA FUNCIÓN PARA ENVIAR LA CONTRASEÑA TEMPORAL*/
+        // enviarClaveTemporal();
         Swal.fire({
             'icon': 'success',
             'title': 'Su solicitud se proceso con éxito',
@@ -233,10 +235,8 @@ const validarDatos = () => {
         }).then(() => {
             window.location.href = 'index.html';
         });
-
     };
 };
-
 /* fin: Función para validar los datos del cliente */
 
 /* Inicio: Función para imprimir los datos del cliente */
@@ -291,6 +291,3 @@ const imprimirDatos = () => {
 /* Fin: Función para obtener los datos del cliente */
 
 btnRegistrarCliente.addEventListener('click', validarEdad);
-
-/* Inicio: Función para...*/
-/* fin: Función para... */

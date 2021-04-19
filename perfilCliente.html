@@ -221,15 +221,28 @@
                     <div class="modal-body">
                         <div>
                             <label for="contraseñaActual">Contraseña actual</label>
-                            <input type="password" id="contraseñaActual" class="input-dobleColumna">
+                            <input type="text" id="contraseñaActual" class="input-dobleColumna">
                         </div>
                         <div>
                             <label for="contraseñaNueva">Contraseña nueva</label>
-                            <input type="password" id="contraseñaNueva" class="input-dobleColumna">
+                            <input type="text" id="contraseñaNueva" class="input-dobleColumna">
                         </div>
                         <div>
-                            <label for="contraseñaNuevaConfirmacion">Confirmar contraseña nueva</label>
-                            <input type="password" id="contraseñaNuevaConfirmacion" class="input-dobleColumna">
+                            <label for="contraseñaConfirmacion">Confirmar contraseña nueva</label>
+                            <input type="text" id="contraseñaConfirmacion" class="input-dobleColumna">
+                        </div>
+                        <div class="contenedor-restriccionesContrasenna">
+                            <h3>Restricciones</h3>
+                            <p>La contraseña debe cumplir con los siguientes requisitos:</p>
+                            <ul>
+                                <li>Mínimo de 6 caracteres</li>
+                                <li>Máximo de 12 caracteres</li>
+                                <li>Al menos una letra mayúscula</li>
+                                <li>Al menos una letra minúscula</li>
+                                <li>Al menos un dígito</li>
+                                <li>No espacios en blanco</li>
+                                <li>Al menos 1 carácter especial</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="modal-footer">
