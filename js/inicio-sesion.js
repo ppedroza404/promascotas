@@ -3,6 +3,16 @@ const inputCorreo = document.querySelector('#txt-correo');
 const inputContrasenna = document.querySelector('#txt-contrasenna');
 const btnIniciar = document.querySelector('#btn-iniciar');
 
+///conexión con el back-end
+const obtener_datos = async() => {
+    let correo = inputCorreo.value;
+    let contrasenna = inputContrasenna.value;
+    iniciar_sesion(correo, contrasenna);
+};
+
+
+//Función de validar
+
 const validar = () => {
     let error = false;
 
@@ -26,7 +36,7 @@ const validar = () => {
 
 
     if (error == false) {
-        iniciarSesion(inputCorreo.value, inputContrasenna.value);
+        obtener_datos();
     } else {
         Swal.fire({
             'icon': 'warning',
