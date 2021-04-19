@@ -18,20 +18,20 @@ const nombreUsuarioConectadoHeader = () => {
 
 const mostrarOpcionesMenu = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-    switch (usuario.tipo) {
-        case 'Administrador':
+    switch (usuario.tipoUsuario) {
+        case 'administrador':
             itemsCliente.classList.add('ocultar');
             itemsProveedor.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
             nombreUsuarioConectadoHeader();
             break;
-        case 'Proveedor':
+        case 'proveedor':
             itemsCliente.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
             nombreUsuarioConectadoHeader();
             break;
-        case 'Cliente':
+        case 'cliente':
             itemsProveedor.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');

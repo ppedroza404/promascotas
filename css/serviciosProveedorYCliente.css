@@ -3,8 +3,7 @@
 }
 
 .duennoBody .agregarServicio,
-.duennoBody .abrirModalContenedor,
-.duennoBody .buscadorServicios {
+.duennoBody .abrirModalContenedor {
     display: none;
 }
 
@@ -33,6 +32,82 @@
     min-height: 25px;
     border: 1px solid #6700a3;
     background: #ffffff;
+}
+
+.acordeonContenedor .panel .modal-header h3 {
+    padding: 20px 30px 15px;
+}
+
+.acordeonContenedor .panel .modal-footer a {
+    background: #6700a3;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease 0s;
+    outline: none;
+}
+
+.acordeonContenedor .panel .modal-footer a:hover {
+    color: #6700a3;
+    background: rgba(86, 207, 225, 0.4);
+    text-decoration: none;
+    box-shadow: 0px 0px 10px 2px rgba(86, 207, 225, 0.8);
+    transition: all 0.5s ease 0s;
+}
+
+.acordeonContenedor .panel .dobleColumna .columna:first-child,
+.acordeonContenedor .panel .simpleColumna .columna {
+    width: calc(33% - 20px) !important;
+}
+
+.duennoBody .acordeonContenedor li.Inactivo {
+    display: none;
+}
+
+.proveedorBody .acordeonContenedor li {
+    position: relative;
+}
+
+.proveedorBody .acordeonContenedor li.Activo button {
+    padding-left: 70px;
+}
+
+.proveedorBody .acordeonContenedor li.Inactivo button {
+    padding-left: 81px;
+}
+
+.proveedorBody .acordeonContenedor li.Activo::after,
+.proveedorBody .acordeonContenedor li.Inactivo::after {
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6700a3;
+}
+
+.proveedorBody .acordeonContenedor li.Activo::after {
+    content: "Activo";
+    display: block;
+    color: #6700a3;
+}
+
+.proveedorBody .acordeonContenedor li.Inactivo button a {
+    color: #666666;
+}
+
+.proveedorBody .acordeonContenedor li.Inactivo::after {
+    content: "Inactivo";
+    display: block;
+    color: #666666;
+}
+
+.proveedorBody .acordeonContenedor li.Inactivo .panel {
+    background-color: #eeeeee;
 }
 
 .mostrar {

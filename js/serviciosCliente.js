@@ -61,5 +61,6 @@ const mostrarTabla = () => {
 };
 
 
+
 mostrarTabla();
 inputFiltro.addEventListener('keyup', mostrarTabla);

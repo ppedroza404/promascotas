@@ -158,6 +158,7 @@ let mascotasCliente3 = [{
     ]
 }]
 
+
 let mascotasCliente = [{
         'nombre': 'Cloe',
         'tipo': 'Perro',
@@ -637,7 +638,7 @@ const tipoUsuario = () => {
 
 const iniciarSesion = (correo, contrasenna) => {
     let credencialesCorrectas = false;
-    listaUsuarios.forEach(usuario => {
+    listaUsuarios1.forEach(usuario => {
         if (usuario.correo == correo) {
             if (usuario.contrasenna == contrasenna) {
                 credencialesCorrectas = true;

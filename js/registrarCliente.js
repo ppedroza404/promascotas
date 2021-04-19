@@ -20,6 +20,8 @@ const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
 /* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
 
+
+
 const habilitarCanton = () => {
     if (sltProvincia.value != '') {
         sltCanton.disabled = false;
@@ -93,28 +95,28 @@ const calcularEdad = (nacimiento) => {
 
 /*
 if (sltTipoId.value == 'nacional') {
-    if (regexCedNacional.test(inputNumId.value) == false) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
-} else if (sltTipoId.value == 'Dimex') {
-    if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
-} else if (sltTipoId.value == 'pasaporte') {
-    if (regexPasaporte.test(inputNumId.value) == false) {
-        error = true;
-        inputNumId.classList.add('error');
-    } else {
-        inputNumId.classList.remove('error');
-    }
+if (regexCedNacional.test(inputNumId.value) == false) {
+    error = true;
+    inputNumId.classList.add('error');
 } else {
-    sltTipoId.classList.remove('error');
+    inputNumId.classList.remove('error');
+}
+} else if (sltTipoId.value == 'Dimex') {
+if ((regexDimex1.test(inputNumId.value) == false) || (regexDimex2.test(inputNumId.value) == false)) {
+    error = true;
+    inputNumId.classList.add('error');
+} else {
+    inputNumId.classList.remove('error');
+}
+} else if (sltTipoId.value == 'pasaporte') {
+if (regexPasaporte.test(inputNumId.value) == false) {
+    error = true;
+    inputNumId.classList.add('error');
+} else {
+    inputNumId.classList.remove('error');
+}
+} else {
+sltTipoId.classList.remove('error');
 }
 */
 
@@ -225,6 +227,8 @@ const validarDatos = () => {
 
     if (error == false) {
         imprimirDatos();
+        /* SE NECESITA AGREGAR LA FUNCIÓN PARA ENVIAR LA CONTRASEÑA TEMPORAL*/
+        // enviarClaveTemporal();
         Swal.fire({
             'icon': 'success',
             'title': 'Su solicitud se proceso con éxito',
@@ -233,11 +237,28 @@ const validarDatos = () => {
         }).then(() => {
             window.location.href = 'index.html';
         });
-
     };
 };
-
 /* fin: Función para validar los datos del cliente */
+
+
+let pass = '';
+
+let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+    'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+
+function generarPassw() {
+
+
+    for (let i = 1; i <= 8; i++) {
+        var char = Math.floor(Math.random() * str.length + 1);
+
+        pass = pass + str.charAt(char)
+    }
+
+
+    return pass;
+}
 
 /* Inicio: Función para imprimir los datos del cliente */
 
@@ -276,21 +297,15 @@ const imprimirDatos = () => {
     console.log(sDistrito);
     console.log(sOtrasSennias);
 
-    Swal.fire({
-            'icon': 'success',
-            'title': 'Su solicitud se proceso con éxito',
-            'text': 'Pronto recibirá un correo electrónico',
-            'confirmButtonText': 'Entendido'
-        })
-        /*.then(() => {
-            window.location.href = 'inicio-sesion.html';
-        });*/
+    let contrasennaRandom = generarPassw();
+
+    registrar_cliente(inputCorreo.value, inputNombreCliente.value, inputPrimApellidoCliente.value, inputSegApellidoCliente.value, sltGenero.value, sltTipoId.value, inputNumId.value, inputNacimiento.value, inputCantMascotas.value, contrasennaRandom, sltProvincia.value, sltCanton.value, sltDistritos.value, inputOtrasSenias.value);
+
+
+
 
 }
 
 /* Fin: Función para obtener los datos del cliente */
 
 btnRegistrarCliente.addEventListener('click', validarEdad);
-
-/* Inicio: Función para...*/
-/* fin: Función para... */
