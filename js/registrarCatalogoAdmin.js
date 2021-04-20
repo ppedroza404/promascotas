@@ -8,32 +8,83 @@ let txtInputCatalogo;
 let sltCatalogo;
 let txtLabelfabricante;
 let txtInputfabricante;
+let sltestado;
+let txtlabeltipodemascota;
+let sltTipodemascota;
+
+//Array de tipo de mascotas
+let arrarTipoDeMascotas = [];
+
+const llenarArregloTipoDeMascotas = async() => {
+    arrarTipoDeMascotas = await obtenerTiposDeMascota();
+};
+
+//Creamos los Arreglos de Values y innerHTML para el select de tipo de mascota
+let valuesSltTipoDeMascota = [""];
+let innerHTMLSltTipoDeMascota = ["Seleccione el tipo de mascota"];
+
+const llenarArreglosOpcionsTipoDeMascotaValues = () => {
+    valuesSltTipoDeMascota = [""];
+    arrarTipoDeMascotas.forEach(TipoDeMascota => {
+        valuesSltTipoDeMascota.push(TipoDeMascota._id);
+
+    });
+};
+
+const llenarArreglosOpcionsTipoDeMascotainnerHTML = () => {
+    innerHTMLSltTipoDeMascota = ["Seleccione el tipo de mascota"];
+    arrarTipoDeMascotas.forEach(TipoDeMascota => {
+        innerHTMLSltTipoDeMascota.push(TipoDeMascota.tipo);
+
+    });
+};
+
+
 
 
 let crearformulario = () => {
     txtDivFormAutomatico.innerHTML = "";
-    txtInputCatalogo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "si");
+    llenarArregloTipoDeMascotas();
     labelInputCatalogo = crearLable("txt-nombreCatalogo", "Nombre");
-    sltCatalogo = crearSelect("slt-esencial", ["1"], "si");
+    txtInputCatalogo = crearInput("text", "txt-nombreCatalogo", ["input-dobleColumna"], "required");
+    sltCatalogo = crearSelect("slt-esencial", ["1"], "required");
     txtLabelfabricante = crearLable("txt-fabricante", "Fabricante");
-    txtInputfabricante = crearInput("text", "txt-fabricante", ["input-dobleColumna"], "si");
+    txtInputfabricante = crearInput("text", "txt-fabricante", ["input-dobleColumna"], "required");
+    sltestado = crearSelect("slt-estado", ["input-dobleColumna"], "required", "");
+    txtlabeltipodemascota = crearLable("txt-tipodemascota", "Tipo de mascota");
+    sltTipodemascota = crearSelect("txt-tipodemascota", ["input-dobleColumna"], "required", "");
     if (txtSlt.value == 'vacunas') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
         txtDivFormAutomatico.appendChild(txtLabelfabricante);
         txtDivFormAutomatico.appendChild(txtInputfabricante);
+
     } else if (txtSlt.value == 'tipodeservicio') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
-    } else if (txtSlt.value == 'razas') {
+        txtDivFormAutomatico.appendChild(crearLable("slt-estado", "Estado"));
+        txtDivFormAutomatico.appendChild(sltestado);
+        crearOpciones(sltestado, ["activo", "inactivo"], ["Activo", "Inactivo"]);
+    } else
+    if (txtSlt.value == 'razas') {
+        llenarArreglosOpcionsTipoDeMascotaValues();
+        llenarArreglosOpcionsTipoDeMascotainnerHTML();
+        txtDivFormAutomatico.appendChild(txtlabeltipodemascota);
+        txtDivFormAutomatico.appendChild(sltTipodemascota);
+        crearOpciones(sltTipodemascota, innerHTMLSltTipoDeMascota, valuesSltTipoDeMascota);
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
+        txtDivFormAutomatico.appendChild(crearLable("slt-estado", "Estado"));
+        txtDivFormAutomatico.appendChild(sltestado);
+        crearOpciones(sltestado, ["activo", "inactivo"], ["Activo", "Inactivo"]);
     } else if (txtSlt.value == 'tipoMascota') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
+
     } else if (txtSlt.value == 'padecimientos') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
+
     } else {
         txtDivFormAutomatico.innerHTML = "";
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
@@ -50,7 +101,7 @@ let crearLable = (elfor, elinnertxt) => {
     return nuevoLable;
 };
 
-// Crea imput (type="tipo" id"elid" class=["clase1","clase2","clase3"] required "si"/"no"
+// Crea imput (type="tipo" id"elid" class=["clase1","clase2","clase3"] required "required"/"no"
 let crearInput = (tipo, elid, clases, requerido) => {
 
     let nuevoInput = document.createElement('Input');
@@ -63,46 +114,44 @@ let crearInput = (tipo, elid, clases, requerido) => {
         nuevoInput.classList.add(clase);
     }
 
-    if (requerido == "si") {
+    if (requerido == "required") {
         nuevoInput.setAttribute("required", "");
     }
 
     return nuevoInput;
 };
 
-// Crea select (Id="" lass=["clase1","clase2","clase3"] required "si"/"no"
-let crearSelect = (elid, clases, requerido) => {
+// Crea select (Id="" class=["clase1","clase2","clase3"] required "required"/"no" disabled "required"/"no"
+let crearSelect = (elid, clases, requerido, disabled) => {
     let nuevoSelect = document.createElement('select');
     nuevoSelect.setAttribute("name", elid);
     nuevoSelect.setAttribute("id", elid);
 
     for (let index = 0; index < clases.length; index++) {
-        const clase = clases[index];
+        let clase = clases[index];
         nuevoSelect.classList.add(clase);
     }
 
-    if (requerido == "si") {
+    if (requerido == "required") {
         nuevoSelect.setAttribute("required", "");
+    }
+    if (disabled == "disabled") {
+        nuevoSelect.setAttribute("disabled", "");
     }
     return nuevoSelect;
 }
 
-// Crea Option (Id="igual que ID del select" values=["valu1","value2","value3"] text=["HTMLtext1","HTMLtext2","HTMLtext3"]"
-let crearOpciones = (select, valores, innertext) => {
-    let nuevoOption = document.createElement("option");
-    let selector = document.querySelector("#" + select);
+// Crea Option (values=["valu1","value2","value3"] text=["HTMLtext1","HTMLtext2","HTMLtext3"]"
+let crearOpciones = (selectElement, valores, innertext) => {
 
     for (let index = 0; index < valores.length; index++) {
-        const option = document.createElement("option");
+        let option = document.createElement("option");
         option.text = valores[index];
         option.value = innertext[index];
-        selector.add(option);
+        selectElement.add(option);
 
     }
 
-
-
-    return nuevoOption;
 }
 
 
@@ -162,20 +211,22 @@ let obtener_datos = () => {
         });*/
         let ptxtInputCatalogo = txtInputCatalogo.value;
         let ptxtInputfabricante = txtInputfabricante.value;
+        let psltestado = sltestado.value;
+        let psltTipodemascota = sltTipodemascota.value;
 
         switch (inputSelectCatalogo.value) {
             case 'tipodeservicio':
                 console.log("tipodeservicio");
-                registrarPadecimiento(ptxtInputCatalogo);
+                registrarTipoServicio(ptxtInputCatalogo, psltestado);
                 break;
             case 'razas':
-                registrarRaza(ptxtInputCatalogo);
+                registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota);
                 break;
             case 'vacunas':
                 console.log("vacunas");
                 registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante);
                 break;
-            case 'padecimientos':
+            case 'tipoMascota':
                 console.log("tipoMascota");
                 registrarPadecimiento(ptxtInputCatalogo);
                 break;
@@ -190,6 +241,12 @@ let obtener_datos = () => {
 
     }
 };
+
+
+
+
+
+
 crearformulario();
 btnRegistrarCatalogo.addEventListener('click', obtener_datos);
 txtSlt.addEventListener('change', crearformulario);

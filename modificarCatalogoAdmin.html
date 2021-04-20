@@ -96,20 +96,15 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="###">Listar Mascotas</a>
+                            <a href="###">Catalogo</a>
                             <ul>
                                 <li>
-                                    <a href="listarCatalogoAdmin.html">Enfermedades</a>
+                                    <a href="registrarCatalogoAdmin.html">Catalogo de registro</a>
                                 </li>
                                 <li>
-                                    <a href="listarCatalogoAdmin.html">Mascotas por raza</a>
+                                    <a href="modificarCatalogoAdmin.html">Modificar Catalogos</a>
                                 </li>
-                                <li>
-                                    <a href="listarCatalogoAdmin.html">Vacunas por mascota</a>
-                                </li>
-                                <li>
-                                    <a href="listarCatalogoAdmin.html">Razas</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
@@ -162,8 +157,9 @@
                     <div>
                         <label for="slt-catalogo">Categoría</label>
                         <select name="slt-catalogo" id="slt-catalogo">
-                             <option value="Nulo">Por favor seleccione una opción del catálogo</option>
-                            <option value="enfermedades">Enfermedades</option>
+                            <option value="Nulo">Por favor seleccione una opción del catálogo</option>
+                            <option value="tipoServicio">Tipo de servicio</option>
+                            <option value="padecimientos">Padecimientos</option>
                             <option value="tiposMascota">Tipos de mascota</option>
                             <option value="razas">Razas</option>
                             <option value="vacunas">Vacunas</option>
@@ -198,8 +194,11 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <!--3Party Scripts -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--3Party Scripts -->
+    <script src="js/catalagos-servicio.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/modificarCatalogoAdmin.js"></script>
 </body>

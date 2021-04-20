@@ -2,6 +2,12 @@
 const tablaCompleta = document.querySelector('table');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
+let tipodeservicios;
+
+const obtenerTiposDeServicios = async() => {
+    tipodeservicios = await listarTipoServicio();
+}
+
 
 const limpiarTabla = () => {
     for (var i = tablaCatalogo.rows.length - 1; i >= 0; i--) {
@@ -17,8 +23,10 @@ const mostrarCatalogoSeleccionado = () => {
     tablaCompleta.classList.remove('ocultar');
     limpiarTabla();
 
-    if (selectCatalogo.value == 'enfermedades') {
-        mostrarTablaEnfermedades()
+    if (selectCatalogo.value == 'tipoServicio') {
+        mostrarTablaTipoServicio()
+    } else if (selectCatalogo.value == 'padecimientos') {
+        mostrarTablapadecimientos()
     } else if (selectCatalogo.value == 'tiposMascota') {
         mostrarTablaTiposMascota()
     } else if (selectCatalogo.value == 'razas') {
@@ -31,14 +39,70 @@ const mostrarCatalogoSeleccionado = () => {
 };
 
 
-
-const mostrarTablaEnfermedades = () => {
+const mostrarTablaTipoServicio = () => {
 
     limpiarTabla();
 
-    enfermedadesAdmin.forEach(item => {
+    tipodeservicios.forEach(servicio => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.enfermedades;
+        fila.insertCell().innerHTML = servicio.nombre;
+        let celdaAcciones1 = fila.insertCell();
+
+
+        let botonActivar = document.createElement('i');
+        botonActivar.classList.add('fa');
+        botonActivar.classList.add('fa-toggle-on');
+        botonActivar.addEventListener('click', () => {
+            console.log('activado')
+        });
+
+
+        celdaAcciones1.appendChild(botonActivar);
+
+        let celdaAcciones2 = fila.insertCell();
+
+        let botonDesactivar = document.createElement('button');
+        botonDesactivar.classList.add('btn');
+        botonDesactivar.innerText = 'Desactivar';
+        botonDesactivar.addEventListener('click', () => {
+            console.log('desactivado')
+        });
+
+        celdaAcciones2.appendChild(botonDesactivar);
+
+        let celdaAcciones3 = fila.insertCell();
+
+        let botonModificar = document.createElement('button');
+        botonModificar.classList.add('btn');
+        botonModificar.innerText = 'Modificar';
+        botonModificar.addEventListener('click', () => {
+            console.log('modificado')
+        });
+
+        celdaAcciones3.appendChild(botonModificar);
+
+        let celdaAcciones4 = fila.insertCell();
+
+        let botonEliminar = document.createElement('button');
+        botonEliminar.classList.add('btn');
+        botonEliminar.innerText = 'Eliminar';
+        botonEliminar.addEventListener('click', () => {
+            console.log('eliminado')
+        });
+
+        celdaAcciones4.appendChild(botonEliminar);
+    })
+}
+
+
+
+const mostrarTablapadecimientos = () => {
+
+    limpiarTabla();
+
+    padecimientosAdmin.forEach(item => {
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.padecimientos;
         let celdaAcciones1 = fila.insertCell();
 
 
@@ -252,7 +316,7 @@ selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
 
 
 
-
+obtenerTiposDeServicios();
 ocultaTabla();
 
 

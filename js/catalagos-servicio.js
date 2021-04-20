@@ -3,6 +3,78 @@
 const inputSelectCatalogo = document.querySelector('#slt-catalogo');
 const btnGuardarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 
+
+const obtenerTiposDeMascota = async() => {
+    let listaTipoDeMascota;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodemascotas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaTipoDeMascota = response.data.tipodemascotas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaTipoDeMascota;
+};
+
+//Matenimineto Tipo de Servicio 
+const registrarTipoServicio = async(ptxtInputCatalogo, psltestado) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-tipodeservicios',
+            responseType: 'json',
+            data: {
+
+                nombre: ptxtInputCatalogo,
+                estado: psltestado,
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su registró el padecimiento con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el padecimiento',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const listarTipoServicio = async() => {
+    let listaTipoDeServicio;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodeservicios',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaTipoDeServicio = response.data.ListaDeTipoDeServicio;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaTipoDeServicio;
+};
+
+
+
 const registrarPadecimiento = async(ptxtInputCatalogo) => {
 
 
@@ -72,7 +144,7 @@ const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
 };
 
 
-const registrarRaza = async(pinputcatalogo) => {
+const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
 
     await axios({
 
@@ -81,8 +153,9 @@ const registrarRaza = async(pinputcatalogo) => {
             responseType: 'json',
             data: {
 
-                raza: pinputcatalogo
-
+                raza: pinputcatalogo,
+                estado: psltestado,
+                _Idtipomascota: psltTipodemascota,
 
             }
 
@@ -219,23 +292,3 @@ const iniciarSesion = async(pcorreo, pcontrasenna) => {
             console.log(error)
         });
 };
-
-
-const selectCatalogos = () => {
-    switch (inputSelectCatalogo.value) {
-        case 'padecimientos':
-            registrarPadecimiento();
-            break;
-        case 'razas':
-            registrarRaza();
-            break;
-        case 'vacunas':
-            registrarVacuna;
-            break;
-        default:
-            console.log('Error default');
-
-    }
-}
-
-//btnGuardarCatalogo.addEventListener('click', selectCatalogos);
