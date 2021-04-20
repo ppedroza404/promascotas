@@ -4,6 +4,41 @@ const inputSelectCatalogo = document.querySelector('#slt-catalogo');
 const btnGuardarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 
 
+const listarVacunas = async() => {
+    let listaVacunas;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-vacunas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaVacunas = response.data.ListaDeVacunas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaVacunas;
+};
+
+const listarRazas = async() => {
+    let listaRazas;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-razas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaRazas = response.data.ListaDeRazas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaRazas;
+};
+
+
 const obtenerTiposDeMascota = async() => {
     let listaTipoDeMascota;
     await axios({
@@ -73,9 +108,75 @@ const listarTipoServicio = async() => {
     return listaTipoDeServicio;
 };
 
+const listarPadecimientos = async() => {
+    let listaPadecimientos;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-padecimientos',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaPadecimientos = response.data.ListaDePadecimientos;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaPadecimientos;
+};
 
 
-const registrarPadecimiento = async(ptxtInputCatalogo) => {
+const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-tipodemascotas',
+            responseType: 'json',
+            data: {
+
+                tipo: ptxtInputCatalogo,
+                estado: psltestado
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su tipo de mascota se registro con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el padecimiento',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const listarTipoMascota = async() => {
+    let TipoMascota;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodemascotas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            TipoMascota = response.data.tipodemascotas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return TipoMascota;
+};
+const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
 
 
     await axios({
@@ -85,7 +186,8 @@ const registrarPadecimiento = async(ptxtInputCatalogo) => {
             responseType: 'json',
             data: {
 
-                padecimiento: ptxtInputCatalogo
+                padecimiento: ptxtInputCatalogo,
+                estado: psltestado
 
 
             }

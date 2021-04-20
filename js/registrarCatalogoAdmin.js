@@ -80,11 +80,14 @@ let crearformulario = () => {
     } else if (txtSlt.value == 'tipoMascota') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
+        txtDivFormAutomatico.appendChild(sltestado);
+        crearOpciones(sltestado, ["activo", "inactivo"], ["Activo", "Inactivo"]);
 
     } else if (txtSlt.value == 'padecimientos') {
         txtDivFormAutomatico.appendChild(labelInputCatalogo);
         txtDivFormAutomatico.appendChild(txtInputCatalogo);
-
+        txtDivFormAutomatico.appendChild(sltestado);
+        crearOpciones(sltestado, ["activo", "inactivo"], ["Activo", "Inactivo"]);
     } else {
         txtDivFormAutomatico.innerHTML = "";
         txtDivFormAutomatico.appendChild(crearLable("txt-nombreCatalogo", "Seleccione Un catalogo"));
@@ -228,11 +231,11 @@ let obtener_datos = () => {
                 break;
             case 'tipoMascota':
                 console.log("tipoMascota");
-                registrarPadecimiento(ptxtInputCatalogo);
+                registrarTipoMascota(ptxtInputCatalogo, psltestado);
                 break;
             case 'padecimientos':
                 console.log("padecimientos");
-                registrarPadecimiento(ptxtInputCatalogo);
+                registrarPadecimiento(ptxtInputCatalogo, psltestado);
                 break;
             default:
                 console.log('Error default');

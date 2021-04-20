@@ -3,6 +3,19 @@ const tablaCompleta = document.querySelector('table');
 const tablaCatalogo = document.querySelector('#tbl-catalogos tbody');
 const selectCatalogo = document.querySelector('#slt-catalogo');
 let tipodeservicios;
+let listaPadecimientos;
+let tiposMascotaAdmin;
+let razasAdmin;
+let vacunasAdmin;
+
+const obtenerVacunas = async() => {
+    vacunasAdmin = await listarVacunas();
+}
+
+const obtenerRaza = async() => {
+    razasAdmin = await listarRazas();
+}
+
 
 const obtenerTiposDeServicios = async() => {
     tipodeservicios = await listarTipoServicio();
@@ -94,15 +107,18 @@ const mostrarTablaTipoServicio = () => {
     })
 }
 
+const obtenerPadecimientos = async() => {
+    listaPadecimientos = await listarPadecimientos();
+}
 
 
 const mostrarTablapadecimientos = () => {
 
     limpiarTabla();
 
-    padecimientosAdmin.forEach(item => {
+    listaPadecimientos.forEach(padecimiento => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.padecimientos;
+        fila.insertCell().innerHTML = padecimiento.padecimiento;
         let celdaAcciones1 = fila.insertCell();
 
 
@@ -157,8 +173,7 @@ const mostrarTablaRazas = () => {
 
     razasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.razas;
-
+        fila.insertCell().innerHTML = item.raza;
         let celdaAcciones1 = fila.insertCell();
 
         let botonActivar = document.createElement('i');
@@ -205,13 +220,18 @@ const mostrarTablaRazas = () => {
     })
 }
 
+const obtenerTiposMascota = async() => {
+    tiposMascotaAdmin = await listarTipoMascota();
+}
+
+
 const mostrarTablaTiposMascota = () => {
 
     limpiarTabla();
 
-    tiposMascotaAdmin.forEach(item => {
+    tiposMascotaAdmin.forEach(tipo => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.tiposMascota;
+        fila.insertCell().innerHTML = tipo.tipo;
         let celdaAcciones1 = fila.insertCell();
 
         let botonActivar = document.createElement('i');
@@ -264,7 +284,7 @@ const mostrarTablaVacunas = () => {
 
     vacunasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.vacunas;
+        fila.insertCell().innerHTML = item.nombre;
         let celdaAcciones1 = fila.insertCell();
 
         let botonActivar = document.createElement('i');
@@ -313,9 +333,10 @@ const mostrarTablaVacunas = () => {
 
 selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
 
-
-
-
+obtenerVacunas();
+obtenerRaza();
+obtenerTiposMascota();
+obtenerPadecimientos();
 obtenerTiposDeServicios();
 ocultaTabla();
 
