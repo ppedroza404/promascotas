@@ -394,3 +394,117 @@ const iniciarSesion = async(pcorreo, pcontrasenna) => {
             console.log(error)
         });
 };
+
+
+const desactivarTipoServicio = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-tipoServicio',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de servicio se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarTipoServicio = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-tipoServicio',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de servicio se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarTipoServicio = async(pNombreModificado, p_id) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-tipoServicio',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                nombre: pNombreModificado,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de servicio se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el tipo de servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+const eliminarTipoServicio = async(p_id) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-TipoServicio',
+            responseType: 'json',
+            data: {
+                _id: p_id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de servicio se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar el tipo de servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};

@@ -20,7 +20,7 @@ const limpiarTabla = () => {
     }
 }
 
-const ocultaTabla = () => {
+const ocultarTabla = () => {
     tablaCompleta.classList.add('ocultar');
     filtroEnfermedadesContenedor.classList.add('ocultar');
     filtroTipoContenedor.classList.add('ocultar');
@@ -57,7 +57,7 @@ const mostrarCatalogoSeleccionado = () => {
         filtroRazasContenedor.classList.add('ocultar');
         mostrarTablaVacunas()
     } else if (selectCatalogo.value == 'Nulo') {
-        ocultaTabla()
+        ocultarTabla()
     }
 };
 
@@ -67,11 +67,9 @@ const mostrarTablaEnfermedades = () => {
     limpiarTabla();
 
     enfermedadesAdmin.forEach(item => {
-        if (item.enfermedades.toLowerCase().includes(filtro)) {
-            let fila = tablaCatalogo.insertRow();
-            fila.insertCell().innerHTML = item.enfermedades;
+        let fila = tablaCatalogo.insertRow();
+        fila.insertCell().innerHTML = item.enfermedades;
 
-        }
     })
 
     inputFiltroEnfermedades.addEventListener('keyup', mostrarTablaEnfermedades);
@@ -125,17 +123,15 @@ selectCatalogo.addEventListener('change', mostrarCatalogoSeleccionado);
 const registrarCatalogo = () => {
     window.location.href = 'registrarCatalogoAdmin.html';
 };
+const modificarCatalogo = () => {
+    window.location.href = 'modificarCatalogoAdmin.html';
+};
 
 btnCatalogo.addEventListener('click', () => {
     registrarCatalogo();
 });
 
-const modificarCatalogo = () => {
-    window.location.href = 'modificarCatalogoAdmin.html';
-};
-
 btnModificarCatalogo.addEventListener('click', () => {
     modificarCatalogo();
 });
-
-ocultaTabla();
+ocultarTabla();

@@ -147,7 +147,7 @@ const eliminarServicioProveedor = async(p_id) => {
 
     await axios({
             method: 'delete',
-            url: 'http://localhost:3000/api/eliminar-usuario',
+            url: 'http://localhost:3000/api/eliminar-serviciosProveedor',
             responseType: 'json',
             data: {
                 _id: p_id
