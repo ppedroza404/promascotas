@@ -118,9 +118,9 @@ const mostrarTablapadecimientos = () => {
 
         let celdaAcciones2 = fila.insertCell();
 
-        let botonDesactivar = document.createElement('button');
-        botonDesactivar.classList.add('btn');
-        botonDesactivar.innerText = 'Desactivar';
+        let botonDesactivar = document.createElement('i')
+        botonDesactivar.classList.add('fa');
+        botonDesactivar.classList.add('fa-toggle-off');
         botonDesactivar.addEventListener('click', () => {
             console.log('desactivado')
         });
@@ -129,9 +129,9 @@ const mostrarTablapadecimientos = () => {
 
         let celdaAcciones3 = fila.insertCell();
 
-        let botonModificar = document.createElement('button');
-        botonModificar.classList.add('btn');
-        botonModificar.innerText = 'Modificar';
+        let botonModificar = document.createElement('i');
+        botonModificar.classList.add('fa');
+        botonModificar.classList.add('fa-edit');
         botonModificar.addEventListener('click', () => {
             console.log('modificado')
         });
@@ -140,9 +140,9 @@ const mostrarTablapadecimientos = () => {
 
         let celdaAcciones4 = fila.insertCell();
 
-        let botonEliminar = document.createElement('button');
-        botonEliminar.classList.add('btn');
-        botonEliminar.innerText = 'Eliminar';
+        let botonEliminar = document.createElement('i');
+        botonEliminar.classList.add('fa');
+        botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
             console.log('eliminado')
         });
@@ -161,9 +161,9 @@ const mostrarTablaRazas = () => {
 
         let celdaAcciones1 = fila.insertCell();
 
-        let botonActivar = document.createElement('button');
-        botonActivar.classList.add('btn');
-        botonActivar.innerText = 'Activar';
+        let botonActivar = document.createElement('i');
+        botonActivar.classList.add('fa');
+        botonActivar.classList.add('fa-toggle-on');
         botonActivar.addEventListener('click', () => {
             console.log('activado')
         });
@@ -172,9 +172,9 @@ const mostrarTablaRazas = () => {
 
         let celdaAcciones2 = fila.insertCell();
 
-        let botonDesactivar = document.createElement('button');
-        botonDesactivar.classList.add('btn');
-        botonDesactivar.innerText = 'Desactivar';
+        let botonDesactivar = document.createElement('i')
+        botonDesactivar.classList.add('fa');
+        botonDesactivar.classList.add('fa-toggle-off');
         botonDesactivar.addEventListener('click', () => {
             console.log('desactivado')
         });
@@ -183,9 +183,9 @@ const mostrarTablaRazas = () => {
 
         let celdaAcciones3 = fila.insertCell();
 
-        let botonModificar = document.createElement('button');
-        botonModificar.classList.add('btn');
-        botonModificar.innerText = 'Modificar';
+        let botonModificar = document.createElement('i');
+        botonModificar.classList.add('fa');
+        botonModificar.classList.add('fa-edit');
         botonModificar.addEventListener('click', () => {
             console.log('modificado')
         });
@@ -194,9 +194,9 @@ const mostrarTablaRazas = () => {
 
         let celdaAcciones4 = fila.insertCell();
 
-        let botonEliminar = document.createElement('button');
-        botonEliminar.classList.add('btn');
-        botonEliminar.innerText = 'Eliminar';
+        let botonEliminar = document.createElement('i');
+        botonEliminar.classList.add('fa');
+        botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
             console.log('eliminado')
         });
@@ -214,9 +214,9 @@ const mostrarTablaTiposMascota = () => {
         fila.insertCell().innerHTML = item.tiposMascota;
         let celdaAcciones1 = fila.insertCell();
 
-        let botonActivar = document.createElement('button');
-        botonActivar.classList.add('btn');
-        botonActivar.innerText = 'Activar';
+        let botonActivar = document.createElement('i');
+        botonActivar.classList.add('fa');
+        botonActivar.classList.add('fa-toggle-on');
         botonActivar.addEventListener('click', () => {
             console.log('activado')
         });
@@ -225,9 +225,9 @@ const mostrarTablaTiposMascota = () => {
 
         let celdaAcciones2 = fila.insertCell();
 
-        let botonDesactivar = document.createElement('button');
-        botonDesactivar.classList.add('btn');
-        botonDesactivar.innerText = 'Desactivar';
+        let botonDesactivar = document.createElement('i')
+        botonDesactivar.classList.add('fa');
+        botonDesactivar.classList.add('fa-toggle-off');
         botonDesactivar.addEventListener('click', () => {
             console.log('desactivado')
         });
@@ -236,9 +236,9 @@ const mostrarTablaTiposMascota = () => {
 
         let celdaAcciones3 = fila.insertCell();
 
-        let botonModificar = document.createElement('button');
-        botonModificar.classList.add('btn');
-        botonModificar.innerText = 'Modificar';
+        let botonModificar = document.createElement('i');
+        botonModificar.classList.add('fa');
+        botonModificar.classList.add('fa-edit');
         botonModificar.addEventListener('click', () => {
             console.log('modificado')
         });
@@ -247,9 +247,9 @@ const mostrarTablaTiposMascota = () => {
 
         let celdaAcciones4 = fila.insertCell();
 
-        let botonEliminar = document.createElement('button');
-        botonEliminar.classList.add('btn');
-        botonEliminar.innerText = 'Eliminar';
+        let botonEliminar = document.createElement('i');
+        botonEliminar.classList.add('fa');
+        botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
             console.log('eliminado')
         });
@@ -267,9 +267,9 @@ const mostrarTablaVacunas = () => {
         fila.insertCell().innerHTML = item.vacunas;
         let celdaAcciones1 = fila.insertCell();
 
-        let botonActivar = document.createElement('button');
-        botonActivar.classList.add('btn');
-        botonActivar.innerText = 'Activar';
+        let botonActivar = document.createElement('i');
+        botonActivar.classList.add('fa');
+        botonActivar.classList.add('fa-toggle-on');
         botonActivar.addEventListener('click', () => {
             console.log('activado')
         });
@@ -278,9 +278,9 @@ const mostrarTablaVacunas = () => {
 
         let celdaAcciones2 = fila.insertCell();
 
-        let botonDesactivar = document.createElement('button');
-        botonDesactivar.classList.add('btn');
-        botonDesactivar.innerText = 'Desactivar';
+        let botonDesactivar = document.createElement('i')
+        botonDesactivar.classList.add('fa');
+        botonDesactivar.classList.add('fa-toggle-off');
         botonDesactivar.addEventListener('click', () => {
             console.log('desactivado')
         });
@@ -289,9 +289,9 @@ const mostrarTablaVacunas = () => {
 
         let celdaAcciones3 = fila.insertCell();
 
-        let botonModificar = document.createElement('button');
-        botonModificar.classList.add('btn');
-        botonModificar.innerText = 'Modificar';
+        let botonModificar = document.createElement('i');
+        botonModificar.classList.add('fa');
+        botonModificar.classList.add('fa-edit');
         botonModificar.addEventListener('click', () => {
             console.log('modificado')
         });
@@ -300,9 +300,9 @@ const mostrarTablaVacunas = () => {
 
         let celdaAcciones4 = fila.insertCell();
 
-        let botonEliminar = document.createElement('button');
-        botonEliminar.classList.add('btn');
-        botonEliminar.innerText = 'Eliminar';
+        let botonEliminar = document.createElement('i');
+        botonEliminar.classList.add('fa');
+        botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
             console.log('eliminado')
         });

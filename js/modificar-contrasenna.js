@@ -3,9 +3,9 @@
 let modal = document.querySelector('#modalModificarContrasenna');
 let abrirModal = document.querySelector('#abrirModalContrasenna')
 let cerrarModal = document.querySelector("#modalModificarContrasenna .close");
-const contrasennaActual = document.querySelector('#contraseñaActual');
-const contrasennaNueva = document.querySelector('#contraseñaNueva');
-const contrasennaConfirmada = document.querySelector('#contraseñaConfirmacion');
+const contrasennaActual = document.querySelector('#contrasennaActual');
+const contrasennaNueva = document.querySelector('#contrasennaNueva');
+const contrasennaConfirmada = document.querySelector('#contrasennaConfirmacion');
 const btnGuardarContrasenna = document.querySelector('#btn-guardar-nuevaCont');
 
 
@@ -31,13 +31,16 @@ const obtenerDatos = () => {
 const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) => {
 
     let error = false;
-    let regexNuevaContrasenna = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,12}$/;
+    let regexNuevaContrasenna = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/;
+
+
 
     if (claveActual === cliente.contrasenna) {
+        console.log('si entró')
         if (claveActual !== claveNueva) {
             if (regexNuevaContrasenna.test(claveNueva) == false) {
                 error = true;
-                claveNueva.classList.add('error');
+                contrasennaNueva.classList.add('error');
                 Swal.fire({
                     'icon': 'warning',
                     'title': 'No se pudo registrar su solicitud',
@@ -45,9 +48,15 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
                     'confirmButtonText': 'Entendido'
                 });
             } else {
-                claveNueva.classList.remove('error');
+                contrasennaNueva.classList.remove('error');
                 if (claveNueva === claveConfirmada) {
                     modificarContrasenna(correo, claveNueva);
+                    Swal.fire({
+                        'icon': 'success',
+                        'title': 'Solicitud completada',
+                        'text': 'La contraseña se actualizó',
+                        'confirmButtonText': 'Entendido'
+                    });
                 } else {
                     error = true;
                     Swal.fire({
@@ -113,7 +122,7 @@ const validarDatos = () => {
     }
 
     if (error == false) {
-        validarContrasennas();
+        obtenerDatos();
     } else {
         Swal.fire({
             'icon': 'warning',

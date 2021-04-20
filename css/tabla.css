@@ -39,3 +39,59 @@
     border-bottom: 2px solid #6700a3;
     text-align: center;
 }
+
+.tabla td i {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #6700a3;
+    position: relative;
+}
+
+.tabla td i::after {
+    display: block;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    top: 6px;
+    left: 35px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.5s ease 0s;
+    width: 0;
+    overflow: hidden;
+}
+
+.tabla td i.fa-toggle-on::after {
+    content: "Activar";
+}
+
+.tabla td i.fa-toggle-on:hover::after {
+    transition: all 0.5s ease 0s;
+    width: 42px;
+}
+
+.tabla td i.fa-toggle-off::after {
+    content: "Desactivar";
+}
+
+.tabla td i.fa-toggle-off:hover::after {
+    transition: all 0.5s ease 0s;
+    width: 62px;
+}
+
+.tabla td i.fa-edit::after {
+    content: "Modificar";
+}
+
+.tabla td i.fa-edit:hover::after {
+    transition: all 0.5s ease 0s;
+    width: 56px;
+}
+
+.tabla td i.fa-trash::after {
+    content: "Eliminar";
+}
+
+.tabla td i.fa-trash:hover::after {
+    transition: all 0.5s ease 0s;
+    width: 47px;
+}

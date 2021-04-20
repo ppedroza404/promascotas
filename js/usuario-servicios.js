@@ -51,7 +51,7 @@ const modificarContrasenna = async(pcorreo, pclaveNueva) => {
 
     await axios({
             method: 'put',
-            url: 'http://localhost:3000/api/modificar-cliente',
+            url: 'http://localhost:3000/api/modificar-contrasenna',
             responseType: 'json',
             data: {
                 correo: pcorreo,

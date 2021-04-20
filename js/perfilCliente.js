@@ -68,11 +68,11 @@ pGeneroCliente.value = cliente.sexo;
 let lista_calificadosOrdenada = [];
 
 const acomodarLista = (lista_proveedoresCalificados) => {
-    return lista_proveedoresCalificados.sort(function(a, b) {
-        return ((a.calificacion < b.calificacion) ? 1 : ((a.calificacion > b.calificacion) ? -1 : 0));
-    });
-}
-lista_calificadosOrdenada = acomodarLista(lista_proveedoresCalificados, 'calificacion').slice(0, 20);
+        return lista_proveedoresCalificados.sort(function(a, b) {
+            return ((a.calificacion < b.calificacion) ? 1 : ((a.calificacion > b.calificacion) ? -1 : 0));
+        });
+    }
+    //lista_calificadosOrdenada = acomodarLista(lista_proveedoresCalificados, 'calificacion').slice(0, 20);
 
 /* Inicio: Función para acomodar los proveedores mejor calificados según calificación */
 
@@ -100,44 +100,44 @@ lista_calificadosOrdenada.forEach(proveedor => {
 
 /* Inicio: Función que obtiene la información de la mascota que pertenece al usuario conectado */
 
-const obtenerMascotaCliente = () => {
-        mascotasCliente.forEach(mascota => {
-            if (cliente.correo == mascota.correo) {
-                pNombreMascota.value = mascota.nombre;
-                pRazaMascota.value = mascota.raza;
-                pGeneroMascota.value = mascota.genero;
-                pTipoMascota.value = mascota.tipo;
-                pEdadMascota.value = mascota.edad;
-                pPadecimientosMascota.value = mascota.padecimientos;
+// const obtenerMascotaCliente = () => {
+//         mascotasCliente.forEach(mascota => {
+//             if (cliente.correo == mascota.correo) {
+//                 pNombreMascota.value = mascota.nombre;
+//                 pRazaMascota.value = mascota.raza;
+//                 pGeneroMascota.value = mascota.genero;
+//                 pTipoMascota.value = mascota.tipo;
+//                 pEdadMascota.value = mascota.edad;
+//                 pPadecimientosMascota.value = mascota.padecimientos;
 
-            }
-        });
-    }
-    /* Fin: Función que obtiene la información de la mascota que pertenece al usuario conectado */
+//             }
+//         });
+//     }
+/* Fin: Función que obtiene la información de la mascota que pertenece al usuario conectado */
 
 /* Inicio: Función para mostrar datos de vacunas en la tabla */
 
-const mostrarTablaVacunas = () => {
+// const mostrarTablaVacunas = () => {
 
-    mascotasCliente.forEach(mascota => {
-        if (cliente.correo == mascota.correo) {
+//     mascotasCliente.forEach(mascota => {
+//         if (cliente.correo == mascota.correo) {
 
 
-            mascota.vacunas.forEach(vacuna => {
+//             mascota.vacunas.forEach(vacuna => {
 
-                let fila = vacunasMascota.insertRow();
-                fila.insertCell().innerHTML = vacuna.nombre;
-                fila.insertCell().innerHTML = vacuna.fecha;
-                fila.insertCell().innerHTML = vacuna.fabricante;
+//                 let fila = vacunasMascota.insertRow();
+//                 fila.insertCell().innerHTML = vacuna.nombre;
+//                 fila.insertCell().innerHTML = vacuna.fecha;
+//                 fila.insertCell().innerHTML = vacuna.fabricante;
 
-            })
+//             })
 
-        }
+//         }
 
-    });
-    limpiarTabla();
+//     });
+//     limpiarTabla();
 
-}
+// }
 
 const limpiarTabla = () => {
     for (var i = vacunasMascota.rows.length - 4; i >= 0; i--) {
@@ -145,7 +145,7 @@ const limpiarTabla = () => {
     }
 }
 
-mostrarTablaVacunas();
+//mostrarTablaVacunas();
 
 /* Fin: Función para mostrar datos de vacunas en la tabla */
 
