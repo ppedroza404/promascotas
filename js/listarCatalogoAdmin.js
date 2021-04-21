@@ -67,8 +67,11 @@ const mostrarTablaEnfermedades = () => {
     limpiarTabla();
 
     enfermedadesAdmin.forEach(item => {
-        let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.enfermedades;
+        if (item.enfermedades.toLowerCase().includes(filtro)) {
+            let fila = tablaCatalogo.insertRow();
+            fila.insertCell().innerHTML = item.enfermedades;
+
+        }
 
     })
 
