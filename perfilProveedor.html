@@ -226,7 +226,69 @@
                         <input type="text" id="txt-otrasSeniasProv" class="input-dobleColumna" disabled>
                     </div>
                 </div>
+                <div class="columna columna-noMargenBottom">
+                    <div>
+                        <div>
+                            <a>
+                                <h3></h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="columna columna-noMargenBottom">
+                    <div id="cliente-modificarContrasenna">
+                        <div id="abrirModalContrasenna">
+                            <a>
+                                <h3 for="txt-genero">¿Desea cambiar su contraseña?</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
+
+            <!----------------Modal---------------->
+            <div id="modalModificarContrasenna" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h3 class="padding-top padding-bottom">Modificar contraseña</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label for="contrasennaActual">Contraseña actual</label>
+                            <input type="text" id="contrasennaActual" class="input-dobleColumna">
+                        </div>
+                        <div>
+                            <label for="contrasennaNueva">Contraseña nueva</label>
+                            <input type="text" id="contrasennaNueva" class="input-dobleColumna">
+                        </div>
+                        <div>
+                            <label for="contrasennaConfirmacion">Confirmar contraseña nueva</label>
+                            <input type="text" id="contrasennaConfirmacion" class="input-dobleColumna">
+                        </div>
+                        <div class="contenedor-restriccionesContrasenna">
+                            <h3>Restricciones</h3>
+                            <p>La contraseña debe cumplir con los siguientes requisitos:</p>
+                            <ul>
+                                <li>Mínimo de 6 caracteres</li>
+                                <li>Máximo de 12 caracteres</li>
+                                <li>Al menos una letra mayúscula</li>
+                                <li>Al menos una letra minúscula</li>
+                                <li>Al menos un dígito</li>
+                                <li>No espacios en blanco</li>
+                                <li>Al menos 1 carácter especial</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
+                            <button type="button" id="btn-guardar-nuevaCont">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
         <section class="seccion-representante">
             <hr>
@@ -278,7 +340,13 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+
+    <!-- 3Party Script-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- 3Party Script-->
+
+    <script src="js/modificar-contrasennaP.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/perfilProveedor.js"></script>

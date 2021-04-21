@@ -50,7 +50,7 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
             } else {
                 contrasennaNueva.classList.remove('error');
                 if (claveNueva === claveConfirmada) {
-                    modificarContrasenna(correo, claveNueva);
+                    modificarContrasennaC(correo, claveNueva);
                     Swal.fire({
                         'icon': 'success',
                         'title': 'Solicitud completada',

@@ -47,14 +47,45 @@ const iniciar_sesion = async(pcorreo, pcontrasenna) => {
     }
 };
 
-const modificarContrasenna = async(pcorreo, pclaveNueva) => {
+const modificarContrasennaC = async(pcorreoCliente, pclaveNueva) => {
 
     await axios({
             method: 'put',
-            url: 'http://localhost:3000/api/modificar-contrasenna',
+            url: 'http://localhost:3000/api/modificar-contrasennaC',
             responseType: 'json',
             data: {
-                correo: pcorreo,
+                correo: pcorreoCliente,
+                contrasenna: pclaveNueva
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Contraseña actualizada',
+                'text': 'Muchas gracias',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'perfilCliente.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar la contraseña',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const modificarContrasennaP = async(pcorreoProveedor, pclaveNueva) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-contrasennaP',
+            responseType: 'json',
+            data: {
+                correo: pcorreoProveedor,
                 contrasenna: pclaveNueva
             }
 
