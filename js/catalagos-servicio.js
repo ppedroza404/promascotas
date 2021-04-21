@@ -847,3 +847,116 @@ const eliminarTipoMascota = async(p_id) => {
             })
         });
 };
+///Vacuna
+const desactivarVacuna = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-Vacuna',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La vacuna se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar la vacuna',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarVacuna = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-Vacuna',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La vacuna se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar la vacuna',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarVacuna = async(pNombreModificado, p_id) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-Vacuna',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                nombre: pNombreModificado,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La vacuna se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar la vacuna',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+const eliminarVacuna = async(p_id) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-Vacuna',
+            responseType: 'json',
+            data: {
+                _id: p_id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La vacuna se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar la vacuna',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};

@@ -672,40 +672,123 @@ const mostrarTablaVacunas = () => {
 
     vacunasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.nombre;
         fila.classList.add(`${item.estado}`);
-        let celdaAcciones1 = fila.insertCell();
+        fila.insertCell().innerHTML = item.nombre;
 
+        let celdaAcciones1 = fila.insertCell();
         let botonActivar = document.createElement('i');
         botonActivar.classList.add('fa');
-        botonActivar.classList.add('fa-toggle-on');
+        botonActivar.classList.add('fa-toggle-off');
+        botonActivar.setAttribute('id', `activarVacuna${item._id}`);
         botonActivar.addEventListener('click', () => {
-            console.log('activado')
+            activarVacunaConst();
         });
-
         celdaAcciones1.appendChild(botonActivar);
+        celdaAcciones1.classList.add('ActivarContenedor');
 
         let celdaAcciones2 = fila.insertCell();
-
         let botonDesactivar = document.createElement('i')
         botonDesactivar.classList.add('fa');
-        botonDesactivar.classList.add('fa-toggle-off');
+        botonDesactivar.classList.add('fa-toggle-on');
+        botonDesactivar.setAttribute('id', `desactivarVacuna${item._id}`);
         botonDesactivar.addEventListener('click', () => {
-            console.log('desactivado')
+            desactivarVacunaConst();
         });
-
         celdaAcciones2.appendChild(botonDesactivar);
+        celdaAcciones2.classList.add('DesactivarContenedor');
 
         let celdaAcciones3 = fila.insertCell();
-
         let botonModificar = document.createElement('i');
         botonModificar.classList.add('fa');
         botonModificar.classList.add('fa-edit');
-        botonModificar.addEventListener('click', () => {
-            console.log('modificado')
-        });
 
+
+
+        botonModificar.setAttribute('id', `abrirModal${item._id}`);
+
+        //modal
+        let ModalContenedor;
+        let ModalContent;
+        ModalContenedor = document.createElement('div');
+        ModalContenedor.setAttribute('id', `modal${item._id}`);
+        ModalContenedor.classList.add('modal');
+        ModalContenedor.classList.add('modalModificar');
+        ModalContent = document.createElement('div');
+        ModalContent.classList.add('modal-content');
+        ModalContenedor.appendChild(ModalContent);
+        //modal header
+        let ModalHeader;
+        let ModalCerrar;
+        let ModalTitulo;
+        ModalHeader = document.createElement('div');
+        ModalHeader.classList.add('modal-header');
+        ModalContent.appendChild(ModalHeader);
+        ModalCerrar = document.createElement('span');
+        ModalCerrar.setAttribute('id', `cerrar${item._id}`);
+        ModalCerrar.classList.add('close');
+        ModalHeader.appendChild(ModalCerrar);
+        ModalCerrar.innerText = 'x';
+        ModalTitulo = document.createElement('h3');
+        ModalTitulo.innerText = `${item.nombre} (${item.estado})`;
+        ModalHeader.appendChild(ModalTitulo);
+        //modal body
+        let ModalBody;
+        let ModalContenido;
+        ModalBody = document.createElement('div');
+        ModalBody.classList.add('modal-body');
+        ModalContent.appendChild(ModalBody);
+        ModalContenido = document.createElement('div');
+        ModalContenido.classList.add('centrarBloque');
+        ModalBody.appendChild(ModalContenido);
+        //modal nombre
+        let ModalContenidoNombre;
+        let ModalContenidoNombreLabel;
+        let ModalContenidoNombreInput;
+        ModalContenidoNombre = document.createElement('div');
+        ModalContenido.appendChild(ModalContenidoNombre);
+        ModalContenidoNombreLabel = document.createElement('label');
+        ModalContenidoNombreLabel.setAttribute('for', `modificarServicioVacuna${item._id}`);
+        ModalContenidoNombreLabel.innerText = 'Nombre que desea modificar';
+        ModalContenidoNombre.appendChild(ModalContenidoNombreLabel);
+        ModalContenidoNombreInput = document.createElement('input');
+        ModalContenidoNombreInput.setAttribute('id', `modificarServicioVacuna${item._id}`);
+        ModalContenidoNombre.appendChild(ModalContenidoNombreInput);
+        //modal footer
+        let ModalFooter;
+        ModalFooter = document.createElement('div');
+        ModalFooter.classList.add('modal-footer');
+        ModalContent.appendChild(ModalFooter);
+        //modal footer btn modificar
+        let ModalFooterModificarBtn;
+        let BtnModificarItem;
+        ModalFooterModificarBtn = document.createElement('a');
+        ModalFooterModificarBtn.setAttribute('id', `modificarVacuna${item._id}`);
+        ModalFooter.appendChild(ModalFooterModificarBtn);
+        BtnModificarItem = document.createElement('i');
+        BtnModificarItem.classList.add('fa');
+        BtnModificarItem.classList.add('fa-edit');
+        ModalFooterModificarBtn.appendChild(BtnModificarItem);
         celdaAcciones3.appendChild(botonModificar);
+        celdaAcciones3.appendChild(ModalContenedor);
+
+        //Levanta y cierra el modal
+        let modal = document.querySelector(`#modal${item._id}`);
+        let botonModal = document.querySelector(`#abrirModal${item._id}`);
+        let cerrarModal = document.querySelector(`#cerrar${item._id}`);
+        botonModal.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+        cerrarModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        const datosModificacionVacuna = () => {
+            let NombreModificado = document.querySelector(`#modificarServicioVacuna${item._id}`).value;
+            let _id = item._id;
+            modificarVacuna(NombreModificado, _id);
+        }
+        let btnModificarVacuna = document.querySelector(`#modificarVacuna${item._id}`);
+        btnModificarVacuna.addEventListener('click', datosModificacionVacuna);
+
 
         let celdaAcciones4 = fila.insertCell();
 
@@ -713,10 +796,26 @@ const mostrarTablaVacunas = () => {
         botonEliminar.classList.add('fa');
         botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
-            console.log('eliminado')
+            eliminarVacunaConst();
         });
-
         celdaAcciones4.appendChild(botonEliminar);
+
+
+        //Activar Vacuna
+        const activarVacunaConst = () => {
+                let _id = item._id;
+                activarVacuna(_id);
+            }
+            //Desactivar Vacuna
+        const desactivarVacunaConst = () => {
+                let _id = item._id;
+                desactivarVacuna(_id);
+            }
+            //Eliminar Vacuna
+        const eliminarVacunaConst = () => {
+            let _id = item._id;
+            eliminarVacuna(_id);
+        }
     })
 }
 
