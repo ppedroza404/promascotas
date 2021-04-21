@@ -395,7 +395,7 @@ const iniciarSesion = async(pcorreo, pcontrasenna) => {
         });
 };
 
-
+///Tipo de servicio
 const desactivarTipoServicio = async(p_id) => {
     await axios({
             method: 'put',
@@ -503,6 +503,119 @@ const eliminarTipoServicio = async(p_id) => {
         .catch((error) => {
             Swal.fire({
                 'title': 'No se pudo eliminar el tipo de servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+///Padecimiento
+const desactivarPadecimiento = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarPadecimiento = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarPadecimiento = async(pNombreModificado, p_id) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                padecimiento: pNombreModificado,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de servicio se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el tipo de servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+const eliminarPadecimiento = async(p_id) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-padecimiento',
+            responseType: 'json',
+            data: {
+                _id: p_id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar el padecimiento',
                 'text': 'Ocurrió el siguiente error {error}',
                 'icon': 'error'
             })

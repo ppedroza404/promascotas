@@ -74,21 +74,21 @@
 }
 
 .tabla td i.fa-toggle-on::after {
-    content: "Activar";
+    content: "Desactivar";
 }
 
 .tabla td i.fa-toggle-on:hover::after {
     transition: all 0.5s ease 0s;
-    width: 42px;
+    width: 62px;
 }
 
 .tabla td i.fa-toggle-off::after {
-    content: "Desactivar";
+    content: "Activar";
 }
 
 .tabla td i.fa-toggle-off:hover::after {
     transition: all 0.5s ease 0s;
-    width: 62px;
+    width: 42px;
 }
 
 .tabla td i.fa-edit::after {
