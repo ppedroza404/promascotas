@@ -362,51 +362,146 @@ const mostrarTablaRazas = () => {
 
     razasAdmin.forEach(item => {
         let fila = tablaCatalogo.insertRow();
-        fila.insertCell().innerHTML = item.raza;
         fila.classList.add(`${item.estado}`);
-        let celdaAcciones1 = fila.insertCell();
+        fila.insertCell().innerHTML = item.raza;
 
+        let celdaAcciones1 = fila.insertCell();
         let botonActivar = document.createElement('i');
         botonActivar.classList.add('fa');
-        botonActivar.classList.add('fa-toggle-on');
+        botonActivar.classList.add('fa-toggle-off');
+        botonActivar.setAttribute('id', `activarRaza${item._id}`);
         botonActivar.addEventListener('click', () => {
-            console.log('activado')
+            activarRazaConst();
         });
-
         celdaAcciones1.appendChild(botonActivar);
+        celdaAcciones1.classList.add('ActivarContenedor');
 
         let celdaAcciones2 = fila.insertCell();
-
         let botonDesactivar = document.createElement('i')
         botonDesactivar.classList.add('fa');
-        botonDesactivar.classList.add('fa-toggle-off');
+        botonDesactivar.classList.add('fa-toggle-on');
+        botonDesactivar.setAttribute('id', `desactivarRaza${item._id}`);
         botonDesactivar.addEventListener('click', () => {
-            console.log('desactivado')
+            desactivarRazaConst();
         });
-
         celdaAcciones2.appendChild(botonDesactivar);
+        celdaAcciones2.classList.add('DesactivarContenedor');
 
         let celdaAcciones3 = fila.insertCell();
-
         let botonModificar = document.createElement('i');
         botonModificar.classList.add('fa');
         botonModificar.classList.add('fa-edit');
-        botonModificar.addEventListener('click', () => {
-            console.log('modificado')
-        });
+        botonModificar.setAttribute('id', `abrirModal${item._id}`);
 
+        //modal
+        let ModalContenedor;
+        let ModalContent;
+        ModalContenedor = document.createElement('div');
+        ModalContenedor.setAttribute('id', `modal${item._id}`);
+        ModalContenedor.classList.add('modal');
+        ModalContenedor.classList.add('modalModificar');
+        ModalContent = document.createElement('div');
+        ModalContent.classList.add('modal-content');
+        ModalContenedor.appendChild(ModalContent);
+        //modal header
+        let ModalHeader;
+        let ModalCerrar;
+        let ModalTitulo;
+        ModalHeader = document.createElement('div');
+        ModalHeader.classList.add('modal-header');
+        ModalContent.appendChild(ModalHeader);
+        ModalCerrar = document.createElement('span');
+        ModalCerrar.setAttribute('id', `cerrar${item._id}`);
+        ModalCerrar.classList.add('close');
+        ModalHeader.appendChild(ModalCerrar);
+        ModalCerrar.innerText = 'x';
+        ModalTitulo = document.createElement('h3');
+        ModalTitulo.innerText = `${item.raza} (${item.estado})`;
+        ModalHeader.appendChild(ModalTitulo);
+        //modal body
+        let ModalBody;
+        let ModalContenido;
+        ModalBody = document.createElement('div');
+        ModalBody.classList.add('modal-body');
+        ModalContent.appendChild(ModalBody);
+        ModalContenido = document.createElement('div');
+        ModalContenido.classList.add('centrarBloque');
+        ModalBody.appendChild(ModalContenido);
+        //modal nombre
+        let ModalContenidoNombre;
+        let ModalContenidoNombreLabel;
+        let ModalContenidoNombreInput;
+        ModalContenidoNombre = document.createElement('div');
+        ModalContenido.appendChild(ModalContenidoNombre);
+        ModalContenidoNombreLabel = document.createElement('label');
+        ModalContenidoNombreLabel.setAttribute('for', `modificarRazaInput${item._id}`);
+        ModalContenidoNombreLabel.innerText = 'Nombre que desea modificar';
+        ModalContenidoNombre.appendChild(ModalContenidoNombreLabel);
+        ModalContenidoNombreInput = document.createElement('input');
+        ModalContenidoNombreInput.setAttribute('id', `modificarRazaInput${item._id}`);
+        ModalContenidoNombre.appendChild(ModalContenidoNombreInput);
+        //modal footer
+        let ModalFooter;
+        ModalFooter = document.createElement('div');
+        ModalFooter.classList.add('modal-footer');
+        ModalContent.appendChild(ModalFooter);
+        //modal footer btn modificar
+        let ModalFooterModificarBtn;
+        let BtnModificarItem;
+        ModalFooterModificarBtn = document.createElement('a');
+        ModalFooterModificarBtn.setAttribute('id', `modificarRaza${item._id}`);
+        ModalFooter.appendChild(ModalFooterModificarBtn);
+        BtnModificarItem = document.createElement('i');
+        BtnModificarItem.classList.add('fa');
+        BtnModificarItem.classList.add('fa-edit');
+        ModalFooterModificarBtn.appendChild(BtnModificarItem);
         celdaAcciones3.appendChild(botonModificar);
+        celdaAcciones3.appendChild(ModalContenedor);
+
+        //Levanta y cierra el modal
+        let modal = document.querySelector(`#modal${item._id}`);
+        let botonModal = document.querySelector(`#abrirModal${item._id}`);
+        let cerrarModal = document.querySelector(`#cerrar${item._id}`);
+        botonModal.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+        cerrarModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        const datosModificacionRaza = () => {
+            let NombreModificado = document.querySelector(`#modificarRazaInput${item._id}`).value;
+            let _id = item._id;
+            modificarRaza(NombreModificado, _id);
+        }
+        let btnModificarRaza = document.querySelector(`#modificarRaza${item._id}`);
+        btnModificarRaza.addEventListener('click', datosModificacionRaza);
+
 
         let celdaAcciones4 = fila.insertCell();
-
         let botonEliminar = document.createElement('i');
         botonEliminar.classList.add('fa');
         botonEliminar.classList.add('fa-trash');
         botonEliminar.addEventListener('click', () => {
-            console.log('eliminado')
+            eliminarRazaConst();
         });
-
         celdaAcciones4.appendChild(botonEliminar);
+
+
+        //Activar raza
+        const activarRazaConst = () => {
+                let _id = item._id;
+                activarRaza(_id);
+            }
+            //Desactivar raza
+        const desactivarRazaConst = () => {
+                let _id = item._id;
+                desactivarRaza(_id);
+            }
+            //Eliminar raza
+        const eliminarRazaConst = () => {
+            let _id = item._id;
+            eliminarRaza(_id);
+        }
     })
 }
 
