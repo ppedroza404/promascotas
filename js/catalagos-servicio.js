@@ -734,3 +734,116 @@ const eliminarRaza = async(p_id) => {
             })
         });
 };
+///Tipo Mascota
+const desactivarTipoMascota = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-tipoMascota',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de mascota se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar el tipo de mascota',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarTipoMascota = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-tipoMascota',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de mascota se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar el tipo de mascota',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarTipoMascota = async(pNombreModificado, p_id) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-tipoMascota',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                tipo: pNombreModificado,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de mascota se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el tipo de mascota',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+const eliminarTipoMascota = async(p_id) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-tipoMascota',
+            responseType: 'json',
+            data: {
+                _id: p_id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El tipo de mascota se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar el tipo de mascota',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
