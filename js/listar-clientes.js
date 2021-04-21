@@ -23,7 +23,7 @@ const mostrarTabla = async() => {
                 fila.insertCell().innerHTML = cliente.provincia;
                 fila.insertCell().innerHTML = cliente.canton;
                 fila.insertCell().innerHTML = cliente.distrito;
-                fila.insertCell().innerHTML = cliente.estado;
+                fila.insertCell().innerHTML = cliente.tipoUsuario;
 
 
                 /* let celdaAcciones = fila.insertCell();
