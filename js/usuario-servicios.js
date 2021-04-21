@@ -77,3 +77,18 @@ const modificarContrasenna = async(pcorreo, pclaveNueva) => {
             })
         });
 };
+
+const listar_usuarios_proveedor = async() => {
+    let lista_usuarios_proveedor = [];
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-usuarios-proveedor',
+        responseType: 'json'
+    }).then((response) => {
+        lista_usuarios_proveedor = response.data.lista_usuario;
+    }).catch((response) => {
+
+    });
+
+    return lista_usuarios_proveedor;
+};
