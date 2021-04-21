@@ -580,7 +580,7 @@ const modificarPadecimiento = async(pNombreModificado, p_id) => {
         .then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'El tipo de servicio se modificó con éxito',
+                'title': 'El padecimiento se modificó con éxito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
                 window.location.href = 'modificarCatalogoAdmin.html';
@@ -588,7 +588,7 @@ const modificarPadecimiento = async(pNombreModificado, p_id) => {
         })
         .catch((error) => {
             Swal.fire({
-                'title': 'No se pudo modificar el tipo de servicio',
+                'title': 'No se pudo modificar el padecimiento',
                 'text': 'Ocurrió el siguiente error {error}',
                 'icon': 'error'
             })
@@ -616,6 +616,119 @@ const eliminarPadecimiento = async(p_id) => {
         .catch((error) => {
             Swal.fire({
                 'title': 'No se pudo eliminar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+///Razas
+const desactivarRaza = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-raza',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La raza se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar la raza',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarRaza = async(p_id) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-raza',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo'
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La raza se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar la raza',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarRaza = async(pNombreModificado, p_id) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-raza',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                raza: pNombreModificado,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La raza se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar la raza',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+const eliminarRaza = async(p_id) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-raza',
+            responseType: 'json',
+            data: {
+                _id: p_id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'La raza se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar la raza',
                 'text': 'Ocurrió el siguiente error {error}',
                 'icon': 'error'
             })
