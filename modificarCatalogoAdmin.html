@@ -153,8 +153,8 @@
         <hr>
         <form id="frm-contacto">
             <section class="contenedor-listar">
-                <section>
-                    <div>
+                <section class="contenedorColumna simpleColumna">
+                    <div class="columna">
                         <label for="slt-catalogo">Categoría</label>
                         <select name="slt-catalogo" id="slt-catalogo">
                             <option value="Nulo">Por favor seleccione una opción del catálogo</option>
@@ -164,6 +164,28 @@
                             <option value="razas">Razas</option>
                             <option value="vacunas">Vacunas</option>
                         </select>
+                    </div>
+                    <div class="columna">
+                        <div id="filtroTipoServicioContenedor">
+                            <label for="txt-filtro">Filtrar</label>
+                            <input type="text" id="txt-filtroTipoServicio">
+                        </div>
+                        <div id="filtroPadecimientosContenedor">
+                            <label for="txt-filtro">Filtrar</label>
+                            <input type="text" id="txt-filtroPadecimientos">
+                        </div>
+                        <div id="filtroTipoContenedor">
+                            <label for="txt-filtro">Filtrar</label>
+                            <input type="text" id="txt-filtroTipo">
+                        </div>
+                        <div id="filtroRazasContenedor">
+                            <label for="txt-filtro">Filtrar</label>
+                            <input type="text" id="txt-filtroRazas">
+                        </div>
+                        <div id="filtroVacunasContenedor">
+                            <label for="txt-filtro">Filtrar</label>
+                            <input type="text" id="txt-filtroVacunas">
+                        </div>
                     </div>
                 </section>
 
