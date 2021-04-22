@@ -24,6 +24,10 @@
     background: #e6e6e6;
 }
 
+.tabla tbody tr#idTipoServicio607dbb107fa24051fcbfaafe {
+    display: none;
+}
+
 .tabla tbody tr td {
     text-align: center;
     color: #3d3d46;

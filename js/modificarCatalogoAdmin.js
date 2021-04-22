@@ -59,6 +59,7 @@ const mostrarTablaTipoServicio = () => {
     tipodeservicios.forEach(servicio => {
         let fila = tablaCatalogo.insertRow();
         fila.classList.add(`${servicio.estado}`);
+        fila.setAttribute('id', `idTipoServicio${servicio._id}`);
         fila.insertCell().innerHTML = servicio.nombre;
 
         let celdaAcciones1 = fila.insertCell();
