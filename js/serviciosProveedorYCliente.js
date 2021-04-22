@@ -120,7 +120,7 @@ botonEnviar.addEventListener('click', validarCamposUsuario);
 // UsuarioProveedor
 const corroborarTipoUsuario = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-    switch (usuario.tipo) {
+    switch (usuario.tipoUsuario) {
         case 'proveedor':
             if (document.querySelector('body').classList.contains('duennoBody')) {
                 document.querySelector('body').classList.remove('duennoBody');

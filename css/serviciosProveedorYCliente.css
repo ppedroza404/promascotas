@@ -83,7 +83,7 @@
 .proveedorBody .acordeonContenedor li.Activo::after,
 .proveedorBody .acordeonContenedor li.Inactivo::after {
     position: absolute;
-    top: 26px;
+    top: 24px;
     left: 26px;
     font-size: 16px;
     font-weight: 600;
