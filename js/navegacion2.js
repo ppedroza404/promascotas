@@ -25,13 +25,13 @@ const mostrarOpcionesMenu = () => {
             itemsSinAutenticar.classList.add('ocultar');
             nombreUsuarioConectadoHeader();
             break;
-        case 'Proveedor':
+        case 'proveedor':
             itemsCliente.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');
             nombreUsuarioConectadoHeader();
             break;
-        case 'Cliente':
+        case 'cliente':
             itemsProveedor.classList.add('ocultar');
             itemsAdministrador.classList.add('ocultar');
             itemsSinAutenticar.classList.add('ocultar');

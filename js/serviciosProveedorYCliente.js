@@ -121,7 +121,7 @@ botonEnviar.addEventListener('click', validarCamposUsuario);
 const corroborarTipoUsuario = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     switch (usuario.tipo) {
-        case 'Proveedor':
+        case 'proveedor':
             if (document.querySelector('body').classList.contains('duennoBody')) {
                 document.querySelector('body').classList.remove('duennoBody');
                 document.querySelector('body').classList.add('proveedorBody');
@@ -135,7 +135,7 @@ const corroborarTipoUsuario = () => {
                 document.querySelector('#logoCliente').classList.add('ocultar');
             }
             break;
-        case 'Cliente':
+        case 'cliente':
 
             if (document.querySelector('body').classList.contains('proveedorBody')) {
                 document.querySelector('body').classList.remove('proveedorBody');
