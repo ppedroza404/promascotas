@@ -14,71 +14,73 @@ const mostrarTabla = async() => {
     lista_usuarios_prov.forEach(proveedor => {
 
         if (proveedor.tipoUsuario.toLowerCase().includes('proveedor')) {
-            if (proveedor.estado.toLowerCase().includes(filtro) || proveedor.provincia.toLowerCase().includes(filtro) || proveedor.canton.toLowerCase().includes(filtro) || proveedor.distrito.toLowerCase().includes(filtro)) {
-                let fila = tabla.insertRow();
+            if (proveedor.estado.toLowerCase().includes('pendiente')) {
+                if (proveedor.provincia.toLowerCase().includes(filtro) || proveedor.canton.toLowerCase().includes(filtro) || proveedor.distrito.toLowerCase().includes(filtro)) {
+                    let fila = tabla.insertRow();
 
-                fila.insertCell().innerHTML = proveedor.estado;
-                fila.insertCell().innerHTML = proveedor.nombre;
-                fila.insertCell().innerHTML = proveedor.correo;
-                fila.insertCell().innerHTML = proveedor.provincia;
-                fila.insertCell().innerHTML = proveedor.canton;
-                fila.insertCell().innerHTML = proveedor.distrito;
-                fila.insertCell().innerHTML = proveedor.descripcion;
+                    fila.insertCell().innerHTML = proveedor.estado;
+                    fila.insertCell().innerHTML = proveedor.nombre;
+                    fila.insertCell().innerHTML = proveedor.correo;
+                    fila.insertCell().innerHTML = proveedor.provincia;
+                    fila.insertCell().innerHTML = proveedor.canton;
+                    fila.insertCell().innerHTML = proveedor.distrito;
+                    fila.insertCell().innerHTML = proveedor.descripcion;
 
-                let celdaAcciones = fila.insertCell();
+                    let celdaAcciones = fila.insertCell();
 
-                let botonAprobar = document.createElement('button');
-                botonAprobar.classList.add('btn');
-                botonAprobar.innerText = 'Aprobar';
-                botonAprobar.addEventListener('click', () => {
-                    /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
-                    botonAprobar.classList.add('btn-aprobar');
-                    botonModificar.classList.add('ocultar');
-                    botonAprobar.innerText = 'Aprobado';
-                });
+                    let botonAprobar = document.createElement('button');
+                    botonAprobar.classList.add('btn');
+                    botonAprobar.innerText = 'Aprobar';
+                    botonAprobar.addEventListener('click', () => {
+                        /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
+                        botonAprobar.classList.add('btn-aprobar');
+                        botonModificar.classList.add('ocultar');
+                        botonAprobar.innerText = 'Aprobado';
+                    });
 
-                celdaAcciones.appendChild(botonAprobar);
+                    celdaAcciones.appendChild(botonAprobar);
 
-                let celdaAcciones2 = fila.insertCell();
+                    let celdaAcciones2 = fila.insertCell();
 
-                let botonModificar = document.createElement('button');
-                botonModificar.classList.add('btn');
-                botonModificar.innerText = 'Denegar';
-                botonModificar.addEventListener('click', () => {
-                    botonModificar.classList.add('btn-denegar');
-                    botonAprobar.classList.add('ocultar');
-                    botonModificar.innerText = 'Denegado';
-                });
+                    let botonModificar = document.createElement('button');
+                    botonModificar.classList.add('btn');
+                    botonModificar.innerText = 'Denegar';
+                    botonModificar.addEventListener('click', () => {
+                        botonModificar.classList.add('btn-denegar');
+                        botonAprobar.classList.add('ocultar');
+                        botonModificar.innerText = 'Denegado';
+                    });
 
-                celdaAcciones2.appendChild(botonModificar);
+                    celdaAcciones2.appendChild(botonModificar);
 
 
-                /* let botonEliminar = document.createElement('button');
-                botonEliminar.innerText = 'Eliminar';
+                    /* let botonEliminar = document.createElement('button');
+                    botonEliminar.innerText = 'Eliminar';
 
-                botonEliminar.addEventListener('click', () => {
-                    Swal.fire({
-                        'icon': 'warning',
-                        'text': '¿Está seguro que desea borrar el usuario?',
-                        'showCancelButton': true,
-                        'confirmButtonText': '¡Sí!, estoy seguro',
-                        'cancelButtonColor': '#d33',
-                        'cancelButtonText': 'Cancelar',
-                        'reverseButtons': true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire(
-                                '',
-                                'El usuario ha sido eliminado',
-                                'success'
-                            )
-                        }
-                    })
-                });
-                // Agregarle los botones a la celda
+                    botonEliminar.addEventListener('click', () => {
+                        Swal.fire({
+                            'icon': 'warning',
+                            'text': '¿Está seguro que desea borrar el usuario?',
+                            'showCancelButton': true,
+                            'confirmButtonText': '¡Sí!, estoy seguro',
+                            'cancelButtonColor': '#d33',
+                            'cancelButtonText': 'Cancelar',
+                            'reverseButtons': true
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire(
+                                    '',
+                                    'El usuario ha sido eliminado',
+                                    'success'
+                                )
+                            }
+                        })
+                    });
+                    // Agregarle los botones a la celda
 
-                celdaAcciones.appendChild(botonModificar);
-                celdaAcciones.appendChild(botonEliminar);*/
+                    celdaAcciones.appendChild(botonModificar);
+                    celdaAcciones.appendChild(botonEliminar);*/
+                }
             }
         }
     });
