@@ -226,10 +226,78 @@ const mostrarTablaTipoServicio = () => {
             let botonEliminar = document.createElement('i');
             botonEliminar.classList.add('fa');
             botonEliminar.classList.add('fa-trash');
-            botonEliminar.addEventListener('click', () => {
-                eliminarTipoServicioConst();
-            });
+            botonEliminar.setAttribute('id', `abrirModalEliminar${servicio._id}`);
+            //modal
+            let ModalContenedorEliminar;
+            let ModalContentEliminar;
+            ModalContenedorEliminar = document.createElement('div');
+            ModalContenedorEliminar.setAttribute('id', `modalEliminar${servicio._id}`);
+            ModalContenedorEliminar.classList.add('modal');
+            ModalContenedorEliminar.classList.add('modalModificar');
+            ModalContentEliminar = document.createElement('div');
+            ModalContentEliminar.classList.add('modal-content');
+            ModalContenedorEliminar.appendChild(ModalContentEliminar);
+            //modal header
+            let ModalHeaderEliminar;
+            let ModalCerrarEliminar;
+            let ModalTituloEliminar;
+            ModalHeaderEliminar = document.createElement('div');
+            ModalHeaderEliminar.classList.add('modal-header');
+            ModalContentEliminar.appendChild(ModalHeaderEliminar);
+            ModalCerrarEliminar = document.createElement('span');
+            ModalCerrarEliminar.setAttribute('id', `cerrarEliminar${servicio._id}`);
+            ModalCerrarEliminar.classList.add('close');
+            ModalHeaderEliminar.appendChild(ModalCerrarEliminar);
+            ModalCerrarEliminar.innerText = 'x';
+            ModalTituloEliminar = document.createElement('h3');
+            ModalTituloEliminar.innerText = `Eliminar ${servicio.nombre} (${servicio.estado})`;
+            ModalHeaderEliminar.appendChild(ModalTituloEliminar);
+            //modal body
+            let ModalBodyEliminar;
+            let ModalContenidoEliminar;
+            ModalBodyEliminar = document.createElement('div');
+            ModalBodyEliminar.classList.add('modal-body');
+            ModalContentEliminar.appendChild(ModalBodyEliminar);
+            ModalContenidoEliminar = document.createElement('div');
+            ModalContenidoEliminar.classList.add('centrarBloque');
+            ModalContenidoEliminar.classList.add('centrarTexto');
+            ModalBodyEliminar.appendChild(ModalContenidoEliminar);
+            //modal nombre
+            let ModalContenidoBotonesEliminar;
+            let ModalContenidoBotonSiEliminar;
+            ModalContenidoBotonesEliminar = document.createElement('div');
+            ModalContenidoEliminar.appendChild(ModalContenidoBotonesEliminar);
+            ModalContenidoBotonSiEliminar = document.createElement('button');
+            ModalContenidoBotonSiEliminar.setAttribute('type', `button`);
+            ModalContenidoBotonSiEliminar.setAttribute('id', `aceptoBorrar${servicio._id}`);
+            ModalContenidoBotonSiEliminar.classList.add('btn')
+            ModalContenidoBotonSiEliminar.innerText = 'Eliminar';
+            ModalContenidoBotonesEliminar.appendChild(ModalContenidoBotonSiEliminar);
+            //modal footer
+            let ModalFooterEliminar;
+            ModalFooterEliminar = document.createElement('div');
+            ModalFooterEliminar.classList.add('modal-footer');
+            ModalContentEliminar.appendChild(ModalFooterEliminar);
+            //modal footer btn modificar
             celdaAcciones4.appendChild(botonEliminar);
+            celdaAcciones4.appendChild(ModalContenedorEliminar);
+            //Levanta y cierra el modal
+            let modalEliminar = document.querySelector(`#modalEliminar${servicio._id}`);
+            let botonModalEliminar = document.querySelector(`#abrirModalEliminar${servicio._id}`);
+            let cerrarModalEliminar = document.querySelector(`#cerrarEliminar${servicio._id}`);
+            botonModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'block';
+            });
+            cerrarModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'none';
+            });
+            //Eliminar servicio
+            const eliminarTipoServicioConst = () => {
+                let _id = servicio._id;
+                eliminarTipoServicio(_id);
+            }
+            let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${servicio._id}`);
+            btnAceptoBorrar.addEventListener('click', eliminarTipoServicioConst);
 
 
             //Activar servicio
@@ -239,13 +307,8 @@ const mostrarTablaTipoServicio = () => {
                 }
                 //Desactivar servicio
             const desactivarTipoServicioConst = () => {
-                    let _id = servicio._id;
-                    desactivarTipoServicio(_id);
-                }
-                //Eliminar servicio
-            const eliminarTipoServicioConst = () => {
                 let _id = servicio._id;
-                eliminarTipoServicio(_id);
+                desactivarTipoServicio(_id);
             }
         }
     })
@@ -385,11 +448,79 @@ const mostrarTablapadecimientos = () => {
             let botonEliminar = document.createElement('i');
             botonEliminar.classList.add('fa');
             botonEliminar.classList.add('fa-trash');
-            botonEliminar.addEventListener('click', () => {
-                eliminarPadecimientoConst();
-            });
 
+            botonEliminar.setAttribute('id', `abrirModalEliminar${padecimiento._id}`);
+            //modal
+            let ModalContenedorEliminar;
+            let ModalContentEliminar;
+            ModalContenedorEliminar = document.createElement('div');
+            ModalContenedorEliminar.setAttribute('id', `modalEliminar${padecimiento._id}`);
+            ModalContenedorEliminar.classList.add('modal');
+            ModalContenedorEliminar.classList.add('modalModificar');
+            ModalContentEliminar = document.createElement('div');
+            ModalContentEliminar.classList.add('modal-content');
+            ModalContenedorEliminar.appendChild(ModalContentEliminar);
+            //modal header
+            let ModalHeaderEliminar;
+            let ModalCerrarEliminar;
+            let ModalTituloEliminar;
+            ModalHeaderEliminar = document.createElement('div');
+            ModalHeaderEliminar.classList.add('modal-header');
+            ModalContentEliminar.appendChild(ModalHeaderEliminar);
+            ModalCerrarEliminar = document.createElement('span');
+            ModalCerrarEliminar.setAttribute('id', `cerrarEliminar${padecimiento._id}`);
+            ModalCerrarEliminar.classList.add('close');
+            ModalHeaderEliminar.appendChild(ModalCerrarEliminar);
+            ModalCerrarEliminar.innerText = 'x';
+            ModalTituloEliminar = document.createElement('h3');
+            ModalTituloEliminar.innerText = `Eliminar ${padecimiento.padecimiento} (${padecimiento.estado})`;
+            ModalHeaderEliminar.appendChild(ModalTituloEliminar);
+            //modal body
+            let ModalBodyEliminar;
+            let ModalContenidoEliminar;
+            ModalBodyEliminar = document.createElement('div');
+            ModalBodyEliminar.classList.add('modal-body');
+            ModalContentEliminar.appendChild(ModalBodyEliminar);
+            ModalContenidoEliminar = document.createElement('div');
+            ModalContenidoEliminar.classList.add('centrarBloque');
+            ModalContenidoEliminar.classList.add('centrarTexto');
+            ModalBodyEliminar.appendChild(ModalContenidoEliminar);
+            //modal nombre
+            let ModalContenidoBotonesEliminar;
+            let ModalContenidoBotonSiEliminar;
+            ModalContenidoBotonesEliminar = document.createElement('div');
+            ModalContenidoEliminar.appendChild(ModalContenidoBotonesEliminar);
+            ModalContenidoBotonSiEliminar = document.createElement('button');
+            ModalContenidoBotonSiEliminar.setAttribute('type', `button`);
+            ModalContenidoBotonSiEliminar.setAttribute('id', `aceptoBorrar${padecimiento._id}`);
+            ModalContenidoBotonSiEliminar.classList.add('btn')
+            ModalContenidoBotonSiEliminar.innerText = 'Eliminar';
+            ModalContenidoBotonesEliminar.appendChild(ModalContenidoBotonSiEliminar);
+            //modal footer
+            let ModalFooterEliminar;
+            ModalFooterEliminar = document.createElement('div');
+            ModalFooterEliminar.classList.add('modal-footer');
+            ModalContentEliminar.appendChild(ModalFooterEliminar);
+            //modal footer btn modificar
             celdaAcciones4.appendChild(botonEliminar);
+            celdaAcciones4.appendChild(ModalContenedorEliminar);
+            //Levanta y cierra el modal
+            let modalEliminar = document.querySelector(`#modalEliminar${padecimiento._id}`);
+            let botonModalEliminar = document.querySelector(`#abrirModalEliminar${padecimiento._id}`);
+            let cerrarModalEliminar = document.querySelector(`#cerrarEliminar${padecimiento._id}`);
+            botonModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'block';
+            });
+            cerrarModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'none';
+            });
+            //Eliminar padecimiento
+            const eliminarPadecimientoConst = () => {
+                let _id = padecimiento._id;
+                eliminarPadecimiento(_id);
+            }
+            let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${padecimiento._id}`);
+            btnAceptoBorrar.addEventListener('click', eliminarPadecimientoConst);
 
 
             //Activar padecimiento
@@ -399,14 +530,10 @@ const mostrarTablapadecimientos = () => {
                 }
                 //Desactivar padecimiento
             const desactivarPadecimientoConst = () => {
-                    let _id = padecimiento._id;
-                    desactivarPadecimiento(_id);
-                }
-                //Eliminar padecimiento
-            const eliminarPadecimientoConst = () => {
                 let _id = padecimiento._id;
-                eliminarPadecimiento(_id);
+                desactivarPadecimiento(_id);
             }
+
         }
         inputFiltroPadecimientos.addEventListener('keyup', mostrarTablapadecimientos);
     })
@@ -539,10 +666,79 @@ const mostrarTablaRazas = () => {
             let botonEliminar = document.createElement('i');
             botonEliminar.classList.add('fa');
             botonEliminar.classList.add('fa-trash');
-            botonEliminar.addEventListener('click', () => {
-                eliminarRazaConst();
-            });
+
+            botonEliminar.setAttribute('id', `abrirModalEliminar${item._id}`);
+            //modal
+            let ModalContenedorEliminar;
+            let ModalContentEliminar;
+            ModalContenedorEliminar = document.createElement('div');
+            ModalContenedorEliminar.setAttribute('id', `modalEliminar${item._id}`);
+            ModalContenedorEliminar.classList.add('modal');
+            ModalContenedorEliminar.classList.add('modalModificar');
+            ModalContentEliminar = document.createElement('div');
+            ModalContentEliminar.classList.add('modal-content');
+            ModalContenedorEliminar.appendChild(ModalContentEliminar);
+            //modal header
+            let ModalHeaderEliminar;
+            let ModalCerrarEliminar;
+            let ModalTituloEliminar;
+            ModalHeaderEliminar = document.createElement('div');
+            ModalHeaderEliminar.classList.add('modal-header');
+            ModalContentEliminar.appendChild(ModalHeaderEliminar);
+            ModalCerrarEliminar = document.createElement('span');
+            ModalCerrarEliminar.setAttribute('id', `cerrarEliminar${item._id}`);
+            ModalCerrarEliminar.classList.add('close');
+            ModalHeaderEliminar.appendChild(ModalCerrarEliminar);
+            ModalCerrarEliminar.innerText = 'x';
+            ModalTituloEliminar = document.createElement('h3');
+            ModalTituloEliminar.innerText = `Eliminar ${item.raza} (${item.estado})`;
+            ModalHeaderEliminar.appendChild(ModalTituloEliminar);
+            //modal body
+            let ModalBodyEliminar;
+            let ModalContenidoEliminar;
+            ModalBodyEliminar = document.createElement('div');
+            ModalBodyEliminar.classList.add('modal-body');
+            ModalContentEliminar.appendChild(ModalBodyEliminar);
+            ModalContenidoEliminar = document.createElement('div');
+            ModalContenidoEliminar.classList.add('centrarBloque');
+            ModalContenidoEliminar.classList.add('centrarTexto');
+            ModalBodyEliminar.appendChild(ModalContenidoEliminar);
+            //modal nombre
+            let ModalContenidoBotonesEliminar;
+            let ModalContenidoBotonSiEliminar;
+            ModalContenidoBotonesEliminar = document.createElement('div');
+            ModalContenidoEliminar.appendChild(ModalContenidoBotonesEliminar);
+            ModalContenidoBotonSiEliminar = document.createElement('button');
+            ModalContenidoBotonSiEliminar.setAttribute('type', `button`);
+            ModalContenidoBotonSiEliminar.setAttribute('id', `aceptoBorrar${item._id}`);
+            ModalContenidoBotonSiEliminar.classList.add('btn')
+            ModalContenidoBotonSiEliminar.innerText = 'Eliminar';
+            ModalContenidoBotonesEliminar.appendChild(ModalContenidoBotonSiEliminar);
+            //modal footer
+            let ModalFooterEliminar;
+            ModalFooterEliminar = document.createElement('div');
+            ModalFooterEliminar.classList.add('modal-footer');
+            ModalContentEliminar.appendChild(ModalFooterEliminar);
+            //modal footer btn modificar
             celdaAcciones4.appendChild(botonEliminar);
+            celdaAcciones4.appendChild(ModalContenedorEliminar);
+            //Levanta y cierra el modal
+            let modalEliminar = document.querySelector(`#modalEliminar${item._id}`);
+            let botonModalEliminar = document.querySelector(`#abrirModalEliminar${item._id}`);
+            let cerrarModalEliminar = document.querySelector(`#cerrarEliminar${item._id}`);
+            botonModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'block';
+            });
+            cerrarModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'none';
+            });
+            //Eliminar raza
+            const eliminarRazaConst = () => {
+                let _id = item._id;
+                eliminarRaza(_id);
+            }
+            let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${item._id}`);
+            btnAceptoBorrar.addEventListener('click', eliminarRazaConst);
 
 
             //Activar raza
@@ -552,13 +748,8 @@ const mostrarTablaRazas = () => {
                 }
                 //Desactivar raza
             const desactivarRazaConst = () => {
-                    let _id = item._id;
-                    desactivarRaza(_id);
-                }
-                //Eliminar raza
-            const eliminarRazaConst = () => {
                 let _id = item._id;
-                eliminarRaza(_id);
+                desactivarRaza(_id);
             }
         }
         inputFiltroRazas.addEventListener('keyup', mostrarTablaRazas);
@@ -607,10 +798,6 @@ const mostrarTablaTiposMascota = () => {
             let botonModificar = document.createElement('i');
             botonModificar.classList.add('fa');
             botonModificar.classList.add('fa-edit');
-
-
-
-
             botonModificar.setAttribute('id', `abrirModal${tipo._id}`);
 
             //modal
@@ -697,18 +884,81 @@ const mostrarTablaTiposMascota = () => {
             btnModificarTipoMascota.addEventListener('click', datosModificacionTipoMascota);
 
 
-
-
             let celdaAcciones4 = fila.insertCell();
-
             let botonEliminar = document.createElement('i');
             botonEliminar.classList.add('fa');
             botonEliminar.classList.add('fa-trash');
-            botonEliminar.addEventListener('click', () => {
-                eliminarTipoMascotaConst();
-            });
+            botonEliminar.setAttribute('id', `abrirModalEliminar${tipo._id}`);
+            //modal
+            let ModalContenedorEliminar;
+            let ModalContentEliminar;
+            ModalContenedorEliminar = document.createElement('div');
+            ModalContenedorEliminar.setAttribute('id', `modalEliminar${tipo._id}`);
+            ModalContenedorEliminar.classList.add('modal');
+            ModalContenedorEliminar.classList.add('modalModificar');
+            ModalContentEliminar = document.createElement('div');
+            ModalContentEliminar.classList.add('modal-content');
+            ModalContenedorEliminar.appendChild(ModalContentEliminar);
+            //modal header
+            let ModalHeaderEliminar;
+            let ModalCerrarEliminar;
+            let ModalTituloEliminar;
+            ModalHeaderEliminar = document.createElement('div');
+            ModalHeaderEliminar.classList.add('modal-header');
+            ModalContentEliminar.appendChild(ModalHeaderEliminar);
+            ModalCerrarEliminar = document.createElement('span');
+            ModalCerrarEliminar.setAttribute('id', `cerrarEliminar${tipo._id}`);
+            ModalCerrarEliminar.classList.add('close');
+            ModalHeaderEliminar.appendChild(ModalCerrarEliminar);
+            ModalCerrarEliminar.innerText = 'x';
+            ModalTituloEliminar = document.createElement('h3');
+            ModalTituloEliminar.innerText = `Eliminar ${tipo.tipo} (${tipo.estado})`;
+            ModalHeaderEliminar.appendChild(ModalTituloEliminar);
+            //modal body
+            let ModalBodyEliminar;
+            let ModalContenidoEliminar;
+            ModalBodyEliminar = document.createElement('div');
+            ModalBodyEliminar.classList.add('modal-body');
+            ModalContentEliminar.appendChild(ModalBodyEliminar);
+            ModalContenidoEliminar = document.createElement('div');
+            ModalContenidoEliminar.classList.add('centrarBloque');
+            ModalContenidoEliminar.classList.add('centrarTexto');
+            ModalBodyEliminar.appendChild(ModalContenidoEliminar);
+            //modal nombre
+            let ModalContenidoBotonesEliminar;
+            let ModalContenidoBotonSiEliminar;
+            ModalContenidoBotonesEliminar = document.createElement('div');
+            ModalContenidoEliminar.appendChild(ModalContenidoBotonesEliminar);
+            ModalContenidoBotonSiEliminar = document.createElement('button');
+            ModalContenidoBotonSiEliminar.setAttribute('type', `button`);
+            ModalContenidoBotonSiEliminar.setAttribute('id', `aceptoBorrar${tipo._id}`);
+            ModalContenidoBotonSiEliminar.classList.add('btn')
+            ModalContenidoBotonSiEliminar.innerText = 'Eliminar';
+            ModalContenidoBotonesEliminar.appendChild(ModalContenidoBotonSiEliminar);
+            //modal footer
+            let ModalFooterEliminar;
+            ModalFooterEliminar = document.createElement('div');
+            ModalFooterEliminar.classList.add('modal-footer');
+            ModalContentEliminar.appendChild(ModalFooterEliminar);
+            //modal footer btn modificar
             celdaAcciones4.appendChild(botonEliminar);
-
+            celdaAcciones4.appendChild(ModalContenedorEliminar);
+            //Levanta y cierra el modal
+            let modalEliminar = document.querySelector(`#modalEliminar${tipo._id}`);
+            let botonModalEliminar = document.querySelector(`#abrirModalEliminar${tipo._id}`);
+            let cerrarModalEliminar = document.querySelector(`#cerrarEliminar${tipo._id}`);
+            botonModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'block';
+            });
+            cerrarModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'none';
+            });
+            const BorrarTipoMascota = () => {
+                let _id = tipo._id;
+                eliminarTipoMascota(_id);
+            }
+            let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${tipo._id}`);
+            btnAceptoBorrar.addEventListener('click', BorrarTipoMascota);
 
             //Activar mascota
             const activarTipoMascotaConst = () => {
@@ -717,13 +967,8 @@ const mostrarTablaTiposMascota = () => {
                 }
                 //Desactivar Mascota
             const desactivarTipoMascotaConst = () => {
-                    let _id = tipo._id;
-                    desactivarTipoMascota(_id);
-                }
-                //Eliminar Mascota
-            const eliminarTipoMascotaConst = () => {
                 let _id = tipo._id;
-                eliminarTipoMascota(_id);
+                desactivarTipoMascota(_id);
             }
         }
         inputFiltroTipos.addEventListener('keyup', mostrarTablaTiposMascota);
@@ -861,10 +1106,79 @@ const mostrarTablaVacunas = () => {
             let botonEliminar = document.createElement('i');
             botonEliminar.classList.add('fa');
             botonEliminar.classList.add('fa-trash');
-            botonEliminar.addEventListener('click', () => {
-                eliminarVacunaConst();
-            });
+
+            botonEliminar.setAttribute('id', `abrirModalEliminar${item._id}`);
+            //modal
+            let ModalContenedorEliminar;
+            let ModalContentEliminar;
+            ModalContenedorEliminar = document.createElement('div');
+            ModalContenedorEliminar.setAttribute('id', `modalEliminar${item._id}`);
+            ModalContenedorEliminar.classList.add('modal');
+            ModalContenedorEliminar.classList.add('modalModificar');
+            ModalContentEliminar = document.createElement('div');
+            ModalContentEliminar.classList.add('modal-content');
+            ModalContenedorEliminar.appendChild(ModalContentEliminar);
+            //modal header
+            let ModalHeaderEliminar;
+            let ModalCerrarEliminar;
+            let ModalTituloEliminar;
+            ModalHeaderEliminar = document.createElement('div');
+            ModalHeaderEliminar.classList.add('modal-header');
+            ModalContentEliminar.appendChild(ModalHeaderEliminar);
+            ModalCerrarEliminar = document.createElement('span');
+            ModalCerrarEliminar.setAttribute('id', `cerrarEliminar${item._id}`);
+            ModalCerrarEliminar.classList.add('close');
+            ModalHeaderEliminar.appendChild(ModalCerrarEliminar);
+            ModalCerrarEliminar.innerText = 'x';
+            ModalTituloEliminar = document.createElement('h3');
+            ModalTituloEliminar.innerText = `Eliminar ${item.nombre} (${item.estado})`;
+            ModalHeaderEliminar.appendChild(ModalTituloEliminar);
+            //modal body
+            let ModalBodyEliminar;
+            let ModalContenidoEliminar;
+            ModalBodyEliminar = document.createElement('div');
+            ModalBodyEliminar.classList.add('modal-body');
+            ModalContentEliminar.appendChild(ModalBodyEliminar);
+            ModalContenidoEliminar = document.createElement('div');
+            ModalContenidoEliminar.classList.add('centrarBloque');
+            ModalContenidoEliminar.classList.add('centrarTexto');
+            ModalBodyEliminar.appendChild(ModalContenidoEliminar);
+            //modal nombre
+            let ModalContenidoBotonesEliminar;
+            let ModalContenidoBotonSiEliminar;
+            ModalContenidoBotonesEliminar = document.createElement('div');
+            ModalContenidoEliminar.appendChild(ModalContenidoBotonesEliminar);
+            ModalContenidoBotonSiEliminar = document.createElement('button');
+            ModalContenidoBotonSiEliminar.setAttribute('type', `button`);
+            ModalContenidoBotonSiEliminar.setAttribute('id', `aceptoBorrar${item._id}`);
+            ModalContenidoBotonSiEliminar.classList.add('btn')
+            ModalContenidoBotonSiEliminar.innerText = 'Eliminar';
+            ModalContenidoBotonesEliminar.appendChild(ModalContenidoBotonSiEliminar);
+            //modal footer
+            let ModalFooterEliminar;
+            ModalFooterEliminar = document.createElement('div');
+            ModalFooterEliminar.classList.add('modal-footer');
+            ModalContentEliminar.appendChild(ModalFooterEliminar);
+            //modal footer btn modificar
             celdaAcciones4.appendChild(botonEliminar);
+            celdaAcciones4.appendChild(ModalContenedorEliminar);
+            //Levanta y cierra el modal
+            let modalEliminar = document.querySelector(`#modalEliminar${item._id}`);
+            let botonModalEliminar = document.querySelector(`#abrirModalEliminar${item._id}`);
+            let cerrarModalEliminar = document.querySelector(`#cerrarEliminar${item._id}`);
+            botonModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'block';
+            });
+            cerrarModalEliminar.addEventListener('click', () => {
+                modalEliminar.style.display = 'none';
+            });
+            //Eliminar Vacuna
+            const eliminarVacunaConst = () => {
+                let _id = item._id;
+                eliminarVacuna(_id);
+            }
+            let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${item._id}`);
+            btnAceptoBorrar.addEventListener('click', eliminarVacunaConst);
 
 
             //Activar Vacuna
@@ -874,14 +1188,10 @@ const mostrarTablaVacunas = () => {
                 }
                 //Desactivar Vacuna
             const desactivarVacunaConst = () => {
-                    let _id = item._id;
-                    desactivarVacuna(_id);
-                }
-                //Eliminar Vacuna
-            const eliminarVacunaConst = () => {
                 let _id = item._id;
-                eliminarVacuna(_id);
+                desactivarVacuna(_id);
             }
+
         }
         inputFiltroVacunas.addEventListener('keyup', mostrarTablaVacunas);
     })
