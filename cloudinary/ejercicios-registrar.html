@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudinary</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Nombre</label>
+        <input type="text" id="txt-ejercicio">
+    </div>
+
+    <div>
+        <label for="">Zona</label>
+        <input type="text" id="txt-zona">
+    </div>
+
+
+    <div>
+        <img src="imagen/ejemplo-img.jpg" id="foto-ejercicio">
+    </div>
+
+    <button type="button" id="btn-foto">Agregar imagen</button>
+    <button type="button" id="btn-registrar">Registrar ejercicio</button>
+
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
+
+
+
+    <script src="js/servicio-ejercicios.js"></script>
+    <script src="js/servicio-imagen.js"></script>
+    <script src="js/registrar-ejercicio.js"></script>
+
+</body>
+
+</html>
