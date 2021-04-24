@@ -229,6 +229,12 @@ a:hover {
     text-decoration: none;
 }
 
+.btn-editar button {
+    border: none;
+    background: none;
+    color: #6700a3;
+}
+
 .swal2-container .swal2-icon.swal2-warning {
     border-color: rgba(103, 0, 163, 0.4);
     color: rgba(103, 0, 163, 0.7);
@@ -799,6 +805,7 @@ footer p {
     padding-top: 25px;
 }
 
+.modal-body,
 .modalModificar .modal-body {
     padding: 20px 16px;
 }

@@ -82,3 +82,27 @@ input:focus {
 .modal h2 {
     color: #6700a3 !important;
 }
+
+.modal p {
+    color: #3d3d46;
+    padding: 25px;
+}
+
+.modal label,
+.modal input {
+    display: block;
+    margin: 10px auto 20px;
+    width: 90%;
+}
+
+.modal label {
+    color: #3d3d46;
+    font-weight: 600;
+    max-width: 900px;
+}
+
+.modal input {
+    max-width: 880px;
+    background: #d5f3f7;
+    padding: 10px 15px;
+}
