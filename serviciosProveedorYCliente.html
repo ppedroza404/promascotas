@@ -183,20 +183,7 @@
                             <label for="slt-seleccionarServicio">Seleccioná un servicio</label>
                             <select id="slt-seleccionarServicio">
                                 <option value="">-- Seleccioná un servicio --</option>
-                                <option value="Gromming">Gromming</option>
-                                <option value="Banno">Baño</option>
                             </select>
-                        </div>
-                        <div class="columna">
-                            <div class="">
-                                <label for="slt-seleccionarTamanno">Seleccioná el tamaño de tu mascota</label>
-                                <select id="slt-seleccionarTamanno">
-                                    <option value="">-- Seleccioná el tamaño --</option>
-                                    <option value="Pequenno">Pequeño</option>
-                                    <option value="Mediano">Mediano</option>
-                                    <option value="Grande">Grande</option>
-                                </select>
-                            </div>
                         </div>
                         <div class="columna">
                             <label for="txt-fechaServicio">Seleccioná una fecha</label>
@@ -204,31 +191,6 @@
                         </div>
                     </div>
                     <div class="simpleColumna contenedorColumna">
-                        <div class="columna">
-                            <div class="slct-provincia">
-                                <label for="provincias">Seleccioná la provincia</label>
-                                <select class="form-control" id="provincias" name="provincias">
-                                        <option value="" slected>Seleccione una provincia</option>
-                                    </select>
-                            </div>
-                        </div>
-                        <div class="columna">
-                            <div class="form-group canton" style="display: block;">
-                                <label for="cantones">Seleccioná el cantón</label>
-                                <select class="form-control" id="cantones" name="cantones">
-                                        <option value="" slected>Seleccione un canton</option>
-                
-                                    </select>
-                            </div>
-                        </div>
-                        <div class="columna">
-                            <div class="form-group distrito" style="display: block;">
-                                <label for="distritos" id="labelslct">Seleccioná el distrito</label>
-                                <select value="" class="form-control" id="distritos" name="distritos">
-                                        <option value="" slected>Seleccione un distrito</option>
-                                    </select>
-                            </div>
-                        </div>
                     </div>
                     <div class="unicaColumna contenedorColumna">
                         <div class="columna">
@@ -244,7 +206,8 @@
 
 
                 <!--Primera línea para agregar servicio-->
-                <div class="agregarServicio" id="agregarServicioContenedor0">
+                <!-- CONFIRMAR CON JOSE SI YA ESTO SE PUEDE REMOVER -->
+                <!-- <div class="agregarServicio" id="agregarServicioContenedor0">
                     <div class="unicaColumna contenedorColumna">
                         <div class="columna">
                             <h3>Agregar un servicio</h3>
@@ -259,7 +222,7 @@
                             <label for="agregarServicioDescripcionServicio0">Descripción del servicio</label>
                             <textarea id="agregarServicioDescripcionServicio0"></textarea>
                         </div>
-                    </div>
+                    </div>   
                     <div class="simpleColumna contenedorColumna">
                         <div class="columna">
                             <label for="agregarServicioADomicilio0">¿Cuenta con servicio a domicilio?</label>
@@ -282,7 +245,7 @@
                             <input type="number" id="agregarServicioMonto0">
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="centrarTexto agregarServicio">
                     <button type="button" class="btn" id="btn-agregarServicio">Agregar servicio(s)</button>
                 </div>
@@ -299,7 +262,6 @@
     <!-- <script src="js/servicios.js"></script> -->
     <script src="js/serviciosProveedorCliente-servicio.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/provincias.js"></script>
     <script src="js/serviciosProveedorYCliente.js"></script>
 </body>
 

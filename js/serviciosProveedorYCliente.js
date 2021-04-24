@@ -343,7 +343,20 @@ let listaServiciosProveedor = [];
 const llenarListaServiciosProveedor = async() => {
     listaServiciosProveedor = await obtenerServiciosProveedor();
     mostrarLista();
+    completarSelectServicios();
 };
+
+const completarSelectServicios = () => {
+    listaServiciosProveedor.forEach(element => {
+        let opcion = document.createElement("option");
+
+        opcion.text = element.nombre;
+        opcion.value = element.nombre;
+
+        servicioSeleccionado.add(opcion);
+    });
+}
+
 
 const mostrarLista = async() => {
     let listaContenedor = document.createElement('div');
@@ -708,8 +721,5 @@ const mostrarLista = async() => {
 
 
 };
-
-
-
 
 llenarListaServiciosProveedor();
