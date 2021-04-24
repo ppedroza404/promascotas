@@ -64,7 +64,8 @@
     width: calc(33% - 20px) !important;
 }
 
-.duennoBody .acordeonContenedor li.Inactivo {
+.duennoBody .acordeonContenedor li.Inactivo,
+.duennoBody .acordeonContenedor li#id60791e45bf865d3a08577b3c {
     display: none;
 }
 

@@ -406,6 +406,7 @@ const mostrarLista = async() => {
         //button
         listaItem = document.createElement('li');
         listaItem.classList.add(`${servicio.estado}`)
+        listaItem.setAttribute('id', `id${servicio._id}`)
         listaUlElemento.appendChild(listaItem);
         listaItemButton = document.createElement('button');
         listaItemButton.classList.add('accordion');
