@@ -169,6 +169,38 @@ const modificarContrasennaP = async(pcorreoProveedor, pclaveNueva) => {
         });
 };
 
+const recuperar_contrasenna = async(pcorreoRecuperar, pcontrasennaRandom) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/recuperar-contrasenna',
+            responseType: 'json',
+            data: {
+                correo: pcorreoRecuperar,
+                contrasenna: pcontrasennaRandom
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Contraseña actualizada',
+                'text': 'Muchas gracias',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'inicioSesion.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar la contraseña',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+
 const listar_usuarios_proveedor = async() => {
     let lista_usuarios_proveedor = [];
     await axios({
@@ -222,3 +254,14 @@ const modificarRepresentanteLegal = async(pnombreRepresentante, pprimerApellidoR
             })
         });
 };
+
+//inicio lista de proveedores
+
+let lista_proveedores;
+
+const obtenerProveedores = async() => {
+    lista_proveedores = await listar_usuarios_proveedor();
+}
+obtenerProveedores();
+
+//fin lista de proveedores

@@ -69,19 +69,6 @@ cerrar1.addEventListener('click', () => {
 });
 
 
-//clave random
-// const claveRandom = () => {
-//     let password = '';
-//     let variablesPassword = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcdefghijklmnopqrstuvwxyz' + '0123456789' + '@#/.$+';
-//     let i;
-
-//     for (i = 1; i <= 8; i++) {
-//         let char = Math.floor(Math.random() * variablesPassword.length + 1);
-
-//         password += variablesPassword.charAt(char)
-//     }
-//     return password;
-// }
 
 
 
@@ -117,17 +104,15 @@ function generadorPassword(passwordLength) {
     return variableArreglo(randomPass.map(function(x) { return x[Math.floor(Math.random() * x.length)] })).join('');
 }
 
-function variableArreglo(array) {
-    for (var i = array.length - 1; i > 0; i--) {
+function variableArreglo(arreglo) {
+    for (var i = arreglo.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        var temp = arreglo[i];
+        arreglo[i] = arreglo[j];
+        arreglo[j] = temp;
     }
-    return array;
+    return arreglo;
 }
-
-alert(generadorPassword(9));
 
 
 
@@ -163,10 +148,9 @@ const validarRecuperarContrasenna = () => {
 
 const datosContrasenna = () => {
     let correoRecuperar = inputCorreoRecuperar.value;
-    let contrasennaRandom = claveRandom();
+    let contrasennaRandom = generadorPassword(9);
 
-    console.log(correoRecuperar);
-    console.log(contrasennaRandom);
+    recuperar_contrasenna(correoRecuperar, contrasennaRandom);
 }
 
 btnEnviarCorreo.addEventListener('click', validarRecuperarContrasenna)

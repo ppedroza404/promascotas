@@ -20,6 +20,7 @@ const ptipoIdRep = document.querySelector('#txt-tipoIdRep');
 const pidRep = document.querySelector('#txt-idRep');
 const pcorreoRep = document.querySelector('#txt-correoRep');
 const ptelRep = document.querySelector('#txt-telRep');
+const modificarRepLegal = document.querySelector('#btn-modificar-representante-legal');
 
 /* Inicio: Variables que muestran la información del usuario conectado en el perfil */
 
@@ -49,3 +50,6 @@ if (proveedor.tipoID != "Jurídica") {
 }
 
 /* Fin: Variables que muestran la información del representante de proveedor */
+
+
+modificarRepLegal.addEventListener('click', modificarRepresentanteLegal(pnombreRep.value, ptipoIdRep.value, pidRep.value, pcorreoRep.value, ptelRep.value));
