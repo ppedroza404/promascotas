@@ -80,13 +80,10 @@ const inputTipoIdRepresentante = document.querySelector('#slt-tipoIdRepresentant
 const inputNumeroIdRepresentante = document.querySelector('#txt-numeroIdRepresentante');
 const inputFechaNacimientoRepresentante = document.querySelector('#txt-fechaNacimientoRepresentante');
 const inputCorreoRepresentante = document.querySelector('#txt-correoRepresentante');
-<<<<<<< HEAD
-=======
 const inputProvincia = document.querySelector('#slt-provincia');
 
 const inputCanton = document.querySelector('#slt-canton');
 const inputDistrito = document.querySelector('#slt-distrito');
->>>>>>> 2d234e15d129b2fbc0db30150de4b9454d10ae73
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
 const inputDescripcion = document.getElementById('txt-descripcion');
 const inputTelefonoRep = document.querySelector('#txt-telefonoRepresentante');
