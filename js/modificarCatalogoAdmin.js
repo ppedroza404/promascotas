@@ -545,10 +545,17 @@ const mostrarTablaRazas = () => {
     limpiarTabla();
 
     razasAdmin.forEach(item => {
+        let tipomascotaNombre;
+        item.tipomascota.forEach(tipo => {
+            tipomascotaNombre = tipo.tipo;
+        });
+        ////Averiguar como se hace un doble filtro
         if (item.raza.toLowerCase().includes(filtro)) {
+
             let fila = tablaCatalogo.insertRow();
             fila.classList.add(`${item.estado}`);
-            fila.insertCell().innerHTML = item.raza;
+            fila.insertCell().innerHTML = (` ${tipomascotaNombre} -- ${item.raza}`);
+
 
             let celdaAcciones1 = fila.insertCell();
             let botonActivar = document.createElement('i');
