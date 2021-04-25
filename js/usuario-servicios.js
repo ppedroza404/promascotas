@@ -123,3 +123,42 @@ const listar_usuarios_proveedor = async() => {
 
     return lista_usuarios_proveedor;
 };
+
+
+const modificarRepresentanteLegal = async(pnombreRepresentante, pprimerApellidoRepresentante, psegundoApellidoRepresentante, ptipoIdRepresentante, pnumeroIdRepresentante, pfechaNacimientoRepresentante, pcorreoRepresentante, ptelefonoRep) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api//modificar-representanteLegal',
+            responseType: 'json',
+            data: {
+                nombreRepresentante: pnombreRepresentante,
+                primerApellidoRepresentante: pprimerApellidoRepresentante,
+                segundoApellidoRepresentante: psegundoApellidoRepresentante,
+                tipoIdRepresentante: ptipoIdRepresentante,
+                numeroIdRepresentante: pnumeroIdRepresentante,
+                fechaNacimientoRepresentante: pfechaNacimientoRepresentante,
+                correoRepresentante: pcorreoRepresentante,
+                telefonoRep: ptelefonoRep,
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Representante legal actualizado con éxito',
+                'text': 'Muchas gracias',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'perfilProveedor.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el representante legal',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};

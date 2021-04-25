@@ -73,6 +73,7 @@ const inputNumeroId = document.querySelector('#txt-numeroID');
 const inputTipoIdSolicitante = document.querySelector('#slt-tipoIdSolicitante');
 const inputFechaNacimiento = document.querySelector('#txt-fechaNacimiento');
 const inputCorreoSolicitante = document.querySelector('#txt-correoSolicitante');
+
 const inputNombreRepresentante = document.querySelector('#txt-nombreRepresentante');
 const inputPrimerApellidoRepresentante = document.querySelector('#txt-primerApellidoRepresentante');
 const inputSegundoApellidoRepresentante = document.querySelector('#txt-segundoApellidoRepresentante');
@@ -81,6 +82,7 @@ const inputNumeroIdRepresentante = document.querySelector('#txt-numeroIdRepresen
 const inputFechaNacimientoRepresentante = document.querySelector('#txt-fechaNacimientoRepresentante');
 const inputCorreoRepresentante = document.querySelector('#txt-correoRepresentante');
 const inputProvincia = document.querySelector('#slt-provincia');
+
 const inputCanton = document.querySelector('#slt-canton');
 const inputDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
