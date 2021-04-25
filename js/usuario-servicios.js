@@ -222,3 +222,14 @@ const modificarRepresentanteLegal = async(pnombreRepresentante, pprimerApellidoR
             })
         });
 };
+
+//inicio lista de proveedores
+
+let lista_proveedores;
+
+const obtenerProveedores = async() => {
+    lista_proveedores = await listar_usuarios_proveedor();
+}
+obtenerProveedores();
+
+//fin lista de proveedores
