@@ -14,7 +14,7 @@ const mostrarTabla = async() => {
     lista_usuarios_cliente.forEach(cliente => {
 
 
-        if (cliente.estado.toLowerCase().includes(filtro) || cliente.provincia.toLowerCase().includes(filtro) || cliente.canton.toLowerCase().includes(filtro) || cliente.distrito.toLowerCase().includes(filtro)) {
+        if (cliente.estado.toLowerCase().includes(filtro) || cliente.provincia.toLowerCase().includes(filtro) || cliente.canton.toLowerCase().includes(filtro) || cliente.distrito.toLowerCase().includes(filtro) || cliente.tipoUsuario.toLowerCase().includes(filtro)) {
             let fila = tabla.insertRow();
 
 
