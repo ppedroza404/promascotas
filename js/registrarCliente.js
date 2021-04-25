@@ -299,7 +299,7 @@ const imprimirDatos = () => {
 
     let contrasennaRandom = generarPassw();
 
-    registrar_cliente(inputCorreo.value, inputNombreCliente.value, inputPrimApellidoCliente.value, inputSegApellidoCliente.value, sltGenero.value, sltTipoId.value, inputNumId.value, inputNacimiento.value, inputCantMascotas.value, contrasennaRandom, sltProvincia.value, sltCanton.value, sltDistritos.value, inputOtrasSenias.value);
+    registrar_usuario(inputCorreo.value, inputNombreCliente.value, inputPrimApellidoCliente.value, inputSegApellidoCliente.value, sltGenero.value, sltTipoId.value, inputNumId.value, inputNacimiento.value, inputCantMascotas.value, contrasennaRandom, sltProvincia.value, sltCanton.value, sltDistritos.value, inputOtrasSenias.value);
 
 
 

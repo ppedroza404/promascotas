@@ -56,7 +56,6 @@ const enableSelect = () => {
 
 
 enableSelect();
-
 tipoId.addEventListener('change', enableSelect);
 
 //Declaración de variables
@@ -80,43 +79,37 @@ const inputTipoIdRepresentante = document.querySelector('#slt-tipoIdRepresentant
 const inputNumeroIdRepresentante = document.querySelector('#txt-numeroIdRepresentante');
 const inputFechaNacimientoRepresentante = document.querySelector('#txt-fechaNacimientoRepresentante');
 const inputCorreoRepresentante = document.querySelector('#txt-correoRepresentante');
-const inputProvincia = document.querySelector('#slt-provincia');
-const inputCanton = document.querySelector('#slt-canton');
-const inputDistrito = document.querySelector('#slt-distrito');
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
 const inputDescripcion = document.getElementById('txt-descripcion');
 const inputTelefonoRep = document.querySelector('#txt-telefonoRepresentante');
 const inputTelefonoCliente = document.querySelector('#txt-telefono');
 const inputTipoServicio = document.querySelector('#slt-tipoServicio');
 
+/* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
+
+
 
 const habilitarCanton = () => {
-    if (inputProvincia.value != '') {
-        inputCanton.disabled = false;
-        if (inputCanton.value != '') {
-            inputDistrito.disabled = false;
+    if (sltProvincia.value != '') {
+        sltCanton.disabled = false;
+        if (sltCanton.value != '') {
+            sltDistritos.disabled = false;
         }
     } else {
-        inputCanton.disabled = true;
-        inputDistrito.disabled = true;
+        sltCanton.disabled = true;
+        sltDistritos.disabled = true;
     }
 
 };
-
-inputProvincia.addEventListener('change', habilitarCanton);
 
 const habilitarDistrito = () => {
-    if (inputCanton.value != '') {
-        inputDistrito.disabled = false;
+    if (sltCanton.value != '') {
+        sltDistritos.disabled = false;
     } else {
-        inputDistrito.disabled = true;
+        sltDistritos.disabled = true;
     }
 
 };
-
-inputCanton.addEventListener('change', habilitarDistrito);
-
-
 
 //Validación 
 
@@ -260,23 +253,23 @@ const validar = () => {
         inputCorreoRepresentante.classList.remove('error');
     }
 
-    if (inputProvincia.value == '') {
+    if (sltProvincia.value == '') {
         error = true;
-        inputProvincia.classList.add('error');
+        sltProvincia.classList.add('error');
     } else {
-        inputProvincia.classList.remove('error');
+        sltProvincia.classList.remove('error');
     }
-    if (inputCanton.value == '') {
+    if (sltCanton.value == '') {
         error = true;
-        inputCanton.classList.add('error');
+        sltCanton.classList.add('error');
     } else {
-        inputCanton.classList.remove('error');
+        sltCanton.classList.remove('error');
     }
-    if (inputDistrito.value == '') {
+    if (sltDistritos.value == '') {
         error = true;
-        inputDistrito.classList.add('error');
+        sltDistritos.classList.add('error');
     } else {
-        inputDistrito.classList.remove('error');
+        sltDistritos.classList.remove('error');
     }
     if (inputOtrasSennas.value == '') {
         error = true;
@@ -321,87 +314,45 @@ const calcularEdad = (nacimiento) => {
 };
 
 const imprimir = () => {
-    let imagen = inputImagen.value;
+
+    let correo = inputCorreoSolicitante.value;
+    let nombre = inputNombreSolicitante.value;
+    let primerApellido = inputPrimeApellidoSolicitante.value;
+    let segundoApellido = inputSegundoApellidoSolicitante.value;
+    let genero = 'Proveedor Sin Genero';
+    let tipoIdProveedor = inputTipoIdSolicitante.value;
+    let numeroId = inputNumeroId.value;
+    let nacimiento = inputFechaNacimiento.value;
+    let cantidadMascotas = '';
+    let contrasenna = 'ClaveTemporal'; // Arreglo Popular Conectar Con el generador de password automatico 
+    let provincia = sltProvincia.text;
+    let canton = sltCanton.text;
+    let distrito = sltDistritos.text;
+    let sennas = inputOtrasSennas.value;
+    let tipoUsuario = 'proveedor';
+    let estado = 'pendiente';
+    let _Idservicio = '60791e45bf865d3a08577b3c'; // Arreglo Servicio Null 
+    let avatar = 'inputImagen.value.Imagen';
     let nombreNegocio = inputNombreNegocio.value;
-    let tipoId = inputTipoId.value;
-    let CédulaJurídica = inputCédulaJurídica.value;
-    let nombreSolicitante = inputNombreSolicitante.value;
-    let primeApellidoSolicitante = inputPrimeApellidoSolicitante.value;
-    let segundoApellidoSolicitante = inputSegundoApellidoSolicitante.value;
-    let tipoIdSolicitante = inputTipoIdSolicitante.value;
-    let numeroID = inputNumeroId.value;
-    let fechaNacimiento = new Date(inputFechaNacimiento.value);
-    let edad = calcularEdad(fechaNacimiento);
-    let correoSolicitante = inputCorreoSolicitante.value;
-    let nombreRepresentante = inputNombreRepresentante.value;
-    let primerApellidoRepresentante = inputPrimerApellidoRepresentante.value;
-    let segundoApellidoRepresentante = inputSegundoApellidoRepresentante.value;
-    let tipoIdRepresentante = inputTipoIdRepresentante.value;
-    let numeroIdRepresentante = inputNumeroIdRepresentante.value;
-    let fechaNacimientoRepresentante = new Date(inputFechaNacimientoRepresentante.value);
-    let edadRepresentante = calcularEdad(fechaNacimientoRepresentante);
-    let correoRepresentante = inputCorreoRepresentante.value;
-    let provincia = inputProvincia.value;
-    let canton = inputCanton.value;
-    let distrito = inputDistrito.value;
-    let otrasSennas = inputOtrasSennas.value;
-    let descripcion = inputDescripcion.value;
-    let telefono = inputTelefonoCliente.value;
-    let telefonoRep = inputTelefonoRep.value;
-    let tipoServicio = inputTipoServicio.value;
+    let tipoIdNegocio = inputTipoId.value;
+    let juridicaId = Jurídica.value;
+    let telefono = telefonoCliente.value;
+    let descNegocio = inputDescripcion.value;
+    let _IdtipoDeServicio = '607dbb107fa24051fcbfaafe'; // Arreglo Popular Tipos de servicio en el select y tomar valor 
+    let repLegalCorreo = correoRepresentante.value;
+    let repLegalNombre = nombreRepresentante.value;
+    let repLegalPrimerApell = primerApellidoRepresentante.value;
+    let repLegalSegundoApel = segundoApellidoRepresentante.value;
+    let repLegalTipoId = tipoIdRepresentante.value;
+    let repLegalNumeroId = numeroIdRepresentante.value;
+    let repLegalNacimiento = fechaNacimientoRepresentante.value;
+    let repLegalTelefono = telefonoRep.value;
 
-    console.log('Info del negocio');
-    console.log('=====================');
-    console.log('Imagen pefil: ' + imagen);
-    console.log('Nombre del negocio: ' + nombreNegocio);
-    console.log('Tipo de identificación: ' + tipoId);
-    console.log('');
-    console.log('Información Solicitante');
-    console.log('-------------------');
-    console.log('Nombre: ' + nombreSolicitante);
-    console.log('Apellido: ' + primeApellidoSolicitante);
-    console.log('Apellido 2: ' + segundoApellidoSolicitante);
-    console.log('Tipo de identificación: ' + tipoIdSolicitante);
-    console.log('Numero ID: ' + numeroID);
-    console.log('Fecha de nacimiento: ' + fechaNacimiento);
-    console.log('Edad: ' + edad);
-    console.log('Teléfono: ' + telefono);
-    console.log('Correo: ' + correoSolicitante);
-    console.log('');
-    console.log('Dirección');
-    console.log('-------------------');
-    console.log('Provincia: ' + provincia);
-    console.log('Canton: ' + canton);
-    console.log('Distrito: ' + distrito);
-    console.log('Otras señas: ' + otrasSennas);
-    console.log('Tipo de servicio: ' + tipoServicio);
-    console.log('Descripción del negocio: ' + descripcion);
 
-    if (inputTipoId.value == 'Jurídica') {
-        console.log('');
-        console.log('Información Jurídica');
-        console.log('=====================');
-        console.log('Cédula Jurídica: ' + CédulaJurídica);
-        console.log('Nombre: ' + nombreRepresentante);
-        console.log('Apellido: ' + primerApellidoRepresentante);
-        console.log('Apellido 2: ' + segundoApellidoRepresentante);
-        console.log('Tipo de identificación: ' + tipoIdRepresentante);
-        console.log('Numero ID: ' + numeroIdRepresentante);
-        console.log('Fecha de nacimiento: ' + fechaNacimientoRepresentante);
-        console.log('Edad: ' + edadRepresentante);
-        console.log('Teléfono: ' + telefonoRep);
-        console.log('Correo: ' + correoRepresentante);
-    }
-    console.log('');
-    if (edad < 18) {
-        console.log('=====================');
-        console.log('NO ES MAYOR DE EDAD')
-        console.log('!!!!!!!!!!!!!!!!!!!!');
-    } else {
-        console.log('=====================');
-        console.log('ES MAYOR DE EDAD')
-        console.log('=====================');
-    }
+    registrar_usuario(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono);
+
+    //let edad = calcularEdad(fechaNacimiento);
+
     Swal.fire({
         'icon': 'success',
         'title': 'Su solicitud se proceso con éxito',
@@ -412,7 +363,7 @@ const imprimir = () => {
     });
 
 };
-btnRegistrarProveedor.addEventListener('click', validar);
+
 
 //cambiar imagen
 const imgPerfil = document.querySelector('#img-proveedor');
@@ -437,4 +388,10 @@ const readUrl = () => {
     }
     inputImagen.addEventListener('change', archivoCambiado)
 }
+
+habilitarCanton();
+habilitarDistrito();
+sltProvincia.addEventListener('change', habilitarCanton);
+sltCanton.addEventListener('change', habilitarDistrito);
+btnRegistrarProveedor.addEventListener('click', validar);
 window.addEventListener('load', readUrl);

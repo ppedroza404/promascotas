@@ -1,5 +1,65 @@
 'use strict';
 
+const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido, genero, tipoId, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono) => {
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-usuario',
+        responseType: 'json',
+        data: {
+            correo: correo, //unique
+            nombre: nombre,
+            primerApellido: primerApellido,
+            segundoApellido: segundoApellido,
+            genero: genero,
+            tipoId: tipoId,
+            numeroId: numeroId,
+            nacimiento: nacimiento, //formato fecha de postman YYYY-MM-DD
+            cantidadMascotas: cantidadMascotas,
+            contrasenna: contrasenna,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
+            sennas: sennas,
+            tipoUsuario: tipoUsuario,
+            estado: estado,
+            _Idservicio: _Idservicio,
+            avatar: avatar,
+            nombreNegocio: nombreNegocio,
+            tipoIdNegocio: tipoIdNegocio,
+            juridicaId: juridicaId,
+            telefono: telefono,
+            descNegocio: descNegocio,
+            _IdtipoDeServicio: _IdtipoDeServicio,
+            repLegalCorreo: repLegalCorreo,
+            repLegalNombre: repLegalNombre,
+            repLegalPrimerApell: repLegalPrimerApell,
+            repLegalSegundoApel: repLegalSegundoApel,
+            repLegalTipoId: repLegalTipoId,
+            repLegalNumeroId: repLegalNumeroId,
+            repLegalNacimiento: repLegalNacimiento,
+            repLegalTelefono: repLegalTelefono,
+        }
+    }).then((response) => {
+
+        Swal.fire({
+            'title': 'Se ha registrado exitosamente como Cliente',
+            'icon': 'success',
+            'text': response.msj
+        }).then(() => {
+            window.location.href = 'index.html';
+        });
+
+    }).catch((response) => {
+        Swal.fire({
+            'title': response.msj,
+            'icon': 'error',
+            'text': response.err
+        })
+    });
+
+};
+
+
 const iniciar_sesion = async(pcorreo, pcontrasenna) => {
     try {
         const response = await axios({
