@@ -200,6 +200,52 @@ const recuperar_contrasenna = async(pcorreoRecuperar, pcontrasennaRandom) => {
         });
 };
 
+const cambiar_contrasenna_nueva = async(pcorreoNuevaContrasenna, pcontrasennaTemporal, pcontrasennaNueva) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            params: { correo: pcorreoNuevaContrasenna, contrasenna: pcontrasennaTemporal },
+            url: `http://localhost:3000/api/modificar-contrasennaNuevaGenerica`,
+            responseType: 'json'
+        });
+        if (response.data.validacion == true) {
+            modificar_contrasenna_nueva(pcorreoNuevaContrasenna, pcontrasennaNueva);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+};
+
+const modificar_contrasenna_nueva = async(nuevoPcorreoNuevaContrasenna, nuevoPcontrasennaNueva) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-contrasennaNueva',
+            responseType: 'json',
+            data: {
+                correo: nuevoPcorreoNuevaContrasenna,
+                contrasenna: nuevoPcontrasennaNueva
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Contraseña actualizada',
+                'text': 'Muchas gracias',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'inicioSesion.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar la contraseña',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
 
 const listar_usuarios_proveedor = async() => {
     let lista_usuarios_proveedor = [];

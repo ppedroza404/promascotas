@@ -68,27 +68,7 @@ cerrar1.addEventListener('click', () => {
     modal1.style.display = 'none';
 });
 
-
-
-
-
-
-const claveRandom = () => {
-    let password = '';
-    let variablesPassword = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcdefghijklmnopqrstuvwxyz' + '0123456789' + '@#/.$+';
-    let i;
-
-    for (i = 1; i <= 8; i++) {
-        let char = Math.floor(Math.random() * variablesPassword.length + 1);
-
-        password += variablesPassword.charAt(char)
-    }
-    return password;
-}
-
-
-
-
+//Generador de password genérico
 function generadorPassword(passwordLength) {
     var variablesNumeros = "0123456789";
     var VariablesMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -114,15 +94,10 @@ function variableArreglo(arreglo) {
     return arreglo;
 }
 
-
-
-
-
+//Validación de recuperar contraseña
 const validarRecuperarContrasenna = () => {
     let error = false;
-
     let regexCorreo = /^[a-zA-Z.0-9]+\@{1}[a-zA-Z.]+$/;
-
 
     if (regexCorreo.test(inputCorreoRecuperar.value) == false) {
         error = true;
@@ -130,7 +105,6 @@ const validarRecuperarContrasenna = () => {
     } else {
         inputCorreoRecuperar.classList.remove('error');
     }
-
     if (error == false) {
         datosContrasenna();
     } else {
@@ -141,11 +115,9 @@ const validarRecuperarContrasenna = () => {
             'confirmButtonText': 'Entendido'
         });
     }
-
 };
 
-
-
+//Datos pedir contraseña nueva
 const datosContrasenna = () => {
     let correoRecuperar = inputCorreoRecuperar.value;
     let contrasennaRandom = generadorPassword(9);

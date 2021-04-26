@@ -6,10 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambio de contraseña</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/inicioSesion.css">
+    <link rel="icon" href="img/nariz.png" type="image/x-icon">
 </head>
 
 <body>
-    <h1>Hola</h1>
-</body>
+
+    <body class="cambioContrasennaContenedor">
+        <main>
+            <a href="/" class="logoInicioSesion"></a>
+            <section class="capturaContenedor">
+                <h1>Cambiá tu contraseña!!!</h1>
+                <p>Lo que tenés que hacer, es escribir tu correo electrónico, luego ponés la contraseña que te enviamos al correo y por último crear y corroborar una contraseña nueva.</p>
+                <p>Debés recordar que la nueva contraseña debe de contar con al menos una letra mayúscula, una minúscula, un número y un caractér especial.</p>
+                <form class="formularioRecuperarContrasenna">
+                    <div>
+                        <label for="txt-correoCambiarContrasenna">Correo electrónico</label>
+                        <input type="email" id="txt-correoCambiarContrasenna" placeholder="administrador@website.com">
+                    </div>
+                    <div>
+                        <label for="txt-contrasennaTemporal">Contraseña temporal</label>
+                        <input type="password" id="txt-contrasennaTemporal">
+                    </div>
+                    <div>
+                        <label for="txt-contrasennaNueva">Contraseña nueva</label>
+                        <input type="password" id="txt-contrasennaNueva">
+                    </div>
+                    <div>
+                        <label for="txt-contrasennaNuevaCorroborar">Corroborar contraseña nueva</label>
+                        <input type="password" id="txt-contrasennaNuevaCorroborar">
+                    </div>
+
+                    <div class="centrarTexto">
+                        <button type="button" class="btn" id="btn-cambiar">Cambiar contraseña</button>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <script src="js/usuario-servicios.js"></script>
+        <script src="js/cambioContrasenna.js"></script>
+
+
+    </body>
 
 </html>
