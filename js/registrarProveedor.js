@@ -80,10 +80,9 @@ const inputTipoIdRepresentante = document.querySelector('#slt-tipoIdRepresentant
 const inputNumeroIdRepresentante = document.querySelector('#txt-numeroIdRepresentante');
 const inputFechaNacimientoRepresentante = document.querySelector('#txt-fechaNacimientoRepresentante');
 const inputCorreoRepresentante = document.querySelector('#txt-correoRepresentante');
-const inputProvincia = document.querySelector('#slt-provincia');
 
-const inputCanton = document.querySelector('#slt-canton');
-const inputDistrito = document.querySelector('#slt-distrito');
+
+
 const inputOtrasSennas = document.getElementById('txt-otrasSennas');
 const inputDescripcion = document.getElementById('txt-descripcion');
 const inputTelefonoRep = document.querySelector('#txt-telefonoRepresentante');
@@ -318,6 +317,36 @@ const calcularEdad = (nacimiento) => {
     return edad;
 };
 
+/////  inicio Funcion para generar password Random //////
+function generadorPassword(passwordLength) {
+    var variablesNumeros = "0123456789";
+    var VariablesMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var VariablesMinusculas = "abcdefghijklmnopqrstuvwxyz";
+    var VariablesEspeciales = "@#/.$+";
+    var VariablesJuntas = variablesNumeros + VariablesMayusculas + VariablesMinusculas + VariablesEspeciales;
+    var randomPass = Array(passwordLength);
+    randomPass[0] = variablesNumeros;
+    randomPass[1] = VariablesMayusculas;
+    randomPass[2] = VariablesMinusculas;
+    randomPass[3] = VariablesEspeciales;
+    randomPass = randomPass.fill(VariablesJuntas, 4);
+    return variableArreglo(randomPass.map(function(x) { return x[Math.floor(Math.random() * x.length)] })).join('');
+}
+
+
+function variableArreglo(arreglo) {
+    for (var i = arreglo.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arreglo[i];
+        arreglo[i] = arreglo[j];
+        arreglo[j] = temp;
+    }
+    return arreglo;
+}
+
+/////  Final Funcion para generar password Random //////
+
+
 const imprimir = () => {
 
     let correo = inputCorreoSolicitante.value;
@@ -329,10 +358,10 @@ const imprimir = () => {
     let numeroId = inputNumeroId.value;
     let nacimiento = inputFechaNacimiento.value;
     let cantidadMascotas = '';
-    let contrasenna = 'ClaveTemporal'; // Arreglo Popular Conectar Con el generador de password automatico 
-    let provincia = sltProvincia.text;
-    let canton = sltCanton.text;
-    let distrito = sltDistritos.text;
+    let contrasenna = generadorPassword(9); // Arreglo Popular Conectar Con el generador de password automatico 
+    let provincia = sltProvincia.options[sltProvincia.selectedIndex].text;
+    let canton = sltCanton.options[sltCanton.selectedIndex].text;
+    let distrito = sltDistritos.options[sltDistritos.selectedIndex].text;
     let sennas = inputOtrasSennas.value;
     let tipoUsuario = 'proveedor';
     let estado = 'pendiente';

@@ -260,6 +260,7 @@ function generarPassw() {
     return pass;
 }
 
+
 /* Inicio: Función para imprimir los datos del cliente */
 
 const imprimirDatos = () => {
