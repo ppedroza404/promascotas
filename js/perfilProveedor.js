@@ -52,4 +52,4 @@ if (proveedor.tipoID != "Jurídica") {
 /* Fin: Variables que muestran la información del representante de proveedor */
 
 
-modificarRepLegal.addEventListener('click', modificarRepresentanteLegal(pnombreRep.value, ptipoIdRep.value, pidRep.value, pcorreoRep.value, ptelRep.value));
+//modificarRepLegal.addEventListener('click', modificarRepresentanteLegal(pnombreRep.value, ptipoIdRep.value, pidRep.value, pcorreoRep.value, ptelRep.value));

@@ -247,61 +247,75 @@ let pass = '';
 let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
     'abcdefghijklmnopqrstuvwxyz0123456789@#$';
 
-function generarPassw() {
-
-
-    for (let i = 1; i <= 8; i++) {
-        var char = Math.floor(Math.random() * str.length + 1);
-
-        pass = pass + str.charAt(char)
-    }
-
-
-    return pass;
+/////  inicio Funcion para generar password Random //////
+function generadorPassword(passwordLength) {
+    var variablesNumeros = "0123456789";
+    var VariablesMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var VariablesMinusculas = "abcdefghijklmnopqrstuvwxyz";
+    var VariablesEspeciales = "@#/.$+";
+    var VariablesJuntas = variablesNumeros + VariablesMayusculas + VariablesMinusculas + VariablesEspeciales;
+    var randomPass = Array(passwordLength);
+    randomPass[0] = variablesNumeros;
+    randomPass[1] = VariablesMayusculas;
+    randomPass[2] = VariablesMinusculas;
+    randomPass[3] = VariablesEspeciales;
+    randomPass = randomPass.fill(VariablesJuntas, 4);
+    return variableArreglo(randomPass.map(function(x) { return x[Math.floor(Math.random() * x.length)] })).join('');
 }
+
+
+function variableArreglo(arreglo) {
+    for (var i = arreglo.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arreglo[i];
+        arreglo[i] = arreglo[j];
+        arreglo[j] = temp;
+    }
+    return arreglo;
+}
+
+/////  Final Funcion para generar password Random //////
 
 
 /* Inicio: Función para imprimir los datos del cliente */
 
 const imprimirDatos = () => {
 
-    let sImagen = inputImagen.value;
-    let sNombre = inputNombreCliente.value;
-    let sPrimApellido = inputPrimApellidoCliente.value;
-    let sSegApellido = inputSegApellidoCliente.value;
-    let sGenero = sltGenero.value;
-    let sTipoId = sltTipoId.value;
-    let sNumId = inputNumId.value;
-    let sFechaNac = inputNacimiento.value;
-    let sCorreo = inputCorreo.value;
-    let sCantMasc = inputCantMascotas.value;
-    let sProvincia = sltProvincia.value;
-    let sCanton = sltCanton.value;
-    let sDistrito = sltDistritos.value;
-    let sOtrasSennias = inputOtrasSenias.value;
+    let correo = inputCorreo.value;
+    let nombre = inputNombreCliente.value;
+    let primerApellido = inputPrimApellidoCliente.value;
+    let segundoApellido = inputSegApellidoCliente.value;
+    let genero = sltGenero.value;
+    let tipoIdProveedor = sltTipoId.value;
+    let numeroId = inputNumId.value;
+    let nacimiento = inputNacimiento.value;
+    let cantidadMascotas = inputCantMascotas.value;
+    let contrasenna = generadorPassword(9);
+    let provincia = sltProvincia.options[sltProvincia.selectedIndex].text;
+    let canton = sltCanton.options[sltCanton.selectedIndex].text;
+    let distrito = sltDistritos.options[sltDistritos.selectedIndex].text;
+    let sennas = inputOtrasSenias.value;
+    let tipoUsuario = 'cliente';
+    let estado = 'pendiente';
+    let _Idservicio = '60791e45bf865d3a08577b3c'; // Arreglo Servicio Null 
+    let avatar = 'inputImagen.value.Imagen';
+    let nombreNegocio = '';
+    let tipoIdNegocio = '';
+    let juridicaId = '';
+    let telefono = '';
+    let descNegocio = '';
+    let _IdtipoDeServicio = '607dbb107fa24051fcbfaafe';
+    let repLegalCorreo = '';
+    let repLegalNombre = '';
+    let repLegalPrimerApell = '';
+    let repLegalSegundoApel = '';
+    let repLegalTipoId = '';
+    let repLegalNumeroId = '';
+    let repLegalNacimiento = '';
+    let repLegalTelefono = '';
 
-    console.log('Datos personales');
-    console.log('=====================');
-    console.log(sImagen);
-    console.log(`${sNombre} ${sPrimApellido} ${sSegApellido}`);
-    console.log(sGenero);
-    console.log(sTipoId);
-    console.log(sNumId);
-    console.log(sFechaNac);
-    console.log(sCorreo);
-    console.log(sCantMasc);
-    console.log('');
-    console.log('Dirección');
-    console.log('-------------------');
-    console.log(sProvincia);
-    console.log(sCanton);
-    console.log(sDistrito);
-    console.log(sOtrasSennias);
 
-    let contrasennaRandom = generarPassw();
-
-    registrar_usuario(inputCorreo.value, inputNombreCliente.value, inputPrimApellidoCliente.value, inputSegApellidoCliente.value, sltGenero.value, sltTipoId.value, inputNumId.value, inputNacimiento.value, inputCantMascotas.value, contrasennaRandom, sltProvincia.value, sltCanton.value, sltDistritos.value, inputOtrasSenias.value);
-
+    registrar_usuario(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono);
 
 
 
