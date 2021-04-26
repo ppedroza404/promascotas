@@ -25,11 +25,11 @@ const modificarRepLegal = document.querySelector('#btn-modificar-representante-l
 /* Inicio: Variables que muestran la información del usuario conectado en el perfil */
 
 pnombreProv.value = `${proveedor.nombre} ${proveedor.primerApellido} ${proveedor.segundoApellido}`;
-pnegocioProv.value = proveedor.n_negocio;
+pnegocioProv.value = proveedor.nombreNegocio;
 pcorreoProv.value = proveedor.correo;
 ptelProv.value = proveedor.telefono;
-pidProv.value = proveedor.id;
-ptipoId.value = proveedor.r_legalatipoid;
+pidProv.value = proveedor.numeroId;
+ptipoId.value = proveedor.tipoId;
 pdireccionProv.value = `${proveedor.provincia}, ${proveedor.canton}, ${proveedor.distrito}`;
 potrasSeniasProv.value = proveedor.sennas;
 spanNombreNegocio.innerHTML = proveedor.n_negocio;
@@ -39,14 +39,14 @@ spanNombreNegocio.innerHTML = proveedor.n_negocio;
 
 /* Inicio: Variables que muestran la información del representante de proveedor */
 
-if (proveedor.tipoID != "Jurídica") {
+if (proveedor.tipoIdNegocio != "Jurídica") {
     seccionRep.classList.add('ocultar');
 } else {
-    pnombreRep.value = `${proveedor.r_legal_Nombre} ${proveedor.r_legalaPapellido} ${proveedor.r_legalaSapellido}`;
-    ptipoIdRep.value = proveedor.r_legalatipoid;
-    pidRep.value = proveedor.r_legalanid;
-    pcorreoRep.value = proveedor.r_legacorreo_email;
-    ptelRep.value = proveedor.telefono;
+    pnombreRep.value = `${proveedor.repLegalNombre} ${proveedor.repLegalPrimerApell} ${proveedor.repLegalSegundoApel}`;
+    ptipoIdRep.value = proveedor.repLegalTipoId;
+    pidRep.value = proveedor.repLegalNumeroId;
+    pcorreoRep.value = proveedor.repLegalCorreo;
+    ptelRep.value = proveedor.repLegalTelefono;
 }
 
 /* Fin: Variables que muestran la información del representante de proveedor */

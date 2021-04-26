@@ -55,10 +55,10 @@ function mostrarInfoMascota() {
 
 pNombreCliente.value = `${cliente.nombre} ${cliente.primerApellido} ${cliente.segundoApellido}`;
 pCorreoCliente.value = cliente.correo;
-pNumIdCliente.value = cliente.id;
+pNumIdCliente.value = cliente.numeroId;
 pDireccionCliente.value = `${cliente.provincia}, ${cliente.canton}, ${cliente.distrito}`;
 pOtrasSenias.value = cliente.sennas;
-pGeneroCliente.value = cliente.sexo;
+pGeneroCliente.value = cliente.genero;
 
 /* Fin: Variables que muestran la información del usuario conectado en el perfil */
 
