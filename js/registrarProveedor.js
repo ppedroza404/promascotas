@@ -118,6 +118,50 @@ const habilitarDistrito = () => {
 //Validación 
 
 
+// Tipos de servicio
+let tiposdeServicios = [];
+
+const obtenerTipodeServicios = async() => {
+    tiposdeServicios = await listarTipoServicio();
+}
+
+const listarTipoServicio = async() => {
+    let listaTipoDeServicio;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodeservicios',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaTipoDeServicio = response.data.ListaDeTipoDeServicio;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaTipoDeServicio;
+};
+
+obtenerTipodeServicios();
+
+// tipoServicio ; elemento
+
+const llenarSelectTipoServicio = () => {
+
+
+    tiposdeServicios.forEach(servicio => {
+        let option = document.createElement("option");
+        option.text = servicio.nombre;
+        option.value = servicio._id;
+        tipoServicio.add(option);
+    });
+
+};
+
+
+
+// Fin Tipos de servicio
+
 const validar = () => {
     let error = false;
 
@@ -358,7 +402,7 @@ const imprimir = () => {
     let numeroId = inputNumeroId.value;
     let nacimiento = inputFechaNacimiento.value;
     let cantidadMascotas = '';
-    let contrasenna = generadorPassword(9); // Arreglo Popular Conectar Con el generador de password automatico 
+    let contrasenna = generadorPassword(9);
     let provincia = sltProvincia.options[sltProvincia.selectedIndex].text;
     let canton = sltCanton.options[sltCanton.selectedIndex].text;
     let distrito = sltDistritos.options[sltDistritos.selectedIndex].text;
@@ -372,7 +416,7 @@ const imprimir = () => {
     let juridicaId = Jurídica.value;
     let telefono = telefonoCliente.value;
     let descNegocio = inputDescripcion.value;
-    let _IdtipoDeServicio = '607dbb107fa24051fcbfaafe'; // Arreglo Popular Tipos de servicio en el select y tomar valor 
+    let _IdtipoDeServicio = tipoServicio.value;
     let repLegalCorreo = correoRepresentante.value;
     let repLegalNombre = nombreRepresentante.value;
     let repLegalPrimerApell = primerApellidoRepresentante.value;
@@ -423,9 +467,11 @@ const readUrl = () => {
     inputImagen.addEventListener('change', archivoCambiado)
 }
 
-habilitarCanton();
-habilitarDistrito();
+
 sltProvincia.addEventListener('change', habilitarCanton);
 sltCanton.addEventListener('change', habilitarDistrito);
 btnRegistrarProveedor.addEventListener('click', validar);
 window.addEventListener('load', readUrl);
+window.addEventListener('load', llenarSelectTipoServicio);
+window.addEventListener('load', habilitarCanton);
+window.addEventListener('load', habilitarDistrito);
