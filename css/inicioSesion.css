@@ -1,6 +1,7 @@
 html {
     background: rgb(28, 1, 43);
     background: linear-gradient(62deg, rgba(28, 1, 43, 0.9976191160057774) 0%, rgba(0, 0, 0, 1) 27%);
+    height: auto;
 }
 
 body {
@@ -13,12 +14,18 @@ body {
     min-height: 100vh;
 }
 
+body.cambioContrasennaContenedor {
+    background-image: url('../img/bgrCambioContrasenna.jpg');
+}
+
 a:hover {
     color: #b6b8d6;
 }
 
 .inicioSesionContenedor h1,
-.inicioSesionContenedor h2 {
+.inicioSesionContenedor h2,
+.cambioContrasennaContenedor h1,
+.cambioContrasennaContenedor h2 {
     color: #56cfe1;
     margin-bottom: 0;
     text-align: center;
@@ -42,12 +49,26 @@ a:hover {
     max-width: 60%;
 }
 
-.formularioInicioSesion {
+.cambioContrasennaContenedor .capturaContenedor {
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+.capturaContenedor p {
+    padding: 20px 0px 5px;
+    line-height: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.formularioInicioSesion,
+.formularioRecuperarContrasenna {
     max-width: 500px;
     margin: 0 auto;
 }
 
-.formularioInicioSesion div {
+.formularioInicioSesion div,
+.formularioRecuperarContrasenna div {
     padding: 20px 0px;
 }
 
