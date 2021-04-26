@@ -71,34 +71,30 @@ const mostrarTabla = async() => {
 
     lista_proveedores_activos.forEach(usuario => {
 
+
         if (usuario.tipoUsuario.toLowerCase().includes('proveedor')) {
             if (usuario.estado.toLowerCase().includes('pendiente')) {
                 // if (usuario.servicio.toLowerCase().includes(filtro) || proveedor.provincia.toLowerCase().includes(filtro) || proveedor.canton.toLowerCase().includes(filtro)) {
                 let fila = tabla.insertRow();
-
-                fila.insertCell().innerHTML = usuario.nombreNegocio;
                 usuario.servicios.forEach(servicio => {
-                    fila.insertCell().innerHTML = servicio.nombre;
+                    fila.insertCell().innerHTML = usuario.nombreNegocio;
+                    fila.insertCell().innerHTML = usuario.telefono;
+                    fila.insertCell().innerHTML = usuario.correo;
+                    fila.insertCell().innerHTML = '';
+                    fila.insertCell().innerHTML = '';
+                    fila.insertCell().innerHTML = '';
+
+                    let celdaAcciones = fila.insertCell();
+
+                    let botonVerServicio = document.createElement('button');
+                    botonVerServicio.classList.add('btn');
+                    botonVerServicio.innerText = 'Ver servicio';
+                    botonVerServicio.addEventListener('click', () => {
+                        sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
+                        window.location.href = 'serviciosCliente.html';
+                    });
+                    celdaAcciones.appendChild(botonVerServicio);
                 });
-                fila.insertCell().innerHTML = usuario.telefono;
-                fila.insertCell().innerHTML = usuario.correo;
-                fila.insertCell().innerHTML = '';
-                fila.insertCell().innerHTML = '';
-                fila.insertCell().innerHTML = '';
-
-
-                let celdaAcciones = fila.insertCell();
-
-                let botonVerServicio = document.createElement('button');
-                botonVerServicio.classList.add('btn');
-                botonVerServicio.innerText = 'Ver servicio';
-                botonVerServicio.addEventListener('click', () => {
-                    sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
-                    window.location.href = 'serviciosCliente.html';
-                });
-
-                celdaAcciones.appendChild(botonVerServicio);
-
 
                 // }
             }
