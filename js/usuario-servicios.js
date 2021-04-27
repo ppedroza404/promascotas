@@ -87,7 +87,7 @@ const iniciar_sesion = async(pcorreo, pcontrasenna) => {
                 if (sessionStorage.getItem('tipo_usuario') == 'cliente') {
                     window.location.href = 'perfilCliente.html';
                 } else if (sessionStorage.getItem('tipo_usuario') == 'proveedor') {
-                    window.location.href = 'perfilProveedor.html';
+                    window.location.href = 'paginaInicioProveedor.html';
                 } else {
                     window.location.href = 'paginaInicioAdmin.html';
                 }
@@ -292,7 +292,7 @@ const modificarRepresentanteLegal = async(pnombreRepresentante, pprimerApellidoR
                 'text': 'Muchas gracias',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'perfilProveedor.html';
+                window.location.href = 'paginaInicioProveedor.html';
             });
         })
         .catch((error) => {
