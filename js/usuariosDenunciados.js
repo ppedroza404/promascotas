@@ -76,7 +76,7 @@ const generarTablaRepLegal = () => {
 const mostrarTablaUsuariosReportados = () => {
     let filtro = inputfiltrarSolicitudes.value.toLowerCase();
     tablaSolicitudesPendientes.innerHTML = '';
-    usuariosDenuncadios.forEach(usuario => {
+    usuariosDenunciados.forEach(usuario => {
 
         if (usuario.Estado.toLowerCase().includes(filtro) || usuario.Correo.toLowerCase().includes(filtro) || usuario.Tipo.toLowerCase().includes(filtro)) {
 

@@ -334,7 +334,7 @@ let lista_proveedoresCalificados = [
     { "n_negocio": "La gatita collares", "calificacion": "3.77" }
 ]
 
-let usuariosDenuncadios = [
+let usuariosDenunciados = [
     { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "1", "Correo": "mmatamoro@gmail.com", "Nombre": "Maria", "Primer_apellido": "Trivez", "Idenficacion": "925069023", "Teléfono": "1234-5678" },
     { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "2", "Correo": "rcargua@gmail.com", "Nombre": "Rosa", "Primer_apellido": "Ripado", "Idenficacion": "934480785", "Teléfono": "5784-4433" },
     { "Estado": "Denunciado", "Tipo": "Proveedor", "Denuncias": "3", "Correo": "jsarsa@gamil.com", "Nombre": "Jose", "Primer_apellido": "Baldor", "Idenficacion": "459378283", "Teléfono": "1234-5679" },
