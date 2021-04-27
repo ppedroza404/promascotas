@@ -97,7 +97,7 @@ const mostrarTabla = async() => {
                             botonVerServicio.innerText = 'Ver servicio';
                             botonVerServicio.addEventListener('click', () => {
                                 sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
-                                window.location.href = 'serviciosProveedorYCliente.html';
+                                window.location.href = `serviciosProveedorYCliente.html#${usuario._id}`;
                             });
                             celdaAcciones.appendChild(botonVerServicio);
                         }
