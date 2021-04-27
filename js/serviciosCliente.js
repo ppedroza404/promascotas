@@ -74,29 +74,35 @@ const mostrarTabla = async() => {
 
         if (usuario.tipoUsuario.toLowerCase().includes('proveedor')) {
             if (usuario.estado.toLowerCase().includes('pendiente')) {
-                // if (usuario.servicio.toLowerCase().includes(filtro) || proveedor.provincia.toLowerCase().includes(filtro) || proveedor.canton.toLowerCase().includes(filtro)) {
-                let fila = tabla.insertRow();
+
                 usuario.servicios.forEach(servicio => {
-                    fila.insertCell().innerHTML = usuario.nombreNegocio;
-                    fila.insertCell().innerHTML = usuario.telefono;
-                    fila.insertCell().innerHTML = usuario.correo;
-                    fila.insertCell().innerHTML = '';
-                    fila.insertCell().innerHTML = '';
-                    fila.insertCell().innerHTML = '';
+                    //Falta probar el filtro
+                    if (servicio.nombre.toLowerCase().includes(filtro) || usuario.provincia.toLowerCase().includes(filtro) || usuario.canton.toLowerCase().includes(filtro)) {
 
-                    let celdaAcciones = fila.insertCell();
+                        let fila = tabla.insertRow();
 
-                    let botonVerServicio = document.createElement('button');
-                    botonVerServicio.classList.add('btn');
-                    botonVerServicio.innerText = 'Ver servicio';
-                    botonVerServicio.addEventListener('click', () => {
-                        sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
-                        window.location.href = 'serviciosCliente.html';
-                    });
-                    celdaAcciones.appendChild(botonVerServicio);
+                        if (servicio.nombre !== 'Agregue un servicio') {
+                            fila.insertCell().innerHTML = usuario.nombreNegocio;
+                            fila.insertCell().innerHTML = servicio.nombre;
+                            fila.insertCell().innerHTML = usuario.telefono;
+                            fila.insertCell().innerHTML = usuario.correo;
+                            fila.insertCell().innerHTML = usuario.provincia;
+                            fila.insertCell().innerHTML = usuario.canton;
+                            fila.insertCell().innerHTML = usuario.distrito;
+
+                            let celdaAcciones = fila.insertCell();
+
+                            let botonVerServicio = document.createElement('button');
+                            botonVerServicio.classList.add('btn');
+                            botonVerServicio.innerText = 'Ver servicio';
+                            botonVerServicio.addEventListener('click', () => {
+                                sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
+                                window.location.href = 'serviciosProveedorYCliente.html';
+                            });
+                            celdaAcciones.appendChild(botonVerServicio);
+                        }
+                    }
                 });
-
-                // }
             }
         }
 
