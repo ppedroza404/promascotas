@@ -174,41 +174,17 @@
                     </div>
                 </div>
                 <div class="contenedorColumna simpleColumna">
+                    <div class="columna"></div>
                     <div class="columna">
-                        <label for="txt-mesExpiracion" class="simpleColumna">Fecha de expiración - mes</label>
-                        <select id="slt-mesExpiracion" class="input-dobleColumna">
-                            <option value="">--Seleccione una opción--</option>
-                            <option value="1">Enero</option>
-                            <option value="2">Febrero</option>
-                            <option value="3">Marzo</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Mayo</option>
-                            <option value="6">Junio</option>
-                            <option value="7">Julio</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Setiembre</option>
-                            <option value="10">Octubre</option>
-                            <option value="11">Noviembre</option>
-                            <option value="12">Diciembre</option>
-                        </select>
-                    </div>
-                    <div class="columna">
-                        <label for="slt-annioExpiracion" class="simpleColumna">Fecha de expiración - año</label>
-                        <select id="slt-annioExpiracion" class="input-dobleColumna">
-                            <option value="">--Seleccione una opción--</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                        </select>
+                        <div><label for="txt-mesExpiracion">Fecha Expiracion</label></div>
+                        <input type="month" id="txt-mesExpiracion">
                     </div>
                     <div class="columna">
                         <div><label for="txt-codigoSeguridad">CVC</label></div>
                         <input type="text" id="txt-codigoSeguridad">
                         <img src="img/cvc_logo1.jpg" class="img-codigoSeguridad" alt="">
                     </div>
+                </div>
             </section>
             <div class="btn-general">
                 <button type="button" id="btn-registrarCC">Guardar</button>

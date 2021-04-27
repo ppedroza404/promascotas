@@ -9,10 +9,9 @@ const tarjetaMasterC = document.querySelector('#img-tarjetaMasterC');
 const tarjetaAmex = document.querySelector('#img-tarjetaAmex');
 const numTarjeta = document.querySelector('#txt-numeroTarjeta');
 const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
-const inputExpiracionMes = document.querySelector('#slt-mesExpiracion');
-const inputExpiracionAnnio = document.querySelector('#slt-annioExpiracion');
+const inputExpiracionMes = document.querySelector('#txt-mesExpiracion');
 const inputCodigoSeguridad = document.querySelector('#txt-codigoSeguridad');
-
+let mesTarjeta;
 
 let tipoTarjeta;
 
@@ -27,7 +26,7 @@ const mostrarTabla = (tipoTarjeta) => {
     fila.insertCell().innerHTML = tipoTarjeta;
     fila.insertCell().innerHTML = numTarjeta;
     fila.insertCell().innerHTML = inputNombreTarjeta;
-    fila.insertCell().innerHTML = `${inputExpiracionMes}/${inputExpiracionAnnio}`;
+    fila.insertCell().innerHTML = inputExpiracionMes.value;
     fila.insertCell().innerHTML = inputCodigoSeguridad;
 }
 
@@ -93,20 +92,15 @@ const imprimirDatos = () => {
 
     const numTarjeta = document.querySelector('#txt-numeroTarjeta');
     const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
-    const inputExpiracionMes = document.querySelector('#slt-mesExpiracion');
-    const inputExpiracionAnnio = document.querySelector('#slt-annioExpiracion');
 
     let subStrTarjeta = obtenerSubStr(numTarjeta.value);
     let nombreTarjeta = inputNombreTarjeta.value;
-    let mes = inputExpiracionMes.value;
-    let annio = inputExpiracionAnnio.value;
 
     console.log('Método de pago');
     console.log('=====================');
     console.log(`Tipo de tarjeta ${tipoTarjeta}`);
     console.log(`Tarjeta termina en ${subStrTarjeta}`);
     console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
-    console.log(`Fecha de expiración: 0${mes}/${annio}`);
 
     Swal.fire({
         'icon': 'success',
@@ -114,14 +108,15 @@ const imprimirDatos = () => {
         'text': 'La tarjeta ha sido registrada satisfactoriamente',
         'confirmButtonText': 'Entendido'
     }).then(() => {
-        window.location.href = 'perfilCliente.html';
+        window.location.href = 'registrarMetodoPago.html';
     });
     mostrarTabla();
 
 };
 
 const probarInfo = () => {
-    console.log('Hola Mundo');
+    console.log('exp date');
+    mesTarjeta = inputExpiracionMes.value.split("-");
 }
 
 /* Fin: Función para imprimir los datos del método de pago registrado */
@@ -132,19 +127,16 @@ const probarInfo = () => {
 
 const validarExpiracion = () => {
     let fechaActual = new Date();
-    let mesTarjeta = inputExpiracionMes.value;
-    let annioTarjeta = inputExpiracionAnnio.value;
 
     let mesActual = fechaActual.getMonth();
     let annioActual = fechaActual.getFullYear();
 
-    if (annioTarjeta >= annioActual) {
-        if (mesTarjeta >= mesActual) {
+    if (mesTarjeta[0] >= annioActual) {
+        if (mesTarjeta[1] - 1 >= mesActual) {
             imprimirDatos();
 
         } else {
             inputExpiracionMes.classList.add('error');
-            inputExpiracionAnnio.classList.add('error');
             Swal.fire({
                 'icon': 'warning',
                 'title': 'Favor revisar',
@@ -193,12 +185,6 @@ const validar = (ptipoTarjeta) => {
     } else {
         inputExpiracionMes.classList.remove('error');
     }
-    if (inputExpiracionAnnio.value == "") {
-        error = true;
-        inputExpiracionAnnio.classList.add('error');
-    } else {
-        inputExpiracionAnnio.classList.remove('error');
-    }
     if (inputCodigoSeguridad.value == "") {
         error = true;
         inputCodigoSeguridad.classList.add('error');
@@ -238,7 +224,7 @@ const validar = (ptipoTarjeta) => {
 
 
 /* Fin: Función para validar que se encuentren los datos requeridos */
-
+inputExpiracionMes.addEventListener('change', probarInfo)
 btnRegistrarCC.addEventListener('click', validar);
 
 

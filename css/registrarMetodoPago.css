@@ -17,3 +17,8 @@
 .img-codigoSeguridad {
     float: right;
 }
+
+#txt-mesExpiracion {
+    width: 40%;
+    float: left;
+}
