@@ -1,6 +1,6 @@
 'use strict';
 
-const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido, genero, tipoId, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono) => {
+const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono, inputFacebook, inputInstagram, inputTwitter) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-usuario',
@@ -38,6 +38,9 @@ const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido,
             repLegalNumeroId: repLegalNumeroId,
             repLegalNacimiento: repLegalNacimiento,
             repLegalTelefono: repLegalTelefono,
+            facebook: inputFacebook,
+            tweeter: inputInstagram,
+            instagram: inputTwitter,
         }
     }).then((response) => {
 
