@@ -39,8 +39,8 @@ const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido,
             repLegalNacimiento: repLegalNacimiento,
             repLegalTelefono: repLegalTelefono,
             facebook: inputFacebook,
-            tweeter: inputInstagram,
-            instagram: inputTwitter,
+            twitter: inputTwitter,
+            instagram: inputInstagram,
         }
     }).then((response) => {
 
