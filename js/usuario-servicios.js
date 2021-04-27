@@ -11,7 +11,7 @@ const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido,
             primerApellido: primerApellido,
             segundoApellido: segundoApellido,
             genero: genero,
-            tipoId: tipoId,
+            tipoId: tipoIdProveedor,
             numeroId: numeroId,
             nacimiento: nacimiento, //formato fecha de postman YYYY-MM-DD
             cantidadMascotas: cantidadMascotas,
