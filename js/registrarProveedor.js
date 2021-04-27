@@ -16,6 +16,7 @@ const tipoServicio = document.querySelector('#slt-tipoServicio');
 const divRepreLega = document.querySelector('#div-repreLegal');
 const divCedJuridica = document.querySelector('#div-cedJuridica');
 
+
 const enableSelect = () => {
     if (tipoId.value == 'Jurídica') {
         Jurídica.disabled = false;
@@ -88,6 +89,10 @@ const inputDescripcion = document.getElementById('txt-descripcion');
 const inputTelefonoRep = document.querySelector('#txt-telefonoRepresentante');
 const inputTelefonoCliente = document.querySelector('#txt-telefono');
 const inputTipoServicio = document.querySelector('#slt-tipoServicio');
+
+const campoInputFacebook = document.querySelector('#txt-inputFacebook');
+const campoInputInstagram = document.querySelector('#txt-inputInstagram');
+const campoInputTwitter = document.querySelector('#txt-inputTwitter');
 
 /* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
 
@@ -333,6 +338,34 @@ const validar = () => {
         inputDescripcion.classList.remove('error');
     }
 
+
+
+
+
+    if (campoInputFacebook.value == '') {
+        error = true;
+        campoInputFacebook.classList.add('error');
+    } else {
+        campoInputFacebook.classList.remove('error');
+    }
+
+    if (campoInputInstagram.value == '') {
+        error = true;
+        campoInputInstagram.classList.add('error');
+    } else {
+        campoInputInstagram.classList.remove('error');
+    }
+
+    if (campoInputTwitter.value == '') {
+        error = true;
+        campoInputTwitter.classList.add('error');
+    } else {
+        campoInputTwitter.classList.remove('error');
+    }
+
+
+
+
     if (error == false) {
         imprimir();
     } else {
@@ -425,9 +458,15 @@ const imprimir = () => {
     let repLegalNumeroId = numeroIdRepresentante.value;
     let repLegalNacimiento = fechaNacimientoRepresentante.value;
     let repLegalTelefono = telefonoRep.value;
+    let inputFacebook = campoInputFacebook.value;
+    let inputInstagram = campoInputInstagram.value;
+    let inputTwitter = campoInputTwitter.value;
 
 
-    registrar_usuario(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono);
+
+
+
+    registrar_usuario(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono, inputFacebook, inputInstagram, inputTwitter);
 
     //let edad = calcularEdad(fechaNacimiento);
 
