@@ -1943,7 +1943,7 @@ let listaDistritos = [{
     {
         "Id": "40308",
         "Canton": "403",
-        "Nombre": "Para"
+        "Nombre": "Pará"
     },
     {
         "Id": "40401",
