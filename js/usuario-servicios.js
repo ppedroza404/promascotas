@@ -85,7 +85,7 @@ const iniciar_sesion = async(pcorreo, pcontrasenna) => {
 
                 //redirige al perfil respectivo segun el tipo de id
                 if (sessionStorage.getItem('tipo_usuario') == 'cliente') {
-                    window.location.href = 'perfilCliente.html';
+                    window.location.href = 'paginaInicioCliente.html';
                 } else if (sessionStorage.getItem('tipo_usuario') == 'proveedor') {
                     window.location.href = 'paginaInicioProveedor.html';
                 } else {
@@ -160,7 +160,7 @@ const modificarContrasennaP = async(pcorreoProveedor, pclaveNueva) => {
                 'text': 'Muchas gracias',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'perfilCliente.html';
+                window.location.href = 'perfilProveedor.html';
             });
         })
         .catch((error) => {
