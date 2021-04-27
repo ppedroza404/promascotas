@@ -309,6 +309,36 @@ botonAgregarServicio.addEventListener('click', validarServiciosAgregados);
 
 
 
+//Obtiene información del proveedor cuando es cliente
+let urlID = window.location.hash;
+let urlIDModificado = urlID.slice(1);
+//alert(urlIDModificado);
+
+
+// Listar servicios
+let informacionProveedor = [];
+
+const buscarProveedor = async() => {
+    informacionProveedor = await obtenerInformacionProveedor(urlIDModificado);
+    //mostrarLista();
+    //completarSelectServicios();
+    mostrarProveedor();
+};
+const mostrarProveedor = async() => {
+    console.log(informacionProveedor);
+    //alert(informacionProveedor);
+
+    // let nombreNegocioProveedor = informacionProveedor.nombreNegocio.value;
+    // let descripcionNegocioProveedor = informacionProveedor.descNegocio;
+
+    // alert(nombreNegocioProveedor);
+    // alert(descripcionNegocioProveedor);
+
+};
+
+buscarProveedor();
+
+
 
 //Buscador de servicios
 let buscadorServiciosFiltro = document.querySelector('#txt-buscadorServicios');
@@ -355,7 +385,7 @@ const completarSelectServicios = () => {
 
         servicioSeleccionado.add(opcion);
     });
-}
+};
 
 
 const mostrarLista = async() => {
