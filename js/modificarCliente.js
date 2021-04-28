@@ -33,8 +33,7 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
     let error = false;
     let regexNuevaContrasenna = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/;
 
-    console.log(claveActual);
-    console.log(cliente.contrasenna);
+
 
     if (claveActual === cliente.contrasenna) {
         console.log('si entró')

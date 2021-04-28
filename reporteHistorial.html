@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Página de inicio Admin</title>
+    <title>Reporte de usuarios admin </title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!--Tienen que ir en todas las internas-->
-    <link rel="stylesheet" href="css/paginaInicio.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/listarInformacion.css">
 
 </head>
 
@@ -23,7 +22,7 @@
     <header>
         <section class="contenedor">
             <div>
-                <a href="###" class="logo"><span></span></a>
+                <a href="paginaInicioAdmin.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -104,7 +103,6 @@
                                 <li>
                                     <a href="modificarCatalogoAdmin.html">Modificar catálogos</a>
                                 </li>
-
                             </ul>
                         </li>
                         <li>
@@ -114,7 +112,7 @@
                                     <a href="listarUsuariosAdmin.html">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="solicitudesPendientesAdmin.html">Usuarios denunciados</a>
+                                    <a href="usuariosDenunciados.html">Usuarios denunciados</a>
                                 </li>
                                 <li>
                                     <a href="reporteHistorial.html">Historial</a>
@@ -150,63 +148,42 @@
         </section>
     </header>
 
-    <main class="contenedor inicio-generalCliente">
-
-        <h1>Administrador</h1>
-        <h2>Bienvenido</h2>
-
-        <section class="parrafo-inicioCliente">
-            <p>Nos agrada que estés de vuelta.</p>
-        </section>
-
-        <section class="contenedorColumna">
-            <div class="input-contenedor">
-                <!--
-                <div class="contenedor-buscar">
-                    <label><b>Buscar</b></label>
-                    <input type="text" name="buscar">
-                    <i class="fa fa-search" id="btn-iconoBuscar"></i>
-                </div>
-                -->
+    <main>
+        <h1>Historial</h1>
+        <div class="contenedor">
+            <div class="filtrar">
+                <label for="txt-filtro">Filtrar</label>
+                <input type="text" id="txt-filtro">
             </div>
-        </section>
+            <table id="tbl-bitacora" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo de usuario</th>
+                        <th>Acción</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        <section class="seccion-contenedorCajas">
-            <div class="fix">
-                <div class="flotar-cent seccion-contenedor">
-                    <h2>Proveedores Pendientes</h2>
-                    <p>Aquí podrás ver los proveedores pendientes de aprobación.</p>
-                    <div class="btn-general">
-                        <a href="solicitudesPendientesAprobar.html">
-                            <button type="button" id="btn-proveedoresPendientes">Proveedores Pendientes</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="contenedor seccion-slideshow">
-            <div class="imagenes-slide">
-                <figure>
-                    <img src="img/publicidadCliente3.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente1.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente2.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente1.jpg" alt="publicidad">
-                    <img src="img/publicidadCliente3.jpg" alt="publicidad">
-                </figure>
-            </div>
-        </section>
-
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+
+    <!-- 3Party Script-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/servicios.js"></script>
+    <!-- 3Party Script-->
+
     <script src="js/navegacion.js"></script>
-    <script src="js/irProveedoresPendientes.js"></script>
+    <script src="js/tabla-bitacora.js"></script>
+
+
 </body>
 
 </html>

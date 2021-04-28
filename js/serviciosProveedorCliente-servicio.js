@@ -1,5 +1,21 @@
 'use strict';
 
+const obtenerInformacionProveedor = async(urlIDModificado) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/mostrar-informacionProveedor/${urlIDModificado}`,
+            responseType: 'json'
+        })
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+
+
 const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicilio, ptipoMoneda, pmonto) => {
 
     await axios({
