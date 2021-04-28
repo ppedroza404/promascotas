@@ -18,10 +18,11 @@ let tipoTarjeta;
 /* Inicio: Función para mostrar los datos del método de pago en una tabla */
 
 const tabla = document.querySelector('#tbl-metodosPago');
+const tablabody = document.querySelector('#tbl-metodosPago tbody');
 
-const mostrarTabla = (tipoTarjeta) => {
-    mostrarTabla.innerHTML;
-    let fila = tabla.insertRow();
+const mostrarTabla = () => {
+    tablabody.innerHTML = '';
+    let fila = tablabody.insertRow();
 
     fila.insertCell().innerHTML = tipoTarjeta;
     fila.insertCell().innerHTML = numTarjeta;
