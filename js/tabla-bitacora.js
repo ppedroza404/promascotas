@@ -3,7 +3,11 @@
 const tabla = document.querySelector('#tbl-bitacora tbody');
 const inputFiltro = document.querySelector('#txt-filtro');
 
-const mostrarTabla = () => {
+let listaBitacora = [];
+
+listaBitacora = await listarBitacora();
+
+const mostrarTabla = async() => {
     let filtro = inputFiltro.value.toLowerCase();
     tabla.innerHTML = '';
     listaBitacora.forEach(bitacora => {
