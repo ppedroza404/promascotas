@@ -33,9 +33,6 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
     let error = false;
     let regexNuevaContrasenna = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/;
 
-    console.log(claveActual);
-    console.log(cliente.contrasenna);
-
     if (claveActual === cliente.contrasenna) {
         console.log('si entró')
         if (claveActual !== claveNueva) {
@@ -52,12 +49,12 @@ const validarContrasennas = (claveActual, claveNueva, claveConfirmada, correo) =
                 contrasennaNueva.classList.remove('error');
                 if (claveNueva === claveConfirmada) {
                     modificarContrasennaC(correo, claveNueva);
-                    Swal.fire({
-                        'icon': 'success',
-                        'title': 'Solicitud completada',
-                        'text': 'La contraseña se actualizó',
-                        'confirmButtonText': 'Entendido'
-                    });
+                    // Swal.fire({
+                    //     'icon': 'success',
+                    //     'title': 'Solicitud completada',
+                    //     'text': 'La contraseña se actualizó',
+                    //     'confirmButtonText': 'Entendido'
+                    // });
                 } else {
                     error = true;
                     Swal.fire({
