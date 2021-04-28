@@ -334,6 +334,36 @@ const mostrarProveedor = async() => {
     // alert(nombreNegocioProveedor);
     // alert(descripcionNegocioProveedor);
 
+    let campoNombreProveedor = document.querySelector('#nombreProveedor');
+    let campoDescripcionProveedor = document.querySelector('#descripcionProveedor');
+    let campoNombreProveedorInformacion = document.querySelector('#nombreProveedorInformacion');
+    let campoProvinciaProveedorInformacion = document.querySelector('#provinciaProveedorInformacion');
+    let campoCantonPoveedorInformacion = document.querySelector('#cantonProveedorInformacion');
+    let campoDistritoPoveedorInformacion = document.querySelector('#distritoProveedorInformacion');
+    let campoSennasPoveedorInformacion = document.querySelector('#sennasProveedorInformacion');
+    let campoTelefonoPoveedorInformacion = document.querySelector('#telefonoProveedorInformacion');
+    let campoHrefCorreoPoveedorInformacion = document.querySelector('#hrefCorreoInformacionProveedor');
+    let campoCorreoPoveedorInformacion = document.querySelector('#CorreoInformacionProveedor');
+
+
+
+    informacionProveedor.forEach(datos => {
+        console.log(datos.nombreNegocio);
+        console.log(datos.descNegocio);
+
+        campoNombreProveedor.innerText = datos.nombreNegocio;
+        campoDescripcionProveedor.innerText = datos.descNegocio;
+        campoNombreProveedorInformacion.innerText = datos.nombreNegocio;
+        campoProvinciaProveedorInformacion.innerText = datos.provincia;
+        campoCantonPoveedorInformacion.innerText = datos.canton;
+        campoDistritoPoveedorInformacion.innerText = datos.distrito;
+        campoSennasPoveedorInformacion.innerText = datos.sennas;
+        campoTelefonoPoveedorInformacion.innerText = datos.telefono;
+        campoHrefCorreoPoveedorInformacion.setAttribute('href', `mailto:${datos.correo}`);
+        campoCorreoPoveedorInformacion.innerText = datos.correo;
+
+    });
+
 };
 
 buscarProveedor();
