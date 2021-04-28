@@ -309,6 +309,66 @@ botonAgregarServicio.addEventListener('click', validarServiciosAgregados);
 
 
 
+//Obtiene información del proveedor cuando es cliente
+let urlID = window.location.hash;
+let urlIDModificado = urlID.slice(1);
+//alert(urlIDModificado);
+
+
+// Listar servicios
+let informacionProveedor = [];
+
+const buscarProveedor = async() => {
+    informacionProveedor = await obtenerInformacionProveedor(urlIDModificado);
+    //mostrarLista();
+    //completarSelectServicios();
+    mostrarProveedor();
+};
+const mostrarProveedor = async() => {
+    console.log(informacionProveedor);
+    //alert(informacionProveedor);
+
+    // let nombreNegocioProveedor = informacionProveedor.nombreNegocio.value;
+    // let descripcionNegocioProveedor = informacionProveedor.descNegocio;
+
+    // alert(nombreNegocioProveedor);
+    // alert(descripcionNegocioProveedor);
+
+    let campoNombreProveedor = document.querySelector('#nombreProveedor');
+    let campoDescripcionProveedor = document.querySelector('#descripcionProveedor');
+    let campoNombreProveedorInformacion = document.querySelector('#nombreProveedorInformacion');
+    let campoProvinciaProveedorInformacion = document.querySelector('#provinciaProveedorInformacion');
+    let campoCantonPoveedorInformacion = document.querySelector('#cantonProveedorInformacion');
+    let campoDistritoPoveedorInformacion = document.querySelector('#distritoProveedorInformacion');
+    let campoSennasPoveedorInformacion = document.querySelector('#sennasProveedorInformacion');
+    let campoTelefonoPoveedorInformacion = document.querySelector('#telefonoProveedorInformacion');
+    let campoHrefCorreoPoveedorInformacion = document.querySelector('#hrefCorreoInformacionProveedor');
+    let campoCorreoPoveedorInformacion = document.querySelector('#CorreoInformacionProveedor');
+
+
+
+    informacionProveedor.forEach(datos => {
+        console.log(datos.nombreNegocio);
+        console.log(datos.descNegocio);
+
+        campoNombreProveedor.innerText = datos.nombreNegocio;
+        campoDescripcionProveedor.innerText = datos.descNegocio;
+        campoNombreProveedorInformacion.innerText = datos.nombreNegocio;
+        campoProvinciaProveedorInformacion.innerText = datos.provincia;
+        campoCantonPoveedorInformacion.innerText = datos.canton;
+        campoDistritoPoveedorInformacion.innerText = datos.distrito;
+        campoSennasPoveedorInformacion.innerText = datos.sennas;
+        campoTelefonoPoveedorInformacion.innerText = datos.telefono;
+        campoHrefCorreoPoveedorInformacion.setAttribute('href', `mailto:${datos.correo}`);
+        campoCorreoPoveedorInformacion.innerText = datos.correo;
+
+    });
+
+};
+
+buscarProveedor();
+
+
 
 //Buscador de servicios
 let buscadorServiciosFiltro = document.querySelector('#txt-buscadorServicios');
@@ -355,7 +415,7 @@ const completarSelectServicios = () => {
 
         servicioSeleccionado.add(opcion);
     });
-}
+};
 
 
 const mostrarLista = async() => {

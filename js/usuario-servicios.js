@@ -1,6 +1,6 @@
 'use strict';
 
-const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido, genero, tipoId, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono) => {
+const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido, genero, tipoIdProveedor, numeroId, nacimiento, cantidadMascotas, contrasenna, provincia, canton, distrito, sennas, tipoUsuario, estado, _Idservicio, avatar, nombreNegocio, tipoIdNegocio, juridicaId, telefono, descNegocio, _IdtipoDeServicio, repLegalCorreo, repLegalNombre, repLegalPrimerApell, repLegalSegundoApel, repLegalTipoId, repLegalNumeroId, repLegalNacimiento, repLegalTelefono, inputFacebook, inputInstagram, inputTwitter) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-usuario',
@@ -11,7 +11,7 @@ const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido,
             primerApellido: primerApellido,
             segundoApellido: segundoApellido,
             genero: genero,
-            tipoId: tipoId,
+            tipoId: tipoIdProveedor,
             numeroId: numeroId,
             nacimiento: nacimiento, //formato fecha de postman YYYY-MM-DD
             cantidadMascotas: cantidadMascotas,
@@ -38,6 +38,9 @@ const registrar_usuario = async(correo, nombre, primerApellido, segundoApellido,
             repLegalNumeroId: repLegalNumeroId,
             repLegalNacimiento: repLegalNacimiento,
             repLegalTelefono: repLegalTelefono,
+            facebook: inputFacebook,
+            twitter: inputTwitter,
+            instagram: inputInstagram,
         }
     }).then((response) => {
 
@@ -82,9 +85,9 @@ const iniciar_sesion = async(pcorreo, pcontrasenna) => {
 
                 //redirige al perfil respectivo segun el tipo de id
                 if (sessionStorage.getItem('tipo_usuario') == 'cliente') {
-                    window.location.href = 'perfilCliente.html';
+                    window.location.href = 'paginaInicioCliente.html';
                 } else if (sessionStorage.getItem('tipo_usuario') == 'proveedor') {
-                    window.location.href = 'perfilProveedor.html';
+                    window.location.href = 'paginaInicioProveedor.html';
                 } else {
                     window.location.href = 'paginaInicioAdmin.html';
                 }
@@ -157,7 +160,7 @@ const modificarContrasennaP = async(pcorreoProveedor, pclaveNueva) => {
                 'text': 'Muchas gracias',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'perfilCliente.html';
+                window.location.href = 'perfilProveedor.html';
             });
         })
         .catch((error) => {
@@ -289,7 +292,7 @@ const modificarRepresentanteLegal = async(pnombreRepresentante, pprimerApellidoR
                 'text': 'Muchas gracias',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'perfilProveedor.html';
+                window.location.href = 'paginaInicioProveedor.html';
             });
         })
         .catch((error) => {

@@ -12,10 +12,6 @@ const sltTipoId = document.querySelector('#slt-tipoID');
 const inputNumId = document.querySelector('#txt-numID');
 const inputNacimiento = document.querySelector('#txt-nacimiento');
 const inputCorreo = document.querySelector('#txt-correo');
-const inputCantMascotas = document.querySelector('#txt-cantMascotas');
-//const sltProvincia = document.querySelector('#slt-provincia');
-//const sltCanton = document.querySelector('#slt-canton');
-//const sltDistritos = document.querySelector('#slt-distrito');
 const inputOtrasSenias = document.querySelector('#txt-otrasSenias');
 
 /* Inicio: Funciones para habilitar o desabilitar las opciones de cantón y distrito */
@@ -194,12 +190,7 @@ const validarDatos = () => {
     } else {
         inputCorreo.classList.remove('error');
     }
-    if (inputCantMascotas.value == '') {
-        error = true;
-        inputCantMascotas.classList.add('error');
-    } else {
-        inputCantMascotas.classList.remove('error');
-    }
+
     if (sltProvincia.value == '') {
         error = true;
         sltProvincia.classList.add('error');
@@ -289,7 +280,7 @@ const imprimirDatos = () => {
     let tipoIdProveedor = sltTipoId.value;
     let numeroId = inputNumId.value;
     let nacimiento = inputNacimiento.value;
-    let cantidadMascotas = inputCantMascotas.value;
+    let cantidadMascotas = '0';
     let contrasenna = generadorPassword(9);
     let provincia = sltProvincia.options[sltProvincia.selectedIndex].text;
     let canton = sltCanton.options[sltCanton.selectedIndex].text;
