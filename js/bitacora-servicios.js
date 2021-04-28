@@ -8,7 +8,7 @@ const listarBitacora = async() => {
             responseType: 'json'
         })
         .then((response) => {
-            listaBitacoraTransaccional = response.data.res;
+            listaBitacoraTransaccional = response.data.resp;
         })
         .catch((error) => {
             console.log(error)
