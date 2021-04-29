@@ -7,13 +7,15 @@ const btnRegistrarCC = document.querySelector('#btn-registrarCC');
 const tarjetaVisa = document.querySelector('#img-tarjetaVisa');
 const tarjetaMasterC = document.querySelector('#img-tarjetaMasterC');
 const tarjetaAmex = document.querySelector('#img-tarjetaAmex');
-const numTarjeta = document.querySelector('#txt-numeroTarjeta');
+const inputNumTarjeta = document.querySelector('#txt-numeroTarjeta');
 const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
 const inputExpiracionMes = document.querySelector('#txt-mesExpiracion');
 const inputCodigoSeguridad = document.querySelector('#txt-codigoSeguridad');
+const duennoMascota = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 let mesTarjeta;
-
+let correo = duennoMascota.correo;
 let tipoTarjeta;
+let listaDeMetodosDePago = [];
 
 /* Inicio: Función para mostrar los datos del método de pago en una tabla */
 
@@ -22,13 +24,16 @@ const tablabody = document.querySelector('#tbl-metodosPago tbody');
 
 const mostrarTabla = () => {
     tablabody.innerHTML = '';
-    let fila = tablabody.insertRow();
 
-    fila.insertCell().innerHTML = tipoTarjeta;
-    fila.insertCell().innerHTML = numTarjeta;
-    fila.insertCell().innerHTML = inputNombreTarjeta;
-    fila.insertCell().innerHTML = inputExpiracionMes.value;
-    fila.insertCell().innerHTML = inputCodigoSeguridad;
+    listaDeMetodosDePago.lista_metodosDepago.forEach(element => {
+        let fila = tablabody.insertRow();
+        fila.insertCell().innerHTML = element.tipo;
+        fila.insertCell().innerHTML = obtenerSubStr(element.numTarjeta);
+        fila.insertCell().innerHTML = element.nombreTarjeta;
+        fila.insertCell().innerHTML = element.expiracion;
+    });
+
+
 }
 
 
@@ -43,28 +48,28 @@ const validarTipoTarjeta = () => {
     let mastercard = new RegExp('^5[1-5][0-9]{14}$');
     let mastercard2 = new RegExp('^2[2-7][0-9]{14}$');
 
-    if (visa.test(numTarjeta.value) == true) {
+    if (visa.test(inputNumTarjeta.value) == true) {
         tipoTarjeta = "Visa";
 
         tarjetaVisa.src = "../img/visa_logo_color.jpg";
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
-        numTarjeta.classList.remove('error');
+        inputNumTarjeta.classList.remove('error');
 
         inputCodigoSeguridad.setAttribute('maxlength', 3);
 
-    } else if ((mastercard.test(numTarjeta.value) == true) || (mastercard2.test(numTarjeta.value) == true)) {
+    } else if ((mastercard.test(inputNumTarjeta.value) == true) || (mastercard2.test(inputNumTarjeta.value) == true)) {
         tipoTarjeta = "Mastercard";
 
         tarjetaMasterC.src = "../img/mastercard_logo_color.jpg";
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
         tarjetaAmex.src = "../img/amex_logo_no_color.jpg";
 
-        numTarjeta.classList.remove('error');
+        inputNumTarjeta.classList.remove('error');
         inputCodigoSeguridad.setAttribute('maxlength', 3);
 
 
-    } else if (amex.test(numTarjeta.value) == true) {
+    } else if (amex.test(inputNumTarjeta.value) == true) {
         tipoTarjeta = "Amex";
 
 
@@ -72,7 +77,7 @@ const validarTipoTarjeta = () => {
         tarjetaVisa.src = "../img/visa_logo_no_color.jpg";
         tarjetaMasterC.src = "../img/mastercard_logo_no_color.jpg";
         inputCodigoSeguridad.setAttribute('maxlength', 4);
-        numTarjeta.classList.remove('error');
+        inputNumTarjeta.classList.remove('error');
     }
     //Amex: 378282246310005
     //Visa: 4222222222222
@@ -85,16 +90,36 @@ const validarTipoTarjeta = () => {
 
 }
 
-numTarjeta.addEventListener('change', validarTipoTarjeta);
+const listarMetodosDePagoAsync = async(correo) => {
+
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar-metododepago?cliente=${correo}`,
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaDeMetodosDePago = response.data;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaDeMetodosDePago;
+};
+
+const obtenermetodos = async() => {
+    listaDeMetodosDePago = await listarMetodosDePagoAsync(correo);
+    mostrarTabla();
+}
 
 /* Inicio: Función para imprimir los datos del método de pago registrado */
 
 const imprimirDatos = () => {
 
-    const numTarjeta = document.querySelector('#txt-numeroTarjeta');
+    const inputNumTarjeta = document.querySelector('#txt-numeroTarjeta');
     const inputNombreTarjeta = document.querySelector('#txt-nombreTarjeta');
 
-    let subStrTarjeta = obtenerSubStr(numTarjeta.value);
+    let subStrTarjeta = obtenerSubStr(inputNumTarjeta.value);
     let nombreTarjeta = inputNombreTarjeta.value;
 
     console.log('Método de pago');
@@ -103,20 +128,11 @@ const imprimirDatos = () => {
     console.log(`Tarjeta termina en ${subStrTarjeta}`);
     console.log(`Nombre en la tarjeta ${nombreTarjeta}`);
 
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Su solicitud se proceso con éxito',
-        'text': 'La tarjeta ha sido registrada satisfactoriamente',
-        'confirmButtonText': 'Entendido'
-    }).then(() => {
-        window.location.href = 'registrarMetodoPago.html';
-    });
     mostrarTabla();
 
 };
 
 const probarInfo = () => {
-    console.log('exp date');
     mesTarjeta = inputExpiracionMes.value.split("-");
 }
 
@@ -154,7 +170,13 @@ const validarExpiracion = () => {
 
 const obtenerSubStr = (pnumeroTarjeta) => {
     const n = 4;
-    const digitos = (pnumeroTarjeta.substring(pnumeroTarjeta.length - 4));
+    let digitos = pnumeroTarjeta.toString().split("");
+
+    for (let i = 0; i < digitos.length - n; i++) {
+        digitos[i] = "*";
+    }
+
+    digitos = digitos.join('');
 
     return digitos;
 }
@@ -168,11 +190,11 @@ const validar = (ptipoTarjeta) => {
     let regexCodigoVisaMC = new RegExp('^[0-9]{3}');
 
 
-    if (numTarjeta.value == "") {
+    if (inputNumTarjeta.value == "") {
         error = true;
-        numTarjeta.classList.add('error');
+        inputNumTarjeta.classList.add('error');
     } else {
-        numTarjeta.classList.remove('error');
+        inputNumTarjeta.classList.remove('error');
     }
     if (inputNombreTarjeta.value == "") {
         error = true;
@@ -220,13 +242,71 @@ const validar = (ptipoTarjeta) => {
         });
 
     }
+
+
+    registrarMetodoDePago();
+
+};
+
+const registrarMetodoDePagoAsync = async(correo, tipo, numTarjeta, nombreTarjeta, expiracion, cvc) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-metododepago',
+            responseType: 'json',
+            data: {
+
+                cliente: correo,
+                numTarjeta: numTarjeta,
+                nombreTarjeta: nombreTarjeta,
+                cvc: cvc,
+                expiracion: expiracion,
+                tipo: tipo,
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su solicitud se proceso con éxito',
+                'text': 'La tarjeta ha sido registrada satisfactoriamente',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'registrarMetodoPago.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar un nuevo metodo de pago',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
 };
 
 
 
+
 /* Fin: Función para validar que se encuentren los datos requeridos */
+
+const registrarMetodoDePago = () => {
+    let numTarjeta = inputNumTarjeta.value;
+    let nombreTarjeta = inputNombreTarjeta.value;
+    let expiracion = inputExpiracionMes.value;
+    let cvc = inputCodigoSeguridad.value;
+    let tipo = tipoTarjeta;
+
+    registrarMetodoDePagoAsync(correo, tipo, numTarjeta, nombreTarjeta, expiracion, cvc);
+
+}
+
+obtenermetodos();
+
 inputExpiracionMes.addEventListener('change', probarInfo)
 btnRegistrarCC.addEventListener('click', validar);
+inputNumTarjeta.addEventListener('change', validarTipoTarjeta);
 
-
-/*numTarjeta.addEventListener('input', validarTipoTarjeta);*/
+/*inputNumTarjeta.addEventListener('input', validarTipoTarjeta);*/

@@ -1,5 +1,6 @@
 'use strict';
 const btnRegistrarMascota = document.querySelector('#btn-registrar');
+const cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
 //Función para habilitar o deshabilitar el select de razas según el tipo 
 const tipoMascota = document.querySelector('#slt-tipoMascota');
