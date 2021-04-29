@@ -11,6 +11,8 @@ let txtInputfabricante;
 let sltestado;
 let txtlabeltipodemascota;
 let sltTipodemascota;
+const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+
 
 //Array de tipo de mascotas
 let arrarTipoDeMascotas = [];
@@ -202,6 +204,8 @@ let obtener_datos = () => {
         console.log('Informacion del catálogo registrado');
         console.log('=========================================================');
         //console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
+
+
         /*Swal.fire({
             'title': 'Proceso realizado con éxito',
             'text': 'Sus datos se enviaron adecuadamente',
@@ -218,7 +222,7 @@ let obtener_datos = () => {
         switch (inputSelectCatalogo.value) {
             case 'tipodeservicio':
                 console.log("tipodeservicio");
-                registrarTipoServicio(ptxtInputCatalogo, psltestado);
+                registrarTipoServicio(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'razas':
                 registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota);
@@ -237,9 +241,7 @@ let obtener_datos = () => {
                 break;
             default:
                 console.log('Error default');
-
         }
-
     }
 };
 

@@ -3,300 +3,49 @@
 const inputSelectCatalogo = document.querySelector('#slt-catalogo');
 const btnGuardarCatalogo = document.querySelector('#btn-registrarNuevoCatalogo');
 
+// Inicio de sesión
 
-const listarVacunas = async() => {
-    let listaVacunas;
+const iniciarSesion = async(pcorreo, pcontrasenna) => {
     await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-vacunas',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaVacunas = response.data.ListaDeVacunas;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return listaVacunas;
-};
-
-const listarRazas = async() => {
-    let listaRazas;
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-razas',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaRazas = response.data.ListaDeRazas;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return listaRazas;
-};
-
-
-const obtenerTiposDeMascota = async() => {
-    let listaTipoDeMascota;
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-tipodemascotas',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaTipoDeMascota = response.data.tipodemascotas;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return listaTipoDeMascota;
-};
-
-//Matenimineto Tipo de Servicio 
-const registrarTipoServicio = async(ptxtInputCatalogo, psltestado) => {
-
-
-    await axios({
-
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-tipodeservicios',
+            url: 'http://localhost:3000/api/validar-credenciales',
             responseType: 'json',
             data: {
-
-                nombre: ptxtInputCatalogo,
-                estado: psltestado,
-
+                correo: pcorreo,
+                contrasenna: pcontrasenna
             }
-
         })
         .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su registró el tipo de servicio',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo registrar el padecimiento',
-                'text': `Ocurrió el siguiente error {error}`,
-                'icon': 'error'
-            })
-        });
-};
+            if (response.data.estado == 'No encontrado') {
+                Swal.fire({
+                    'icon': 'warning',
+                    'title': 'No ha podido iniciar sesión',
+                    'text': 'Usuario o contraseña incorrectos',
+                    'confirmButtonText': 'Entendido'
+                });
+            } else {
 
-const listarTipoServicio = async() => {
-    let listaTipoDeServicio;
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-tipodeservicios',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaTipoDeServicio = response.data.ListaDeTipoDeServicio;
+                Swal.fire({
+                    'icon': 'success',
+                    'title': 'Bienvenido',
+                    'text': 'Ha iniciado sesión correctamente',
+                    'confirmButtonText': 'Entendido'
+                }).then(() => {
+                    if (response.data.usuario.estado == 'Cambio contraseña') {
+                        window.location.href = 'modificar-contrasenna.html';
+                    } else {
+                        sessionStorage.setItem('usuarioConectado', JSON.stringify(response.data.usuario));
+                        window.location.href = 'dashboard.html';
+                    }
+                });
+            }
         })
         .catch((error) => {
             console.log(error)
         });
-
-    return listaTipoDeServicio;
 };
 
-const listarPadecimientos = async() => {
-    let listaPadecimientos;
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-padecimientos',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaPadecimientos = response.data.ListaDePadecimientos;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return listaPadecimientos;
-};
-
-
-const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
-
-
-    await axios({
-
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-tipodemascotas',
-            responseType: 'json',
-            data: {
-
-                tipo: ptxtInputCatalogo,
-                estado: psltestado
-
-            }
-
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su tipo de mascota se registro con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo registrar el padecimiento',
-                'text': `Ocurrió el siguiente error {error}`,
-                'icon': 'error'
-            })
-        });
-};
-
-const listarTipoMascota = async() => {
-    let TipoMascota;
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-tipodemascotas',
-            responseType: 'json'
-        })
-        .then((response) => {
-            TipoMascota = response.data.tipodemascotas;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return TipoMascota;
-};
-const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
-
-
-    await axios({
-
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-padecimiento',
-            responseType: 'json',
-            data: {
-
-                padecimiento: ptxtInputCatalogo,
-                estado: psltestado
-
-
-            }
-
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su registró el padecimiento con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo registrar el padecimiento',
-                'text': `Ocurrió el siguiente error {error}`,
-                'icon': 'error'
-            })
-        });
-};
-
-const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
-
-
-    await axios({
-
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-vacunas',
-            responseType: 'json',
-            data: {
-
-                nombre: ptxtInputCatalogo,
-                fabricante: ptxtInputfabricante,
-
-            }
-
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su vacuna se registro con exito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo registrar la vacuna',
-                'text': `Ocurrió el siguiente error {error}`,
-                'icon': 'error'
-            })
-        });
-};
-
-
-const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
-
-    await axios({
-
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-razas',
-            responseType: 'json',
-            data: {
-
-                raza: pinputcatalogo,
-                estado: psltestado,
-                _Idtipomascota: psltTipodemascota,
-
-            }
-
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su registró la raza con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo registrar la raza',
-                'text': `Ocurrió el siguiente error {error}`,
-                'icon': 'error'
-            })
-        });
-};
-
-const obtenerUsuarios = async() => {
-    let listaUsuarios;
-
-    await axios({
-            method: 'get',
-            url: 'http://localhost:3000/api/listar-usuarios',
-            responseType: 'json'
-        })
-        .then((response) => {
-            listaUsuarios = response.data.usuarios;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    return listaUsuarios;
-};
+// Usuarios
 
 const modificarUsuario = async(pcorreo, pnombre, pnacimiento, psexo, ptipo, pestado) => {
 
@@ -355,45 +104,306 @@ const eliminarUsuario = async(pcorreo) => {
         });
 };
 
-const iniciarSesion = async(pcorreo, pcontrasenna) => {
+// Registros
+
+const registrarTipoServicio = async(ptxtInputCatalogo, psltestado, pnombreUsuario, ptipoUsuario) => {
+
+
     await axios({
+
             method: 'post',
-            url: 'http://localhost:3000/api/validar-credenciales',
+            url: 'http://localhost:3000/api/registrar-tipodeservicios',
             responseType: 'json',
             data: {
-                correo: pcorreo,
-                contrasenna: pcontrasenna
+
+                nombre: ptxtInputCatalogo,
+                estado: psltestado,
+                nombreUsuario: pnombreUsuario,
+                tipoUsuario: ptipoUsuario
+
             }
+
         })
         .then((response) => {
-            if (response.data.estado == 'No encontrado') {
-                Swal.fire({
-                    'icon': 'warning',
-                    'title': 'No ha podido iniciar sesión',
-                    'text': 'Usuario o contraseña incorrectos',
-                    'confirmButtonText': 'Entendido'
-                });
-            } else {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su registró el tipo de servicio',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el padecimiento',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
 
-                Swal.fire({
-                    'icon': 'success',
-                    'title': 'Bienvenido',
-                    'text': 'Ha iniciado sesión correctamente',
-                    'confirmButtonText': 'Entendido'
-                }).then(() => {
-                    if (response.data.usuario.estado == 'Cambio contraseña') {
-                        window.location.href = 'modificar-contrasenna.html';
-                    } else {
-                        sessionStorage.setItem('usuarioConectado', JSON.stringify(response.data.usuario));
-                        window.location.href = 'dashboard.html';
-                    }
-                });
+const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-razas',
+            responseType: 'json',
+            data: {
+
+                raza: pinputcatalogo,
+                estado: psltestado,
+                _Idtipomascota: psltTipodemascota,
+
             }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su registró la raza con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar la raza',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-vacunas',
+            responseType: 'json',
+            data: {
+
+                nombre: ptxtInputCatalogo,
+                fabricante: ptxtInputfabricante,
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su vacuna se registro con exito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar la vacuna',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-tipodemascotas',
+            responseType: 'json',
+            data: {
+
+                tipo: ptxtInputCatalogo,
+                estado: psltestado
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su tipo de mascota se registro con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el padecimiento',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
+
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-padecimiento',
+            responseType: 'json',
+            data: {
+
+                padecimiento: ptxtInputCatalogo,
+                estado: psltestado
+
+
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su registró el padecimiento con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el padecimiento',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+// Listares
+
+const listarTipoServicio = async() => {
+    let listaTipoDeServicio;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodeservicios',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaTipoDeServicio = response.data.ListaDeTipoDeServicio;
         })
         .catch((error) => {
             console.log(error)
         });
+
+    return listaTipoDeServicio;
 };
+
+const listarRazas = async() => {
+    let listaRazas;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-razas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaRazas = response.data.ListaDeRazas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaRazas;
+};
+
+const listarVacunas = async() => {
+    let listaVacunas;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-vacunas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaVacunas = response.data.ListaDeVacunas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaVacunas;
+};
+
+const listarTipoMascota = async() => {
+    let TipoMascota;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodemascotas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            TipoMascota = response.data.tipodemascotas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return TipoMascota;
+};
+
+const listarPadecimientos = async() => {
+    let listaPadecimientos;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-padecimientos',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaPadecimientos = response.data.ListaDePadecimientos;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaPadecimientos;
+};
+
+// Obtención de datos
+
+const obtenerTiposDeMascota = async() => {
+    let listaTipoDeMascota;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-tipodemascotas',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaTipoDeMascota = response.data.tipodemascotas;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaTipoDeMascota;
+};
+
+const obtenerUsuarios = async() => {
+    let listaUsuarios;
+
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-usuarios',
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaUsuarios = response.data.usuarios;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaUsuarios;
+};
+
+//---------------------------Mantenimientos---------------------------//
 
 ///Tipo de servicio
 const desactivarTipoServicio = async(p_id) => {
@@ -481,6 +491,7 @@ const modificarTipoServicio = async(pNombreModificado, p_id) => {
             })
         });
 };
+
 const eliminarTipoServicio = async(p_id) => {
 
     await axios({
@@ -508,7 +519,9 @@ const eliminarTipoServicio = async(p_id) => {
             })
         });
 };
+
 ///Padecimiento
+
 const desactivarPadecimiento = async(p_id) => {
     await axios({
             method: 'put',
@@ -594,6 +607,7 @@ const modificarPadecimiento = async(pNombreModificado, p_id) => {
             })
         });
 };
+
 const eliminarPadecimiento = async(p_id) => {
 
     await axios({
@@ -621,7 +635,9 @@ const eliminarPadecimiento = async(p_id) => {
             })
         });
 };
+
 ///Razas
+
 const desactivarRaza = async(p_id) => {
     await axios({
             method: 'put',
@@ -707,6 +723,7 @@ const modificarRaza = async(pNombreModificado, p_id) => {
             })
         });
 };
+
 const eliminarRaza = async(p_id) => {
 
     await axios({
@@ -734,7 +751,9 @@ const eliminarRaza = async(p_id) => {
             })
         });
 };
+
 ///Tipo Mascota
+
 const desactivarTipoMascota = async(p_id) => {
     await axios({
             method: 'put',
@@ -820,6 +839,7 @@ const modificarTipoMascota = async(pNombreModificado, p_id) => {
             })
         });
 };
+
 const eliminarTipoMascota = async(p_id) => {
 
     await axios({
@@ -847,7 +867,9 @@ const eliminarTipoMascota = async(p_id) => {
             })
         });
 };
+
 ///Vacuna
+
 const desactivarVacuna = async(p_id) => {
     await axios({
             method: 'put',
@@ -933,6 +955,7 @@ const modificarVacuna = async(pNombreModificado, p_id) => {
             })
         });
 };
+
 const eliminarVacuna = async(p_id) => {
 
     await axios({
