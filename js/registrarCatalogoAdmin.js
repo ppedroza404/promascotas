@@ -202,8 +202,6 @@ let obtener_datos = () => {
         console.log('Informacion del catálogo registrado');
         console.log('=========================================================');
         //console.log(`Se agregó: ${txtNombreCatalogo.value} al catálogo del administrador`);
-
-
         /*Swal.fire({
             'title': 'Proceso realizado con éxito',
             'text': 'Sus datos se enviaron adecuadamente',

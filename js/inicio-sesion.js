@@ -58,7 +58,7 @@ btnIniciar.addEventListener('click', validar);
 
 // Modal
 let modal1 = document.querySelector('#modal1');
-let botonModal1 = document.querySelector('#recuperarContraseña')
+let botonModal1 = document.querySelector('#recuperarContrasenna')
 let cerrar1 = document.querySelector("#modal1 .close");
 botonModal1.addEventListener('click', () => {
     modal1.style.display = 'block';
