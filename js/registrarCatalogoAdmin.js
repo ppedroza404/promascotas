@@ -225,11 +225,11 @@ let obtener_datos = () => {
                 registrarTipoServicio(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'razas':
-                registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota);
+                registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'vacunas':
                 console.log("vacunas");
-                registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante);
+                registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'tipoMascota':
                 console.log("tipoMascota");
