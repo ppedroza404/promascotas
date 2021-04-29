@@ -4,6 +4,10 @@ const tabla = document.querySelector('#tbl-solicitudespendientes tbody');
 const inputFiltro = document.querySelector('#txt-filtro');
 
 const mostrarTabla = async() => {
+
+
+
+
     let filtro = inputFiltro.value.toLowerCase();
 
 
@@ -12,6 +16,8 @@ const mostrarTabla = async() => {
     lista_usuarios_prov = await listar_usuarios_proveedor();
     tabla.innerHTML = '';
     lista_usuarios_prov.forEach(proveedor => {
+
+
 
         if (proveedor.tipoUsuario.toLowerCase().includes('proveedor')) {
             if (proveedor.estado.toLowerCase().includes('pendiente')) {
@@ -31,8 +37,13 @@ const mostrarTabla = async() => {
                     let botonAprobar = document.createElement('button');
                     botonAprobar.classList.add('btn');
                     botonAprobar.innerText = 'Aprobar';
+
                     botonAprobar.addEventListener('click', () => {
                         /*sessionStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));*/
+                        //botonAprobar.setAttribute('id', `activarProveedor${proveedor._id}`);
+                        activarProveedor(proveedor._id);
+
+
                         botonAprobar.classList.add('btn-aprobar');
                         botonModificar.classList.add('ocultar');
                         botonAprobar.innerText = 'Aprobado';
@@ -45,10 +56,15 @@ const mostrarTabla = async() => {
                     let botonModificar = document.createElement('button');
                     botonModificar.classList.add('btn');
                     botonModificar.innerText = 'Denegar';
+
+
                     botonModificar.addEventListener('click', () => {
+                        desactivarProveedor(proveedor._id);
                         botonModificar.classList.add('btn-denegar');
                         botonAprobar.classList.add('ocultar');
                         botonModificar.innerText = 'Denegado';
+
+
                     });
 
                     celdaAcciones2.appendChild(botonModificar);
@@ -80,8 +96,27 @@ const mostrarTabla = async() => {
 
                     celdaAcciones.appendChild(botonModificar);
                     celdaAcciones.appendChild(botonEliminar);*/
+
+                    //const desactivarProveedor = () => {
+                    //  let _id = proveedor._id;
+                    //  desactivarProveedor(_id);
+                    //}
+
+                    //const activarProveedor = () => {
+                    // let _id = proveedor._id;
+                    //activarProveedor(_id);
+                    // }
                 }
             }
+            /*const desactivarProveedor = () => {
+                let _id = proveedor._id;
+                desactivarProveedor(_id);
+            }
+
+            const activarProveedor = () => {
+                let _id = proveedor._id;
+                activarProveedor(_id);
+            }*/
         }
     });
 };

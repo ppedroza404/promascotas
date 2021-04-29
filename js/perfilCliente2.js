@@ -11,14 +11,6 @@ const elementoContrasenna = document.getElementById('cliente-modificarContrasenn
 const vacunasMascota = document.querySelector('#tbl-vacunasMascota tbody');
 
 // Variables para datos del cliente
-// const pNombreCliente = document.querySelector('#txt-nombreCliente');
-// const pCorreoCliente = document.querySelector('#txt-correo');
-// const pNumIdCliente = document.querySelector('#txt-numId');
-// const pDireccionCliente = document.querySelector('#txt-direccion');
-// const pOtrasSenias = document.querySelector('#txt-otrasSenias');
-// const pGeneroCliente = document.querySelector('#txt-genero');
-
-
 const pNombreCliente = document.querySelector('#txt-nombreCliente');
 const pPrimerApellido = document.querySelector('#txt-primerApellido');
 const pSegundoApellido = document.querySelector('#txt-segundoApellido');
@@ -56,21 +48,12 @@ function mostrarInfoMascota() {
     obtenerMascotaCliente();
     mostrarTablaVacunas();
 };
-
 // No está haciendo nada!
 //fotoMascota.addEventListener('click', mostrarInfoMascota);
 
 /* Fin: Función para desplegar la información de las mascotas en un click a la foto */
 
 /* Inicio: Variables que muestran la información del usuario conectado en el perfil */
-
-// pNombreCliente.value = `${cliente.nombre} ${cliente.primerApellido} ${cliente.segundoApellido}`;
-// pCorreoCliente.value = cliente.correo;
-// pNumIdCliente.value = cliente.numeroId;
-// pDireccionCliente.value = `${cliente.provincia}, ${cliente.canton}, ${cliente.distrito}`;
-// pOtrasSenias.value = cliente.sennas;
-// pGeneroCliente.value = cliente.genero;
-
 
 pNombreCliente.value = cliente.nombre;
 pPrimerApellido.value = cliente.primerApellido;
@@ -82,11 +65,6 @@ pCanton.value = cliente.canton;
 pDistrito.value = cliente.distrito;
 pOtrasSennas.value = cliente.sennas;
 
-
-/* Fin: Variables que muestran la información del usuario conectado en el perfil */
-
-
-/* Inicio: Función para acomodar los proveedores mejor calificados según calificación */
 
 let lista_calificadosOrdenada = [];
 
@@ -111,14 +89,13 @@ lista_calificadosOrdenada.forEach(proveedor => {
 
 // Sección derecha
 lista_calificadosOrdenada.forEach(proveedor => {
-    let listaOrdenadaCalificaciones = document.getElementById('lista-proveedoresCalificadosDer');
-    let calificaciones = `${proveedor.calificacion}`;
-    let entrada2 = document.createElement('li');
-    entrada2.appendChild(document.createTextNode(calificaciones));
-    listaOrdenadaCalificaciones.appendChild(entrada2);
-})
-
-/* Fin: Función para ingresar cada valor de la lista acomodada en un OL LI*/
+        let listaOrdenadaCalificaciones = document.getElementById('lista-proveedoresCalificadosDer');
+        let calificaciones = `${proveedor.calificacion}`;
+        let entrada2 = document.createElement('li');
+        entrada2.appendChild(document.createTextNode(calificaciones));
+        listaOrdenadaCalificaciones.appendChild(entrada2);
+    })
+    /* Fin: Función para ingresar cada valor de la lista acomodada en un OL LI*/
 
 
 /* Inicio: Función que obtiene la información de la mascota que pertenece al usuario conectado */
@@ -162,13 +139,13 @@ lista_calificadosOrdenada.forEach(proveedor => {
 
 // }
 
-const limpiarTabla = () => {
-    for (var i = vacunasMascota.rows.length - 4; i >= 0; i--) {
-        vacunasMascota.deleteRow(i);
-    }
-}
 
-//mostrarTablaVacunas();
+const limpiarTabla = () => {
+        for (var i = vacunasMascota.rows.length - 4; i >= 0; i--) {
+            vacunasMascota.deleteRow(i);
+        }
+    }
+    //mostrarTablaVacunas();
 
 /* Fin: Función para mostrar datos de vacunas en la tabla */
 
@@ -185,17 +162,8 @@ const habilitarCamposCliente = () => {
 const modificarCliente1 = () => {
     modificarCliente(pNombreCliente.value, pPrimerApellido.value, pSegundoApellido.value, pCorreo.value, pNumId.value, pProvincia.value, pCanton.value, pDistrito.value, pOtrasSennas.value);
 
-
-
-    sessionStorage.setItem("autosave", cliente.value, cliente.primerApellido, cliente.segundoApellido);
-
-
-
 };
 
 btnEditarDatosCliente.addEventListener('click', habilitarCamposCliente);
 
 btnGuardarInfoCliente.addEventListener('click', modificarCliente1);
-
-
-// update session storage

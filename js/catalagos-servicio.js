@@ -76,7 +76,7 @@ const registrarTipoServicio = async(ptxtInputCatalogo, psltestado) => {
         .then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'Su registró el padecimiento con éxito',
+                'title': 'Su registró el tipo de servicio',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
                 window.location.href = 'modificarCatalogoAdmin.html';
