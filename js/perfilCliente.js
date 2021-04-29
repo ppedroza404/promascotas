@@ -177,7 +177,14 @@ const limpiarTabla = () => {
 const habilitarCamposCliente = () => {
     btnGuardarInfoCliente.classList.remove('ocultarInfoMascota');
     elementoContrasenna.classList.remove('ocultar');
+
     pNombreCliente.disabled = false;
+    pPrimerApellido.disabled = false;
+    pSegundoApellido.disabled = false;
+    pProvincia.disabled = false;
+    pCanton.disabled = false;
+    pDistrito.disabled = false;
+    pOtrasSennas.disabled = false;
 }
 
 /* fin: Función para habilitar campos a editar del cliente */
