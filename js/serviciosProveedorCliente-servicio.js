@@ -13,7 +13,32 @@ const obtenerInformacionProveedor = async(urlIDModificado) => {
     }
 };
 
+const obtenerInformacionServiciosProveedor = async(urlIDModificado) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/mostrar-informacionProveedor-servicios/${urlIDModificado}`,
+            responseType: 'json'
+        })
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
+
+const obtenerInformacionServiciosProveedorConectado = async(correoProvedorConectado) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar-serviciosProveedor/${correoProvedorConectado}`,
+            responseType: 'json'
+        })
+        return response.data.servicios;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
 const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicilio, ptipoMoneda, pmonto) => {
