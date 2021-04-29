@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--test hugo-->
+<!--test pablo-->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tienen que ir en todas las internas-->
-    <title>Reporte de usuarios admin </title>
+    <title>Listar proveedores</title>
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
@@ -112,10 +114,7 @@
                                     <a href="listarUsuarios.html">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="usuariosDenunciados.html">Usuarios denunciados</a>
-                                </li>
-                                <li>
-                                    <a href="reporteHistorial.html">Historial</a>
+                                    <a href="solicitudesPendientesAdmin.html">Usuarios denunciados</a>
                                 </li>
                             </ul>
                         </li>
@@ -149,20 +148,28 @@
     </header>
 
     <main>
-        <h1>Historial</h1>
+
+        <h1>Listar proveedores</h1>
         <div class="contenedor">
-            <div class="filtrar">
-                <label for="txt-filtro">Filtrar</label>
-                <input type="text" id="txt-filtro">
+            <div class="simpleColumna">
+                <div class="columna">
+                    <label for="txt-filtro">Filtrar</label>
+                    <input type="text" id="txt-filtro">
+                </div>
             </div>
-            <h2></h2>
-            <table id="tbl-bitacora" class="tabla">
+            <table id="tbl-solicitudespendientes" class="tabla">
                 <thead>
                     <tr>
-                        <th>Nombre de usuario</th>
+                        <!--<th>Estado</th>-->
+
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Provincia</th>
+                        <th>Canton</th>
+                        <th>Distrito</th>
                         <th>Tipo de usuario</th>
-                        <th>Acción</th>
-                        <th>Fecha</th>
+
+
                     </tr>
                 </thead>
                 <tbody>
@@ -175,20 +182,13 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
-
-    <!-- 3Party Script-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!-- 3Party Script-->
 
-    <script src="js/bitacora-servicios.js"></script>
-    <script src="js/tabla-bitacora.js"></script>
-    <script src="js/catalagos-servicio.js"></script>
+    <script src="js/usuario-servicios.js"></script>
+    <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
-
-
-
-
+    <script src="js/listar-proveedores.js"></script>
 
 </body>
 

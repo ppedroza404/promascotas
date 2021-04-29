@@ -142,7 +142,7 @@ const registrarTipoServicio = async(ptxtInputCatalogo, psltestado, pnombreUsuari
         });
 };
 
-const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
+const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota, pnombre, ptipoUsuario) => {
 
     await axios({
 
@@ -154,6 +154,8 @@ const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
                 raza: pinputcatalogo,
                 estado: psltestado,
                 _Idtipomascota: psltTipodemascota,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario,
 
             }
 
@@ -161,16 +163,16 @@ const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota) => {
         .then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'Su registró la raza con éxito',
+                'title': 'Se registró la raza con éxito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
+                window.location.href = 'registrarCatalogoAdmin.html';
             });
         })
         .catch((error) => {
             Swal.fire({
                 'title': 'No se pudo registrar la raza',
-                'text': `Ocurrió el siguiente error {error}`,
+                'text': `Ocurrió el siguiente error ${error}`,
                 'icon': 'error'
             })
         });
@@ -188,7 +190,8 @@ const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
 
                 nombre: ptxtInputCatalogo,
                 fabricante: ptxtInputfabricante,
-
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
 
         })
