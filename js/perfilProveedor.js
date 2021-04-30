@@ -28,14 +28,14 @@ pNombreProv.value = proveedor.nombre;
 pPrimerApellidoProveedor.value = proveedor.primerApellido;
 pSegundoApellidoProveedor.value = proveedor.segundoApellido;
 pNombreNegocio.value = proveedor.nombreNegocio;
-pCorreoProveedor.value = proveedor.correoproveedor;
-pNumeroIdProveedor.value = proveedor.numeroIdProveedor;
-pTelProveedor.value = proveedor.telefonoProveedor
-pTipoIdProveedor.value = proveedor.tipoIdProveedor
-pProvinciaProveedor.value = proveedor.provinciaProveedor;
-pCantonProveedor.value = proveedor.cantonProveedor;
-pDistritoProveedor.value = proveedor.distritoProveedor;
-pOtrasSeniasProv.value = proveedor.sennasProveedor;
+pCorreoProveedor.value = proveedor.correo;
+pNumeroIdProveedor.value = proveedor.numeroId;
+pTelProveedor.value = proveedor.telefono;
+pTipoIdProveedor.value = proveedor.tipoId;
+pProvinciaProveedor.value = proveedor.provincia;
+pCantonProveedor.value = proveedor.canton;
+pDistritoProveedor.value = proveedor.distrito;
+pOtrasSeniasProv.value = proveedor.sennas;
 
 
 /* Fin: Variables que muestran la información del usuario conectado en el perfil */
