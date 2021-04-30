@@ -166,7 +166,7 @@ const modificarProveedor = () => {
     let distritoProveedor = pDistritoProveedor.value;
     let sennasProveedor = pOtrasSeniasProv.value;
 
-    let avatar = imagenProveedor.src
+    let avatar = imagenProveedor.src;
 
     modificarInfoProveedor(nombreProveedor, primerApellido, segundoApellido, nombreDelNegocio, correoProveedor, numeroIdProveedor, telProveedor, tipoIdProveedor, provinciaProveedor, cantonProveedor, distritoProveedor, sennasProveedor, avatar);
 

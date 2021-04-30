@@ -1,6 +1,6 @@
 'use strict';
 
-const modificarCliente = async(pnombrerepresentante, pprimerapellido, psegundoapellido, pcorreo, pnumeroid, pprovincia, pcanton, pdistrito, psennas, ) => {
+const modificarCliente = async(pnombrerepresentante, pprimerapellido, psegundoapellido, pcorreo, pnumeroid, pprovincia, pcanton, pdistrito, psennas, pavatar) => {
 
     await axios({
             method: 'put',
@@ -17,6 +17,7 @@ const modificarCliente = async(pnombrerepresentante, pprimerapellido, psegundoap
                 canton: pcanton,
                 distrito: pdistrito,
                 sennas: psennas,
+                avatar: pavatar,
             }
 
         })

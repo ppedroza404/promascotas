@@ -72,6 +72,22 @@ const pPadecimientosMascota = document.querySelector('#txt-padecimientos');
 // pGeneroCliente.value = cliente.genero;
 
 
+
+let imagenProveedor = document.querySelector('#foto-usuario')
+const UsuarioConectadoInformacion = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    let imagenUsuarioConectado = usuario.avatar;
+
+
+    imagenProveedor.setAttribute('src', `${imagenUsuarioConectado}`);
+
+};
+UsuarioConectadoInformacion();
+
+let avatar = imagenProveedor.src;
+
+
+
 pNombreCliente.value = cliente.nombre;
 pPrimerApellido.value = cliente.primerApellido;
 pSegundoApellido.value = cliente.segundoApellido;
@@ -191,7 +207,7 @@ const habilitarCamposCliente = () => {
 
 const modificarCliente1 = () => {
 
-    modificarCliente(pNombreCliente.value, pPrimerApellido.value, pSegundoApellido.value, pCorreo.value, pNumId.value, pProvincia.value, pCanton.value, pDistrito.value, pOtrasSennas.value);
+    modificarCliente(pNombreCliente.value, pPrimerApellido.value, pSegundoApellido.value, pCorreo.value, pNumId.value, pProvincia.value, pCanton.value, pDistrito.value, pOtrasSennas.value, avatar);
 
 
 
