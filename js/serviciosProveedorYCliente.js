@@ -7,6 +7,7 @@ let cantonSeleccionada = document.querySelector('#cantones');
 let distritoSeleccionado = document.querySelector('#distritos');
 let comentarioSeleccionado = document.querySelector('#txt-Comentarios');
 let botonEnviar = document.querySelector('#btn-solicitar');
+const sltNombreServivio = document.querySelector('#slt-seleccionarServicio');
 //Obtiene información del proveedor cuando es cliente
 let urlID = window.location.hash;
 let urlIDModificado = urlID.slice(1);
@@ -101,24 +102,14 @@ const imprimirCamposUsuario = () => {
         'title': 'Se ha enviado con éxito la solicitud de servicio',
         'confirmButtonText': 'Excelente'
     }).then(() => {
+        sessionStorage.setItem('nombreServicio', JSON.stringify(sltNombreServivio.options[sltNombreServivio.selectedIndex].text));
         window.location.href = `compraServicio.html#${urlIDModificado}`;
     });
-
 
 };
 
 
 botonEnviar.addEventListener('click', validarCamposUsuario);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -441,7 +432,7 @@ const completarSelectServicios = async() => {
             let opcion = document.createElement("option");
             console.log(`Prueba de option${servicio.nombre}`);
             opcion.text = servicio.nombre;
-            opcion.setAttribute('value', `idServicio${servicio._id}`);
+            opcion.setAttribute('value', `${servicio.nombre}`);
             servicioSeleccionado.appendChild(opcion);
         });
     });

@@ -2,6 +2,11 @@ const nombreUsuarioSpan = document.querySelector('#usuarioSpan');
 //Obtiene información del proveedor cuando es cliente
 let urlID = window.location.hash;
 let urlIDModificado = urlID.slice(1);
+let btnPagarServicio = document.querySelector('#btn-pagarServicio');
+let cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+let proveedor = JSON.parse(sessionStorage.getItem('usuarioSeleccionado'));
+let nombreServicio = JSON.parse(sessionStorage.getItem('nombreServicio'));
+
 
 //Obtiene información del modal
 let modal = document.querySelector('#modalPagoServicio');
@@ -10,8 +15,7 @@ let cerrarModal = document.querySelector("#modalPagoServicio .close");
 
 
 const nombreUsuarioConectadoSpan = () => {
-    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
-    let nombreUsuarioConectado = usuario.nombre;
+    let nombreUsuarioConectado = cliente.nombre;
 
     nombreUsuarioSpan.textContent = nombreUsuarioConectado
 
@@ -56,6 +60,19 @@ let listaDeMetodosDePago = [];
 const tabla = document.querySelector('#tbl-metodosPago');
 const tablabody = document.querySelector('#tbl-metodosPago tbody');
 
+/* Inicio: Función para crear radio button de seleccion de mp */
+
+// const crearRadio = () => {
+//     const radioList = document.createElement("input");
+//     radioList.setAttribute('type', 'radio');
+
+//     //Create and append the options
+
+//     }
+//     return selectList
+// }
+
+
 const mostrarTabla = () => {
     tablabody.innerHTML = '';
 
@@ -65,21 +82,78 @@ const mostrarTabla = () => {
         fila.insertCell().innerHTML = obtenerSubStr(element.numTarjeta);
         fila.insertCell().innerHTML = element.nombreTarjeta;
         fila.insertCell().innerHTML = element.expiracion;
-        let celda = fila.insertCell();
+
+        /////////////////////////////////////////
+        let celdaSeleccion = fila.insertCell();
+        let radioList = document.createElement("input");
+        radioList.setAttribute('type', 'radio');
+        radioList.setAttribute('name', `seleccionMP`);
+        radioList.setAttribute('value', `${element._id}`);
+        celdaSeleccion.appendChild(radioList);
+
+        const obtenerIdMetodoPago = async() => {
+
+            let metodoSeleccionado = await listarMetodosDePagoDefault(radioList.value);
+            inputNumTarjeta.value = metodoSeleccionado.lista_metodosDepago.numTarjeta;
+            inputNombreTarjeta.value = metodoSeleccionado.lista_metodosDepago.nombreTarjeta;
+            inputExpiracionMes.value = metodoSeleccionado.lista_metodosDepago.expiracion;
+            inputCodigoSeguridad.value = metodoSeleccionado.lista_metodosDepago.cvc;
+
+            inputNumTarjeta.setAttribute('disabled', true);
+            inputNombreTarjeta.setAttribute('disabled', true);
+            inputExpiracionMes.setAttribute('disabled', true);
+            inputCodigoSeguridad.setAttribute('disabled', true);
+            validarTipoTarjeta();
+        }
+
+
+        /////////////////////////////////////////
+        let celdaEliminar = fila.insertCell();
         let listaBtnEditarItem = document.createElement('i');
         listaBtnEditarItem.classList.add('fa');
         listaBtnEditarItem.classList.add('fa-trash');
-        celda.appendChild(listaBtnEditarItem);
+        celdaEliminar.appendChild(listaBtnEditarItem);
         const eliminarMetodoDePagoCons = () => {
             let _id = element._id;
             eliminarMetodoDePago(_id);
 
         }
         listaBtnEditarItem.addEventListener('click', eliminarMetodoDePagoCons);
+        radioList.addEventListener('click', obtenerIdMetodoPago);
     });
-
-
 }
+
+//const obtenerDatosTarjeta 
+
+const listarMetodosDePagoDefault = async(id) => {
+
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_metodo_pago_default?_id=${id}`,
+            responseType: 'json'
+        })
+        .then((response) => {
+            listaDeMetodosDePago = response.data;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+    return listaDeMetodosDePago;
+};
+
+let allDisabled = document.querySelectorAll("input");
+
+const removerDisable = () => {
+    allDisabled.forEach(elelemto => {
+
+    })
+};
+
+
+
+
+
 
 
 
@@ -293,6 +367,7 @@ const validar = (ptipoTarjeta) => {
 
 };
 
+
 const registrarMetodoDePagoAsync = async(correo, tipo, numTarjeta, nombreTarjeta, expiracion, cvc) => {
 
 
@@ -333,6 +408,104 @@ const registrarMetodoDePagoAsync = async(correo, tipo, numTarjeta, nombreTarjeta
 };
 
 
+
+/////////
+
+
+const registrarSolicitudServicio = async(pcliente, pproveedor, pnombreServicio, pprovincia, pcanton, pdistrito, pfechaServicio, pcomentario) => {
+
+    await axios({
+
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-solicitudServicio',
+            responseType: 'json',
+            data: {
+
+                cliente: pcliente,
+                proveedor: pproveedor,
+                nombreServicio: pnombreServicio,
+                provincia: pprovincia,
+                canton: pcanton,
+                distrito: pdistrito,
+                calificacion: '0',
+                fechaServicio: pfechaServicio,
+                comentario: pcomentario,
+                estadoSolicitud: 'pendiente'
+            }
+
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su solicitud se proceso con éxito',
+                'text': 'La tarjeta ha sido registrada satisfactoriamente',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'registrarMetodoPago.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar un nuevo metodo de pago',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
+
+
+
+const obtenerdatosSolicitudServ = () => {
+
+    //registrarSolicitudServicio(cliente.nombre, proveedor.correo, nombreServicio, proveedor.provincia, proveedor.canton, proveedor.distrito, fechaServicio, comentario);
+
+    registrarSolicitudServicio(cliente.nombre, 'Rob', 'Rob', 'Rob', 'Rob', 'Rob', '2021-06-30', 'comentario');
+}
+
+btnPagarServicio.addEventListener('click', obtenerdatosSolicitudServ);
+
+
+////////
+
+
+// const registrarMetodoDePagoAsync = async(correo, tipo, numTarjeta, nombreTarjeta, expiracion, cvc) => {
+
+
+//     await axios({
+
+//             method: 'post',
+//             url: 'http://localhost:3000/api/registrar-metododepago',
+//             responseType: 'json',
+//             data: {
+
+//                 cliente: correo,
+//                 numTarjeta: numTarjeta,
+//                 nombreTarjeta: nombreTarjeta,
+//                 cvc: cvc,
+//                 expiracion: expiracion,
+//                 tipo: tipo,
+
+//             }
+
+//         })
+//         .then((response) => {
+//             Swal.fire({
+//                 'icon': 'success',
+//                 'title': 'Su solicitud se proceso con éxito',
+//                 'text': 'La tarjeta ha sido registrada satisfactoriamente',
+//                 'confirmButtonText': 'Entendido'
+//             }).then(() => {
+//                 window.location.href = 'registrarMetodoPago.html';
+//             });
+//         })
+//         .catch((error) => {
+//             Swal.fire({
+//                 'title': 'No se pudo registrar un nuevo metodo de pago',
+//                 'text': `Ocurrió el siguiente error {error}`,
+//                 'icon': 'error'
+//             })
+//         });
+// };
 
 
 /* Fin: Función para validar que se encuentren los datos requeridos */
@@ -379,7 +552,6 @@ const eliminarMetodoDePago = async(metodoID) => {
 };
 
 inputExpiracionMes.addEventListener('change', probarInfo)
-btnRegistrarCC.addEventListener('click', validar);
 inputNumTarjeta.addEventListener('change', validarTipoTarjeta);
 
 /*inputNumTarjeta.addEventListener('input', validarTipoTarjeta);*/

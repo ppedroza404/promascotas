@@ -298,6 +298,11 @@ input[type=date] {
     min-height: 23px;
 }
 
+input[type=radio] {
+    background: #b90b0b;
+    padding: 25%;
+}
+
 input {
     width: calc(100% - 30px);
 }
