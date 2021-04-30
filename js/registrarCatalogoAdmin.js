@@ -233,11 +233,11 @@ let obtener_datos = () => {
                 break;
             case 'tipoMascota':
                 console.log("tipoMascota");
-                registrarTipoMascota(ptxtInputCatalogo, psltestado);
+                registrarTipoMascota(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'padecimientos':
                 console.log("padecimientos");
-                registrarPadecimiento(ptxtInputCatalogo, psltestado);
+                registrarPadecimiento(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             default:
                 console.log('Error default');

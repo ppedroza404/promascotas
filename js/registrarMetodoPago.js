@@ -31,6 +31,16 @@ const mostrarTabla = () => {
         fila.insertCell().innerHTML = obtenerSubStr(element.numTarjeta);
         fila.insertCell().innerHTML = element.nombreTarjeta;
         fila.insertCell().innerHTML = element.expiracion;
+        let celda = fila.insertCell();
+        let listaBtnEditarItem = document.createElement('i');
+        listaBtnEditarItem.classList.add('fa');
+        listaBtnEditarItem.classList.add('fa-trash');
+        celda.appendChild(listaBtnEditarItem);
+        const eliminarMetodoDePagoCons = () => {
+            let _id = element._id;
+            eliminarMetodoDePago(_id);
+        }
+        listaBtnEditarItem.addEventListener('click', eliminarMetodoDePagoCons);
     });
 
 
@@ -304,6 +314,34 @@ const registrarMetodoDePago = () => {
 }
 
 obtenermetodos();
+
+const eliminarMetodoDePago = async(metodoID) => {
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-metododepago',
+            responseType: 'json',
+            data: {
+                _id: metodoID
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Metodo de pago Eliminado',
+                'text': 'El metodo de pago fue eliminado',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'registrarMetodoPago.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se Eliminar el metodo de pago',
+                'text': `Ocurrió el siguiente error {error}`,
+                'icon': 'error'
+            })
+        });
+};
 
 inputExpiracionMes.addEventListener('change', probarInfo)
 btnRegistrarCC.addEventListener('click', validar);

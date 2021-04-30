@@ -130,7 +130,7 @@ const registrarTipoServicio = async(ptxtInputCatalogo, psltestado, pnombreUsuari
                 'title': 'Su registró el tipo de servicio',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
+                window.location.href = 'registrarCatalogoAdmin.html';
             });
         })
         .catch((error) => {
@@ -178,7 +178,7 @@ const registrarRaza = async(pinputcatalogo, psltestado, psltTipodemascota, pnomb
         });
 };
 
-const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
+const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante, pnombre, ptipoUsuario) => {
 
 
     await axios({
@@ -198,23 +198,22 @@ const registrarVacuna = async(ptxtInputCatalogo, ptxtInputfabricante) => {
         .then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'Su vacuna se registro con exito',
+                'title': 'Su vacuna se registró con exito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
+                window.location.href = 'registrarCatalogoAdmin.html';
             });
         })
         .catch((error) => {
             Swal.fire({
                 'title': 'No se pudo registrar la vacuna',
-                'text': `Ocurrió el siguiente error {error}`,
+                'text': `Ocurrió el siguiente error ${error}`,
                 'icon': 'error'
             })
         });
 };
 
-const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
-
+const registrarTipoMascota = async(ptxtInputCatalogo, psltestado, pnombre, ptipoUsuario) => {
 
     await axios({
 
@@ -224,7 +223,9 @@ const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
             data: {
 
                 tipo: ptxtInputCatalogo,
-                estado: psltestado
+                estado: psltestado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
 
@@ -232,22 +233,22 @@ const registrarTipoMascota = async(ptxtInputCatalogo, psltestado) => {
         .then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'Su tipo de mascota se registro con éxito',
+                'title': 'Su tipo de mascota se registró con éxito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
+                window.location.href = 'registrarCatalogoAdmin.html';
             });
         })
         .catch((error) => {
             Swal.fire({
-                'title': 'No se pudo registrar el padecimiento',
-                'text': `Ocurrió el siguiente error {error}`,
+                'title': 'No se pudo registrar el tipo de mascota',
+                'text': `Ocurrió el siguiente error ${error}`,
                 'icon': 'error'
             })
         });
 };
 
-const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
+const registrarPadecimiento = async(ptxtInputCatalogo, psltestado, pnombre, ptipoUsuario) => {
 
 
     await axios({
@@ -258,8 +259,9 @@ const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
             data: {
 
                 padecimiento: ptxtInputCatalogo,
-                estado: psltestado
-
+                estado: psltestado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
 
@@ -270,7 +272,7 @@ const registrarPadecimiento = async(ptxtInputCatalogo, psltestado) => {
                 'title': 'Su registró el padecimiento con éxito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
+                window.location.href = 'registrarCatalogoAdmin.html';
             });
         })
         .catch((error) => {
@@ -409,14 +411,16 @@ const obtenerUsuarios = async() => {
 //---------------------------Mantenimientos---------------------------//
 
 ///Tipo de servicio
-const desactivarTipoServicio = async(p_id) => {
+const desactivarTipoServicio = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/desactivar-tipoServicio',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Inactivo'
+                estado: 'Inactivo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -437,14 +441,16 @@ const desactivarTipoServicio = async(p_id) => {
         });
 }
 
-const activarTipoServicio = async(p_id) => {
+const activarTipoServicio = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/activar-tipoServicio',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Activo'
+                estado: 'Activo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -465,7 +471,7 @@ const activarTipoServicio = async(p_id) => {
         });
 }
 
-const modificarTipoServicio = async(pNombreModificado, p_id) => {
+const modificarTipoServicio = async(pNombreModificado, p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'put',
@@ -474,6 +480,8 @@ const modificarTipoServicio = async(pNombreModificado, p_id) => {
             data: {
                 _id: p_id,
                 nombre: pNombreModificado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
         })
@@ -495,14 +503,16 @@ const modificarTipoServicio = async(pNombreModificado, p_id) => {
         });
 };
 
-const eliminarTipoServicio = async(p_id) => {
+const eliminarTipoServicio = async(p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'delete',
             url: 'http://localhost:3000/api/eliminar-TipoServicio',
             responseType: 'json',
             data: {
-                _id: p_id
+                _id: p_id,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -523,132 +533,18 @@ const eliminarTipoServicio = async(p_id) => {
         });
 };
 
-///Padecimiento
-
-const desactivarPadecimiento = async(p_id) => {
-    await axios({
-            method: 'put',
-            url: 'http://localhost:3000/api/desactivar-padecimientos',
-            responseType: 'json',
-            data: {
-                _id: p_id,
-                estado: 'Inactivo'
-            }
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'El padecimiento se desactivó con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo desactivar el padecimiento',
-                'text': 'Ocurrió el siguiente error {error}',
-                'icon': 'error'
-            })
-        });
-}
-
-const activarPadecimiento = async(p_id) => {
-    await axios({
-            method: 'put',
-            url: 'http://localhost:3000/api/activar-padecimientos',
-            responseType: 'json',
-            data: {
-                _id: p_id,
-                estado: 'Activo'
-            }
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'El padecimiento se activó con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo activar el padecimiento',
-                'text': 'Ocurrió el siguiente error {error}',
-                'icon': 'error'
-            })
-        });
-}
-
-const modificarPadecimiento = async(pNombreModificado, p_id) => {
-
-    await axios({
-            method: 'put',
-            url: 'http://localhost:3000/api/modificar-padecimientos',
-            responseType: 'json',
-            data: {
-                _id: p_id,
-                padecimiento: pNombreModificado,
-
-            }
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'El padecimiento se modificó con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo modificar el padecimiento',
-                'text': 'Ocurrió el siguiente error {error}',
-                'icon': 'error'
-            })
-        });
-};
-
-const eliminarPadecimiento = async(p_id) => {
-
-    await axios({
-            method: 'delete',
-            url: 'http://localhost:3000/api/eliminar-padecimiento',
-            responseType: 'json',
-            data: {
-                _id: p_id
-            }
-        })
-        .then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'El padecimiento se eliminó con éxito',
-                'confirmButtonText': 'Entendido'
-            }).then(() => {
-                window.location.href = 'modificarCatalogoAdmin.html';
-            });
-        })
-        .catch((error) => {
-            Swal.fire({
-                'title': 'No se pudo eliminar el padecimiento',
-                'text': 'Ocurrió el siguiente error {error}',
-                'icon': 'error'
-            })
-        });
-};
-
 ///Razas
 
-const desactivarRaza = async(p_id) => {
+const desactivarRaza = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/desactivar-raza',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Inactivo'
+                estado: 'Inactivo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -665,18 +561,20 @@ const desactivarRaza = async(p_id) => {
                 'title': 'No se pudo desactivar la raza',
                 'text': 'Ocurrió el siguiente error {error}',
                 'icon': 'error'
-            })
+            });
         });
 }
 
-const activarRaza = async(p_id) => {
+const activarRaza = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/activar-raza',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Activo'
+                estado: 'Activo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -697,7 +595,7 @@ const activarRaza = async(p_id) => {
         });
 }
 
-const modificarRaza = async(pNombreModificado, p_id) => {
+const modificarRaza = async(pNombreModificado, p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'put',
@@ -706,6 +604,8 @@ const modificarRaza = async(pNombreModificado, p_id) => {
             data: {
                 _id: p_id,
                 raza: pNombreModificado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
         })
@@ -727,14 +627,16 @@ const modificarRaza = async(pNombreModificado, p_id) => {
         });
 };
 
-const eliminarRaza = async(p_id) => {
+const eliminarRaza = async(p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'delete',
             url: 'http://localhost:3000/api/eliminar-raza',
             responseType: 'json',
             data: {
-                _id: p_id
+                _id: p_id,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -755,16 +657,143 @@ const eliminarRaza = async(p_id) => {
         });
 };
 
+
+///Padecimiento
+
+const desactivarPadecimiento = async(p_id, pnombre, ptipoUsuario) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/desactivar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Inactivo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se desactivó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo desactivar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const activarPadecimiento = async(p_id, pnombre, ptipoUsuario) => {
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/activar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                estado: 'Activo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se activó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo activar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+}
+
+const modificarPadecimiento = async(pNombreModificado, p_id, pnombre, ptipoUsuario) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-padecimientos',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                padecimiento: pNombreModificado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+
+const eliminarPadecimiento = async(p_id, pnombre, ptipoUsuario) => {
+
+    await axios({
+            method: 'delete',
+            url: 'http://localhost:3000/api/eliminar-padecimiento',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'El padecimiento se eliminó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'modificarCatalogoAdmin.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo eliminar el padecimiento',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+
 ///Tipo Mascota
 
-const desactivarTipoMascota = async(p_id) => {
+const desactivarTipoMascota = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/desactivar-tipoMascota',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Inactivo'
+                estado: 'Inactivo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -785,14 +814,16 @@ const desactivarTipoMascota = async(p_id) => {
         });
 }
 
-const activarTipoMascota = async(p_id) => {
+const activarTipoMascota = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/activar-tipoMascota',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Activo'
+                estado: 'Activo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -813,7 +844,7 @@ const activarTipoMascota = async(p_id) => {
         });
 }
 
-const modificarTipoMascota = async(pNombreModificado, p_id) => {
+const modificarTipoMascota = async(pNombreModificado, p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'put',
@@ -822,6 +853,8 @@ const modificarTipoMascota = async(pNombreModificado, p_id) => {
             data: {
                 _id: p_id,
                 tipo: pNombreModificado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
         })
@@ -843,14 +876,16 @@ const modificarTipoMascota = async(pNombreModificado, p_id) => {
         });
 };
 
-const eliminarTipoMascota = async(p_id) => {
+const eliminarTipoMascota = async(p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'delete',
             url: 'http://localhost:3000/api/eliminar-tipoMascota',
             responseType: 'json',
             data: {
-                _id: p_id
+                _id: p_id,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -873,14 +908,16 @@ const eliminarTipoMascota = async(p_id) => {
 
 ///Vacuna
 
-const desactivarVacuna = async(p_id) => {
+const desactivarVacuna = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/desactivar-Vacuna',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Inactivo'
+                estado: 'Inactivo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -901,14 +938,16 @@ const desactivarVacuna = async(p_id) => {
         });
 }
 
-const activarVacuna = async(p_id) => {
+const activarVacuna = async(p_id, pnombre, ptipoUsuario) => {
     await axios({
             method: 'put',
             url: 'http://localhost:3000/api/activar-Vacuna',
             responseType: 'json',
             data: {
                 _id: p_id,
-                estado: 'Activo'
+                estado: 'Activo',
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {
@@ -929,7 +968,7 @@ const activarVacuna = async(p_id) => {
         });
 }
 
-const modificarVacuna = async(pNombreModificado, p_id) => {
+const modificarVacuna = async(pNombreModificado, p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'put',
@@ -938,6 +977,8 @@ const modificarVacuna = async(pNombreModificado, p_id) => {
             data: {
                 _id: p_id,
                 nombre: pNombreModificado,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
 
             }
         })
@@ -959,14 +1000,16 @@ const modificarVacuna = async(pNombreModificado, p_id) => {
         });
 };
 
-const eliminarVacuna = async(p_id) => {
+const eliminarVacuna = async(p_id, pnombre, ptipoUsuario) => {
 
     await axios({
             method: 'delete',
             url: 'http://localhost:3000/api/eliminar-Vacuna',
             responseType: 'json',
             data: {
-                _id: p_id
+                _id: p_id,
+                nombreUsuario: pnombre,
+                tipoUsuario: ptipoUsuario
             }
         })
         .then((response) => {

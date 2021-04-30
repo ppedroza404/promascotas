@@ -16,6 +16,8 @@ const inputFiltroRazas = document.querySelector('#txt-filtroRazas');
 const inputFiltroVacunas = document.querySelector('#txt-filtroVacunas');
 
 
+const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+
 
 
 let tipodeservicios;
@@ -216,7 +218,7 @@ const mostrarTablaTipoServicio = () => {
             const datosModificacionTipoServicio = () => {
                 let NombreModificado = document.querySelector(`#modificarServicioNombreServicio${servicio._id}`).value;
                 let _id = servicio._id;
-                modificarTipoServicio(NombreModificado, _id);
+                modificarTipoServicio(NombreModificado, _id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnModificarTipoServicio = document.querySelector(`#modificarServicio${servicio._id}`);
             btnModificarTipoServicio.addEventListener('click', datosModificacionTipoServicio);
@@ -294,7 +296,7 @@ const mostrarTablaTipoServicio = () => {
             //Eliminar servicio
             const eliminarTipoServicioConst = () => {
                 let _id = servicio._id;
-                eliminarTipoServicio(_id);
+                eliminarTipoServicio(_id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${servicio._id}`);
             btnAceptoBorrar.addEventListener('click', eliminarTipoServicioConst);
@@ -303,12 +305,12 @@ const mostrarTablaTipoServicio = () => {
             //Activar servicio
             const activarTipoServicioConst = () => {
                     let _id = servicio._id;
-                    activarTipoServicio(_id);
+                    activarTipoServicio(_id, usuario.nombre, usuario.tipoUsuario);
                 }
                 //Desactivar servicio
             const desactivarTipoServicioConst = () => {
                 let _id = servicio._id;
-                desactivarTipoServicio(_id);
+                desactivarTipoServicio(_id, usuario.nombre, usuario.tipoUsuario);
             }
         }
     })
@@ -438,7 +440,7 @@ const mostrarTablapadecimientos = () => {
             const datosModificacionPadecimiento = () => {
                 let NombreModificado = document.querySelector(`#modificarPadecimiento${padecimiento._id}`).value;
                 let _id = padecimiento._id;
-                modificarPadecimiento(NombreModificado, _id);
+                modificarPadecimiento(NombreModificado, _id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnModificarPadecimiento = document.querySelector(`#btnModificarPadecimiento${padecimiento._id}`);
             btnModificarPadecimiento.addEventListener('click', datosModificacionPadecimiento);
@@ -517,7 +519,7 @@ const mostrarTablapadecimientos = () => {
             //Eliminar padecimiento
             const eliminarPadecimientoConst = () => {
                 let _id = padecimiento._id;
-                eliminarPadecimiento(_id);
+                eliminarPadecimiento(_id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${padecimiento._id}`);
             btnAceptoBorrar.addEventListener('click', eliminarPadecimientoConst);
@@ -526,12 +528,12 @@ const mostrarTablapadecimientos = () => {
             //Activar padecimiento
             const activarPadecimientoConst = () => {
                     let _id = padecimiento._id;
-                    activarPadecimiento(_id);
+                    activarPadecimiento(_id, usuario.nombre, usuario.tipoUsuario);
                 }
                 //Desactivar padecimiento
             const desactivarPadecimientoConst = () => {
                 let _id = padecimiento._id;
-                desactivarPadecimiento(_id);
+                desactivarPadecimiento(_id, usuario.nombre, usuario.tipoUsuario);
             }
 
         }
@@ -663,7 +665,7 @@ const mostrarTablaRazas = () => {
             const datosModificacionRaza = () => {
                 let NombreModificado = document.querySelector(`#modificarRazaInput${item._id}`).value;
                 let _id = item._id;
-                modificarRaza(NombreModificado, _id);
+                modificarRaza(NombreModificado, _id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnModificarRaza = document.querySelector(`#modificarRaza${item._id}`);
             btnModificarRaza.addEventListener('click', datosModificacionRaza);
@@ -742,7 +744,7 @@ const mostrarTablaRazas = () => {
             //Eliminar raza
             const eliminarRazaConst = () => {
                 let _id = item._id;
-                eliminarRaza(_id);
+                eliminarRaza(_id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${item._id}`);
             btnAceptoBorrar.addEventListener('click', eliminarRazaConst);
@@ -751,12 +753,12 @@ const mostrarTablaRazas = () => {
             //Activar raza
             const activarRazaConst = () => {
                     let _id = item._id;
-                    activarRaza(_id);
+                    activarRaza(_id, usuario.nombre, usuario.tipoUsuario);
                 }
                 //Desactivar raza
             const desactivarRazaConst = () => {
                 let _id = item._id;
-                desactivarRaza(_id);
+                desactivarRaza(_id, usuario.nombre, usuario.tipoUsuario);
             }
         }
         inputFiltroRazas.addEventListener('keyup', mostrarTablaRazas);
@@ -885,7 +887,7 @@ const mostrarTablaTiposMascota = () => {
             const datosModificacionTipoMascota = () => {
                 let NombreModificado = document.querySelector(`#modificarNombreTipoMascota${tipo._id}`).value;
                 let _id = tipo._id;
-                modificarTipoMascota(NombreModificado, _id);
+                modificarTipoMascota(NombreModificado, _id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnModificarTipoMascota = document.querySelector(`#modificarTipoMascota${tipo._id}`);
             btnModificarTipoMascota.addEventListener('click', datosModificacionTipoMascota);
@@ -962,7 +964,7 @@ const mostrarTablaTiposMascota = () => {
             });
             const BorrarTipoMascota = () => {
                 let _id = tipo._id;
-                eliminarTipoMascota(_id);
+                eliminarTipoMascota(_id, usuario.nombre, usuario.tipoUsuario);
             }
             let btnAceptoBorrar = document.querySelector(`#aceptoBorrar${tipo._id}`);
             btnAceptoBorrar.addEventListener('click', BorrarTipoMascota);
@@ -970,12 +972,12 @@ const mostrarTablaTiposMascota = () => {
             //Activar mascota
             const activarTipoMascotaConst = () => {
                     let _id = tipo._id;
-                    activarTipoMascota(_id);
+                    activarTipoMascota(_id, usuario.nombre, usuario.tipoUsuario);
                 }
                 //Desactivar Mascota
             const desactivarTipoMascotaConst = () => {
                 let _id = tipo._id;
-                desactivarTipoMascota(_id);
+                desactivarTipoMascota(_id, usuario.nombre, usuario.tipoUsuario);
             }
         }
         inputFiltroTipos.addEventListener('keyup', mostrarTablaTiposMascota);

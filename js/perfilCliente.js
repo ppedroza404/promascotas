@@ -194,8 +194,7 @@ const modificarCliente1 = () => {
 
 
 
-    sessionStorage.setItem("autosave", cliente.value, cliente.primerApellido, cliente.segundoApellido);
-
+    setTimeout(() => { iniciarSesion(pcorreo.value, pcontrasenna.value); }, 5000);
 
 
 };
@@ -206,3 +205,4 @@ btnGuardarInfoCliente.addEventListener('click', modificarCliente1);
 
 
 // update session storage
+//sessionStorage.setItem("autosave", cliente.value, cliente.primerApellido, cliente.segundoApellido);
