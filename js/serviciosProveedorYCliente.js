@@ -1,7 +1,7 @@
 'use strict';
 let servicioSeleccionado = document.querySelector('#slt-seleccionarServicio');
 let tamanoSeleccionado = document.querySelector('#slt-seleccionarTamanno');
-let fechaSeleccionada = document.querySelector('#txt-fechaServicio');
+const fechaSeleccionada = document.querySelector('#txt-fechaServicio');
 let provinciaSeleccionada = document.querySelector('#provincias');
 let cantonSeleccionada = document.querySelector('#cantones');
 let distritoSeleccionado = document.querySelector('#distritos');
@@ -69,6 +69,10 @@ const validarCamposUsuario = () => {
             'confirmButtonText': 'Entendido'
         });
     }
+
+    sessionStorage.setItem('servicioSeleccionadoST', JSON.stringify(servicioSeleccionado.value));
+    sessionStorage.setItem('fechaSeleccionadaST', JSON.stringify(fechaSeleccionada.value));
+    sessionStorage.setItem('comentarioSeleccionadoST', JSON.stringify(comentarioSeleccionado.value));
 
 };
 
