@@ -30,7 +30,7 @@ const mostrarTabla = async() => {
     tabla.innerHTML = '';
     lista_usuarios_cliente.forEach(cliente => {
 
-        if (cliente.estado.toLowerCase().includes('denunciado')) {
+        if (cliente.estado.toLowerCase().includes('')) {
             if (cliente.estado.toLowerCase().includes(filtro) || cliente.provincia.toLowerCase().includes(filtro) || cliente.canton.toLowerCase().includes(filtro) || cliente.distrito.toLowerCase().includes(filtro)) {
                 let fila = tabla.insertRow();
                 id_select = cliente._id;
