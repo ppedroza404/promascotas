@@ -77,7 +77,7 @@ const habilitarCamposRepLegal = () => {
 
 const modificarRepLegal1 = () => {
 
-    const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
     let nombreRepresentante = pnombreRep.value;
     let primerApellidoRep = pprimerApellidoRep.value;
@@ -122,10 +122,10 @@ const habilitarCamposProveedor = () => {
     pPrimerApellidoProveedor.disabled = false;
     pSegundoApellidoProveedor.disabled = false;
     pNombreNegocio.disabled = false;
-    pCorreoProveedor.disabled = false;
+    // pCorreoProveedor.disabled = false;
     // pNumeroIdProveedor.disabled = false;
     pTelProveedor.disabled = false;
-    pTipoIdProveedor.disabled = false;
+    //pTipoIdProveedor.disabled = false;
     // pProvinciaProveedor.disabled = false;
     // pCantonProveedor.disabled = false;
     // pDistritoProveedor.disabled = false;
@@ -149,7 +149,7 @@ UsuarioConectadoInformacion();
 
 
 const modificarProveedor = () => {
-    const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
     let nombreProveedor = pNombreProv.value;
     let primerApellido = pPrimerApellidoProveedor.value;
