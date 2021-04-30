@@ -156,9 +156,9 @@
     <main class="contenedor">
         <h1>Mi perfil</h1>
         <div class="btn-editar">
-            <a href="">
+            <button>
                 <i class="fa fa-edit fa-2x" id="btn-editarDatosProveedor"></i>
-            </a>
+            </button>
         </div>
         <section class="contenedorColumna simpleColumna">
             <section class="seccion-proveedor">
@@ -180,10 +180,25 @@
                 </div>
                 <div class="columna columna-noMargenBottom">
                     <div>
-                        <h3 for="txt-nombreProveedor">Nombre completo</h3>
+                        <h3 for="txt-nombreProveedor">Nombre</h3>
                         <input type="text" id="txt-nombreProveedor" class="input-dobleColumna" disabled>
                     </div>
                 </div>
+
+                <div class="columna columna-noMargenBottom">
+                    <div>
+                        <h3 for="txt-primerApellidoProveedor">Primer apellido</h3>
+                        <input type="text" id="txt-primerApellidoProveedor" class="input-dobleColumna" disabled>
+                    </div>
+                </div>
+
+                <div class="columna columna-noMargenBottom">
+                    <div>
+                        <h3 for="txt-segundoApellidoProveedor">Segundo apellido</h3>
+                        <input type="text" id="txt-segundoApellidoProveedor" class="input-dobleColumna" disabled>
+                    </div>
+                </div>
+
                 <div class="columna columna-noMargenBottom">
                     <div>
                         <h3 for="txt-nombreNegocio">Nombre del negocio</h3>
@@ -210,33 +225,52 @@
                 </div>
                 <div class="columna columna-noMargenBottom">
                     <div>
-                        <h3 for="txt-idProveedor">Número de ID</h3>
-                        <input type="text" id="txt-idProveedor" class="input-dobleColumna" disabled>
+                        <h3 for="txt-numeroIdProveedor">Número de ID</h3>
+                        <input type="text" id="txt-numeroIdProveedor" class="input-dobleColumna" disabled>
                     </div>
                 </div>
                 <div class="columna columna-noMargenBottom">
+
+                </div>
+                <div class="columna columna-noMargenBottom">
                     <div>
-                        <h3 for="txt-direccionProv">Dirección</h3>
-                        <input type="text" id="txt-direccionProv" class="input-dobleColumna" disabled>
+                        <h3 for="txt-provinciaProveedor">Provincia</h3>
+                        <input type="text" id="txt-provinciaProveedor" class="input-dobleColumna" disabled>
                     </div>
                 </div>
+
+                <div class="columna columna-noMargenBottom">
+                    <div>
+                        <h3 for="txt-cantonProveedor">Cantón</h3>
+                        <input type="text" id="txt-cantonProveedor" class="input-dobleColumna" disabled>
+                    </div>
+                </div>
+
+
+                <div class="columna columna-noMargenBottom">
+
+                </div>
+
+                <div class="columna columna-noMargenBottom">
+                    <div>
+                        <h3 for="txt-distritoProveedor">Distrito</h3>
+                        <input type="text" id="txt-distritoProveedor" class="input-dobleColumna" disabled>
+                    </div>
+                </div>
+
+
+
                 <div class="columna columna-noMargenBottom">
                     <div>
                         <h3 for="txt-otrasSeniasProv">Otras señas</h3>
                         <input type="text" id="txt-otrasSeniasProv" class="input-dobleColumna" disabled>
                     </div>
                 </div>
+
+
+
                 <div class="columna columna-noMargenBottom">
-                    <div>
-                        <div>
-                            <a>
-                                <h3></h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div id="cliente-modificarContrasenna">
+                    <div id="proveedor-modificarContrasenna" class="ocultar">
                         <div id="abrirModalContrasenna">
                             <a>
                                 <h3 for="txt-genero">¿Desea cambiar su contraseña?</h3>
@@ -244,104 +278,126 @@
                         </div>
                     </div>
                 </div>
+                <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
+                    <button type="button" id="btn-guardar-infoProveedor" class="ocultarInfoMascota">Guardar</button>
+                </div>
+
+                <!----------------Modal---------------->
+                <div id="modalModificarContrasenna" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h3 class="padding-top padding-bottom">Modificar contraseña</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="contrasennaActual">Contraseña actual</label>
+                                <input type="password" id="contrasennaActual" class="input-dobleColumna">
+                            </div>
+                            <div>
+                                <label for="contrasennaNueva">Contraseña nueva</label>
+                                <input type="password" id="contrasennaNueva" class="input-dobleColumna">
+                            </div>
+                            <div>
+                                <label for="contrasennaConfirmacion">Confirmar contraseña nueva</label>
+                                <input type="password" id="contrasennaConfirmacion" class="input-dobleColumna">
+                            </div>
+                            <div class="contenedor-restriccionesContrasenna">
+                                <h3>Restricciones</h3>
+                                <p>La contraseña debe cumplir con los siguientes requisitos:</p>
+                                <ul>
+                                    <li>Mínimo de 6 caracteres</li>
+                                    <li>Máximo de 12 caracteres</li>
+                                    <li>Al menos una letra mayúscula</li>
+                                    <li>Al menos una letra minúscula</li>
+                                    <li>Al menos un dígito</li>
+                                    <li>No espacios en blanco</li>
+                                    <li>Al menos 1 carácter especial</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
+                                <button type="button" id="btn-guardar-nuevaCont">Guardar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </section>
+            <section class="seccion-representante">
 
-            <!----------------Modal---------------->
-            <div id="modalModificarContrasenna" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h3 class="padding-top padding-bottom">Modificar contraseña</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <label for="contrasennaActual">Contraseña actual</label>
-                            <input type="password" id="contrasennaActual" class="input-dobleColumna">
-                        </div>
-                        <div>
-                            <label for="contrasennaNueva">Contraseña nueva</label>
-                            <input type="password" id="contrasennaNueva" class="input-dobleColumna">
-                        </div>
-                        <div>
-                            <label for="contrasennaConfirmacion">Confirmar contraseña nueva</label>
-                            <input type="password" id="contrasennaConfirmacion" class="input-dobleColumna">
-                        </div>
-                        <div class="contenedor-restriccionesContrasenna">
-                            <h3>Restricciones</h3>
-                            <p>La contraseña debe cumplir con los siguientes requisitos:</p>
-                            <ul>
-                                <li>Mínimo de 6 caracteres</li>
-                                <li>Máximo de 12 caracteres</li>
-                                <li>Al menos una letra mayúscula</li>
-                                <li>Al menos una letra minúscula</li>
-                                <li>Al menos un dígito</li>
-                                <li>No espacios en blanco</li>
-                                <li>Al menos 1 carácter especial</li>
-                            </ul>
+                <h2>Representante legal</h2>
+                <section class="contenedorColumna simpleColumna">
+                    <div class="contenedorClasesFlotantes">
+                        <div class="btn-editar">
+                            <a href="">
+                                <i class="fa fa-edit fa-2x" id="btn-modificar-representante-legal"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
-                            <button type="button" id="btn-guardar-nuevaCont">Guardar</button>
+                    <div class="columna">
+                        <div class="div-imgUpload">
+                            <div class="previstaImagen" id="prevImagen">
+                                <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
+                            </div>
+                            <input type="file" name="input-img" id="input-imagen">
+                        </div>
+                    </div>
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-nombreRep">Nombre</h3>
+                            <input type="text" id="txt-nombreRep" class="input-dobleColumna" disabled>
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-        </section>
-        <section class="seccion-representante">
-            <hr>
-            <h2>Representante legal</h2>
-            <section class="contenedorColumna simpleColumna">
-                <div class="contenedorClasesFlotantes">
-                    <div class="btn-editar">
-                        <a href="">
-                            <i class="fa fa-edit fa-2x" id="btn-modificar-representante-legal"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="columna">
-                    <div class="div-imgUpload">
-                        <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-primerApellidoRep">Primer apellido</h3>
+                            <input type="text" id="txt-primerApellidoRep" class="input-dobleColumna" disabled>
                         </div>
-                        <input type="file" name="input-img" id="input-imagen">
                     </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div>
-                        <h3 for="txt-nombreRep">Nombre completo</h3>
-                        <input type="text" id="txt-nombreRep" class="input-dobleColumna" disabled>
+
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-segundoApellidoRep">Segundo apellido</h3>
+                            <input type="text" id="txt-segundoApellidoRep" class="input-dobleColumna" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div>
-                        <h3 for="txt-tipoIdRep">Tipo de ID</h3>
-                        <input type="text" id="txt-tipoIdRep" class="input-dobleColumna" disabled>
+
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-tipoIdRep">Tipo de ID</h3>
+                            <input type="text" id="txt-tipoIdRep" class="input-dobleColumna" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div>
-                        <h3 for="txt-correoRep">Correo</h3>
-                        <input type="email" id="txt-correoRep" class="input-dobleColumna" disabled>
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-correoRep">Correo</h3>
+                            <input type="email" id="txt-correoRep" class="input-dobleColumna" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div>
-                        <h3 for="txt-idRep">Número de ID</h3>
-                        <input type="text" id="txt-idRep" class="input-dobleColumna" disabled>
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-idRep">Número de ID</h3>
+                            <input type="text" id="txt-idRep" class="input-dobleColumna" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="columna columna-noMargenBottom">
-                    <div>
-                        <h3 for="txt-telRep">Número de teléfono</h3>
-                        <input type="text" id="txt-telRep" class="input-dobleColumna" disabled>
+                    <div class="columna columna-noMargenBottom">
+                        <div>
+                            <h3 for="txt-telRep">Número de teléfono</h3>
+                            <input type="text" id="txt-telRep" class="input-dobleColumna" disabled>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="btn-registar btn-general " type="button" id="btn-guardarDatosCliente">
+                        <button type="button" id="btn-guardar-info-repLegal" class="ocultarInfoMascota">Guardar</button>
+                    </div>
+
+                </section>
+                <hr>
             </section>
-            <hr>
-        </section>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
@@ -359,6 +415,7 @@
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/perfilProveedor.js"></script>
+    <script src="js/serviciosProveedorCliente-servicio.js"></script>
 </body>
 
 </html>

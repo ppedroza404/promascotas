@@ -245,3 +245,79 @@ const eliminarServicioProveedor = async(p_id) => {
             })
         });
 };
+
+
+const modificarInfoProveedor = async(pnombreProveedor, pprimerApellido, psegundoApellido, pnombreDelNegocio, pcorreoProveedor, pnumeroIdProveedor, ptelProveedor, ptipoIdProveedor, pprovinciaProveedor, pcantonProveedor, pdistritoProveedor, psennasProveedor) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-proveedor',
+            responseType: 'json',
+            data: {
+                nombre: pnombreProveedor,
+                primerApellido: pprimerApellido,
+                segundoApellido: psegundoApellido,
+                nombreNegocio: pnombreDelNegocio,
+                correoproveedor: pcorreoProveedor,
+                numeroIdProveedor: pnumeroIdProveedor,
+                telefonoProveedor: ptelProveedor,
+                tipoIdProveedor: ptipoIdProveedor,
+                provinciaProveedor: pprovinciaProveedor,
+                cantonProveedor: pcantonProveedor,
+                distritoProveedor: pdistritoProveedor,
+                sennasProveedor: psennasProveedor,
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su servicio se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'perfilProveedor.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
+
+const modificarRepresentanteLegal = async(pnombreRep, pprimerApellidoRep, psegundoApellidoRep, ptipoIdRep, pidRep, pcorreoRep, ptelRep) => {
+
+    await axios({
+            method: 'put',
+            url: 'http://localhost:3000/api/modificar-representante-legal',
+            responseType: 'json',
+            data: {
+
+                nombreRep: pnombreRep,
+                primerApellidoRep: pprimerApellidoRep,
+                segundoApellidoRep: psegundoApellidoRep,
+                tipoIdRep: ptipoIdRep,
+                idRep: pidRep,
+                correoRep: pcorreoRep,
+                telRep: ptelRep,
+
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su servicio se modificó con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
+                window.location.href = 'perfilProveedor.html';
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo modificar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+};
