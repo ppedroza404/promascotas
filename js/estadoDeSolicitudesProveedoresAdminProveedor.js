@@ -1,27 +1,29 @@
 'use strict';
 
-
 const tabla = document.querySelector('#tbl-solicitudespendientes tbody');
 const inputFiltro = document.querySelector('#txt-filtro');
+let solicitud = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
-let listaSolicitudesPendientes = [];
 
-const mostrarTabla = () => {
+const mostrarTabla = async() => {
+
+    let listaSolicitudesPendientes2 = [];
+
+    listaSolicitudesPendientes2 = await listarSolicitudes();
+
     let filtro = inputFiltro.value.toLowerCase();
     tabla.innerHTML = '';
 
-    informacionServiciosPorAprobar.forEach(proveedor => {
 
-        if (proveedor.nombreCliente.toLowerCase().includes(filtro)) {
+    listaSolicitudesPendientes2.forEach(solicitudes => {
+
+        if (solicitudes.proveedor.toLowerCase().includes(solicitud.correo)) {
             let fila = tabla.insertRow();
 
             /*fila.insertCell().innerHTML = proveedor.estado;*/
-            fila.insertCell().innerHTML = proveedor.nombre;
-            fila.insertCell().innerHTML = proveedor.tipo;
-            fila.insertCell().innerHTML = proveedor.precio;
-            fila.insertCell().innerHTML = proveedor.nombreCliente;
-            fila.insertCell().innerHTML = proveedor.telefono;
-
+            fila.insertCell().innerHTML = solicitudes.nombreServicio;
+            fila.insertCell().innerHTML = solicitudes.cliente;
+            fila.insertCell().innerHTML = solicitudes.fechaServicio;
 
 
             let celdaAcciones = fila.insertCell();
