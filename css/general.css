@@ -22,6 +22,10 @@ footer p {
 
 /******** clases globales ********/
 
+#foto-usuario {
+    max-width: 100%;
+}
+
 .contenedorClasesFlotantes {
     display: flow-root;
 }

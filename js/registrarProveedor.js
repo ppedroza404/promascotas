@@ -15,6 +15,8 @@ const telefonoCliente = document.querySelector('#txt-telefono');
 const tipoServicio = document.querySelector('#slt-tipoServicio');
 const divRepreLega = document.querySelector('#div-repreLegal');
 const divCedJuridica = document.querySelector('#div-cedJuridica');
+//Imagen
+//const divFoto = document.querySelector('#foto-usuario');
 
 
 const enableSelect = () => {
@@ -62,7 +64,7 @@ tipoId.addEventListener('change', enableSelect);
 //Declaración de variables
 
 const btnRegistrarProveedor = document.querySelector('#btn-registrarProveedor');
-const inputImagen = document.querySelector('#input-imagen');
+// const divFoto = document.querySelector('#input-imagen');
 const inputNombreNegocio = document.querySelector('#txt-nombreNegocio');
 const inputTipoId = document.querySelector('#slt-tipoId');
 const inputCédulaJurídica = document.querySelector('#txt-CédulaJurídica');
@@ -121,6 +123,31 @@ const habilitarDistrito = () => {
 };
 
 //Validación 
+
+
+
+
+
+const boton_foto = document.querySelector('#btn-foto');
+const imagenUsusario = document.querySelector('#foto-usuario');
+
+
+let widget_cloudinary = cloudinary.createUploadWidget({
+    cloudName: 'promascotascloudinary',
+    uploadPreset: 'r17qodvl'
+}, (err, result) => {
+    if (!err && result && result.event === 'success') {
+        console.log('Imagen subida con éxito', result.info);
+        imagenUsusario.src = result.info.secure_url;
+    }
+});
+boton_foto.addEventListener('click', () => {
+    widget_cloudinary.open();
+}, false);
+
+
+
+
 
 
 // Tipos de servicio
@@ -193,11 +220,11 @@ const validar = () => {
     } else {
         inputCédulaJurídica.classList.remove('error');
     }
-    if (inputImagen.value == '') {
+    if (imagenUsusario.value == '') {
         error = true;
-        inputImagen.classList.add('error');
+        imagenUsusario.classList.add('error');
     } else {
-        inputImagen.classList.remove('error');
+        imagenUsusario.classList.remove('error');
     }
     if (inputTipoId.value == '') {
         error = true;
@@ -443,7 +470,7 @@ const imprimir = () => {
     let tipoUsuario = 'proveedor';
     let estado = 'pendiente';
     let _Idservicio = '60791e45bf865d3a08577b3c'; // Arreglo Servicio Null 
-    let avatar = 'inputImagen.value.Imagen';
+    let avatar = imagenUsusario.src;
     let nombreNegocio = inputNombreNegocio.value;
     let tipoIdNegocio = inputTipoId.value;
     let juridicaId = Jurídica.value;
@@ -483,34 +510,34 @@ const imprimir = () => {
 
 
 //cambiar imagen
-const imgPerfil = document.querySelector('#img-proveedor');
-const archivoCambiado = (evento) => {
-    let elArchivo = evento.target.files[0];
-    let reader = new FileReader();
+// //const imgPerfil = document.querySelector('#img-proveedor');
+// const archivoCambiado = (evento) => {
+//     let elArchivo = evento.target.files[0];
+//     let reader = new FileReader();
 
-    reader.onload = function(evt) {
-        let datosImagen = evt.target.result;
+//     reader.onload = function(evt) {
+//         let datosImagen = evt.target.result;
 
-        imgPerfil.src = event.target.result;
-    }
-    reader.readAsDataURL(elArchivo);
+//         imgPerfil.src = event.target.result;
+//     }
+//     reader.readAsDataURL(elArchivo);
 
-}
-const readUrl = () => {
-    let tieneArchivoApi = (window.File && window.FileReader);
+// }
+// const readUrl = () => {
+//     let tieneArchivoApi = (window.File && window.FileReader);
 
-    if (!tieneArchivoApi) {
-        console.log('El browser no soporta API');
-        return;
-    }
-    inputImagen.addEventListener('change', archivoCambiado)
-}
+//     if (!tieneArchivoApi) {
+//         console.log('El browser no soporta API');
+//         return;
+//     }
+//     inputImagen.addEventListener('change', archivoCambiado)
+// }
 
 
 sltProvincia.addEventListener('change', habilitarCanton);
 sltCanton.addEventListener('change', habilitarDistrito);
 btnRegistrarProveedor.addEventListener('click', validar);
-window.addEventListener('load', readUrl);
+//window.addEventListener('load', readUrl);
 window.addEventListener('load', llenarSelectTipoServicio);
 window.addEventListener('load', habilitarCanton);
 window.addEventListener('load', habilitarDistrito);

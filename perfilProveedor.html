@@ -170,13 +170,23 @@
                     <i class="fa fa-paw" aria-hidden="true"></i>
                 </div>
                 <h2>Proveedor <span id='spanNombreNegocio'>xxx</span></h2>
-                <div class="columna">
+                <div class="columna centrarTexto">
+
+                    <label for="btn-foto">Fotografía o avatar</label>
+                    <div>
+                        <img src="img/imgPrevLogo.jpg" id="foto-usuario">
+                    </div>
+                    <button type="button" id="btn-foto" class="btn">Agregar imagen</button>
+
+                    <!-- <label for="div-imgUpload">Fotografía o avatar</label>
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="img-proveedor" class="img-proveedor">
                         </div>
                         <input type="file" name="input-img" id="input-imagen">
-                    </div>
+                    </div> -->
+
+
                 </div>
                 <div class="columna columna-noMargenBottom">
                     <div>
@@ -405,11 +415,13 @@
     </footer>
 
     <!-- 3Party Script-->
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- 3Party Script-->
 
 
+    <script src="cloudinary/js/servicio-imagen.js"></script>
     <script src="js/modificar-contrasennaP.js"></script>
     <script src="js/usuario-servicios.js"></script>
     <script src="js/servicios.js"></script>
