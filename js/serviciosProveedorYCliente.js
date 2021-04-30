@@ -7,7 +7,9 @@ let cantonSeleccionada = document.querySelector('#cantones');
 let distritoSeleccionado = document.querySelector('#distritos');
 let comentarioSeleccionado = document.querySelector('#txt-Comentarios');
 let botonEnviar = document.querySelector('#btn-solicitar');
-
+//Obtiene información del proveedor cuando es cliente
+let urlID = window.location.hash;
+let urlIDModificado = urlID.slice(1);
 
 
 const validarCamposUsuario = () => {
@@ -20,36 +22,36 @@ const validarCamposUsuario = () => {
     } else {
         servicioSeleccionado.classList.remove('error');
     }
-    if (tamanoSeleccionado.value == '') {
-        error = true;
-        tamanoSeleccionado.classList.add('error');
-    } else {
-        tamanoSeleccionado.classList.remove('error');
-    }
+    // if (tamanoSeleccionado.value == '') {
+    //     error = true;
+    //     tamanoSeleccionado.classList.add('error');
+    // } else {
+    //     tamanoSeleccionado.classList.remove('error');
+    // }
     if (fechaSeleccionada.value == '') {
         error = true;
         fechaSeleccionada.classList.add('error');
     } else {
         fechaSeleccionada.classList.remove('error');
     }
-    if (provinciaSeleccionada.value == '') {
-        error = true;
-        provinciaSeleccionada.classList.add('error');
-    } else {
-        provinciaSeleccionada.classList.remove('error');
-    }
-    if (cantonSeleccionada.value == '') {
-        error = true;
-        cantonSeleccionada.classList.add('error');
-    } else {
-        cantonSeleccionada.classList.remove('error');
-    }
-    if (distritoSeleccionado.value == '') {
-        error = true;
-        distritoSeleccionado.classList.add('error');
-    } else {
-        distritoSeleccionado.classList.remove('error');
-    }
+    // if (provinciaSeleccionada.value == '') {
+    //     error = true;
+    //     provinciaSeleccionada.classList.add('error');
+    // } else {
+    //     provinciaSeleccionada.classList.remove('error');
+    // }
+    // if (cantonSeleccionada.value == '') {
+    //     error = true;
+    //     cantonSeleccionada.classList.add('error');
+    // } else {
+    //     cantonSeleccionada.classList.remove('error');
+    // }
+    // if (distritoSeleccionado.value == '') {
+    //     error = true;
+    //     distritoSeleccionado.classList.add('error');
+    // } else {
+    //     distritoSeleccionado.classList.remove('error');
+    // }
     if (comentarioSeleccionado.value == '') {
         error = true;
         comentarioSeleccionado.classList.add('error');
@@ -76,23 +78,23 @@ const validarCamposUsuario = () => {
 
 const imprimirCamposUsuario = () => {
     let servicio = servicioSeleccionado.value;
-    let tamanno = tamanoSeleccionado.value;
+    // let tamanno = tamanoSeleccionado.value;
     let fecha = new Date(fechaSeleccionada.value);
-    let provincia = provinciaSeleccionada.value;
-    let canton = cantonSeleccionada.value;
-    let distrito = distritoSeleccionado.value;
+    // let provincia = provinciaSeleccionada.value;
+    // let canton = cantonSeleccionada.value;
+    // let distrito = distritoSeleccionado.value;
     let comentario = comentarioSeleccionado.value;
 
 
-    console.log("Solicitar servicio");
-    console.log("------------------");
-    console.log("Servicio:", servicio);
-    console.log("Tamaño:", tamanno);
-    console.log("Fecha:", fecha);
-    console.log("Provincia:", provincia);
-    console.log("Cantón:", canton);
-    console.log("Distrito:", distrito);
-    console.log("Comentario:", comentario);
+    // console.log("Solicitar servicio");
+    // console.log("------------------");
+    // console.log("Servicio:", servicio);
+    // console.log("Tamaño:", tamanno);
+    // console.log("Fecha:", fecha);
+    // console.log("Provincia:", provincia);
+    // console.log("Cantón:", canton);
+    // console.log("Distrito:", distrito);
+    // console.log("Comentario:", comentario);
 
     Swal.fire({
         'icon': 'success',
@@ -274,9 +276,7 @@ const validarServiciosAgregados = () => {
 //validar todo el form de proveedor
 botonAgregarServicio.addEventListener('click', validarServiciosAgregados);
 
-//Obtiene información del proveedor cuando es cliente
-let urlID = window.location.hash;
-let urlIDModificado = urlID.slice(1);
+
 // Listar servicios
 let informacionProveedor = [];
 let informacionServiciosProveedor = [];
