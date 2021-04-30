@@ -247,7 +247,7 @@ const eliminarServicioProveedor = async(p_id) => {
 };
 
 
-const modificarInfoProveedor = async(pnombreProveedor, pprimerApellido, psegundoApellido, pnombreDelNegocio, pcorreoProveedor, pnumeroIdProveedor, ptelProveedor, ptipoIdProveedor, pprovinciaProveedor, pcantonProveedor, pdistritoProveedor, psennasProveedor) => {
+const modificarInfoProveedor = async(pnombreProveedor, pprimerApellido, psegundoApellido, pnombreDelNegocio, pcorreoProveedor, pnumeroIdProveedor, ptelProveedor, ptipoIdProveedor, pprovinciaProveedor, pcantonProveedor, pdistritoProveedor, psennasProveedor, pavatar) => {
 
     await axios({
             method: 'put',
@@ -266,6 +266,7 @@ const modificarInfoProveedor = async(pnombreProveedor, pprimerApellido, psegundo
                 cantonProveedor: pcantonProveedor,
                 distritoProveedor: pdistritoProveedor,
                 sennasProveedor: psennasProveedor,
+                avatar: pavatar,
             }
         })
         .then((response) => {

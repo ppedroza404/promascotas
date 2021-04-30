@@ -133,6 +133,17 @@ const habilitarCamposProveedor = () => {
 
 }
 
+let imagenProveedor = document.querySelector('#foto-usuario')
+const UsuarioConectadoInformacion = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    let imagenUsuarioConectado = usuario.avatar;
+
+    imagenProveedor.setAttribute('src', `${imagenUsuarioConectado}`);
+
+};
+UsuarioConectadoInformacion();
+
+
 const modificarProveedor = () => {
     const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
@@ -151,7 +162,9 @@ const modificarProveedor = () => {
     let distritoProveedor = pDistritoProveedor.value;
     let sennasProveedor = pOtrasSeniasProv.value;
 
-    modificarInfoProveedor(nombreProveedor, primerApellido, segundoApellido, nombreDelNegocio, correoProveedor, numeroIdProveedor, telProveedor, tipoIdProveedor, provinciaProveedor, cantonProveedor, distritoProveedor, sennasProveedor);
+    let avatar = imagenProveedor.src
+
+    modificarInfoProveedor(nombreProveedor, primerApellido, segundoApellido, nombreDelNegocio, correoProveedor, numeroIdProveedor, telProveedor, tipoIdProveedor, provinciaProveedor, cantonProveedor, distritoProveedor, sennasProveedor, avatar);
 
 
     // Swal.fire({
