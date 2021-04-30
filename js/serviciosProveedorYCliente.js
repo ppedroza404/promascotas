@@ -424,17 +424,37 @@ const listarServiciosProveedorParaCliente = async() => {
     completarSelectServicios();
 };
 
+
+
+
+
+
+
+
+
+
+
+
 const completarSelectServicios = async() => {
-    let opcion = document.createElement("option");
     listarServiciosProveedor.forEach(datos => {
         datos.servicios.forEach(servicio => {
-            console.log(servicio.nombre);
+            let opcion = document.createElement("option");
+            console.log(`Prueba de option${servicio.nombre}`);
             opcion.text = servicio.nombre;
             opcion.setAttribute('value', `idServicio${servicio._id}`);
             servicioSeleccionado.appendChild(opcion);
         });
     });
 };
+
+
+
+
+
+
+
+
+
 
 //Populación de servicios para el proveedor
 const llenarListaServiciosProveedor = async() => {
