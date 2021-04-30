@@ -134,11 +134,15 @@ const habilitarCamposProveedor = () => {
 }
 
 let imagenProveedor = document.querySelector('#foto-usuario')
+let nombreNegocio = document.querySelector('#spanNombreNegocio')
 const UsuarioConectadoInformacion = () => {
     let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     let imagenUsuarioConectado = usuario.avatar;
+    nombreNegocio.innerText = usuario.nombreNegocio;
+
 
     imagenProveedor.setAttribute('src', `${imagenUsuarioConectado}`);
+    // spanNombreNegocioTxt.innerText(spanNombreNegocioTxt);
 
 };
 UsuarioConectadoInformacion();
