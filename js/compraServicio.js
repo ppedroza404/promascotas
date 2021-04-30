@@ -5,9 +5,15 @@ let urlIDModificado = urlID.slice(1);
 let btnPagarServicio = document.querySelector('#btn-pagarServicio');
 let cliente = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 let proveedor = JSON.parse(sessionStorage.getItem('usuarioSeleccionado'));
+const fechaDeServ = document.querySelector('#txt-fechaServicio');
 let nombreServicio = JSON.parse(sessionStorage.getItem('nombreServicio'));
+///
+let servicioSeleccionadoST = JSON.parse(sessionStorage.getItem('servicioSeleccionadoST'));
+let fechaSeleccionadaST = JSON.parse(sessionStorage.getItem('fechaSeleccionadaST'));
+let comentarioSeleccionadoST = JSON.parse(sessionStorage.getItem('comentarioSeleccionadoST'));
+///
 
-
+let comentario = document.querySelector('#txt-Comentarios');
 //Obtiene información del modal
 let modal = document.querySelector('#modalPagoServicio');
 let abrirModal = document.querySelector('#btn-abrirModalPagoServicio')
@@ -459,7 +465,7 @@ const obtenerdatosSolicitudServ = () => {
 
     //registrarSolicitudServicio(cliente.nombre, proveedor.correo, nombreServicio, proveedor.provincia, proveedor.canton, proveedor.distrito, fechaServicio, comentario);
 
-    registrarSolicitudServicio(cliente.nombre, 'Rob', 'Rob', 'Rob', 'Rob', 'Rob', '2021-06-30', 'comentario');
+    registrarSolicitudServicio(cliente.nombre, proveedor.correo, nombreServicio, proveedor.provincia, proveedor.canton, proveedor.distrito, fechaSeleccionadaST, comentarioSeleccionadoST);
 }
 
 btnPagarServicio.addEventListener('click', obtenerdatosSolicitudServ);

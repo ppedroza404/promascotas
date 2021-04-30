@@ -28,14 +28,14 @@ pNombreProv.value = proveedor.nombre;
 pPrimerApellidoProveedor.value = proveedor.primerApellido;
 pSegundoApellidoProveedor.value = proveedor.segundoApellido;
 pNombreNegocio.value = proveedor.nombreNegocio;
-pCorreoProveedor.value = proveedor.correoproveedor;
-pNumeroIdProveedor.value = proveedor.numeroIdProveedor;
-pTelProveedor.value = proveedor.telefonoProveedor
-pTipoIdProveedor.value = proveedor.tipoIdProveedor
-pProvinciaProveedor.value = proveedor.provinciaProveedor;
-pCantonProveedor.value = proveedor.cantonProveedor;
-pDistritoProveedor.value = proveedor.distritoProveedor;
-pOtrasSeniasProv.value = proveedor.sennasProveedor;
+pCorreoProveedor.value = proveedor.correo;
+pNumeroIdProveedor.value = proveedor.numeroId;
+pTelProveedor.value = proveedor.telefono;
+pTipoIdProveedor.value = proveedor.tipoId;
+pProvinciaProveedor.value = proveedor.provincia;
+pCantonProveedor.value = proveedor.canton;
+pDistritoProveedor.value = proveedor.distrito;
+pOtrasSeniasProv.value = proveedor.sennas;
 
 
 /* Fin: Variables que muestran la información del usuario conectado en el perfil */
@@ -77,7 +77,7 @@ const habilitarCamposRepLegal = () => {
 
 const modificarRepLegal1 = () => {
 
-    const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
     let nombreRepresentante = pnombreRep.value;
     let primerApellidoRep = pprimerApellidoRep.value;
@@ -122,10 +122,10 @@ const habilitarCamposProveedor = () => {
     pPrimerApellidoProveedor.disabled = false;
     pSegundoApellidoProveedor.disabled = false;
     pNombreNegocio.disabled = false;
-    pCorreoProveedor.disabled = false;
+    // pCorreoProveedor.disabled = false;
     // pNumeroIdProveedor.disabled = false;
     pTelProveedor.disabled = false;
-    pTipoIdProveedor.disabled = false;
+    //pTipoIdProveedor.disabled = false;
     // pProvinciaProveedor.disabled = false;
     // pCantonProveedor.disabled = false;
     // pDistritoProveedor.disabled = false;
@@ -149,7 +149,7 @@ UsuarioConectadoInformacion();
 
 
 const modificarProveedor = () => {
-    const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+    const proveedor = JSON.parse(sessionStorage.getItem('usuarioConectado'));
 
     let nombreProveedor = pNombreProv.value;
     let primerApellido = pPrimerApellidoProveedor.value;
