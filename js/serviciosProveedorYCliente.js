@@ -101,7 +101,7 @@ const imprimirCamposUsuario = () => {
         'title': 'Se ha enviado con éxito la solicitud de servicio',
         'confirmButtonText': 'Excelente'
     }).then(() => {
-        window.location.href = 'compraServicio.html';
+        window.location.href = `compraServicio.html#${urlIDModificado}`;
     });
 
 
