@@ -154,15 +154,23 @@
         <h3>Datos personales</h3>
         <form>
             <section class="contenedorColumna dobleColumna">
-                <div class="columna">
-                    <label for="div-imgUpload">Fotografía o avatar</label>
+                <div class="columna centrarTexto">
+
+                    <label for="btn-foto">Fotografía o avatar</label>
+                    <div>
+                        <img src="img/imgPrevLogo.jpg" id="foto-usuario">
+                    </div>
+                    <button type="button" id="btn-foto" class="btn">Agregar imagen</button>
+
+                    <!-- <label for="div-imgUpload">Fotografía o avatar</label>
                     <div class="div-imgUpload">
                         <div class="previstaImagen" id="prevImagen">
-                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="imagen-prev">
+                            <img src="img/imgPrevLogo.jpg" alt="Prevista" id="img-proveedor" class="img-proveedor">
                         </div>
-                        <span><input type="file" name="input-img" id="input-imagen" onchange="document.getElementById('imagen-prev').src = window.URL.createObjectURL(this.files[0])"></span>
-                        <!--PS: createObjectURL is short string referencing the file data in-memory -->
-                    </div>
+                        <input type="file" name="input-img" id="input-imagen">
+                    </div> -->
+
+
                 </div>
                 <div class="columna">
                     <div>
@@ -264,6 +272,7 @@
     </footer>
 
     <!-- 3Party Script-->
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- 3Party Script-->

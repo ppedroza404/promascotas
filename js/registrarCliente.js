@@ -2,7 +2,7 @@
 
 
 const btnRegistrarCliente = document.querySelector('#btn-registrarCliente');
-const inputImagen = document.querySelector('#input-imagen');
+//const inputImagen = document.querySelector('#input-imagen');
 
 const inputNombreCliente = document.querySelector('#txt-nombreCliente');
 const inputPrimApellidoCliente = document.querySelector('#txt-primerApellidoCliente');
@@ -126,6 +126,24 @@ sltTipoId.classList.remove('error');
 
 /* Inicio: Función para validar los datos del cliente */
 
+const boton_foto = document.querySelector('#btn-foto');
+const imagenUsusario = document.querySelector('#foto-usuario');
+
+
+let widget_cloudinary = cloudinary.createUploadWidget({
+    cloudName: 'promascotascloudinary',
+    uploadPreset: 'r17qodvl'
+}, (err, result) => {
+    if (!err && result && result.event === 'success') {
+        console.log('Imagen subida con éxito', result.info);
+        imagenUsusario.src = result.info.secure_url;
+    }
+});
+boton_foto.addEventListener('click', () => {
+    widget_cloudinary.open();
+}, false);
+
+
 const validarDatos = () => {
     let error = false;
 
@@ -136,12 +154,12 @@ const validarDatos = () => {
 
     //Validación por núm de ID(regex) por tipo de ID
 
-    if (inputImagen.value == '') {
-        error = true;
-        inputImagen.classList.add('error');
-    } else {
-        inputImagen.classList.remove('error');
-    }
+    // if (inputImagen.value == '') {
+    //     error = true;
+    //     inputImagen.classList.add('error');
+    // } else {
+    //     inputImagen.classList.remove('error');
+    // }
     if (inputNombreCliente.value == '') {
         error = true;
         inputNombreCliente.classList.add('error');
@@ -289,7 +307,8 @@ const imprimirDatos = () => {
     let tipoUsuario = 'cliente';
     let estado = 'pendiente';
     let _Idservicio = '60791e45bf865d3a08577b3c'; // Arreglo Servicio Null 
-    let avatar = 'inputImagen.value.Imagen';
+    //let avatar = 'inputImagen.value.Imagen';
+    let avatar = imagenUsusario.src;
     let nombreNegocio = '';
     let tipoIdNegocio = '';
     let juridicaId = '';
