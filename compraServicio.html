@@ -8,13 +8,18 @@
     <title>Servicios</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfilCliente.css">
+    <link rel="stylesheet" href="css/registrarMetodoPago.css">
     <link rel="stylesheet" href="css/serviciosProveedorYCliente.css">
     <link rel="icon" href="img/nariz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Tienen que ir en todas las internas-->
+    <link rel="stylesheet" href="css/registrarProveedor.css">
+    <link rel="stylesheet" href="css/registrarMacotaCliente.css">
+    <link rel="stylesheet" href="css/registrarMetodoPago.css">
+    <link rel="stylesheet" href="css/tabla.css  ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="duennoBody">
@@ -163,7 +168,6 @@
                             <div class="centrarTexto padding-top">
                                 <a href="serviciosProveedorYCliente.html" class="btn">Ver proveedor</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -177,15 +181,99 @@
                             <br> Te invitamos a seguir navegando en <a href="paginaInicioCliente.html">Pro Mascotas</a>.</p>
 
                     </div>
+                    <div class="centrarTexto">
+                        <button type="button" class="btn" id="btn-abrirModalPagoServicio">Pagar</button>
+                    </div>
                 </div>
             </div>
+            <!----------------Modal---------------->
+            <div id="modalPagoServicio" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h3 class="padding-top padding-bottom">Seleccionar un método de pago</h3>
+                    </div>
+                    <div class="modal-body">
+                        <section class="contenedor">
+                            <h1>Métodos de pago</h1>
+                            <section class="contenedor">
+                                <h3>Tarjetas de crédito o débito</h3>
+                            </section>
+                            <form>
+                                <section class="contenedorColumna simpleColumna">
+                                    <div class="columna">
+                                        <label for="div-imgUpload">Tipo de tarjeta</label>
+                                        <section class="div-tarjetas">
+                                            <div>
+                                                <img src="img/visa_logo_no_color.jpg" alt="Visa Logo - Inactivo" id="img-tarjetaVisa">
+                                                <img src="img/mastercard_logo_no_color.jpg" alt="Visa Logo - Inactivo" id="img-tarjetaMasterC">
+                                                <img src="img/amex_logo_no_color.jpg" alt="Amex Logo - Inactivo" id="img-tarjetaAmex">
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="columna">
+                                        <div>
+                                            <label for="txt-numeroTarjeta">Número de la tarjeta</label>
+                                            <input type="number" id="txt-numeroTarjeta" class="input-dobleColumna">
+                                        </div>
+                                    </div>
+                                    <div class="columna">
+                                        <div>
+                                            <label for="txt-nombreTarjeta">Nombre en la tarjeta</label>
+                                            <input type="text" id="txt-nombreTarjeta" class="input-dobleColumna">
+                                        </div>
+                                    </div>
+                                    <div class="contenedorColumna simpleColumna">
+                                        <div class="columna"></div>
+                                        <div class="columna">
+                                            <div><label for="txt-mesExpiracion">Fecha Expiracion</label></div>
+                                            <input type="month" id="txt-mesExpiracion">
+                                        </div>
+                                        <div class="columna">
+                                            <div><label for="txt-codigoSeguridad">CVC</label></div>
+                                            <input type="text" id="txt-codigoSeguridad">
+                                            <img src="img/cvc_logo1.jpg" class="img-codigoSeguridad" alt="">
+                                        </div>
+                                    </div>
+                                </section>
+                            </form>
+                            <h3>Seleccioná un método de pago:</h3>
+                            <section>
+                                <table id="tbl-metodosPago" class="tabla">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Información de la tarjeta</th>
+                                            <th>Nombre en la tarjeta</th>
+                                            <th>Fecha de expiración</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </section>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-general">
+                            <button type="button" id="btn-registrarCC">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </main>
     <footer>
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <!-- 3r Party scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- 3r Party scripts -->
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/compraServicio.js"></script>
