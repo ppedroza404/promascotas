@@ -22,7 +22,7 @@
     <header>
         <section class="contenedor">
             <div>
-                <a href="index.html" class="logo"><span></span></a>
+                <a href="paginaInicioCliente.html" class="logo"><span></span></a>
                 <nav class="navPrincipal">
                     <ul id="menuUlCliente">
                         <!--Inicia menu cliente-->
@@ -33,13 +33,14 @@
                             <a href="perfilCliente.html">Mi Perfil</a>
                         </li>
                         <li>
-                            <a href="listaServiciosProveedor">Mis servicios</a>
+                            <a href="serviciosCliente.html">Servicios</a>
+
                         </li>
                         <li>
-                            <a href="###">Carrito de compras</a>
+                            <a href="###">Cuenta</a>
                             <ul>
                                 <li>
-                                    <a href="###">Pagos</a>
+                                    <a href="registrarMetodoPago.html">Métodos de pago</a>
                                 </li>
                             </ul>
                         </li>
@@ -47,15 +48,10 @@
                             <a href="###">Mis mascotas</a>
                             <ul>
                                 <li>
-                                    <a href="###">Mantenimiento</a>
+                                    <a href="listarMascotasCliente.html">Ver mascotas</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="###">Servicios</a>
-                            <ul>
                                 <li>
-                                    <a href="###">Detalle</a>
+                                    <a href="registrarMascota.html">Agregar mascotas</a>
                                 </li>
                             </ul>
                         </li>
@@ -150,6 +146,7 @@
         </section>
     </header>
     <main class="contenedor">
+
         <h1>Agregar mascota</h1>
         <h3>Datos de la mascota</h3>
         <section>
@@ -179,79 +176,15 @@
                         </div>
                         <div id="div-razaGato">
                             <label for="slt-razaGato">Raza</label>
-                            <select id="slt-razaGato" class="inpt-raza">
+                            <select id="slt-razaGato" class="inpt-raza" disabled>
                                 <option value="">--Seleccione una raza--</option>
-                                <option value="American wirehair">American wirehair</option>
-                                <option value="Angora">Angora</option>
-                                <option value="British Shorthair">British Shorthair</option>
-                                <option value="California Spangled">California Spangled</option>
-                                <option value="Cymric">Cymric</option>
-                                <option value="Foldex">Foldex</option>
-                                <option value="Javaneses">Javaneses</option>
-                                <option value="Khao Manee">Khao Manee</option>
-                                <option value="Montés">Montés</option>
-                                <option value="Nebelung">Nebelung</option>
-                                <option value="Oriental de pelo largo">Oriental de pelo largo</option>
-                                <option value="Rabón japonés">Rabón japonés</option>
-                                <option value="Ragamuffin">Ragamuffin</option>
-                                <option value="Ragdoll">Ragdoll</option>
-                                <option value="Raza única Gato">Raza única Gato</option>
-                                <option value="Sin pelo">Sin pelo</option>
-                                <option value="Somalí">Somalí</option>
-                                <option value="Tonquinés">Tonquinés</option>
                             </select>
                         </div>
                         <div id="div-razaPerro">
                             <label for="slt-razaPerro">Raza</label>
-                            <select id="slt-razaPerro" class="inpt-raza">
+                            <select id="slt-razaPerro" class="inpt-raza" disabled>
                                 <option value="">--Seleccione una raza--</option>
-                                <option value="Akita Inu">Akita Inu</option>
-                                <option value="Alaskan Malamute">Alaskan Malamute</option>
-                                <option value="Beagle">Beagle</option>
-                                <option value="Bichon Maltés">Bichon Maltés</option>
-                                <option value="Bloodhound">Bloodhound</option>
-                                <option value="Bloodhound">Bloodhound</option>
-                                <option value="Boxer">Boxer</option>
-                                <option value="Bull Terrier">Bull Terrier</option>
-                                <option value="Bulldog Francés">Bulldog Francés</option>
-                                <option value="Bulldog Inglés">Bulldog Inglés</option>
-                                <option value="Caniche">Caniche</option>
-                                <option value="Carlino">Carlino</option>
-                                <option value="Chihuahua">Chihuahua</option>
-                                <option value="Chow Chow">Chow Chow</option>
-                                <option value="Cocker Americano">Cocker Americano</option>
-                                <option value="Cocker Inglés">Cocker Inglés</option>
-                                <option value="Collie">Collie</option>
-                                <option value="Dálmata">Dálmata</option>
-                                <option value="Doberman">Doberman</option>
-                                <option value="Fox Terrier">Fox Terrier</option>
-                                <option value="Golden Retriever">Golden Retriever</option>
-                                <option value="Gran Danés">Gran Danés</option>
-                                <option value="Husky Siberiano">Husky Siberiano</option>
-                                <option value="Labrador Retriever">Labrador Retriever</option>
-                                <option value="Lahsa Apso">Lahsa Apso</option>
-                                <option value="Pastor Alemán">Pastor Alemán</option>
-                                <option value="Pastor Belga">Pastor Belga</option>
-                                <option value="Pekinés">Pekinés</option>
-                                <option value="Pinscher">Pinscher</option>
-                                <option value="Pit Bull">Pit Bull</option>
-                                <option value="Raza única Perro">Raza única Perro</option>
-                                <option value="Rottweiler">Rottweiler</option>
-                                <option value="Samoyedo">Samoyedo</option>
-                                <option value="San Bernardo">San Bernardo</option>
-                                <option value="Schnauzer">Schnauzer</option>
-                                <option value="Setter Irlandés">Setter Irlandés</option>
-                                <option value="Shar Pei">Shar Pei</option>
-                                <option value="Teckel">Teckel</option>
-                                <option value="Welsh Corgi">Welsh Corgi</option>
-                                <option value="Westie">Westie</option>
-                                <option value="Yorkshire Terrier">Yorkshire Terrier</option>
                             </select>
-                        </div>
-
-                        <div>
-                            <label for="txt-padecimientos">Padecimientos</label>
-                            <input type="text" id="txt-padecimientos" class="inpt-raza">
                         </div>
 
                         <div>
@@ -261,6 +194,27 @@
                     </div>
 
                 </div>
+                <hr>
+                <p class="titulo">
+                    <h3>Padecimientos</h3>
+                </p>
+                <div class="contenedorColumna simpleColumna" id="div-padecimientos">
+                    <div class="columna">
+                        <select id="slt-padecimiento1" class="inpt-raza">
+                        <option value="">--Seleccione una opción--</option>
+                    </select>
+                    </div>
+                    <div class="columna">
+                        <select id="slt-padecimiento2" class="inpt-raza">
+                        <option value="">--Seleccione una opción--</option>
+                    </select>
+                    </div>
+                    <div class="columna">
+                        <select id="slt-padecimiento3" class="inpt-raza">
+                        <option value="">--Seleccione una opción--</option>
+                    </select>
+                    </div>
+                </div>
 
                 <hr>
                 <p class="titulo">
@@ -268,104 +222,50 @@
                 </p>
                 <div class="contenedorColumna simpleColumna" id="div-vacuna0">
                     <div class="columna">
-                        <label for="txt-nombreVacuna">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna">
+                        <label for="slt-vacuna1">Nombre de la vacuna</label>
+                        <select id="slt-vacuna1" class="inpt-raza">
+                            <option value="">--Seleccione una opción--</option>
+                        </select>
                     </div>
                     <div class="columna ">
                         <label for="txt-fechaVacuna">Fecha de aplicación</label>
                         <input type="date" id="txt-fechaVacuna">
                     </div>
-                    <div class="columna">
-                        <label for="txt-fabricante">Fabricante</label>
-                        <input type="text" id="txt-fabricante">
-                    </div>
                 </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna1"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
+
                 <div class="contenedorColumna simpleColumna" id="div-vacuna1">
                     <hr>
                     <div class="columna">
-                        <label for="txt-nombreVacuna1">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna1">
+                        <label for="slt-vacuna2">Nombre de la vacuna</label>
+                        <select id="slt-vacuna2" class="inpt-raza">
+                            <option value="">--Seleccione una opción--</option>
+                        </select>
                     </div>
                     <div class="columna">
                         <label for="txt-fechaVacuna1">Fecha de aplicación</label>
                         <input type="date" id="txt-fechaVacuna1">
                     </div>
-                    <div class="columna">
-                        <label for="txt-fabricante1">Fabricante</label>
-                        <input type="text" id="txt-fabricante1">
-                    </div>
+
                 </div>
 
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna1Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna1Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                </div>
 
-                <div class="contenedorColumna simpleColumna" id="div-vacuna2">
-                    <hr>
-                    <div class="columna">
-                        <label for="txt-nombreVacuna2">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna2">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fechaVacuna2">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacuna2">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante2">Fabricante</label>
-                        <input type="text" id="txt-fabricante2">
-                    </div>
-                </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna2Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna2Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                </div>
-                <div class="contenedorColumna simpleColumna" id="div-vacuna3">
-                    <hr>
-                    <div class="columna">
-                        <label for="txt-nombreVacuna3">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna3">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fechaVacuna3">Fecha de aplicación</label>
-                        <input type="date" id="txt-fechaVacuna3">
-                    </div>
-                    <div class="columna">
-                        <label for="txt-fabricante3">Fabricante</label>
-                        <input type="text" id="txt-fabricante3">
-                    </div>
-                </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna3Mas"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna3Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                </div>
+
                 <div class="contenedorColumna simpleColumna" id="div-vacuna4">
                     <hr>
                     <div class="columna">
-                        <label for="txt-nombreVacuna4">Nombre de la vacuna</label>
-                        <input type="text" id="txt-nombreVacuna4">
+
+                        <label for="slt-vacuna3">Nombre de la vacuna</label>
+                        <select id="slt-vacuna3" class="inpt-raza">
+                            <option value="">--Seleccione una opción--</option>
+                        </select>
                     </div>
                     <div class="columna">
                         <label for="txt-fechaVacuna4">Fecha de aplicación</label>
                         <input type="date" id="txt-fechaVacuna4">
                     </div>
-                    <div class="columna">
-                        <label for="txt-fabricante4">Fabricante</label>
-                        <input type="text" id="txt-fabricante4">
-                    </div>
+
                 </div>
-                <div>
-                    <button class="morada" type="button" id="btn-vacuna4Menos"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                </div>
+
 
 
 
@@ -379,10 +279,16 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
+    <script src="js/mascotas-servicios.js"></script>
+    <script src="js/registrarMascota-servicio.js"></script>
     <script src="js/registrarMascotaCliente.js "></script>
+
+
 
 </body>
 

@@ -55,6 +55,9 @@
                                 <li>
                                     <a href="listarMascotasCliente.html">Ver mascotas</a>
                                 </li>
+                                <li>
+                                    <a href="registrarMascota.html">Agregar mascotas</a>
+                                </li>
                             </ul>
                         </li>
                         <!--Finaliza menu cliente-->
@@ -161,8 +164,11 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Raza</th>
-                    <th>Vacunas</th>
-                    <th>Cantidad de servicios</th>
+                    <th>Tipo</th>
+                    <th>Edad</th>
+                    <th>Estado</th>
+                    <th></th>
+                    <th></th>
                     <th></th>
                 </tr>
             </thead>
@@ -175,9 +181,11 @@
         <p>Esta aplicación fue creada por <a href="colossus.html" targe="_blank">Colossus</a></p>
         <p>Pro Mascotas es una aplicación de <a href="http://www.abaanimal.org/" targe="_blank">Abaanimal</a> &copy; Todos los derechos reservados 2021</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/servicios.js"></script>
     <script src="js/navegacion.js"></script>
+    <script src="js/mascotas-servicios.js"></script>
     <script src="js/mascotasCliente.js"></script>
 </body>
 

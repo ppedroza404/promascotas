@@ -29,39 +29,110 @@ enableSelect();
 tipoMascota.addEventListener('change', enableSelect);*/
 
 //Vacunas
-
+let mascotaConectada = JSON.parse(sessionStorage.getItem('mascotaSeleccionada'));
 const tabla = document.querySelector('#tbl-mascotas tbody');
+const tabla2 = document.querySelector('#tbl-padecimientos tbody');
 const inputTipoMascota1 = document.querySelector('#txt-tipoMascota');
-const inputNombreMascota1 = document.querySelector('#h3-nombreMascota');
+const inputNombreMascota1 = document.querySelector('#txt-nombreMascota');
 const inputRaza1 = document.querySelector('#txt-raza');
 const inputEdad1 = document.querySelector('#txt-edad');
 const inputPadecimientos1 = document.querySelector('#txt-padecimientos');
+const selectVacuna1 = document.querySelector('#slt-vacuna1');
+const selectPadecimiento1 = document.querySelector('#slt-padecimiento1');
+const btnAgregarVacuna = document.querySelector('#btn-AgregarVacuna');
+const btnAgregarPadecimiento = document.querySelector('#btn-AgregarPadecimiento');
+const inputFechaAplicacion = document.querySelector('#txt-fechaVacuna');
+
+inputNombreMascota1.value = mascotaConectada.nombre;
+inputTipoMascota1.value = mascotaConectada.tipoMascota;
+inputRaza1.value = mascotaConectada.raza;
+inputEdad1.value = mascotaConectada.edad;
 
 
-const mostrarTabla = () => {
-    mascotasCliente3.forEach(mascota => {
-
-        inputNombreMascota1.innerHTML = mascota.nombre;
-        inputTipoMascota1.value = mascota.tipo;
-        inputRaza1.value = mascota.raza;
-        inputEdad1.value = mascota.edad;
-        inputPadecimientos1.value = mascota.padecimientos;
 
 
-        mascota.vacunas.forEach(vacuna => {
+const mostrarTabla = async() => {
+    tabla.innerHTML = '';
 
+    let vacunasPopuladas = [];
+    vacunasPopuladas = await listar_vacunas_cliente();
 
+    vacunasPopuladas.forEach(vacuna1 => {
+
+        if (vacuna1.correo.toLowerCase().includes(mascotaConectada.correo) && vacuna1.nombreMascota.toLowerCase().includes(mascotaConectada.nombre.toLowerCase())) {
             let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = vacuna.nombre;
-            fila.insertCell().innerHTML = vacuna.fecha;
-            fila.insertCell().innerHTML = vacuna.fabricante;
-
-        });
-
+            fila.insertCell().innerHTML = vacuna1.vacuna;
+            fila.insertCell().innerHTML = vacuna1.fechaAplicacion;
+        }
 
     });
 };
+
 mostrarTabla();
+
+
+
+
+
+const mostrarTabla2 = async() => {
+    tabla2.innerHTML = '';
+
+    let padePopulados = [];
+    padePopulados = await listar_padecimientos_cliente();
+
+    padePopulados.forEach(pade => {
+
+        if (pade.correo.toLowerCase().includes(mascotaConectada.correo) && pade.nombreMascota.toLowerCase().includes(mascotaConectada.nombre.toLowerCase())) {
+            let fila = tabla2.insertRow();
+            fila.insertCell().innerHTML = pade.padecimiento;
+
+        }
+
+    });
+};
+
+mostrarTabla2();
+
+let padecimientos2 = [];
+const obtenerPadecimientos = async() => {
+    padecimientos2 = await listarPadecimientos();
+    llenarSelectPadecimientos2();
+};
+
+obtenerPadecimientos();
+
+const llenarSelectPadecimientos2 = async() => {
+
+
+    padecimientos2.forEach(item => {
+
+        let option = document.createElement("option");
+        option.text = item.padecimiento;
+        option.value = item.padecimiento;
+        selectPadecimiento1.add(option);
+    });
+
+};
+
+let vacunas2 = [];
+const obtenerVacunas = async() => {
+    vacunas2 = await listarVacunas();
+    llenarSelectVacunas2();
+};
+
+obtenerVacunas();
+const llenarSelectVacunas2 = async() => {
+
+
+    vacunas2.forEach(item => {
+
+        let option = document.createElement("option");
+        option.text = item.nombre;
+        option.value = item.nombre;
+        selectVacuna1.add(option);
+    });
+
+};
 
 //Variables validación
 const btnGuardarMascota = document.querySelector('#btn-guardarMascota');
@@ -80,22 +151,15 @@ const inputFabricante1 = document.querySelector('#txt-fabricante1');
 
 
 //funcion para agregar vacunas
-const btnVacuna = document.querySelector('#btn-vacuna1');
+/*const btnVacuna = document.querySelector('#btn-vacuna1');
 const btnVacuna1Mas = document.querySelector('#btn-vacuna1Mas');
 const btnVacuna1Menos = document.querySelector('#btn-vacuna1Menos');
-const vacuna1 = document.querySelector('#div-vacuna1');
+const vacuna1 = document.querySelector('#div-vacuna1');*/
 
 
 
 
-vacuna1.classList.add('ocultar');
-
-btnVacuna1Menos.classList.add('ocultar');
-
-
-
-
-
+/*
 const mostrarVacuna = () => {
 
     vacuna1.classList.remove('ocultar');
@@ -119,7 +183,7 @@ const ocultarVacuna1 = () => {
 
 btnVacuna1Menos.addEventListener('click', ocultarVacuna1);
 
-
+*/
 //Validar el form
 
 const validar = () => {
@@ -143,12 +207,6 @@ const validar = () => {
         inputRaza.classList.remove('error');
     }
 
-    if (inputPadecimientos.value == '') {
-        error = true;
-        inputPadecimientos.classList.add('error');
-    } else {
-        inputPadecimientos.classList.remove('error');
-    }
     if (inputEdad.value == '') {
         error = true;
         inputEdad.classList.add('error');
@@ -218,7 +276,7 @@ const imprimir = () => {
 
     let tipoMascota = inputTipoMascota.value;
     let raza = inputRaza.value;
-    let padecimientos = inputPadecimientos.value;
+
     let nombreVacuna = inputNombreVacuna.value;
     let fechaVacuna = inputFechaVacuna.value;
     let fabricante = inputFabricante.value;
@@ -233,22 +291,7 @@ const imprimir = () => {
     console.log('Tipo: ' + tipoMascota);
     console.log('Raza: ' + raza);
     console.log('Edad: ' + edad);
-    console.log('Padecimientos: ' + padecimientos);
 
-    if (inputNombreVacuna.value != '') {
-        console.log('');
-        console.log('Vacunas nuevas');
-        console.log('=====================');
-
-        console.log('Nombre: ' + nombreVacuna);
-        console.log('Fecha de aplicación: ' + fechaVacuna);
-        console.log('Fabricante: ' + fabricante);
-    }
-    if (inputNombreVacuna1.value != '') {
-        console.log('Nombre: ' + nombreVacuna1);
-        console.log('Fecha de aplicación: ' + fechaVacuna1);
-        console.log('Fabricante: ' + fabricante1);
-    }
 
 
 
@@ -263,4 +306,19 @@ const imprimir = () => {
 
 };
 
-btnGuardarMascota.addEventListener('click', validar);
+
+
+const agregarPadecimientoPerfil = () => {
+
+    registrarPadecimientoMascota(selectPadecimiento1.value, mascotaConectada.correo, mascotaConectada.nombre);
+    window.location.href = 'perfilMascota.html';
+
+}
+
+const agregarVacunaPerfil = () => {
+
+    registrarVacunaMascota(selectVacuna1.value, inputFechaAplicacion.value, mascotaConectada.correo, mascotaConectada.nombre);
+    window.location.href = 'perfilMascota.html';
+}
+btnAgregarPadecimiento.addEventListener('click', agregarPadecimientoPerfil);
+btnAgregarVacuna.addEventListener('click', agregarVacunaPerfil);
