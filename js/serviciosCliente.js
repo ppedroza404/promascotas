@@ -73,7 +73,7 @@ const mostrarTabla = async() => {
 
 
         if (usuario.tipoUsuario.toLowerCase().includes('proveedor')) {
-            if (usuario.estado.toLowerCase().includes('pendiente')) {
+            if (usuario.estado.toLowerCase().includes('activo')) {
 
                 usuario.servicios.forEach(servicio => {
                     //Falta probar el filtro
