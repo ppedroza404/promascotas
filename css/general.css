@@ -274,6 +274,10 @@ input {
     padding: 10px 15px;
 }
 
+textarea {
+    resize: none;
+}
+
 .input-dobleColumna {
     margin-bottom: 39px;
 }
@@ -384,7 +388,7 @@ input {
 }
 
 
-/* Inicio*/
+/* Inicio */
 
 
 /* Estilos header principal */

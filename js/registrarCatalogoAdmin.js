@@ -11,6 +11,8 @@ let txtInputfabricante;
 let sltestado;
 let txtlabeltipodemascota;
 let sltTipodemascota;
+const usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
+
 
 //Array de tipo de mascotas
 let arrarTipoDeMascotas = [];
@@ -220,28 +222,26 @@ let obtener_datos = () => {
         switch (inputSelectCatalogo.value) {
             case 'tipodeservicio':
                 console.log("tipodeservicio");
-                registrarTipoServicio(ptxtInputCatalogo, psltestado);
+                registrarTipoServicio(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'razas':
-                registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota);
+                registrarRaza(ptxtInputCatalogo, psltestado, psltTipodemascota, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'vacunas':
                 console.log("vacunas");
-                registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante);
+                registrarVacuna(ptxtInputCatalogo, ptxtInputfabricante, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'tipoMascota':
                 console.log("tipoMascota");
-                registrarTipoMascota(ptxtInputCatalogo, psltestado);
+                registrarTipoMascota(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             case 'padecimientos':
                 console.log("padecimientos");
-                registrarPadecimiento(ptxtInputCatalogo, psltestado);
+                registrarPadecimiento(ptxtInputCatalogo, psltestado, usuario.nombre, usuario.tipoUsuario);
                 break;
             default:
                 console.log('Error default');
-
         }
-
     }
 };
 

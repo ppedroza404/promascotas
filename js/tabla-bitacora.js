@@ -15,10 +15,11 @@ const mostrarTabla = async() => {
 
         let fila = tabla.insertRow();
         // if (bitacora.nombre.toLowerCase().includes(filtro) || bitacora.tipoUsuario.toLowerCase().includes(filtro) || bitacora.accion.toLowerCase().includes(filtro)) {
-        fila.insertCell().innerHTML = bitacora.nombre;
+        fila.insertCell().innerHTML = bitacora.nombreUsuario;
         fila.insertCell().innerHTML = bitacora.tipoUsuario;
         fila.insertCell().innerHTML = bitacora.accion;
         fila.insertCell().innerHTML = bitacora.fecha;
+
         // }
     });
 };
