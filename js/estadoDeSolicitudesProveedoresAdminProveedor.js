@@ -1,53 +1,10 @@
 'use strict';
 
-let informacionServiciosPorAprobar = [{
-        "nombre": "Clhoe",
-        "tipo": "grooming",
-        "precio": "15000",
-        "nombreCliente": "Carlos Alberto Diaz",
-        "telefono": "7154-5868"
-    },
-    {
-        "nombre": "Petsi",
-        "tipo": "grooming",
-        "precio": "15000",
-        "nombreCliente": "Juan Roberto Cruz",
-        "telefono": "7154-4857"
-    },
-    {
-        "nombre": "Ratsi",
-        "tipo": "Corte de pelo",
-        "precio": "12000",
-        "nombreCliente": "Roberto Angel Ruiz",
-        "telefono": "7587-7777"
-    },
-    {
-        "nombre": "Orus",
-        "tipo": "Corte de pelo",
-        "precio": "12000",
-        "nombreCliente": "Carlos Alberto Diaz",
-        "telefono": "8154-8878"
-    },
-    {
-        "nombre": "Garfield",
-        "tipo": "corte de uñas",
-        "precio": "5000",
-        "nombreCliente": "Sigifredo Rosales",
-        "telefono": "7154-5868"
-    },
-    {
-        "nombre": "Carrito",
-        "tipo": "Corte de pelo",
-        "precio": "15000",
-        "nombreCliente": "Roberto Rosando",
-        "telefono": "7154-7774"
-    },
 
-
-
-]
 const tabla = document.querySelector('#tbl-solicitudespendientes tbody');
 const inputFiltro = document.querySelector('#txt-filtro');
+
+let listaSolicitudesPendientes = [];
 
 const mostrarTabla = () => {
     let filtro = inputFiltro.value.toLowerCase();
