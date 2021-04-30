@@ -233,25 +233,27 @@ const validarServicioAgregado0 = () => {
     }
 };
 
+// Listar servicios
+let idServicioAgregadoProveedor = [];
+
 const imprimirServicioAgregado0 = () => {
+    let usuario = JSON.parse(sessionStorage.getItem('usuarioConectado'));
     let nombreServicioAgregado = inputNombreServicio0.value;
     let descripcionServicioAgregado = textareaDescripcionServicio0.value;
     let servicioDomicilioAgregado = selectDomicilioServicio0.value;
     let tipoMonedaServicioAgregado = selectMonedaServicio0.value;
     let montoServicioAgregado = inputMontoServicio0.value;
+    let correoUsuarioConectado = usuario.correo;
 
 
-    console.log("Servicio agregado número 1");
-    console.log("------------------");
-    console.log("Nombre del servicio:", nombreServicioAgregado);
-    console.log("Tamaño:", descripcionServicioAgregado);
-    console.log("¿Cuenta con servicio a domicilio?:", servicioDomicilioAgregado);
-    console.log("Tipo de moneda:", tipoMonedaServicioAgregado);
-    console.log("Monto por servicio:", montoServicioAgregado);
-    console.log("------------------");
-    console.log("------------------");
+    registrarServicioProveedor(correoUsuarioConectado, nombreServicioAgregado, descripcionServicioAgregado, servicioDomicilioAgregado, tipoMonedaServicioAgregado, montoServicioAgregado);
 
-    registrarServicioProveedor(nombreServicioAgregado, descripcionServicioAgregado, servicioDomicilioAgregado, tipoMonedaServicioAgregado, montoServicioAgregado);
+
+
+    let idServicioAgregado = idServicioAgregadoProveedor._id;
+    console.log(idServicioAgregado);
+
+
 
     Swal.fire({
         'icon': 'success',

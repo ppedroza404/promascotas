@@ -41,13 +41,14 @@ const obtenerInformacionServiciosProveedorConectado = async(correoProvedorConect
 };
 
 
-const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicilio, ptipoMoneda, pmonto) => {
-
+const registrarServicioProveedor = async(pcorreoUsuarioConectado, pnombre, pdescripcion, pservicioDomicilio, ptipoMoneda, pmonto) => {
+    let idServicioAgregadoProveedor;
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-servicio',
             responseType: 'json',
             data: {
+                correo: pcorreoUsuarioConectado,
                 nombreServicioAgregado: pnombre,
                 descripcionServicioAgregado: pdescripcion,
                 servicioDomicilioAgregado: pservicioDomicilio,
@@ -62,7 +63,39 @@ const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicil
                 'title': 'Su servicio se registró con éxito',
                 'confirmButtonText': 'Entendido'
             }).then(() => {
+                idServicioAgregadoProveedor = response.data.serviciosProveedor;
+                anexarServicioProveedor(pcorreoUsuarioConectado, response.data.serviciosProveedor);
+
+            });
+        })
+        .catch((error) => {
+            Swal.fire({
+                'title': 'No se pudo registrar el servicio',
+                'text': 'Ocurrió el siguiente error {error}',
+                'icon': 'error'
+            })
+        });
+    return idServicioAgregadoProveedor;
+};
+
+const anexarServicioProveedor = async(correo, serviciosProveedor) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/anexar-servicio',
+            responseType: 'json',
+            data: {
+                correo: correo,
+                _id: serviciosProveedor._id
+            }
+        })
+        .then((response) => {
+            Swal.fire({
+                'icon': 'success',
+                'title': 'Su servicio se registró con éxito',
+                'confirmButtonText': 'Entendido'
+            }).then(() => {
                 window.location.href = 'serviciosProveedorYCliente.html';
+
             });
         })
         .catch((error) => {
@@ -73,6 +106,7 @@ const registrarServicioProveedor = async(pnombre, pdescripcion, pservicioDomicil
             })
         });
 };
+
 
 const obtenerServiciosProveedor = async() => {
     let listaServiciosProveedor;
